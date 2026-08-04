@@ -34,9 +34,11 @@ export default function PlaceDetailModal({
 }: PlaceDetailModalProps) {
   
   // Custom Google Maps deep link for interactive directions
-  const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    place.name + " " + (place.address || "")
-  )}`;
+  const directionsUrl = place.location
+    ? `https://www.google.com/maps/dir/?api=1&destination=${place.location.lat},${place.location.lng}`
+    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+        place.name + " " + (place.address || "")
+      )}`;
 
   // UI translations helper
   const t = (key: string) => {
