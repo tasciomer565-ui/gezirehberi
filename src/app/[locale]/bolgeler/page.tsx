@@ -11,7 +11,7 @@ export async function generateMetadata(props: {
   const dict = getDictionary(locale);
   
   return {
-    title: `${dict.nav.regions} | ${dict.nav.logo}`,
+    title: dict.nav.regions,
     description: dict.home.subtitle,
   };
 }

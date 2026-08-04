@@ -1,17 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [kvkkAccepted, setKvkkAccepted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
+    if (formData.name && formData.email && formData.message && kvkkAccepted) {
       setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
+      setKvkkAccepted(false);
     }
   };
 
@@ -39,12 +41,8 @@ export default function ContactForm() {
                 <span>info@yoldefterim.com.tr</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="text-kiremit" size={18} />
-                <span>+90 (212) 555 0100</span>
-              </div>
-              <div className="flex items-center gap-3">
                 <MapPin className="text-kiremit animate-bounce" size={18} />
-                <span>Levent, Şişli / İstanbul</span>
+                <span>Çanakkale</span>
               </div>
             </div>
           </div>
@@ -112,6 +110,19 @@ export default function ContactForm() {
                     className="w-full rounded-xl border border-ink/10 bg-paper py-3 px-4 text-sm text-ink placeholder:text-ink/30 outline-none focus:border-kiremit focus:ring-1 focus:ring-kiremit transition-all shadow-inner resize-none"
                     placeholder="Hangi ilçe veya mekanla ilgili bildirimde bulunmak istersiniz?"
                   />
+                </div>
+                <div className="flex items-start gap-2.5 pt-2">
+                  <input
+                    type="checkbox"
+                    id="kvkk"
+                    required
+                    checked={kvkkAccepted}
+                    onChange={(e) => setKvkkAccepted(e.target.checked)}
+                    className="mt-1 h-4 w-4 rounded border-ink/10 text-kiremit focus:ring-kiremit cursor-pointer"
+                  />
+                  <label htmlFor="kvkk" className="text-xs text-ink/75 font-semibold leading-relaxed cursor-pointer selection:bg-transparent">
+                    <a href="/tr/gizlilik-politikasi" target="_blank" className="text-kiremit hover:underline">Gizlilik Politikası</a> ve Çerez Kullanım şartlarını, KVKK aydınlatma metni kapsamında kabul ediyorum.
+                  </label>
                 </div>
                 <button
                   type="submit"

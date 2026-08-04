@@ -182,6 +182,11 @@ export default function AuthModal({ isOpen, onClose, onSuccess }: AuthModalProps
                   : locale === "tr" ? "Kayıt Ol" : "Register"}
               </button>
             </form>
+            <div className="mt-4 rounded-lg bg-safran/10 border border-safran/20 p-3 text-[10px] font-semibold text-ink/70 leading-relaxed">
+              🔒 {locale === "tr" 
+                ? "Bilgilendirme: Hesap ve rota verileriniz tamamen yerel tarayıcınızda (offline / localStorage) saklanır. Sunucularımıza hiçbir kişisel veri iletilmez." 
+                : "Privacy Note: Your account and route data are stored entirely locally in your browser (offline / localStorage). No personal data is transmitted to our servers."}
+            </div>
           </motion.div>
         </div>
       )}

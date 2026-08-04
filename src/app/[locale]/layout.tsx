@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 import "../globals.css";
 import { getDictionary, Locale } from "@/lib/i18n";
 
@@ -76,6 +77,7 @@ export default async function RootLayout(props: {
         <Header />
         <main className="flex-1">{props.children}</main>
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );

@@ -60,9 +60,13 @@ export default function CityContentSections({
   const [subFilter, setSubFilter] = useState<string>("all"); // must-see/should-see OR budget/mid/luxury
 
   // Infinite Scroll / Paging State
-  const [items, setItems] = useState<any[]>([]);
+  const [items, setItems] = useState<any[]>(() => {
+    return initialAttractions || [];
+  });
   const [offset, setOffset] = useState<number>(0);
-  const [totalCount, setTotalCount] = useState<number>(0);
+  const [totalCount, setTotalCount] = useState<number>(() => {
+    return initialAttractions ? initialAttractions.length : 0;
+  });
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   const [loadingMore, setLoadingMore] = useState<boolean>(false);

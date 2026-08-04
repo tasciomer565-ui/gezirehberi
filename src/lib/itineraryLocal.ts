@@ -71,8 +71,32 @@ export function getMockWeather(citySlug: string, day: number, avgTempHint = 18):
   const r3 = seededRandom(`${citySlug}-${day}-r`);
   const r4 = seededRandom(`${citySlug}-${day}-w`);
 
-  const tempC = Math.round(avgTempHint - 6 + r1 * 12);
-  const condition = CONDITIONS[Math.floor(r2 * CONDITIONS.length)];
+  // Ege and Akdeniz regions are generally warmer
+  let baseTemp = avgTempHint;
+  const isWarmRegion = 
+    citySlug.includes("cesme") || 
+    citySlug.includes("bodrum") || 
+    citySlug.includes("antalya") || 
+    citySlug.includes("alanya") || 
+    citySlug.includes("fethiye") || 
+    citySlug.includes("marmaris") || 
+    citySlug.includes("kas") ||
+    citySlug.includes("izmir");
+
+  if (isWarmRegion) {
+    baseTemp = 25;
+  }
+
+  const tempC = Math.round(baseTemp - 5 + r1 * 10);
+  
+  // Filter weather conditions based on temperature and regional climate
+  let allowedConditions: MockWeather["condition"][] = ["güneşli", "parçalı bulutlu", "yağmurlu", "sisli"];
+  if (tempC <= 5 && !isWarmRegion) {
+    allowedConditions.push("karlı");
+  }
+
+  // Pick condition from the allowed subset
+  const condition = allowedConditions[Math.floor(r2 * allowedConditions.length)];
 
   return {
     tempC,

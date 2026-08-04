@@ -85,22 +85,43 @@ export default function Footer() {
                 ✓ {locale === "tr" ? "Başarıyla Abone Olundu!" : "Subscribed Successfully!"}
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="relative flex">
-                <input
-                  type="email"
-                  required
-                  placeholder={locale === "tr" ? "E-posta adresiniz" : "Your email address"}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full rounded-xl border border-paper/10 bg-paper/5 py-3 pl-4 pr-12 text-sm text-paper placeholder:text-paper/40 outline-none focus:border-safran focus:ring-1 focus:ring-safran transition-all"
-                />
-                <button
-                  type="submit"
-                  className="absolute right-1 top-1 flex h-10 w-10 items-center justify-center rounded-lg bg-safran text-ink hover:scale-105 transition-all cursor-pointer"
-                  aria-label="Subscribe"
-                >
-                  <ArrowRight size={16} />
-                </button>
+              <form onSubmit={handleSubscribe} className="space-y-2.5">
+                <div className="relative flex">
+                  <input
+                    type="email"
+                    required
+                    placeholder={locale === "tr" ? "E-posta adresiniz" : "Your email address"}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full rounded-xl border border-paper/10 bg-paper/5 py-3 pl-4 pr-12 text-sm text-paper placeholder:text-paper/40 outline-none focus:border-safran focus:ring-1 focus:ring-safran transition-all"
+                  />
+                  <button
+                    type="submit"
+                    className="absolute right-1 top-1 flex h-10 w-10 items-center justify-center rounded-lg bg-safran text-ink hover:scale-105 transition-all cursor-pointer"
+                    aria-label="Subscribe"
+                  >
+                    <ArrowRight size={16} />
+                  </button>
+                </div>
+                <div className="flex items-start gap-2 px-1">
+                  <input
+                    type="checkbox"
+                    id="kvkk-newsletter"
+                    required
+                    className="mt-0.5 h-3.5 w-3.5 rounded border-paper/20 bg-paper/5 text-safran focus:ring-safran cursor-pointer"
+                  />
+                  <label htmlFor="kvkk-newsletter" className="text-[10px] text-paper/50 leading-normal font-semibold cursor-pointer selection:bg-transparent">
+                    {locale === "tr" ? (
+                      <>
+                        <a href="/tr/gizlilik-politikasi" target="_blank" className="text-safran hover:underline">Gizlilik Politikası</a> şartlarını okudum ve kabul ediyorum.
+                      </>
+                    ) : (
+                      <>
+                        I accept the <a href={`/${locale}/gizlilik-politikasi`} target="_blank" className="text-safran hover:underline">Privacy Policy</a> terms.
+                      </>
+                    )}
+                  </label>
+                </div>
               </form>
             )}
           </div>
