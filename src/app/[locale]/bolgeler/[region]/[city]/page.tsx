@@ -200,19 +200,38 @@ export default async function CityDetailPage(props: {
       </div>
 
       <div className="mx-auto max-w-6xl px-4 py-12 pb-24 sm:px-6 sm:pb-12">
-        <div className="mb-8 flex items-center justify-between">
-          <Link
-            href={`/${locale}/bolgeler/${city.regionSlug}`}
-            className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-4 py-2 text-sm font-semibold text-ink hover:border-kiremit hover:text-kiremit transition-colors"
-          >
-            <ArrowLeft size={16} /> {dict.city.back}
-          </Link>
-          <WishlistButton
-            citySlug={city.slug}
-            regionSlug={city.regionSlug}
-            cityName={city.name}
-            variant="inline"
-          />
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/40">
+            <Link href={`/${locale}`} className="hover:text-kiremit transition-colors">
+              {locale === "tr" ? "Ana Sayfa" : "Home"}
+            </Link>
+            <span>/</span>
+            <Link href={`/${locale}/bolgeler`} className="hover:text-kiremit transition-colors">
+              {locale === "tr" ? "Bölgeler" : "Regions"}
+            </Link>
+            <span>/</span>
+            <Link href={`/${locale}/bolgeler/${city.regionSlug}`} className="hover:text-kiremit transition-colors">
+              {translateDataText(city.region, locale)}
+            </Link>
+            <span>/</span>
+            <span className="text-ink/80 truncate max-w-[150px]">
+              {translateDataText(city.name, locale)}
+            </span>
+          </nav>
+          <div className="flex items-center gap-3">
+            <Link
+              href={`/${locale}/bolgeler/${city.regionSlug}`}
+              className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-4 py-2 text-sm font-semibold text-ink hover:border-kiremit hover:text-kiremit transition-colors"
+            >
+              <ArrowLeft size={16} /> {dict.city.back}
+            </Link>
+            <WishlistButton
+              citySlug={city.slug}
+              regionSlug={city.regionSlug}
+              cityName={city.name}
+              variant="inline"
+            />
+          </div>
         </div>
 
         <div className="mb-16 grid grid-cols-1 gap-8 lg:grid-cols-3">

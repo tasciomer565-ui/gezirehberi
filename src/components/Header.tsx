@@ -151,7 +151,7 @@ export default function Header() {
         </nav>
         
         {/* Mobile menu triggers */}
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 lg:!hidden">
           <ThemeToggle />
           <LanguageSwitcher />
           
