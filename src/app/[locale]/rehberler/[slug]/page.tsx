@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { Locale, buildAlternates, buildRobots, buildPageSocialMeta, translateDataText, getDictionary, SITE_URL } from "@/lib/i18n";
 import { getAllGuides, getGuideBySlug } from "@/lib/data/guides";
 import { allCities } from "@/lib/data/cities";
 import AdSlot from "@/components/AdSlot";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 // Rehber gövdeleri düz metin; bölüm başlıkları kendi satırında BÜYÜK HARFLE
 // yazılmış ("SELAMLAŞMA", "112 — TEK ACİL ÇAĞRI NUMARASI"). Önceden hepsi tek
@@ -91,10 +92,20 @@ export default async function GuideDetailPage(props: { params: Promise<{ slug: s
     "dateModified": guide.updatedAt ?? guide.publishedAt,
     "url": pageUrl,
     "mainEntityOfPage": pageUrl,
+    // Google'ın Article için önerdiği alanlar. Yazar olarak uydurma bir kişi
+    // değil, içeriği gerçekten yayımlayan kurum (site) gösteriliyor; görsel,
+    // sayfanın og:image'ı olan markalı görsel.
+    "image": [`${SITE_URL}/${locale}/opengraph-image`],
+    "author": {
+      "@type": "Organization",
+      "name": dict.nav.logo,
+      "url": SITE_URL,
+    },
     "publisher": {
       "@type": "Organization",
       "name": dict.nav.logo,
       "url": SITE_URL,
+      "logo": { "@type": "ImageObject", "url": `${SITE_URL}/icon` },
     },
   };
 
@@ -104,12 +115,14 @@ export default async function GuideDetailPage(props: { params: Promise<{ slug: s
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <Link
-        href={`/${locale}/rehberler`}
-        className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-ink/65 hover:text-kiremit transition-colors"
-      >
-        <ArrowLeft size={15} /> {locale === "tr" ? "Rehberler" : "Guides"}
-      </Link>
+      <Breadcrumbs
+        withSchema
+        items={[
+          { label: locale === "tr" ? "Ana Sayfa" : "Home", href: `/${locale}` },
+          { label: locale === "tr" ? "Rehberler" : "Guides", href: `/${locale}/rehberler` },
+          { label: guide.seoTitle ?? guide.title },
+        ]}
+      />
       <h1 className="font-display text-3xl italic text-ink sm:text-4xl mb-4">{guide.title}</h1>
       <p className="text-base text-ink/65 mb-8">{guide.summary}</p>
       <div className="max-w-none text-ink/80 leading-relaxed">

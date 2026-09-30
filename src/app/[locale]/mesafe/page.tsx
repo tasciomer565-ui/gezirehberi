@@ -109,6 +109,7 @@ export default async function DistanceHubPage(props: { params: Promise<{ locale:
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
       <Breadcrumbs
+        withSchema
         items={[
           { label: isTr ? "Ana Sayfa" : "Home", href: `/${locale}` },
           { label: isTr ? "Mesafeler" : "Distances" },

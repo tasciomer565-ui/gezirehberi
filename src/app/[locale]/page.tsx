@@ -61,7 +61,6 @@ export default async function Home(props: {
     "name": dict.nav.logo,
     "url": SITE_URL,
     "logo": `${SITE_URL}/icon`,
-    "sameAs": [],
   };
 
   const websiteSchema = {

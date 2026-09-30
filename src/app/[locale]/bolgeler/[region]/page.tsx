@@ -208,6 +208,7 @@ export default async function RegionPage(props: {
 
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <Breadcrumbs
+        withSchema
           items={[
             { label: locale === "tr" ? "Ana Sayfa" : "Home", href: `/${locale}` },
             { label: dict.nav.regions, href: `/${locale}/bolgeler` },

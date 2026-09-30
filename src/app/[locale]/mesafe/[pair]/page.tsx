@@ -12,6 +12,7 @@ import {
 import { buildStopDirectionsUrl } from "@/lib/geo";
 import { getGuidesForCity } from "@/lib/data/guides";
 import AdSlot from "@/components/AdSlot";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { BookOpen } from "lucide-react";
 
 export async function generateStaticParams() {
@@ -205,6 +206,14 @@ export default async function DistancePage(props: { params: Promise<{ pair: stri
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Breadcrumbs
+        withSchema
+        items={[
+          { label: locale === "tr" ? "Ana Sayfa" : "Home", href: `/${locale}` },
+          { label: locale === "tr" ? "Mesafeler" : "Distances", href: `/${locale}/mesafe` },
+          { label: `${translateDataText(cityA.name, locale)} - ${translateDataText(cityB.name, locale)}` },
+        ]}
       />
       <Link
         href={`/${locale}/bolgeler/${cityA.regionSlug}/${cityA.slug}`}
