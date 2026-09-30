@@ -46,18 +46,31 @@ export async function generateMetadata(props: { params: Promise<{ pair: string; 
   // 3.147 gösterim / 1 tık — başlıkta süre yoktu. Süre de başlığa ekleniyor;
   // marka eki (" | Yol Defteri", 14 karakter) dahil 60'ı aşmamak için
   // adaylar uzundan kısaya deneniyor, sığan ilk başlık kullanılıyor.
+  //
+  // Güncelleme (2026-09-30, GSC + canlı SERP incelemesi): en büyük sayfalar
+  // 19-20 Eylül'de ana sorgusu "X Y arası kaç km"de tamamen kayboldu
+  // (gaziantep-mardin haftalık 1.324 -> 26 gösterim). Google bu sorgularda
+  // artık yol tarifi kutusu + AI özeti gösterip ilk sayfada 7 organik sonuç
+  // bırakıyor; o 7 sonucun hepsinin başlığında sorgunun kendisi birebir
+  // geçiyor ("... Arası Kaç Km? Kaç Saat?"). Bizim başlıkta rakam vardı ama
+  // "kaç km" ifadesi 9 Eylül'de çıkarılmıştı. Artık ikisi birlikte: soru
+  // ifadesi + cevap (km ve süre). 60 karaktere sığması için TR'de marka eki
+  // kullanılmıyor (title.absolute) — marka bu sorgularda tıklama sebebi değil.
   const roundedKm = Math.round(data.distanceKm);
   const { cityA, cityB } = data;
   const h = Math.floor(data.durationMin / 60);
   const m = data.durationMin % 60;
-  const MAX_TITLE = 60 - " | Yol Defteri".length;
+  const durShort = [h > 0 ? `${h} Sa` : null, m > 0 ? `${m} Dk` : null].filter(Boolean).join(" ");
+  const durLong = [h > 0 ? `${h} Saat` : null, m > 0 ? `${m} Dk` : null].filter(Boolean).join(" ");
+  const pairName = `${cityA.name} - ${cityB.name}`;
+  const MAX_TITLE = locale === "tr" ? 60 : 60 - " | Yol Defteri".length;
   const titleCandidates =
     locale === "tr"
       ? [
-          `${cityA.name} - ${cityB.name} Arası ${roundedKm} Km, ${[h > 0 ? `${h} Saat` : null, m > 0 ? `${m} Dk` : null].filter(Boolean).join(" ")}`,
-          `${cityA.name} - ${cityB.name} Arası ${roundedKm} Km, ${[h > 0 ? `${h} Sa` : null, m > 0 ? `${m} Dk` : null].filter(Boolean).join(" ")}`,
-          `${cityA.name} - ${cityB.name} ${roundedKm} Km, ${[h > 0 ? `${h} Saat` : null, m > 0 ? `${m} Dk` : null].filter(Boolean).join(" ")}`,
-          `${cityA.name} - ${cityB.name} Arası ${roundedKm} Km`,
+          `${pairName} Arası Kaç Km, Kaç Saat? ${roundedKm} Km, ${durShort}`,
+          `${pairName} Arası Kaç Km? ${roundedKm} Km, ${durLong}`,
+          `${pairName} Arası Kaç Km? ${roundedKm} Km, ${durShort}`,
+          `${pairName} Arası Kaç Km? ${roundedKm} Km`,
         ]
       : [
           `${cityA.name} to ${cityB.name}: ${roundedKm} km, ${[h > 0 ? `${h}h` : null, m > 0 ? `${m}min` : null].filter(Boolean).join(" ")} Drive`,
@@ -75,7 +88,9 @@ export async function generateMetadata(props: { params: Promise<{ pair: string; 
   const descriptionParts =
     locale === "tr"
       ? [
-          `${cityA.name} ${cityB.name} arası karayoluyla ${roundedKm} km, arabayla yaklaşık ${durationText}.`,
+          // Sorgu ifadesi ("arası kaç km") açıklamada da birebir geçiyor —
+          // Google eşleşen kelimeleri sonuçta kalın gösteriyor.
+          `${cityA.name} ${cityB.name} arası kaç km? Karayoluyla ${roundedKm} km, arabayla yaklaşık ${durationText}.`,
           stopNames ? ` Yol üstü: ${stopNames}.` : "",
           ` ${cityB.name} ${cityA.name} yönü, güzergah ve gezilecek yerler.`,
         ]
@@ -87,7 +102,7 @@ export async function generateMetadata(props: { params: Promise<{ pair: string; 
   const description = descriptionParts.reduce((acc, part) => (acc.length + part.length <= 155 ? acc + part : acc), "");
 
   return {
-    title,
+    title: locale === "tr" ? { absolute: title } : title,
     description,
     robots: buildRobots(locale),
     alternates: buildAlternates(locale, `/mesafe/${data.slug}`),
