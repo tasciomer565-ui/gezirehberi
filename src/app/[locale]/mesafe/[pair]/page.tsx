@@ -8,7 +8,10 @@ import {
   buildDistanceDescription,
   formatDuration,
   getTopAttractions,
+  buildDistanceSections,
+  getDistanceLinksForCity,
 } from "@/lib/data/distances";
+import FuelCostCalculator from "@/components/FuelCostCalculator";
 import { buildStopDirectionsUrl } from "@/lib/geo";
 import { getGuidesForCity } from "@/lib/data/guides";
 import AdSlot from "@/components/AdSlot";
@@ -121,6 +124,40 @@ export default async function DistancePage(props: { params: Promise<{ pair: stri
 
   const { cityA, cityB, distanceKm, durationMin, majorRoads, stopCities, stopAttractions } = data;
   const description = buildDistanceDescription(data, locale);
+  // TR'de aynı gerçek veri soru başlıklı bölümlere ayrılıyor (bkz.
+  // buildDistanceSections); diğer dillerde kısa özet paragrafı kalıyor.
+  const sections = locale === "tr" ? buildDistanceSections(data) : [];
+  // Komşu mesafe sayfalarına iç link — rakip sayfalarda 26-85 iç link varken
+  // bizde 7-11 vardı; Google'ın bu sorgudaki "ilgili aramalar"ı da komşu
+  // çiftler ("Batman Diyarbakır arası kaç km"). Mevcut çift hariç.
+  // Önce rota bölümleri (km, süre, güzergah) — hemen ardından ana yollar ve
+  // durak çizelgesi geliyor; yakıt/ulaşım/hakkında onlardan sonra.
+  const routeSections = sections.filter((x) => ["km", "sure", "guzergah"].includes(x.id));
+  const detailSections = sections.filter((x) => !["km", "sure", "guzergah"].includes(x.id));
+  const renderSection = (section: (typeof sections)[number]) => (
+    <section key={section.id}>
+      <h2 className="mb-2 font-display text-xl italic text-ink sm:text-2xl">{section.heading}</h2>
+      <div className="space-y-2">
+        {section.paragraphs.map((text, i) => (
+          <p key={i} className="text-base text-ink/80 leading-relaxed">
+            {text}
+          </p>
+        ))}
+      </div>
+      {section.id === "yakit" && (
+        <div className="mt-4">
+          <FuelCostCalculator distanceKm={distanceKm} />
+        </div>
+      )}
+    </section>
+  );
+  const otherDistances = [cityA, cityB].map((city) => ({
+    city,
+    links: getDistanceLinksForCity(city.slug)
+      .filter((l) => l.slug !== data.slug)
+      .sort((x, y) => x.distanceKm - y.distanceKm)
+      .slice(0, 8),
+  }));
   // Madde 84 tutarlılığı — mesafe sayfaları önceden ilgili rehber
   // makalelerine hiç link vermiyordu (şehir sayfalarında zaten vardı).
   // İki şehrin relatedCitySlugs eşleşen makaleleri birleştirilip
@@ -275,7 +312,11 @@ export default async function DistancePage(props: { params: Promise<{ pair: stri
         </a>
       </div>
 
-      <p className="text-base text-ink/80 leading-relaxed mb-8">{description}</p>
+      {sections.length > 0 ? (
+        <div className="mb-10 space-y-8">{routeSections.map(renderSection)}</div>
+      ) : (
+        <p className="text-base text-ink/80 leading-relaxed mb-8">{description}</p>
+      )}
 
       {majorRoads.length > 0 && (
         <div className="mb-10 rounded-lg border border-ink/10 bg-safran/5 p-4">
@@ -360,6 +401,8 @@ export default async function DistancePage(props: { params: Promise<{ pair: stri
         </div>
       )}
 
+      {detailSections.length > 0 && <div className="mb-10 space-y-8">{detailSections.map(renderSection)}</div>}
+
       <div className="mb-10">
         <h2 className="mb-4 text-xs font-bold uppercase tracking-wider text-kiremit">
           {locale === "tr" ? "Varınca Gezilecek Yerler" : "What to See at Each End"}
@@ -416,6 +459,44 @@ export default async function DistancePage(props: { params: Promise<{ pair: stri
       >
         <RouteIcon size={14} /> {locale === "tr" ? "Tüm şehirler arası mesafe tablosu" : "All city-to-city distances"}
       </Link>
+
+      {otherDistances.some((g) => g.links.length > 0) && (
+        <div className="mt-12 border-t border-ink/10 pt-8">
+          <h2 className="mb-4 text-xs font-bold uppercase tracking-wider text-kiremit">
+            {locale === "tr" ? "Diğer Şehirlere Mesafeler" : "Other Distances"}
+          </h2>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {otherDistances
+              .filter((g) => g.links.length > 0)
+              .map((g) => (
+                <div key={g.city.slug}>
+                  <h3 className="mb-2 text-sm font-bold text-ink">
+                    {locale === "tr"
+                      ? `${g.city.name} çıkışlı mesafeler`
+                      : `From ${translateDataText(g.city.name, locale)}`}
+                  </h3>
+                  <ul className="divide-y divide-ink/5 text-sm">
+                    {g.links.map((l) => (
+                      <li key={l.slug}>
+                        <Link
+                          href={`/${locale}/mesafe/${l.slug}`}
+                          className="flex items-center justify-between gap-3 py-2 text-ink/80 hover:text-kiremit transition-colors"
+                        >
+                          <span>
+                            {locale === "tr"
+                              ? `${g.city.name} ${l.otherCityName} arası kaç km`
+                              : `${translateDataText(g.city.name, locale)} – ${translateDataText(l.otherCityName, locale)}`}
+                          </span>
+                          <span className="shrink-0 text-xs text-ink/60">{Math.round(l.distanceKm)} km</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
 
       <div className="mt-12 border-t border-ink/10 pt-8">
         <h2 className="mb-4 text-xs font-bold uppercase tracking-wider text-kiremit">

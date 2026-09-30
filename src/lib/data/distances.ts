@@ -4,6 +4,7 @@ import { allCities } from "./cities";
 import { distancePairs, distancePairSlug, type DistancePair } from "./distancePairs";
 import type { Attraction, City } from "../types";
 import type { Locale } from "../i18n";
+import { haversineDistanceKm } from "../geo";
 
 export interface DistanceCacheEntry {
   distanceKm: number;
@@ -262,4 +263,106 @@ export function buildDistanceDescription(data: DistancePageData, locale: Locale)
   }
 
   return result.join(" ");
+}
+
+export interface DistanceSection {
+  id: "km" | "sure" | "guzergah" | "yakit" | "ulasim" | "hakkinda";
+  heading: string;
+  paragraphs: string[];
+}
+
+// Rakip incelemesi (2026-09-30): "X Y arası kaç km" sorgusunda ilk sayfadaki
+// sayfalar içeriği aranan sorularla başlıklandırıyor ("Kaç Kilometredir?",
+// "Kaç Saat Sürer?", "Yol Güzergahları", "Ne Kadar Yakar?", "Ulaşım
+// Seçenekleri"); bizde aynı bilgi başlıksız tek paragraftaydı. Bu fonksiyon
+// buildDistanceDescription ile AYNI gerçek veriyi (Mapbox mesafe/süre/yol,
+// güzergah durakları, şehirlerin curated alanları) soru başlıklı bölümlere
+// ayırır. Eklenen iki türetilmiş değer de gerçek veriden: kuş uçuşu mesafe
+// (iki şehir koordinatından) ve ortalama hız (km / süre). Sadece TR.
+export function buildDistanceSections(data: DistancePageData): DistanceSection[] {
+  const { cityA, cityB, distanceKm, durationMin, majorRoads, stopCities } = data;
+  const durationText = formatDuration(durationMin, "tr");
+  const airKm = Math.round(haversineDistanceKm(cityA.location, cityB.location));
+  const avgSpeed = Math.round(distanceKm / (durationMin / 60));
+  const sameRegion = cityA.regionSlug === cityB.regionSlug;
+  const liters = (per100: number) => Math.round((distanceKm * per100) / 100);
+
+  const sections: DistanceSection[] = [
+    {
+      id: "km",
+      heading: `${cityA.name} ${cityB.name} Arası Kaç Km?`,
+      paragraphs: [
+        `${cityA.name} ile ${cityB.name} arası karayoluyla yaklaşık ${distanceKm} km. İki şehir arasındaki kuş uçuşu mesafe ise yaklaşık ${airKm} km; aradaki fark yolun izlediği güzergahtan kaynaklanıyor.`,
+        sameRegion
+          ? `${cityA.name} ve ${cityB.name}, ikisi de ${cityA.region} bölgesinde yer alıyor — aynı gezi rotası içinde birbirine yakın iki durak olarak planlanabilir.`
+          : `${cityA.name} ${cityA.region} bölgesinde, ${cityB.name} ise ${cityB.region} bölgesinde yer alıyor; bu yol iki farklı bölgeyi birbirine bağlıyor.`,
+      ],
+    },
+    {
+      id: "sure",
+      heading: `${cityA.name} ${cityB.name} Arası Kaç Saat Sürer?`,
+      paragraphs: [
+        `${cityA.name} ${cityB.name} arası arabayla normal trafik koşullarında yaklaşık ${durationText} sürüyor; bu, yolun tamamında ortalama ${avgSpeed} km/sa hıza karşılık geliyor. Mola, trafik ve hava koşulları süreyi uzatabilir.`,
+      ],
+    },
+    {
+      id: "guzergah",
+      heading: `${cityA.name} ${cityB.name} Yol Güzergahı`,
+      paragraphs: [
+        [
+          majorRoads.length > 0 ? `Güzergahın büyük bölümü ${majorRoads.slice(0, 3).join(", ")} üzerinden geçiyor.` : "",
+          stopCities.length > 0
+            ? `Yol, ${stopCities.map((s) => s.city.name).join(", ")} üzerinden ya da yakınından geçiyor.`
+            : "",
+          `Dönüş yönünde (${cityB.name} - ${cityA.name}) de aynı güzergah kullanılıyor ve mesafe aynı.`,
+        ]
+          .filter(Boolean)
+          .join(" "),
+      ],
+    },
+    {
+      id: "yakit",
+      heading: `${cityA.name} ${cityB.name} Arası Ne Kadar Yakıt Harcanır?`,
+      paragraphs: [
+        `${distanceKm} km'lik bu yolda 100 km'de 5 litre tüketen bir araç yaklaşık ${liters(5)} litre, 7 litre tüketen bir araç yaklaşık ${liters(7)} litre, 9 litre tüketen bir araç ise yaklaşık ${liters(9)} litre yakıt harcar. Yakıt maliyetini bulmak için bu miktarı güncel litre fiyatıyla çarpmak yeterli; aşağıdaki hesaplayıcıya kendi aracınızın tüketimini ve güncel fiyatı girebilirsiniz.`,
+      ],
+    },
+  ];
+
+  const transport = (city: City) =>
+    [
+      city.howToArrive.byBus ? `Otobüs: ${city.howToArrive.byBus}.` : "",
+      city.howToArrive.byAir ? `Uçak: ${city.howToArrive.byAir}.` : "",
+      city.howToArrive.byTrain ? `Tren: ${city.howToArrive.byTrain}.` : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+  const transportA = transport(cityA);
+  const transportB = transport(cityB);
+  if (transportA || transportB) {
+    sections.push({
+      id: "ulasim",
+      heading: `${cityA.name} ve ${cityB.name} Ulaşım Seçenekleri`,
+      paragraphs: [
+        ...(transportA ? [`${cityA.name} tarafında — ${transportA}`] : []),
+        ...(transportB ? [`${cityB.name} tarafında — ${transportB}`] : []),
+      ],
+    });
+  }
+
+  const highlightsA = cityA.highlights.slice(0, 3).join(", ");
+  const highlightsB = cityB.highlights.slice(0, 3).join(", ");
+  sections.push({
+    id: "hakkinda",
+    heading: `${cityA.name} ve ${cityB.name} Hakkında`,
+    paragraphs: [
+      `${cityA.name}, ${cityA.summary}. ${cityB.name} ise ${cityB.summary}.`,
+      ...(highlightsA || highlightsB
+        ? [`${cityA.name} denince akla ${highlightsA || cityA.summary} geliyor; ${cityB.name} denince ise ${highlightsB || cityB.summary} öne çıkıyor.`]
+        : []),
+      `${cityA.name} için en iyi ziyaret zamanı: ${cityA.whenToGo}. ${cityB.name} için ise: ${cityB.whenToGo}.`,
+    ],
+  });
+
+  return sections;
 }
