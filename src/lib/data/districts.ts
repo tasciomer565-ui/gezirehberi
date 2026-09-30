@@ -1,3 +1,4 @@
+import districtDistancesRaw from "./districtDistances.json";
 import { RegionSlug } from "@/lib/types";
 
 export interface District {
@@ -261,4 +262,17 @@ export function getAllDistrictSlugs(): { region: string; city: string; district:
     city: d.citySlug,
     district: d.slug
   }));
+}
+
+// İlçenin bağlı olduğu şehir merkezine gerçek karayolu mesafesi/süresi
+// (scripts/generate-district-distances.ts çıktısı). Kayıt yoksa (ilçe ile
+// şehir aynı yer ya da rota alınamadı) undefined döner — sayfa o durumda
+// kutuyu hiç göstermez.
+const districtDistances = districtDistancesRaw as Record<string, { distanceKm: number; durationMin: number }>;
+
+export function getDistrictDistance(
+  citySlug: string,
+  districtSlug: string
+): { distanceKm: number; durationMin: number } | undefined {
+  return districtDistances[`${citySlug}/${districtSlug}`];
 }

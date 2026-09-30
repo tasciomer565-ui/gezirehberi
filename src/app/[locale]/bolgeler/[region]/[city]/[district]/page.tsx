@@ -15,7 +15,8 @@ import { getConfusablePlaces } from "@/lib/data/confusablePlaces";
 import AdSlot from "@/components/AdSlot";
 
 import { getCity } from "@/lib/data/cities";
-import { getDistrict, getAllDistrictSlugs } from "@/lib/data/districts";
+import { getDistrict, getAllDistrictSlugs, getDistrictDistance } from "@/lib/data/districts";
+import { formatDuration } from "@/lib/data/distances";
 import { getPlacesForCity } from "@/lib/places";
 import { getDictionary, Locale, translateDataText, buildAlternates, SITE_URL } from "@/lib/i18n";
 import { getCityImage } from "@/lib/cityImages";
@@ -84,6 +85,9 @@ export default async function DistrictDetailPage(props: {
   const dict = getDictionary(locale);
   const city = getCity(params.region, params.city);
   const district = getDistrict(params.city, params.district);
+  const districtDistance = getDistrictDistance(params.city, params.district);
+  // Adalara karayoluyla gidilemiyor; rota feribot geçişi içeriyor.
+  const isIsland = ["bozcaada", "gokceada"].includes(params.district);
 
   if (!city || !district) {
     notFound();
@@ -245,6 +249,24 @@ export default async function DistrictDetailPage(props: {
                 </div>
               ))}
             </div>
+
+            {/* İlçe düzeyinde mesafe aramaları ("izmir çeşme arası kaç km",
+                "trabzon uzungöl") için — gerçek güzergah verisi, kayıt yoksa
+                (ilçe ile şehir aynı yer) hiç gösterilmez. */}
+            {districtDistance && (
+              <div className="mt-6 rounded-lg border border-ink/10 bg-paper p-4 shadow-sm">
+                <h3 className="text-base font-bold text-ink">
+                  {locale === "tr"
+                    ? `${city.name} ${district.name} arası kaç km?`
+                    : `${translateDataText(city.name, locale)} to ${translateDataText(district.name, locale)}`}
+                </h3>
+                <p className="mt-1 text-sm text-ink/80 leading-relaxed">
+                  {locale === "tr"
+                    ? `${city.name} merkezden ${district.name} ${isIsland ? "karayolu ve feribotla" : "karayoluyla"} yaklaşık ${districtDistance.distanceKm} km; yolculuk ${isIsland ? "feribot geçişi dahil " : "arabayla "}yaklaşık ${formatDuration(districtDistance.durationMin, locale)} sürüyor.`
+                    : `About ${districtDistance.distanceKm} km by road from the city centre, roughly ${formatDuration(districtDistance.durationMin, locale)} by car.`}
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="rounded-xl border border-ink/10 bg-gradient-to-br from-safran/10 to-kiremit/5 p-6 shadow-sm">

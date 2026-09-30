@@ -11,7 +11,10 @@ export const akdenizExtra2Cities: City[] = [
       "Hatay, Antakya'nın bin yıllardır süregelen çok kültürlü ve çok dinli mirası, dünyanın en zengin Roma mozaik koleksiyonlarından birine sahip müzesi ve UNESCO'nun gastronomi şehri unvanı verdiği zengin mutfağıyla Türkiye'nin en özgün illerinden biri.",
     heroTagline: "Lezzetin ve hoşgörünün buluştuğu topraklar",
     heroImage: "/images/hatay-hero.jpg",
-    location: { lat: 36.4018, lng: 36.3498 },
+    // İl merkezi Antakya. Önceki nokta (36.4018, 36.3498) Antakya'nın ~28 km
+    // kuzeydoğusundaydı; Hatay çıkışlı mesafeler 12-43 km eksik çıkıyordu
+    // (KGM cetveli Antakya'ya göre ölçer; doğrulandı, 2026-09-30).
+    location: { lat: 36.2023, lng: 36.1613 },
     region: "Akdeniz",
     howToGetThere: "Hatay Havalimanı'na uçuş, Gaziantep'ten karayoluyla 2 saat.",
     howToArrive: { byAir: "Hatay Havalimanı, merkeze 25 km", byBus: "Gaziantep ve Adana'dan düzenli seferler" },

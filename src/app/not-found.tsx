@@ -20,13 +20,13 @@ import "./globals.css";
 // gösteriliyor (diğer tüm fallback noktalarıyla aynı mantık).
 const fraunces = Fraunces({
   variable: "--font-fraunces",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
+  subsets: ["latin", "latin-ext"],
+  style: ["italic"],
 });
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
 });
 
 export const metadata: Metadata = {

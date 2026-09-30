@@ -629,7 +629,10 @@ export const marmaraExtra3Cities: City[] = [
       "Kocaeli (İzmit), Osman Gazi'nin oğlu Orhan Gazi tarafından fethedilerek Osmanlı'nın ilk başkenti unvanını taşıyan tarihi bir kent. Günümüzde Türkiye'nin en önemli sanayi merkezlerinden biri olsa da, Kartepe'nin kayak pistleri ve İzmit Körfezi'nin sahil şeridiyle doğa turizmine de ev sahipliği yapıyor.",
     heroTagline: "Körfezin kıyısında tarih ve sanayinin buluşması",
     heroImage: "/images/kocaeli-hero.jpg",
-    location: { lat: 40.8533, lng: 29.8815 },
+    // İl merkezi İzmit. Önceki nokta (40.8533, 29.8815) merkezin ~11 km
+    // kuzeybatısındaydı; Kocaeli-Sakarya 64 km çıkıyordu (KGM 37). Düzeltildi
+    // 2026-09-30.
+    location: { lat: 40.7654, lng: 29.9408 },
     region: "Marmara",
     howToGetThere: "İstanbul'dan karayolu veya banliyö treniyle 1-1.5 saat.",
     howToArrive: { byBus: "İstanbul'dan sık otobüs ve banliyö seferleri", byCar: "TEM otoyolu üzerinden kolay ulaşım" },

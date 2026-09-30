@@ -12,15 +12,21 @@ import { ThemeProvider } from "@/lib/ThemeContext";
 import "../globals.css";
 import { getDictionary, Locale, buildRobots, OG_LOCALE_MAP } from "@/lib/i18n";
 
+// Lighthouse (2026-09-30, şehir sayfası mobil): 5 font dosyasının ikisi (123 KB,
+// Türkçe ş/ğ/ı/İ harflerini taşıyan latin-ext alt kümeleri) ancak 3. saniyede
+// iniyordu — yalnızca "latin" ön yükleniyordu, Türkçe metin önce yedek
+// fontla çizilip font gelince yeniden düzenleniyordu. latin-ext artık ön
+// yükleniyor. Fraunces sitede sadece italik kullanılıyor (tüm font-display
+// sınıfları italic); kullanılmayan normal stil kaldırıldı.
 const fraunces = Fraunces({
   variable: "--font-fraunces",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
+  subsets: ["latin", "latin-ext"],
+  style: ["italic"],
 });
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
 });
 
 const siteUrl = "https://www.yoldefterim.com.tr";

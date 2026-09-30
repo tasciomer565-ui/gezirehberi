@@ -634,7 +634,10 @@ export const doguAnadoluExtra2Cities: City[] = [
       "Muş, 1071'deki Malazgirt Zaferi'nin kazanıldığı, Anadolu'nun Türk yurdu olma sürecinin başladığı sembolik topraklara ev sahipliği yapıyor. Geniş Muş Ovası, tarım açısından bölgenin can damarı konumunda.",
     heroTagline: "Bin yıllık zaferin toprakları",
     heroImage: "/images/mus-hero.jpg",
-    location: { lat: 38.9462, lng: 41.7539 },
+    // Şehir merkezi. Önceki nokta (38.9462, 41.7539) merkezin ~30 km
+    // kuzeydoğusundaydı; Muş çıkışlı mesafeler 28-36 km şişiyordu (KGM
+    // cetveliyle doğrulandı, 2026-09-30).
+    location: { lat: 38.7346, lng: 41.491 },
     region: "Doğu Anadolu",
     howToGetThere: "Muş Havalimanı'na uçuş, Bitlis'ten karayoluyla 1.5 saat.",
     howToArrive: { byAir: "Muş Havalimanı", byBus: "Bitlis ve Bingöl'den düzenli seferler" },

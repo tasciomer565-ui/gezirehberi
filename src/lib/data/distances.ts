@@ -14,7 +14,7 @@ export interface DistanceCacheEntry {
 
 const distanceCache = distanceCacheRaw as Record<string, DistanceCacheEntry>;
 
-// scripts/generate-route-stops.ts çıktısı — gerçek Mapbox güzergah
+// scripts/generate-distance-data.ts çıktısı — gerçek (OSRM) güzergah
 // çizgisine yakınlıkla hesaplanmış yol üstü şehirler/yerler.
 interface RouteStopsEntry {
   cities: { slug: string; kmFromA: number }[];
@@ -74,14 +74,14 @@ export function getTopAttractions(city: City, limit: number): Attraction[] {
     .slice(0, limit);
 }
 
-// Ham step isimleri arasından ("Tevkifhane Sokağı" gibi lokal sokaklar dahil)
-// gerçekten güzergahı tanımlayan ana yolları seçiyor — otoyol/karayolu/yol/
-// bulvar/D-numarası içerenler. Sokak/cadde isimleri (şehir içi başlangıç-
-// bitiş noktaları) dışarıda bırakılıyor, "hangi güzergah üzerinden" sorusuna
-// gerçekten cevap veren kısım bu.
+// distanceCache.json'daki roadNames, üzerinde gidilen km'ye göre (çoktan
+// aza) sıralı ve rotanın en az %2'sini oluşturan yollar (bkz.
+// scripts/generate-distance-data.ts). Burada sadece şehir içi cadde/sokak/
+// bulvarlar eleniyor — "güzergahın büyük bölümü X üzerinden geçiyor" cümlesi
+// gerçekten en uzun gidilen şehirler arası yolları saymalı.
 function extractMajorRoads(roadNames: string[]): string[] {
-  const majorPattern = /otoyol|karayolu|çevre ?yolu| yolu|bulvar|^D\d/i;
-  return roadNames.filter((n) => majorPattern.test(n)).slice(0, 5);
+  const cityStreet = /cadde|sokak|sokağı|bulvar|\bcd\.|\bsk\./i;
+  return roadNames.filter((n) => !cityStreet.test(n)).slice(0, 5);
 }
 
 export function getAllDistancePairSlugs(): string[] {

@@ -1,0 +1,54 @@
+{
+  "izmir/cesme": {
+    "distanceKm": 87.5,
+    "durationMin": 58
+  },
+  "izmir/alacati": {
+    "distanceKm": 78,
+    "durationMin": 55
+  },
+  "balikesir/ayvalik": {
+    "distanceKm": 127.2,
+    "durationMin": 90
+  },
+  "denizli/pamukkale": {
+    "distanceKm": 17.6,
+    "durationMin": 19
+  },
+  "izmir/selcuk": {
+    "distanceKm": 78.2,
+    "durationMin": 58
+  },
+  "aydin/kusadasi": {
+    "distanceKm": 57.7,
+    "durationMin": 53
+  },
+  "fethiye/oludeniz": {
+    "distanceKm": 13.4,
+    "durationMin": 18
+  },
+  "antalya/kas": {
+    "distanceKm": 187,
+    "durationMin": 152
+  },
+  "antalya/alanya": {
+    "distanceKm": 134.7,
+    "durationMin": 104
+  },
+  "kapadokya/urgup": {
+    "distanceKm": 9.5,
+    "durationMin": 11
+  },
+  "canakkale/bozcaada": {
+    "distanceKm": 60.9,
+    "durationMin": 91
+  },
+  "canakkale/gokceada": {
+    "distanceKm": 54.6,
+    "durationMin": 127
+  },
+  "trabzon/uzungol": {
+    "distanceKm": 95.4,
+    "durationMin": 76
+  }
+}

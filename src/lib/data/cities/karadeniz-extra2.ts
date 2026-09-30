@@ -635,7 +635,10 @@ export const karadenizExtra2Cities: City[] = [
       "Bolu, Abant Gölü'nün çevresindeki yürüyüş parkuru, Gölcük Tabiat Parkı'nın ormanları ve Kartalkaya'nın kayak pistleriyle doğa turizminin merkezlerinden biri. İstanbul ve Ankara'ya yakınlığı sayesinde yıl boyu ziyaretçi çeken bir Batı Karadeniz durağı.",
     heroTagline: "Göllerin ve ormanların arasında bir mola",
     heroImage: "/images/bolu-hero.jpg",
-    location: { lat: 40.576, lng: 31.5788 },
+    // Şehir merkezi. Önceki nokta (40.576, 31.5788) merkezin ~18 km güneyinde,
+    // Abant tarafındaydı; mesafe sayfalarında Bolu çıkışlı tüm km değerlerini
+    // 26-36 km şişiriyordu (KGM cetveliyle doğrulandı, 2026-09-30).
+    location: { lat: 40.735, lng: 31.6061 },
     region: "Karadeniz",
     howToGetThere: "İstanbul'dan D100 karayoluyla 3 saat, Ankara'dan 2.5 saat.",
     howToArrive: {
