@@ -6,13 +6,23 @@ import { usePathname } from "next/navigation";
 import { Heart, Search, ChevronDown, BookOpen, GitCompareArrows } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { regions } from "@/lib/data/regions";
+import type { SearchableCity } from "@/lib/search";
+import { regionMeta } from "@/lib/data/regionMeta";
 import ThemeToggle from "./ThemeToggle";
 import SearchBar from "./SearchBar";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { getDictionary, Locale, translateDataText } from "@/lib/i18n";
 
-export default function Header() {
+// activeRegionSlugs sunucudan geliyor (layout/not-found) — bu istemci
+// bileşeni şehir sayısı için regions.ts'i import ederse tüm şehir verisi
+// her sayfanın JS paketine giriyordu. Verilmezse tüm bölgeler gösterilir.
+export default function Header({
+  activeRegionSlugs,
+  searchIndex,
+}: {
+  activeRegionSlugs?: string[];
+  searchIndex: SearchableCity[];
+}) {
   const pathname = usePathname() || "";
   const segments = pathname.split("/");
   const locale = ["tr", "en", "de", "ar", "ru"].includes(segments[1])
@@ -20,7 +30,9 @@ export default function Header() {
     : ("tr" as Locale);
 
   const dict = getDictionary(locale);
-  const activeRegions = regions.filter((r) => r.cityCount > 0);
+  const activeRegions = activeRegionSlugs
+    ? regionMeta.filter((r) => activeRegionSlugs.includes(r.slug))
+    : regionMeta;
 
   const [isRegionsOpen, setIsRegionsOpen] = useState(false);
   const regionsRef = useRef<HTMLDivElement>(null);
@@ -49,7 +61,7 @@ export default function Header() {
         </Link>
         
         <div className="hidden flex-1 justify-center px-6 md:flex">
-          <SearchBar />
+          <SearchBar index={searchIndex} />
         </div>
         
         <nav className="hidden items-center gap-5 text-sm font-semibold text-ink/80 lg:flex">
@@ -159,7 +171,7 @@ export default function Header() {
             className="overflow-hidden border-t border-ink/10 md:hidden"
           >
             <div className="px-4 py-3 sm:px-6">
-              <SearchBar />
+              <SearchBar index={searchIndex} />
             </div>
           </motion.div>
         )}

@@ -1,5 +1,11 @@
-import { City } from "@/lib/types";
-import { allCities } from "@/lib/data/cities";
+import type { City } from "@/lib/types";
+
+// Arama sadece bu 5 alanı kullanıyor. Önceden search.ts allCities'i import
+// ediyordu; SearchBar (Header içinde, her sayfada) istemci bileşeni olduğu
+// için 85 şehrin tüm verisi (~1,7 MB) her sayfanın JS paketine giriyordu
+// (Lighthouse 2026-09-29). Dizin artık sunucuda getSearchIndex() ile
+// üretilip layout -> Header -> SearchBar prop'u olarak geliyor (~10 KB).
+export type SearchableCity = Pick<City, "slug" | "regionSlug" | "name" | "region" | "tags">;
 
 function normalize(s: string): string {
   return s
@@ -29,7 +35,7 @@ function levenshtein(a: string, b: string): number {
 }
 
 export interface SearchResult {
-  city: City;
+  city: SearchableCity;
   score: number;
   matchedOn: string;
 }
@@ -38,13 +44,13 @@ export interface SearchResult {
  * Bölüm 5.5/5.6: Debounce'a hazır (çağıran component debounce'lar),
  * substring eşleşmesi + Levenshtein toleranslı fuzzy arama.
  */
-export function searchCities(query: string, limit = 8): SearchResult[] {
+export function searchCities(query: string, index: SearchableCity[], limit = 8): SearchResult[] {
   const q = normalize(query.trim());
   if (q.length < 2) return [];
 
   const results: SearchResult[] = [];
 
-  for (const city of allCities) {
+  for (const city of index) {
     const nameNorm = normalize(city.name);
     const tagsNorm = city.tags.map(normalize);
     const regionNorm = normalize(city.region);

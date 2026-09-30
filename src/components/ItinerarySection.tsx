@@ -10,6 +10,9 @@ import { getDictionary, Locale } from "@/lib/i18n";
 
 export default function ItinerarySection({ city, locale }: { city: City; locale: string }) {
   const [selectedDays, setSelectedDays] = useState(3);
+  // İlk render'da giriş animasyonu yok (SSR çıktısı opacity:0 gelmesin);
+  // kullanıcı gün sayısını değiştirdikten sonra geçiş animasyonu devrede.
+  const [hasChangedDays, setHasChangedDays] = useState(false);
   const dict = getDictionary(locale as Locale);
 
   const itinerary = useMemo(() => generateItinerary(city, selectedDays), [city, selectedDays]);
@@ -17,12 +20,16 @@ export default function ItinerarySection({ city, locale }: { city: City; locale:
   return (
     <div>
       <div className="mb-10 rounded-xl border border-ink/10 bg-gradient-to-b from-ink/5 to-transparent p-6 sm:p-8">
-        <DurationSelector selected={selectedDays} onSelect={setSelectedDays} />
+        <DurationSelector selected={selectedDays} onSelect={(days) => {
+            setHasChangedDays(true);
+            setSelectedDays(days);
+          }}
+        />
       </div>
 
       <motion.div
         key={selectedDays}
-        initial={{ opacity: 0, y: 10 }}
+        initial={hasChangedDays ? { opacity: 0, y: 10 } : false}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
         className="space-y-6"

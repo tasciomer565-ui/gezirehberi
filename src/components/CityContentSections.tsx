@@ -389,7 +389,11 @@ export default function CityContentSections({
             <div className="space-y-6">
               {/* Dynamic Place List Grid */}
               <motion.div layout className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                <AnimatePresence mode="popLayout">
+                {/* initial={false}: ilk render'da giriş animasyonu yok — aksi halde
+                    kartlar sunucudan opacity:0 ile geliyor, JS çalışana kadar
+                    sayfanın asıl içeriği (gezilecek yerler) görünmüyordu. Sekme/
+                    filtre değişimlerinde animasyon aynen çalışıyor. */}
+                <AnimatePresence mode="popLayout" initial={false}>
                   {processedItems.map((item, idx) => (
                     <motion.div 
                       key={item.id} 

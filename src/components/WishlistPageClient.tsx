@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { getWishlist, removeFromWishlist, subscribeWishlist, WishlistItem } from "@/lib/wishlist";
 import { getSavedPlaces, subscribeSavedPlaces, SavedPlaceItem } from "@/lib/savedPlaces";
-import { regions } from "@/lib/data/regions";
+import { regionMeta as regions } from "@/lib/data/regionMeta";
 import { getDictionary, Locale, translateDataText } from "@/lib/i18n";
 import { useParams } from "next/navigation";
 

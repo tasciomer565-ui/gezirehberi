@@ -5,7 +5,17 @@ import { Region } from "@/lib/types";
 import { translateDataText, Locale } from "@/lib/i18n";
 import { REGION_IMAGES } from "@/lib/cityImages";
 
-export default function RegionCard({ region, locale }: { region: Region; locale: string }) {
+// eager: mobilde ilk kart ekranın ilk görünümünde ve LCP öğesi (Lighthouse
+// 2026-09-29: ana sayfada 2,4 sn "load delay", düşük öncelikle yükleniyordu).
+export default function RegionCard({
+  region,
+  locale,
+  eager = false,
+}: {
+  region: Region;
+  locale: string;
+  eager?: boolean;
+}) {
   const hasContent = region.cityCount > 0;
 
   const countText = hasContent
@@ -38,6 +48,8 @@ export default function RegionCard({ region, locale }: { region: Region; locale:
           alt={region.name}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          loading={eager ? "eager" : "lazy"}
+          fetchPriority={eager ? "high" : "auto"}
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 filter brightness-[0.85] contrast-[1.05]"
         />
         {/* Dark linear gradient overlay for contrast */}

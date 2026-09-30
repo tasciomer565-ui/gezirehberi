@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import { getSearchIndex } from "@/lib/data/cities";
+import { regions } from "@/lib/data/regions";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
@@ -108,7 +110,10 @@ export default async function RootLayout(props: {
     >
       <body className="min-h-full flex flex-col bg-background text-ink selection:bg-kiremit/20">
         <ThemeProvider>
-          <Header />
+          <Header
+            activeRegionSlugs={regions.filter((r) => r.cityCount > 0).map((r) => r.slug)}
+            searchIndex={getSearchIndex()}
+          />
           <main className="flex-1">{props.children}</main>
           <Footer />
           <CookieConsentBanner />

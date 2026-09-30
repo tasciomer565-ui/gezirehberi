@@ -120,3 +120,9 @@ const HIDDEN_GEM_SLUGS = new Set([
 export function isHiddenGem(citySlug: string): boolean {
   return HIDDEN_GEM_SLUGS.has(citySlug);
 }
+
+// Header'daki arama kutusu için küçük dizin (bkz. src/lib/search.ts notu).
+// Sadece sunucu bileşenlerinden (layout, not-found) çağrılmalı.
+export function getSearchIndex(): Pick<City, "slug" | "regionSlug" | "name" | "region" | "tags">[] {
+  return allCities.map(({ slug, regionSlug, name, region, tags }) => ({ slug, regionSlug, name, region, tags }));
+}

@@ -4,12 +4,12 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter, useParams } from "next/navigation";
 import { Search, X, MapPin } from "lucide-react";
-import { searchCities, SearchResult } from "@/lib/search";
+import { searchCities, type SearchResult, type SearchableCity } from "@/lib/search";
 import { getDictionary, Locale, translateDataText } from "@/lib/i18n";
 
 const DEBOUNCE_MS = 200;
 
-export default function SearchBar() {
+export default function SearchBar({ index }: { index: SearchableCity[] }) {
   const params = useParams();
   const locale = (params?.locale || "tr") as Locale;
   const dict = getDictionary(locale);
@@ -24,12 +24,12 @@ export default function SearchBar() {
   useEffect(() => {
     if (debounceRef.current) clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(() => {
-      setResults(searchCities(query));
+      setResults(searchCities(query, index));
     }, DEBOUNCE_MS);
     return () => {
       if (debounceRef.current) clearTimeout(debounceRef.current);
     };
-  }, [query]);
+  }, [query, index]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {

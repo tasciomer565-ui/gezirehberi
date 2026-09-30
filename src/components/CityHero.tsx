@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { MapPin } from "lucide-react";
-import { getRegion } from "@/lib/data/regions";
+import { getRegionMeta } from "@/lib/data/regionMeta";
 import { translateDataText, Locale, getDictionary } from "@/lib/i18n";
 import { getCityImage } from "@/lib/cityImages";
 
@@ -19,7 +19,7 @@ interface CityHeroProps {
 }
 
 export default function CityHero({ city, locale = "tr" }: CityHeroProps) {
-  const regionData = getRegion(city.regionSlug);
+  const regionData = getRegionMeta(city.regionSlug);
   const colorAccent = regionData?.gradientFrom ?? "#0F5257";
 
   const containerVariants = {
@@ -45,19 +45,19 @@ export default function CityHero({ city, locale = "tr" }: CityHeroProps) {
   const bgImage = getCityImage(city.slug, city.regionSlug);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="relative h-96 overflow-hidden text-paper"
-    >
+    // Önceden dış sarmalayıcı initial={{ opacity: 0 }} ile, metin bloğu da
+    // initial="hidden" ile sunucudan GÖRÜNMEZ geliyordu; hero görseli (LCP
+    // öğesi) ve H1 ancak JS yüklenip framer-motion çalışınca boyanıyordu
+    // (Lighthouse 2026-09-29, mobil: görsel indikten sonra 3,6-5 sn "render
+    // delay", LCP 5,8-8,1 sn). Artık SSR çıktısı doğrudan görünür durumda.
+    <div className="relative h-96 overflow-hidden text-paper">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
           src={bgImage}
           alt={translateDataText(city.name, locale as Locale)}
           fill
-          priority
+          preload
           sizes="100vw"
           className="object-cover filter brightness-[0.65] contrast-[1.03]"
         />
@@ -73,7 +73,7 @@ export default function CityHero({ city, locale = "tr" }: CityHeroProps) {
 
       <motion.div
         variants={containerVariants}
-        initial="hidden"
+        initial={false}
         animate="visible"
         className="absolute inset-0 flex flex-col justify-end p-6 sm:p-12 z-20"
       >
@@ -103,6 +103,6 @@ export default function CityHero({ city, locale = "tr" }: CityHeroProps) {
           {translateDataText(city.heroTagline, locale as Locale)}
         </motion.p>
       </motion.div>
-    </motion.div>
+    </div>
   );
 }

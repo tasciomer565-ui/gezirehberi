@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { Compass } from "lucide-react";
+import { getSearchIndex } from "@/lib/data/cities";
+import { regions } from "@/lib/data/regions";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/lib/ThemeContext";
@@ -37,7 +39,10 @@ export default function RootNotFound() {
     <html lang="tr" className={`${fraunces.variable} ${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-ink selection:bg-kiremit/20">
         <ThemeProvider>
-          <Header />
+          <Header
+            activeRegionSlugs={regions.filter((r) => r.cityCount > 0).map((r) => r.slug)}
+            searchIndex={getSearchIndex()}
+          />
           <main className="flex-1">
             <div className="mx-auto flex max-w-2xl flex-col items-center px-4 py-32 text-center sm:px-6">
               <span className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-kiremit/10 text-kiremit">
