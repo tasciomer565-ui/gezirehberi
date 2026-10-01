@@ -63,10 +63,11 @@ export default function Map({
       document.documentElement.getAttribute("data-theme") === "dark" ||
       (typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches);
 
-    // Premium CartoDB basemap: Light (Positron) or Dark (Dark Matter)
-    const tileUrl = isDarkMode
-      ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-      : "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
+    // CARTO basemap'leri 2026'da API anahtarı istemeye başladı; anahtarsız
+    // istekler "API KEY REQUIRED" karosu döndürüyordu (tüm haritalar boştu).
+    // OpenStreetMap standart karoları anahtarsız; koyu temada CSS filtresiyle
+    // koyulaştırılıyor (globals.css .map-tiles-dark).
+    const tileUrl = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
 
     // Initialize map
     const map = L.map(mapContainerRef.current, {
@@ -77,7 +78,9 @@ export default function Map({
     });
 
     L.tileLayer(tileUrl, {
-      attribution: '&copy; <a href="https://carto.com/">CartoDB</a> &copy; <a href="https://osm.org/copyright">OpenStreetMap</a>',
+      maxZoom: 19,
+      className: isDarkMode ? "map-tiles-dark" : "",
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> katkıcıları',
     }).addTo(map);
 
     L.control.zoom({ position: "bottomright" }).addTo(map);
