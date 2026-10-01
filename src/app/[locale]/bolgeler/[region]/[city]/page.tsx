@@ -30,7 +30,8 @@ import BudgetTierTable from "@/components/BudgetTierTable";
 import { getPlacesForCity } from "@/lib/places";
 import { getTranslatedCity, cityHasTranslation, getTranslatedKnownFor } from "@/lib/translation/pipeline";
 import { getGuidesForCity } from "@/lib/data/guides";
-import { getDistanceLinksForCity, IMPORTANCE_RANK } from "@/lib/data/distances";
+import { getDistanceLinksForCity, IMPORTANCE_RANK, formatDuration } from "@/lib/data/distances";
+import { getCityAirports } from "@/lib/data/airports";
 import { Route as RouteIcon } from "lucide-react";
 import { BookOpen } from "lucide-react";
 
@@ -149,6 +150,10 @@ export default async function CityDetailPage(props: {
   const knownForText = await getTranslatedKnownFor(city.slug, locale);
   const relatedGuides = getGuidesForCity(city.slug);
   const distanceLinks = getDistanceLinksForCity(city.slug);
+  // Günübirlik: gerçek karayolu süresi 3 saate kadar olan şehirler (gidiş-dönüş
+  // 6 saat, gezmeye vakit kalıyor). Sadece mesafe verisi olan çiftler.
+  const dayTrips = distanceLinks.filter((d) => d.durationMin <= 180).slice(0, 6);
+  const cityAirports = getCityAirports(city.slug);
   const quickFacts = getCityQuickFacts(city.slug);
 
   // Server-rendered first page of the default (attractions/popularity) list, so the
@@ -467,11 +472,86 @@ export default async function CityDetailPage(props: {
             şehir sayfasından linklenmiyordu, sadece sitemap.xml üzerinden
             keşfedilebiliyordu — bu ters yönü ekliyor. Gerçek Mapbox
             verisinden (distanceCache), boşsa hiç render edilmez. */}
+        {dayTrips.length > 0 && (
+          <section className="mt-16 border-t border-ink/10 pt-16 no-print">
+            <h2 className="font-display text-3xl italic text-ink mb-2">
+              {locale === "tr"
+                ? `${city.name} Yakınında Günübirlik Gidilecek Yerler`
+                : `Day Trips from ${translateDataText(city.name, locale)}`}
+            </h2>
+            <p className="mb-6 text-sm text-ink/65">
+              {locale === "tr"
+                ? `Karayoluyla en fazla 3 saat uzaklıktaki şehirler — mesafe ve süreler gerçek güzergah verisinden.`
+                : `Cities within a 3-hour drive — distances and times from real route data.`}
+            </p>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {dayTrips.map((d) => (
+                <div key={d.slug} className="rounded-xl border border-ink/8 bg-paper p-5 shadow-sm">
+                  <h3 className="text-lg font-bold text-ink">
+                    <Link href={`/${locale}/bolgeler/${d.otherRegionSlug}/${d.otherCitySlug}`} className="hover:text-kiremit transition-colors">
+                      {translateDataText(d.otherCityName, locale)}
+                    </Link>
+                  </h3>
+                  <p className="mt-1 text-sm font-semibold text-kiremit">
+                    {d.distanceKm} km · {formatDuration(d.durationMin, locale)}
+                  </p>
+                  {d.otherTopAttractions.length > 0 && (
+                    <p className="mt-2 text-sm text-ink/70">
+                      {d.otherTopAttractions.map((a) => translateDataText(a, locale)).join(", ")}
+                    </p>
+                  )}
+                  <Link
+                    href={`/${locale}/mesafe/${d.slug}`}
+                    className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-ink/60 hover:text-kiremit transition-colors"
+                  >
+                    <RouteIcon size={13} className="text-kiremit shrink-0" />
+                    {locale === "tr"
+                      ? `${city.name} ${d.otherCityName} arası kaç km`
+                      : "Route and distance"}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {cityAirports.length > 0 && (
+          <section className="mt-16 border-t border-ink/10 pt-16 no-print">
+            <h2 className="font-display text-3xl italic text-ink mb-2">
+              {locale === "tr"
+                ? `${city.name} En Yakın Havalimanı: Merkeze Kaç Km?`
+                : `Nearest Airports to ${translateDataText(city.name, locale)}`}
+            </h2>
+            <p className="mb-6 text-sm text-ink/65">
+              {locale === "tr"
+                ? `Havalimanından ${city.name} merkezine karayolu mesafesi ve trafiksiz sürüş süresi.`
+                : `Road distance and drive time from the airport to the city centre (without traffic).`}
+            </p>
+            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {cityAirports.map(({ airport, distanceKm, durationMin }) => (
+                <li key={airport.iata} className="rounded-xl border border-ink/8 bg-paper p-5 shadow-sm">
+                  <p className="font-bold text-ink">
+                    {airport.name} <span className="text-xs font-semibold text-ink/50">({airport.iata})</span>
+                  </p>
+                  <p className="mt-1 text-sm text-ink/75">
+                    {locale === "tr"
+                      ? `${city.name} merkezine ${distanceKm.toLocaleString("tr-TR")} km, yaklaşık ${formatDuration(durationMin, locale)}`
+                      : `${distanceKm} km to the centre, about ${formatDuration(durationMin, locale)}`}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Denetim bulgusu (2026-09): mesafe sayfaları hiçbir şehir
+            sayfasından linklenmiyordu — bu ters yönü ekliyor. Gerçek rota
+            verisinden (distanceCache), yakından uzağa; boşsa render edilmez. */}
         {distanceLinks.length > 0 && (
           <div className="mt-16 border-t border-ink/10 pt-16 no-print">
-            <h3 className="font-display text-2xl italic text-ink mb-5">
-              {locale === "tr" ? "Diğer Şehirlere Mesafe" : "Distance to Other Cities"}
-            </h3>
+            <h2 className="font-display text-2xl italic text-ink mb-5">
+              {locale === "tr" ? `${city.name} Çıkışlı Şehirler Arası Mesafeler` : "Distance to Other Cities"}
+            </h2>
             <div className="flex flex-wrap gap-3">
               {distanceLinks.map((d) => (
                 <Link

@@ -178,7 +178,8 @@ export default async function RegionPage(props: {
             src={bgImage}
             alt={translateDataText(region.name, locale)}
             fill
-            preload
+            loading="eager"
+            fetchPriority="high"
             sizes="100vw"
             className="object-cover filter brightness-[0.7] contrast-[1.02]"
           />

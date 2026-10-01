@@ -42,6 +42,11 @@ function formatDurationShort(min: number, locale: Locale): string {
   return [h > 0 ? `${h}h` : null, m > 0 ? `${m}min` : null].filter(Boolean).join(" ");
 }
 
+// Merkez şehirlerin (İstanbul, Ankara...) tüm şehirlerle çifti eklendikten
+// sonra (2026-10-01, 1133 çift) her kartta tüm satırlar 2000+ link ediyordu;
+// kartta en yakın 10'u, tamamı şehir sayfasındaki mesafe listesinde.
+const HUB_ROWS_PER_CITY = 10;
+
 export default async function DistanceHubPage(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
   const locale = (params.locale || "tr") as Locale;
@@ -201,7 +206,7 @@ export default async function DistanceHubPage(props: { params: Promise<{ locale:
                   {isTr ? `${g.name} — Diğer Şehirlere Mesafe` : `From ${translateDataText(g.name, locale)}`}
                 </h3>
                 <ul className="divide-y divide-ink/5 text-sm">
-                  {g.rows.map((r) => (
+                  {g.rows.slice(0, HUB_ROWS_PER_CITY).map((r) => (
                     <li key={r.slug}>
                       <Link
                         href={`/${locale}/mesafe/${r.slug}`}
@@ -218,6 +223,16 @@ export default async function DistanceHubPage(props: { params: Promise<{ locale:
                     </li>
                   ))}
                 </ul>
+                {g.rows.length > HUB_ROWS_PER_CITY && (
+                  <Link
+                    href={`/${locale}/bolgeler/${g.regionSlug}/${g.slug}`}
+                    className="mt-3 inline-block text-xs font-bold text-kiremit hover:underline"
+                  >
+                    {isTr
+                      ? `${g.name} çıkışlı ${g.rows.length} mesafenin tümü →`
+                      : `All ${g.rows.length} distances from ${translateDataText(g.name, locale)} →`}
+                  </Link>
+                )}
               </div>
             ))}
           </div>

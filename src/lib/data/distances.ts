@@ -91,7 +91,11 @@ export function getAllDistancePairSlugs(): string[] {
 export interface DistanceLinkInfo {
   slug: string;
   otherCityName: string;
+  otherCitySlug: string;
+  otherRegionSlug: string;
   distanceKm: number;
+  durationMin: number;
+  otherTopAttractions: string[];
 }
 
 // Şehir sayfasından ilgili mesafe sayfalarına ters link için (madde 84
@@ -101,15 +105,24 @@ export interface DistanceLinkInfo {
 export function getDistanceLinksForCity(citySlug: string): DistanceLinkInfo[] {
   return distancePairs
     .filter((p) => p.cityA === citySlug || p.cityB === citySlug)
-    .map((p) => {
+    .map((p): DistanceLinkInfo | undefined => {
       const slug = distancePairSlug(p);
       const otherSlug = p.cityA === citySlug ? p.cityB : p.cityA;
       const otherCity = allCities.find((c) => c.slug === otherSlug);
       const entry = distanceCache[slug];
       if (!otherCity || !entry) return undefined;
-      return { slug, otherCityName: otherCity.name, distanceKm: entry.distanceKm };
+      return {
+        slug,
+        otherCityName: otherCity.name,
+        otherCitySlug: otherCity.slug,
+        otherRegionSlug: otherCity.regionSlug,
+        distanceKm: entry.distanceKm,
+        durationMin: entry.durationMin,
+        otherTopAttractions: getTopAttractions(otherCity, 3).map((a) => a.name),
+      };
     })
-    .filter((d): d is DistanceLinkInfo => Boolean(d));
+    .filter((d): d is DistanceLinkInfo => Boolean(d))
+    .sort((x, y) => x.distanceKm - y.distanceKm);
 }
 
 export function getDistancePageData(slug: string): DistancePageData | undefined {

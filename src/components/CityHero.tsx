@@ -57,7 +57,8 @@ export default function CityHero({ city, locale = "tr" }: CityHeroProps) {
           src={bgImage}
           alt={translateDataText(city.name, locale as Locale)}
           fill
-          preload
+          loading="eager"
+          fetchPriority="high"
           sizes="100vw"
           className="object-cover filter brightness-[0.65] contrast-[1.03]"
         />

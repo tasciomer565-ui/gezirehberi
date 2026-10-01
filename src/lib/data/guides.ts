@@ -544,6 +544,141 @@ Bu deneyimlerin çoğu mevsime ve hava koşullarına bağlıdır — özellikle 
   }
 );
 
+// Mevsimsel rehberler (2026-10-01) — "ekim ayında nereye gidilir", "kasımda
+// nereye gidilir", "kışın gidilecek yerler" sorguları dönemsel olarak çok
+// aranıyor. İçerik genel, doğrulanabilir bilgi; fiyat/işletme adı yok.
+guides.push(
+  {
+    slug: "ekim-ayinda-nereye-gidilir",
+    title: "Ekim Ayında Nereye Gidilir? Türkiye'de Sonbaharın En Güzel 10 Rotası",
+    seoTitle: "Ekim Ayında Nereye Gidilir? 10 Rota",
+    summary:
+      "Yaz kalabalığı dağılmış, sıcaklar kırılmış: Ekim'de Kapadokya, Likya kıyıları, Mardin, Yedigöller ve Safranbolu gibi 10 rota ve neden bu ayda gidilmeli.",
+    publishedAt: "2026-10-01",
+    relatedCitySlugs: ["kapadokya", "fethiye", "kas", "mardin", "sanliurfa", "bolu", "safranbolu", "denizli", "izmir", "trabzon"],
+    body: `Ekim, Türkiye'de gezmek için yılın en dengeli aylarından biridir. Güney kıyılarında deniz hâlâ yazın sıcaklığını korurken iç bölgelerde ve Güneydoğu'da yaz sıcağı geride kalır; okulların açılmasıyla ören yerleri ve tatil beldeleri de rahatlar. Aşağıdaki rotalar bu avantajların en çok hissedildiği yerler.
+
+1. KAPADOKYA (NEVŞEHİR)
+Günler ılık, sabahlar serin geçer; peri bacaları arasında yürüyüş için en rahat dönemlerden biridir. Balon uçuşları her mevsim yapılır ama rüzgara bağlıdır, bu yüzden planınıza yedek bir sabah eklemeniz iyi olur. Göreme Açık Hava Müzesi, Uçhisar Kalesi ve Kızılçukur–Güllüdere vadileri öne çıkan duraklardır.
+
+2. FETHİYE VE ÖLÜDENİZ (MUĞLA)
+Deniz suyu Ekim'de genellikle yüzmeye uygundur, kalabalık ise Ağustos'a göre belirgin şekilde azalır. Babadağ'dan yamaç paraşütü ve Likya Yolu'nun ilk etapları için hava daha elverişlidir.
+
+3. KAŞ (ANTALYA)
+Dalış, kano ve Kekova tekne turları sezonun sonuna doğru hâlâ devam eder. Likya Yolu yürüyüşü için ilkbahar ve sonbahar en uygun mevsimler kabul edilir.
+
+4. MARDİN
+Yazın çok sıcak olan Mezopotamya ovasında Ekim, taş sokaklarda gün boyu yürümeyi mümkün kılar. Eski Mardin, Deyrulzafaran Manastırı ve Midyat güzergahı iki üç günlük bir plana sığar.
+
+5. ŞANLIURFA
+Göbeklitepe ve Balıklıgöl'ü yaz sıcağına yakalanmadan gezmek için iyi bir dönemdir. Harran'ın kümbet evleri de aynı rotaya eklenebilir.
+
+6. YEDİGÖLLER MİLLİ PARKI (BOLU)
+Ekim ortasından Kasım başına kadar orman sarı, turuncu ve kırmızıya döner; Türkiye'nin en çok fotoğraflanan sonbahar manzaralarından biridir. Hafta sonları yoğun olabileceği için hafta içi tercih edilebilir.
+
+7. SAFRANBOLU (KARABÜK)
+UNESCO Dünya Mirası listesindeki Osmanlı konakları sonbahar havasında ayrı bir güzelleşir. Tokatlı Kanyonu cam terası ve İncekaya Su Kemeri yakın duraklardır.
+
+8. PAMUKKALE VE HİERAPOLİS (DENİZLİ)
+Beyaz travertenlerde çıplak ayakla yürümek ve antik kenti gezmek yazın öğle sıcağında zorlaşır; Ekim'de gün boyunca rahat gezilir.
+
+9. EFES VE ŞİRİNCE (İZMİR)
+Efes Antik Kenti açık alanda ve gölgesi az bir ören yeridir; serin hava ziyareti kolaylaştırır. Şirince köyü ve Meryem Ana Evi aynı gün eklenebilir.
+
+10. UZUNGÖL (TRABZON)
+Karadeniz'in yağışlı iklimine rağmen Ekim, yaylalardaki sonbahar renkleri için güzel bir zamandır. Hava hızlı değişebilir; yağmurluk ve kat kat giyim önerilir.
+
+PLANLAMA İÇİN KISA NOTLAR
+Ekim'de güneş daha erken batar, açık hava gezilerini sabaha almak daha verimli olur. Kıyı beldelerinde bazı işletmeler ay sonuna doğru sezonu kapatmaya başlar. Şehirler arası mesafe ve sürüş sürelerini mesafe sayfalarımızdan, her rotanın gezilecek yerlerini ilgili şehir sayfalarından inceleyebilirsiniz.`,
+  },
+  {
+    slug: "kasim-ayinda-nereye-gidilir",
+    title: "Kasım Ayında Nereye Gidilir? Türkiye'de Kasımda Gezilecek 10 Yer",
+    seoTitle: "Kasım Ayında Nereye Gidilir? 10 Öneri",
+    summary:
+      "Kasım'da ılık Akdeniz kıyıları, gastronomi şehirleri, müzeler ve sonbahar ormanları: Antalya'dan Gaziantep'e Türkiye'de kasımda gezilecek 10 yer.",
+    publishedAt: "2026-10-01",
+    relatedCitySlugs: ["antalya", "kas", "gaziantep", "mardin", "istanbul", "kapadokya", "bolu", "safranbolu", "denizli", "sanliurfa"],
+    body: `Kasım, sezon dışı seyahatin başladığı aydır: tatil beldeleri sakinleşir, konaklama seçenekleri genişler ve şehirleri yerel ritmiyle görmek kolaylaşır. Hava bölgeden bölgeye çok değişir; Akdeniz kıyısı ılık kalırken Doğu Anadolu'da kar başlayabilir. Bu ay için en mantıklı 10 rota şunlar.
+
+1. ANTALYA
+Akdeniz ikliminin etkisiyle Kasım'da günler çoğunlukla ılıktır. Kaleiçi, Düden ve Kurşunlu şelaleleri, Perge ve Aspendos gibi antik kentler kalabalıksız gezilir.
+
+2. KAŞ VE KEKOVA (ANTALYA)
+Sakin bir sahil kasabası deneyimi ve Likya Yolu'nun kısa etaplarında yürüyüş için uygun bir dönemdir.
+
+3. GAZİANTEP
+UNESCO Yaratıcı Şehirler Ağı'nda gastronomi şehri olarak yer alır. Zeugma Mozaik Müzesi, Gaziantep Kalesi ve tarihi çarşılar kapalı ya da yarı açık alanlarda gezildiği için mevsimden pek etkilenmez.
+
+4. MARDİN VE MİDYAT
+Serin ve güneşli günlerde taş mimariyi gezmek keyiflidir. Akşamları serinlediği için kalın bir üst giyim yanınızda olsun.
+
+5. ŞANLIURFA
+Göbeklitepe, Şanlıurfa Arkeoloji ve Mozaik Müzesi ve Balıklıgöl çevresi Kasım'da rahat gezilir.
+
+6. İSTANBUL
+Müzeler, saraylar ve çarşılar mevsimden bağımsız gezilebilir; Boğaz vapurları ve sonbahar renkleriyle Emirgan, Yıldız ve Belgrad Ormanı Kasım'da da güzeldir.
+
+7. KAPADOKYA (NEVŞEHİR)
+Turist yoğunluğu azalır, sabahlar soğuk ama gündüzler yürüyüşe uygundur. Yeraltı şehirleri (Derinkuyu, Kaymaklı) hava koşullarından etkilenmeyen duraklardır.
+
+8. YEDİGÖLLER VE ABANT (BOLU)
+Kasım'ın ilk günlerine kadar sonbahar renkleri devam edebilir; ay ilerledikçe hava soğur ve yükseklerde kar görülebilir.
+
+9. SAFRANBOLU (KARABÜK)
+Tarihi çarşı, Cinci Hanı ve konaklar yağmurlu havalarda bile gezilebilir; şömineli taş konaklarda kalmak bu mevsime yakışır.
+
+10. PAMUKKALE (DENİZLİ)
+Hierapolis antik kenti ve travertenler soğuk havada da ziyaret edilebilir; travertenlerdeki termal su ılıktır.
+
+PLANLAMA İÇİN KISA NOTLAR
+Kasım'da yayla ve yüksek dağ yolları kar nedeniyle kapanabilir; özellikle Doğu ve Karadeniz'de yola çıkmadan önce güncel yol durumunu kontrol edin. Gün ışığı kısaldığı için uzun sürüşleri gündüze planlamak daha güvenlidir.`,
+  },
+  {
+    slug: "kisin-gidilecek-yerler",
+    title: "Kışın Gidilecek Yerler: Türkiye'de Kış Tatili İçin 10 Rota",
+    seoTitle: "Kışın Gidilecek Yerler: 10 Kış Rotası",
+    summary:
+      "Kayak merkezlerinden Doğu Ekspresi'ne, donmuş Çıldır Gölü'nden karlı Kapadokya'ya: Türkiye'de kışın gidilecek 10 yer ve her biri için pratik notlar.",
+    publishedAt: "2026-10-01",
+    relatedCitySlugs: ["erzurum", "bursa", "bolu", "kars", "kayseri", "kapadokya", "denizli", "antalya", "ankara"],
+    body: `Türkiye'de kış, bölgeye göre bambaşka bir tatil demektir: Doğu Anadolu'da güçlü kar örtüsü ve kayak, İç Anadolu'da karlı peri bacaları, Akdeniz'de ise ılık güneşli günler. Aşağıdaki 10 rota farklı kış deneyimlerini bir araya getiriyor.
+
+1. PALANDÖKEN (ERZURUM)
+Türkiye'nin en bilinen kayak merkezlerinden biridir; şehir merkezine yakınlığı sayesinde ulaşım kolaydır. Erzurum'un tarihi yapıları (Çifte Minareli Medrese, Üç Kümbetler) ve cağ kebabı rotayı tamamlar.
+
+2. ULUDAĞ (BURSA)
+İstanbul'a en yakın büyük kayak merkezidir. Bursa'dan teleferikle çıkılabilir; şehirde Ulu Cami, Koza Han ve Cumalıkızık köyü gezilebilir.
+
+3. KARTALKAYA (BOLU)
+Ormanlar içindeki pistleriyle bilinir. Aynı rotada Abant Gölü ve Gölcük Tabiat Parkı'nın karlı manzaraları görülebilir.
+
+4. ERCİYES (KAYSERİ)
+Sönmüş bir volkanın yamaçlarında kurulu, şehir merkezine yakın bir kayak merkezidir. Kapadokya'ya yakınlığı sayesinde iki rota tek gezide birleşebilir.
+
+5. SARIKAMIŞ (KARS)
+Sarıçam ormanları arasındaki pistleri ve kristal kar olarak anılan kuru karıyla tanınır.
+
+6. DOĞU EKSPRESİ (ANKARA–KARS)
+Ankara'dan Kars'a uzanan uzun tren yolculuğu, karlı Anadolu manzaralarıyla kışın en popüler deneyimlerinden biri hâline geldi. Biletler kış aylarında hızla tükendiği için erken plan yapmak gerekir.
+
+7. KARS VE ÇILDIR GÖLÜ
+Kars'ta Ani Ören Yeri ve Baltık mimarisindeki tarihi binalar gezilir. Çıldır Gölü kışın donar; buz üzerinde atlı kızak ve buz altı balıkçılığı bölgenin simgesidir. Buz kalınlığı her yıl farklı olduğundan yerel uyarılara mutlaka uyun.
+
+8. KAPADOKYA (NEVŞEHİR)
+Karla örtülü peri bacaları ve vadiler, yılın en etkileyici fotoğraflarını verir. Balon uçuşları hava şartlarına bağlı olarak kışın da yapılır.
+
+9. PAMUKKALE (DENİZLİ)
+Termal sular kışın da ılıktır; Hierapolis'in antik havuzu ve çevredeki termal tesisler soğuk günlerde iyi bir alternatiftir.
+
+10. ANTALYA
+Kışı ılık geçen Akdeniz kıyısı, kar istemeyenler için iyi bir seçenektir. Aynı gün içinde Saklıkent kayak merkezinde kar, şehirde güneş görmek mümkündür.
+
+KIŞ YOLCULUĞU İÇİN NOTLAR
+Doğu Anadolu ve yüksek geçitlerde kış lastiği ve zincir bulundurun, yola çıkmadan önce Karayolları'nın güncel yol durumu duyurularını kontrol edin. Kayak merkezlerinde konaklama hafta sonları ve sömestr tatilinde çok yoğundur. Şehirler arası mesafe ve sürüş süreleri için mesafe sayfalarımıza göz atabilirsiniz.`,
+  }
+);
+
 export function getAllGuides(): GuideArticle[] {
   return [...guides].sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 }
