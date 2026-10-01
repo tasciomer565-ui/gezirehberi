@@ -4,12 +4,13 @@ import { Locale, buildAlternates, buildRobots, buildPageSocialMeta, translateDat
 import { getAllDistancePageData, getPopularDistances, formatDuration } from "@/lib/data/distances";
 import { regions } from "@/lib/data/regions";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { ablative } from "@/lib/trSuffix";
 
 // Denetim bulgusu (2026-09): 150 mesafe sayfasının (madde 150) crawl edilebilir
 // bir merkezi yoktu (/mesafe 404) — sadece şehir sayfalarındaki bloklar ve
 // sitemap üzerinden keşfediliyordu. Bu hub, hepsine tek sayfadan iç link verir
 // ve "şehirler arası mesafe" genel sorgusuna hedef sayfa olur. Tüm km/süre
-// değerleri distanceCache.json'daki gerçek Mapbox verisinden okunur.
+// değerleri distanceCache.json'daki gerçek rota verisinden (OSRM) okunur.
 //
 // Güncelleme (2026-09-29): title marka ekiyle 65 karakterdi (kesiliyordu);
 // sayfa 85 alfabetik H2 altında ~300 satırlık düz listeydi. Artık bölge (H2) →
@@ -82,7 +83,7 @@ export default async function DistanceHubPage(props: { params: Promise<{ locale:
     ? [
         {
           q: "Şehirler arası mesafeler nasıl hesaplanıyor?",
-          a: "Mesafeler, iki şehir merkezi arasındaki gerçek karayolu güzergahından (Mapbox yol verisi) hesaplanır; kuş uçuşu değildir. Süreler, normal trafik koşullarındaki ortalama sürüş süresidir — mola ve trafik bu süreyi uzatabilir.",
+          a: "Mesafeler, iki şehir merkezi arasındaki gerçek karayolu güzergahından (OpenStreetMap yol verisi) hesaplanır ve resmî KGM mesafe cetveliyle karşılaştırılarak doğrulanır; kuş uçuşu değildir. Süreler, normal trafik koşullarındaki ortalama sürüş süresidir — mola ve trafik bu süreyi uzatabilir.",
         },
         ...(shortest && longest
           ? [
@@ -225,11 +226,11 @@ export default async function DistanceHubPage(props: { params: Promise<{ locale:
                 </ul>
                 {g.rows.length > HUB_ROWS_PER_CITY && (
                   <Link
-                    href={`/${locale}/bolgeler/${g.regionSlug}/${g.slug}`}
+                    href={`/${locale}/mesafe/sehir/${g.slug}`}
                     className="mt-3 inline-block text-xs font-bold text-kiremit hover:underline"
                   >
                     {isTr
-                      ? `${g.name} çıkışlı ${g.rows.length} mesafenin tümü →`
+                      ? `${ablative(g.name)} ${g.rows.length} şehre mesafe tablosu →`
                       : `All ${g.rows.length} distances from ${translateDataText(g.name, locale)} →`}
                   </Link>
                 )}

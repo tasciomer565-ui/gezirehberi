@@ -30,7 +30,8 @@ import { clampDescription, clampTitle } from "@/lib/metaText";
 import { getPlacesForCity } from "@/lib/places";
 import { getTranslatedCity, cityHasTranslation, getTranslatedKnownFor } from "@/lib/translation/pipeline";
 import { getGuidesForCity } from "@/lib/data/guides";
-import { getDistanceLinksForCity, IMPORTANCE_RANK, formatDuration } from "@/lib/data/distances";
+import { getDistanceLinksForCity, IMPORTANCE_RANK, formatDuration, CITY_TABLE_MIN_ROWS } from "@/lib/data/distances";
+import { ablative } from "@/lib/trSuffix";
 import { getCityAirports } from "@/lib/data/airports";
 import { Route as RouteIcon } from "lucide-react";
 import { BookOpen } from "lucide-react";
@@ -551,6 +552,11 @@ export default async function CityDetailPage(props: {
             <h2 className="font-display text-2xl italic text-ink mb-5">
               {locale === "tr" ? `${city.name} Çıkışlı Şehirler Arası Mesafeler` : "Distance to Other Cities"}
             </h2>
+            {distanceLinks.length >= CITY_TABLE_MIN_ROWS && (
+              <Link href={`/${locale}/mesafe/sehir/${city.slug}`} className="-mt-2 mb-5 inline-block text-sm font-bold text-kiremit hover:underline">
+                {locale === "tr" ? `${ablative(city.name)} illere mesafe tablosu (km ve süre) →` : "Full distance table →"}
+              </Link>
+            )}
             <div className="flex flex-wrap gap-3">
               {distanceLinks.map((d) => (
                 <Link

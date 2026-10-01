@@ -125,6 +125,13 @@ export function getDistanceLinksForCity(citySlug: string): DistanceLinkInfo[] {
     .sort((x, y) => x.distanceKm - y.distanceKm);
 }
 
+// Şehirden illere mesafe tablosu sayfası (/mesafe/sehir/[city]) — en az bu
+// kadar gerçek çifti olan şehirler için.
+export const CITY_TABLE_MIN_ROWS = 8;
+export function getCityTableSlugs(): string[] {
+  return allCities.filter((c) => getDistanceLinksForCity(c.slug).length >= CITY_TABLE_MIN_ROWS).map((c) => c.slug);
+}
+
 export function getDistancePageData(slug: string): DistancePageData | undefined {
   const pair: DistancePair | undefined = distancePairs.find((p) => distancePairSlug(p) === slug);
   if (!pair) return undefined;
