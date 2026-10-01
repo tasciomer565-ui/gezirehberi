@@ -3087,10 +3087,6 @@
     "cities": [],
     "attractions": []
   },
-  "aydin-izmir": {
-    "cities": [],
-    "attractions": []
-  },
   "izmir-kutahya": {
     "cities": [],
     "attractions": [
@@ -6641,6 +6637,10 @@
     "attractions": []
   },
   "batman-mardin": {
+    "cities": [],
+    "attractions": []
+  },
+  "aydin-izmir": {
     "cities": [],
     "attractions": []
   }

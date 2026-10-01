@@ -703,15 +703,6 @@
       "Fevzi Paşa Bulvarı"
     ]
   },
-  "aydin-izmir": {
-    "distanceKm": 108.4,
-    "durationMin": 75,
-    "roadNames": [
-      "İzmir - Aydın Otoyolu",
-      "Doğuş Caddesi",
-      "Menderes Caddesi"
-    ]
-  },
   "izmir-kutahya": {
     "distanceKm": 341,
     "durationMin": 252,
@@ -3331,6 +3322,11 @@
   "batman-mardin": {
     "distanceKm": 143,
     "durationMin": 133,
+    "roadNames": []
+  },
+  "aydin-izmir": {
+    "distanceKm": 117,
+    "durationMin": 83,
     "roadNames": []
   }
 }

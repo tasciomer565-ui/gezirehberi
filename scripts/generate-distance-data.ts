@@ -68,8 +68,10 @@ const VERIFIED_OVERRIDES: Record<string, { distanceKm: number; durationMin: numb
   "batman-mardin": { distanceKm: 143, durationMin: 133 }, // OSRM 109,5 km; KGM 148
   "balikesir-canakkale": { distanceKm: 193, durationMin: 168 }, // OSRM 213,5 km; KGM 192
   "diyarbakir-van": { distanceKm: 362, durationMin: 298 }, // OSRM 406,2 km; KGM 363
+  "aydin-izmir": { distanceKm: 117, durationMin: 83 }, // OSRM 108,4 km
   // Kontrol edilip OSRM değeri korunanlar: agri-kars (Google yol kutusu yok,
-  // AI özeti güzergaha göre 167-215 km; OSRM 168,2 kısa güzergah).
+  // AI özeti güzergaha göre 167-215 km; OSRM 168,2 kısa güzergah), isparta-konya
+  // (Google 241), istanbul-tekirdag (146), bilecik-istanbul (199), balikesir-izmir (205).
 };
 
 // Şehir merkezi güzergaha bu kadar yakınsa "yol üstü" sayılıyor — çevre yolu
