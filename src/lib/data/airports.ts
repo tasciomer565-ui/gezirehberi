@@ -75,7 +75,10 @@ export interface CityAirport {
 
 export function getCityAirports(citySlug: string): CityAirport[] {
   const list = (airportDistances as Record<string, { iata: string; distanceKm: number; durationMin: number }[]>)[citySlug] ?? [];
+  // En yakını her zaman; ikincisi yalnızca karayoluyla 150 km içindeyse
+  // (kuş uçuşu yakın ama dağ yüzünden 280 km süren havalimanı önerilmesin).
   return list
+    .filter((d, i) => i === 0 || d.distanceKm <= 150)
     .map((d) => {
       const airport = airports.find((a) => a.iata === d.iata);
       return airport ? { airport, distanceKm: d.distanceKm, durationMin: d.durationMin } : undefined;

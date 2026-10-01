@@ -1,1 +1,992 @@
-{}
+{
+  "amasra": [
+    {
+      "iata": "ONQ",
+      "distanceKm": 53.5,
+      "durationMin": 45
+    },
+    {
+      "iata": "KFS",
+      "distanceKm": 209.3,
+      "durationMin": 177
+    }
+  ],
+  "safranbolu": [
+    {
+      "iata": "ONQ",
+      "distanceKm": 95.7,
+      "durationMin": 86
+    },
+    {
+      "iata": "KFS",
+      "distanceKm": 119.3,
+      "durationMin": 100
+    }
+  ],
+  "amasya": [
+    {
+      "iata": "MZH",
+      "distanceKm": 45.9,
+      "durationMin": 48
+    },
+    {
+      "iata": "TJK",
+      "distanceKm": 98.2,
+      "durationMin": 80
+    }
+  ],
+  "artvin": [
+    {
+      "iata": "RZV",
+      "distanceKm": 118.5,
+      "durationMin": 110
+    },
+    {
+      "iata": "KSY",
+      "distanceKm": 222.7,
+      "durationMin": 233
+    }
+  ],
+  "bayburt": [
+    {
+      "iata": "ERZ",
+      "distanceKm": 117.2,
+      "durationMin": 90
+    },
+    {
+      "iata": "ERC",
+      "distanceKm": 130.9,
+      "durationMin": 123
+    }
+  ],
+  "bolu": [
+    {
+      "iata": "ONQ",
+      "distanceKm": 146.1,
+      "durationMin": 107
+    },
+    {
+      "iata": "ESB",
+      "distanceKm": 199,
+      "durationMin": 133
+    }
+  ],
+  "corum": [
+    {
+      "iata": "MZH",
+      "distanceKm": 75.1,
+      "durationMin": 68
+    },
+    {
+      "iata": "TJK",
+      "distanceKm": 165.3,
+      "durationMin": 132
+    }
+  ],
+  "duzce": [
+    {
+      "iata": "ONQ",
+      "distanceKm": 196.4,
+      "durationMin": 138
+    },
+    {
+      "iata": "AOE",
+      "distanceKm": 251.5,
+      "durationMin": 188
+    }
+  ],
+  "giresun": [
+    {
+      "iata": "OGU",
+      "distanceKm": 30.7,
+      "durationMin": 24
+    },
+    {
+      "iata": "TZX",
+      "distanceKm": 137.3,
+      "durationMin": 102
+    }
+  ],
+  "gumushane": [
+    {
+      "iata": "TZX",
+      "distanceKm": 109.4,
+      "durationMin": 115
+    },
+    {
+      "iata": "ERC",
+      "distanceKm": 142.1,
+      "durationMin": 144
+    }
+  ],
+  "kastamonu": [
+    {
+      "iata": "KFS",
+      "distanceKm": 16.9,
+      "durationMin": 28
+    },
+    {
+      "iata": "NOP",
+      "distanceKm": 180.7,
+      "durationMin": 142
+    }
+  ],
+  "ordu": [
+    {
+      "iata": "OGU",
+      "distanceKm": 18.5,
+      "durationMin": 15
+    },
+    {
+      "iata": "SZF",
+      "distanceKm": 129.5,
+      "durationMin": 98
+    }
+  ],
+  "rize": [
+    {
+      "iata": "RZV",
+      "distanceKm": 39.5,
+      "durationMin": 45
+    },
+    {
+      "iata": "TZX",
+      "distanceKm": 73.3,
+      "durationMin": 55
+    }
+  ],
+  "samsun": [
+    {
+      "iata": "SZF",
+      "distanceKm": 24.7,
+      "durationMin": 22
+    },
+    {
+      "iata": "MZH",
+      "distanceKm": 103.8,
+      "durationMin": 89
+    }
+  ],
+  "sinop": [
+    {
+      "iata": "NOP",
+      "distanceKm": 7.9,
+      "durationMin": 15
+    },
+    {
+      "iata": "MZH",
+      "distanceKm": 247.7,
+      "durationMin": 200
+    }
+  ],
+  "tokat": [
+    {
+      "iata": "TJK",
+      "distanceKm": 22.1,
+      "durationMin": 25
+    },
+    {
+      "iata": "VAS",
+      "distanceKm": 110.9,
+      "durationMin": 89
+    }
+  ],
+  "trabzon": [
+    {
+      "iata": "TZX",
+      "distanceKm": 6.9,
+      "durationMin": 8
+    },
+    {
+      "iata": "RZV",
+      "distanceKm": 117.7,
+      "durationMin": 100
+    }
+  ],
+  "zonguldak": [
+    {
+      "iata": "ONQ",
+      "distanceKm": 55.3,
+      "durationMin": 44
+    }
+  ],
+  "antalya": [
+    {
+      "iata": "AYT",
+      "distanceKm": 17.5,
+      "durationMin": 24
+    },
+    {
+      "iata": "ISE",
+      "distanceKm": 161,
+      "durationMin": 141
+    }
+  ],
+  "kas": [
+    {
+      "iata": "DLM",
+      "distanceKm": 154.7,
+      "durationMin": 152
+    },
+    {
+      "iata": "AYT",
+      "distanceKm": 201.2,
+      "durationMin": 171
+    }
+  ],
+  "fethiye": [
+    {
+      "iata": "DLM",
+      "distanceKm": 55.8,
+      "durationMin": 64
+    },
+    {
+      "iata": "DNZ",
+      "distanceKm": 206.6,
+      "durationMin": 219
+    }
+  ],
+  "adana": [
+    {
+      "iata": "COV",
+      "distanceKm": 35.5,
+      "durationMin": 42
+    },
+    {
+      "iata": "HTY",
+      "distanceKm": 176.5,
+      "durationMin": 124
+    }
+  ],
+  "mersin": [
+    {
+      "iata": "COV",
+      "distanceKm": 51.9,
+      "durationMin": 54
+    }
+  ],
+  "hatay": [
+    {
+      "iata": "HTY",
+      "distanceKm": 28.2,
+      "durationMin": 25
+    },
+    {
+      "iata": "COV",
+      "distanceKm": 228.1,
+      "durationMin": 170
+    }
+  ],
+  "kahramanmaras": [
+    {
+      "iata": "KCM",
+      "distanceKm": 9.5,
+      "durationMin": 20
+    },
+    {
+      "iata": "GZT",
+      "distanceKm": 98.9,
+      "durationMin": 82
+    }
+  ],
+  "osmaniye": [
+    {
+      "iata": "KCM",
+      "distanceKm": 106.2,
+      "durationMin": 85
+    },
+    {
+      "iata": "HTY",
+      "distanceKm": 114.4,
+      "durationMin": 91
+    }
+  ],
+  "isparta": [
+    {
+      "iata": "ISE",
+      "distanceKm": 39.7,
+      "durationMin": 45
+    },
+    {
+      "iata": "DNZ",
+      "distanceKm": 119.8,
+      "durationMin": 107
+    }
+  ],
+  "burdur": [
+    {
+      "iata": "ISE",
+      "distanceKm": 36.2,
+      "durationMin": 45
+    },
+    {
+      "iata": "DNZ",
+      "distanceKm": 116.3,
+      "durationMin": 107
+    }
+  ],
+  "cesme": [
+    {
+      "iata": "ADB",
+      "distanceKm": 97.4,
+      "durationMin": 68
+    },
+    {
+      "iata": "EDO",
+      "distanceKm": 285.8,
+      "durationMin": 206
+    }
+  ],
+  "bodrum": [
+    {
+      "iata": "BJV",
+      "distanceKm": 36.9,
+      "durationMin": 36
+    },
+    {
+      "iata": "DLM",
+      "distanceKm": 204.4,
+      "durationMin": 181
+    }
+  ],
+  "marmaris": [
+    {
+      "iata": "DLM",
+      "distanceKm": 96.6,
+      "durationMin": 95
+    },
+    {
+      "iata": "BJV",
+      "distanceKm": 131.8,
+      "durationMin": 121
+    }
+  ],
+  "izmir": [
+    {
+      "iata": "ADB",
+      "distanceKm": 18.3,
+      "durationMin": 23
+    },
+    {
+      "iata": "EDO",
+      "distanceKm": 199.9,
+      "durationMin": 153
+    }
+  ],
+  "manisa": [
+    {
+      "iata": "ADB",
+      "distanceKm": 55.1,
+      "durationMin": 55
+    },
+    {
+      "iata": "EDO",
+      "distanceKm": 210.9,
+      "durationMin": 148
+    }
+  ],
+  "aydin": [
+    {
+      "iata": "ADB",
+      "distanceKm": 93,
+      "durationMin": 71
+    },
+    {
+      "iata": "BJV",
+      "distanceKm": 127.2,
+      "durationMin": 110
+    }
+  ],
+  "denizli": [
+    {
+      "iata": "DNZ",
+      "distanceKm": 66.4,
+      "durationMin": 71
+    },
+    {
+      "iata": "ISE",
+      "distanceKm": 148.9,
+      "durationMin": 137
+    }
+  ],
+  "afyonkarahisar": [
+    {
+      "iata": "KZR",
+      "distanceKm": 65.7,
+      "durationMin": 77
+    },
+    {
+      "iata": "ISE",
+      "distanceKm": 145.8,
+      "durationMin": 134
+    }
+  ],
+  "kutahya": [
+    {
+      "iata": "KZR",
+      "distanceKm": 49.4,
+      "durationMin": 59
+    },
+    {
+      "iata": "AOE",
+      "distanceKm": 83.6,
+      "durationMin": 72
+    }
+  ],
+  "usak": [
+    {
+      "iata": "KZR",
+      "distanceKm": 104.5,
+      "durationMin": 98
+    },
+    {
+      "iata": "DNZ",
+      "distanceKm": 153,
+      "durationMin": 127
+    }
+  ],
+  "istanbul": [
+    {
+      "iata": "SAW",
+      "distanceKm": 41.4,
+      "durationMin": 45
+    },
+    {
+      "iata": "IST",
+      "distanceKm": 49.6,
+      "durationMin": 44
+    }
+  ],
+  "bursa": [
+    {
+      "iata": "YEI",
+      "distanceKm": 52.6,
+      "durationMin": 53
+    },
+    {
+      "iata": "SAW",
+      "distanceKm": 124.6,
+      "durationMin": 96
+    }
+  ],
+  "edirne": [
+    {
+      "iata": "TEQ",
+      "distanceKm": 152.2,
+      "durationMin": 105
+    }
+  ],
+  "kirklareli": [
+    {
+      "iata": "TEQ",
+      "distanceKm": 126,
+      "durationMin": 92
+    },
+    {
+      "iata": "IST",
+      "distanceKm": 186.6,
+      "durationMin": 117
+    }
+  ],
+  "tekirdag": [
+    {
+      "iata": "TEQ",
+      "distanceKm": 52.2,
+      "durationMin": 54
+    },
+    {
+      "iata": "IST",
+      "distanceKm": 119.6,
+      "durationMin": 86
+    }
+  ],
+  "yalova": [
+    {
+      "iata": "SAW",
+      "distanceKm": 68.1,
+      "durationMin": 64
+    },
+    {
+      "iata": "YEI",
+      "distanceKm": 77.4,
+      "durationMin": 74
+    }
+  ],
+  "kocaeli": [
+    {
+      "iata": "SAW",
+      "distanceKm": 71.2,
+      "durationMin": 60
+    },
+    {
+      "iata": "YEI",
+      "distanceKm": 139.5,
+      "durationMin": 114
+    }
+  ],
+  "sakarya": [
+    {
+      "iata": "YEI",
+      "distanceKm": 114.5,
+      "durationMin": 97
+    },
+    {
+      "iata": "SAW",
+      "distanceKm": 120.4,
+      "durationMin": 87
+    }
+  ],
+  "bilecik": [
+    {
+      "iata": "YEI",
+      "distanceKm": 46.7,
+      "durationMin": 46
+    },
+    {
+      "iata": "AOE",
+      "distanceKm": 87.6,
+      "durationMin": 76
+    }
+  ],
+  "balikesir": [
+    {
+      "iata": "BZI",
+      "distanceKm": 6.8,
+      "durationMin": 15
+    },
+    {
+      "iata": "EDO",
+      "distanceKm": 87.9,
+      "durationMin": 71
+    }
+  ],
+  "canakkale": [
+    {
+      "iata": "CKZ",
+      "distanceKm": 10.8,
+      "durationMin": 20
+    },
+    {
+      "iata": "EDO",
+      "distanceKm": 130,
+      "durationMin": 131
+    }
+  ],
+  "kapadokya": [
+    {
+      "iata": "NAV",
+      "distanceKm": 40.1,
+      "durationMin": 37
+    },
+    {
+      "iata": "ASR",
+      "distanceKm": 78.2,
+      "durationMin": 68
+    }
+  ],
+  "konya": [
+    {
+      "iata": "KYA",
+      "distanceKm": 16.5,
+      "durationMin": 24
+    }
+  ],
+  "ankara": [
+    {
+      "iata": "ESB",
+      "distanceKm": 29.3,
+      "durationMin": 29
+    }
+  ],
+  "kayseri": [
+    {
+      "iata": "ASR",
+      "distanceKm": 6.5,
+      "durationMin": 12
+    },
+    {
+      "iata": "NAV",
+      "distanceKm": 98.6,
+      "durationMin": 88
+    }
+  ],
+  "eskisehir": [
+    {
+      "iata": "AOE",
+      "distanceKm": 6.7,
+      "durationMin": 12
+    },
+    {
+      "iata": "KZR",
+      "distanceKm": 124.5,
+      "durationMin": 116
+    }
+  ],
+  "sivas": [
+    {
+      "iata": "VAS",
+      "distanceKm": 24.2,
+      "durationMin": 28
+    },
+    {
+      "iata": "TJK",
+      "distanceKm": 126.7,
+      "durationMin": 101
+    }
+  ],
+  "kirikkale": [
+    {
+      "iata": "ESB",
+      "distanceKm": 92.5,
+      "durationMin": 74
+    },
+    {
+      "iata": "NAV",
+      "distanceKm": 193.8,
+      "durationMin": 143
+    }
+  ],
+  "aksaray": [
+    {
+      "iata": "NAV",
+      "distanceKm": 78.3,
+      "durationMin": 69
+    },
+    {
+      "iata": "ASR",
+      "distanceKm": 163.7,
+      "durationMin": 130
+    }
+  ],
+  "karaman": [
+    {
+      "iata": "KYA",
+      "distanceKm": 127.9,
+      "durationMin": 104
+    },
+    {
+      "iata": "GZP",
+      "distanceKm": 226.4,
+      "durationMin": 229
+    }
+  ],
+  "kirsehir": [
+    {
+      "iata": "NAV",
+      "distanceKm": 82.7,
+      "durationMin": 64
+    },
+    {
+      "iata": "ASR",
+      "distanceKm": 136.7,
+      "durationMin": 106
+    }
+  ],
+  "nigde": [
+    {
+      "iata": "NAV",
+      "distanceKm": 110.6,
+      "durationMin": 85
+    },
+    {
+      "iata": "ASR",
+      "distanceKm": 134.6,
+      "durationMin": 108
+    }
+  ],
+  "cankiri": [
+    {
+      "iata": "KFS",
+      "distanceKm": 105.5,
+      "durationMin": 90
+    },
+    {
+      "iata": "ESB",
+      "distanceKm": 117.7,
+      "durationMin": 89
+    }
+  ],
+  "yozgat": [
+    {
+      "iata": "MZH",
+      "distanceKm": 182.4,
+      "durationMin": 152
+    },
+    {
+      "iata": "NAV",
+      "distanceKm": 197.3,
+      "durationMin": 159
+    }
+  ],
+  "van": [
+    {
+      "iata": "VAN",
+      "distanceKm": 8.5,
+      "durationMin": 9
+    },
+    {
+      "iata": "YKO",
+      "distanceKm": 183.1,
+      "durationMin": 158
+    }
+  ],
+  "erzurum": [
+    {
+      "iata": "ERZ",
+      "distanceKm": 14.3,
+      "durationMin": 17
+    },
+    {
+      "iata": "BGG",
+      "distanceKm": 185.9,
+      "durationMin": 137
+    }
+  ],
+  "erzincan": [
+    {
+      "iata": "ERC",
+      "distanceKm": 6.7,
+      "durationMin": 10
+    },
+    {
+      "iata": "EZS",
+      "distanceKm": 258.2,
+      "durationMin": 219
+    }
+  ],
+  "kars": [
+    {
+      "iata": "KSY",
+      "distanceKm": 18.2,
+      "durationMin": 50
+    },
+    {
+      "iata": "IGD",
+      "distanceKm": 129,
+      "durationMin": 112
+    }
+  ],
+  "igdir": [
+    {
+      "iata": "IGD",
+      "distanceKm": 20.6,
+      "durationMin": 28
+    },
+    {
+      "iata": "AJI",
+      "distanceKm": 152.8,
+      "durationMin": 125
+    }
+  ],
+  "agri": [
+    {
+      "iata": "AJI",
+      "distanceKm": 9.1,
+      "durationMin": 12
+    },
+    {
+      "iata": "IGD",
+      "distanceKm": 119,
+      "durationMin": 137
+    }
+  ],
+  "mus": [
+    {
+      "iata": "MSR",
+      "distanceKm": 18.5,
+      "durationMin": 25
+    },
+    {
+      "iata": "BGG",
+      "distanceKm": 111.4,
+      "durationMin": 89
+    }
+  ],
+  "bitlis": [
+    {
+      "iata": "MSR",
+      "distanceKm": 81.4,
+      "durationMin": 69
+    },
+    {
+      "iata": "BAL",
+      "distanceKm": 168.5,
+      "durationMin": 168
+    }
+  ],
+  "bingol": [
+    {
+      "iata": "BGG",
+      "distanceKm": 10.3,
+      "durationMin": 12
+    },
+    {
+      "iata": "MSR",
+      "distanceKm": 128.8,
+      "durationMin": 102
+    }
+  ],
+  "tunceli": [
+    {
+      "iata": "ERC",
+      "distanceKm": 125.5,
+      "durationMin": 111
+    },
+    {
+      "iata": "EZS",
+      "distanceKm": 134.6,
+      "durationMin": 111
+    }
+  ],
+  "elazig": [
+    {
+      "iata": "EZS",
+      "distanceKm": 13.9,
+      "durationMin": 18
+    },
+    {
+      "iata": "MLX",
+      "distanceKm": 129.8,
+      "durationMin": 102
+    }
+  ],
+  "malatya": [
+    {
+      "iata": "MLX",
+      "distanceKm": 28.8,
+      "durationMin": 27
+    },
+    {
+      "iata": "ADF",
+      "distanceKm": 122.5,
+      "durationMin": 115
+    }
+  ],
+  "hakkari": [
+    {
+      "iata": "YKO",
+      "distanceKm": 75.1,
+      "durationMin": 69
+    },
+    {
+      "iata": "VAN",
+      "distanceKm": 196.1,
+      "durationMin": 149
+    }
+  ],
+  "ardahan": [
+    {
+      "iata": "KSY",
+      "distanceKm": 107.9,
+      "durationMin": 123
+    }
+  ],
+  "mardin": [
+    {
+      "iata": "MQM",
+      "distanceKm": 16.1,
+      "durationMin": 12
+    },
+    {
+      "iata": "BAL",
+      "distanceKm": 118.9,
+      "durationMin": 108
+    }
+  ],
+  "sanliurfa": [
+    {
+      "iata": "GNY",
+      "distanceKm": 37.5,
+      "durationMin": 32
+    },
+    {
+      "iata": "ADF",
+      "distanceKm": 133.9,
+      "durationMin": 102
+    }
+  ],
+  "gaziantep": [
+    {
+      "iata": "GZT",
+      "distanceKm": 21.5,
+      "durationMin": 27
+    },
+    {
+      "iata": "KCM",
+      "distanceKm": 77.9,
+      "durationMin": 74
+    }
+  ],
+  "diyarbakir": [
+    {
+      "iata": "DIY",
+      "distanceKm": 5.7,
+      "durationMin": 11
+    },
+    {
+      "iata": "BAL",
+      "distanceKm": 98.4,
+      "durationMin": 79
+    }
+  ],
+  "batman": [
+    {
+      "iata": "BAL",
+      "distanceKm": 8.8,
+      "durationMin": 20
+    },
+    {
+      "iata": "DIY",
+      "distanceKm": 96.2,
+      "durationMin": 80
+    }
+  ],
+  "siirt": [
+    {
+      "iata": "BAL",
+      "distanceKm": 92.2,
+      "durationMin": 76
+    },
+    {
+      "iata": "NKT",
+      "distanceKm": 149.7,
+      "durationMin": 129
+    }
+  ],
+  "adiyaman": [
+    {
+      "iata": "ADF",
+      "distanceKm": 22.3,
+      "durationMin": 19
+    },
+    {
+      "iata": "GNY",
+      "distanceKm": 125.7,
+      "durationMin": 97
+    }
+  ],
+  "kilis": [
+    {
+      "iata": "GZT",
+      "distanceKm": 49.7,
+      "durationMin": 47
+    },
+    {
+      "iata": "HTY",
+      "distanceKm": 123.6,
+      "durationMin": 113
+    }
+  ],
+  "sirnak": [
+    {
+      "iata": "NKT",
+      "distanceKm": 52.8,
+      "durationMin": 43
+    },
+    {
+      "iata": "BAL",
+      "distanceKm": 186.7,
+      "durationMin": 159
+    }
+  ]
+}

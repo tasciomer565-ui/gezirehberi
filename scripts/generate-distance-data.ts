@@ -72,10 +72,13 @@ const VERIFIED_OVERRIDES: Record<string, { distanceKm: number; durationMin: numb
   "gumushane-rize": { distanceKm: 165, durationMin: 137 }, // OSRM 182,3 km
   "bitlis-mardin": { distanceKm: 267, durationMin: 221 }, // OSRM 248,5 km
   "bingol-erzincan": { distanceKm: 221, durationMin: 219 }, // OSRM 242,6 km
+  "karaman-nigde": { distanceKm: 177, durationMin: 128 }, // OSRM 194,3 km
   // Kontrol edilip OSRM değeri korunanlar: agri-kars (Google yol kutusu yok,
   // AI özeti güzergaha göre 167-215 km; OSRM 168,2 kısa güzergah), isparta-konya
   // (Google 241), istanbul-tekirdag (146), bilecik-istanbul (199), balikesir-izmir (205),
-  // ordu-tokat (192).
+  // ordu-tokat (192), canakkale-tekirdag (161), balikesir-manisa (155),
+  // gaziantep-osmaniye (136), adana-nigde (182), batman-mus (173), giresun-tokat
+  // (238), bingol-tunceli (130), amasra-duzce (245), istanbul-izmir (480).
 };
 
 // Şehir merkezi güzergaha bu kadar yakınsa "yol üstü" sayılıyor — çevre yolu
@@ -123,8 +126,41 @@ interface FetchedRoute {
   lengthKm: number;
 }
 
-async function fetchRoute(from: GeoPoint, to: GeoPoint): Promise<FetchedRoute | undefined> {
-  const url = `${OSRM_BASE}/${from.lng},${from.lat};${to.lng},${to.lat}?overview=full&geometries=geojson&steps=true`;
+// OSRM'in ilk rotası en hızlısı; uzun çiftlerde bu bazen yüzlerce km'lik
+// otoyol dolanması oluyor (2026-10-01: Ankara-Bursa 479 km, Google 386 /
+// KGM 385; Edirne-İzmir 716 km, KGM 546). Süresi en hızlı rotadan en fazla
+// %10 uzun olan alternatifler arasından en kısası seçiliyor — sürücülerin
+// fiilen kullandığı ve KGM/Google'ın verdiği güzergah bu.
+const MAX_ALT_DURATION_RATIO = 1.1;
+// Alternatif rotanın KGM cetvelinden daha uzak düştüğü (ya da KGM'de
+// olmayan tatil kasabası çiftlerinde 40 km / %5'ten az kısalttığı) çiftler:
+// burada en hızlı rota korunuyor — kısa alternatif çoğunlukla ara/köy yolu
+// (Bingöl-Tunceli: alternatif 112 km, Google 130 / OSRM hızlı 132; Amasra-
+// Düzce: 221, Google 245 / hızlı 248). Liste 2026-10-01'de 1133 çiftin iki
+// rotası KGM ile karşılaştırılarak çıkarıldı.
+const FASTEST_ROUTE_PAIRS = new Set([
+  "adana-bodrum", "amasra-antalya", "amasra-bursa", "amasra-duzce", "amasra-gaziantep",
+  "ankara-antalya", "ankara-bitlis", "ankara-mus", "ankara-van", "antalya-bingol",
+  "antalya-elazig", "antalya-malatya", "antalya-mus", "antalya-safranbolu", "antalya-tokat",
+  "antalya-tunceli", "batman-izmir", "bayburt-gaziantep", "bayburt-tunceli", "bingol-tunceli",
+  "bodrum-denizli", "bolu-safranbolu", "burdur-denizli", "bursa-kutahya", "bursa-mus",
+  "bursa-usak", "bursa-van", "canakkale-manisa", "diyarbakir-izmir", "diyarbakir-trabzon",
+  "edirne-konya", "gaziantep-rize", "istanbul-karaman", "istanbul-konya", "izmir-siirt",
+  "kayseri-mardin", "kirklareli-konya", "konya-mersin", "konya-tokat", "mardin-trabzon",
+  "samsun-tokat", "samsun-van", "sanliurfa-trabzon",
+]);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function pickRoute(routes: any[], slug: string): any {
+  if (routes.length === 0) return undefined;
+  if (FASTEST_ROUTE_PAIRS.has(slug)) return routes[0];
+  const fastest = Math.min(...routes.map((r) => r.duration));
+  return routes
+    .filter((r) => r.duration <= fastest * MAX_ALT_DURATION_RATIO)
+    .reduce((best, r) => (r.distance < best.distance ? r : best));
+}
+
+async function fetchRoute(from: GeoPoint, to: GeoPoint, slug: string): Promise<FetchedRoute | undefined> {
+  const url = `${OSRM_BASE}/${from.lng},${from.lat};${to.lng},${to.lat}?overview=full&geometries=geojson&steps=true&alternatives=3`;
   const res = await fetch(url, {
     headers: { "User-Agent": "yoldefteri-distance-data/1.0" },
     signal: AbortSignal.timeout(40000),
@@ -134,7 +170,7 @@ async function fetchRoute(from: GeoPoint, to: GeoPoint): Promise<FetchedRoute | 
     return undefined;
   }
   const data = await res.json();
-  const route = data.routes?.[0];
+  const route = pickRoute(data.routes ?? [], slug);
   const coords: [number, number][] | undefined = route?.geometry?.coordinates;
   if (!route || !Array.isArray(route.legs) || route.legs.length === 0 || !coords || coords.length < 2) {
     console.error(`  Rota bulunamadı`);
@@ -256,7 +292,7 @@ async function main() {
     let route: FetchedRoute | undefined;
     for (let attempt = 0; attempt < 3 && !route; attempt++) {
       try {
-        route = await fetchRoute(cityA.location, cityB.location);
+        route = await fetchRoute(cityA.location, cityB.location, slug);
       } catch (err) {
         console.error(`[${slug}] Hata (deneme ${attempt + 1}): ${err instanceof Error ? err.message : err}`);
       }
