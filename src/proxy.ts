@@ -1,11 +1,25 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { distancePairs, distancePairSlug } from "@/lib/data/distancePairs";
 
 const locales = ["tr", "en", "de", "ar", "ru"];
 const defaultLocale = "tr";
 
+// Mesafe sayfaları tek (alfabetik) yönde yayında; "mardin-gaziantep" gibi
+// ters yön aramaları kanonik sayfaya 308 ile yönlenir. Önceden her çift için
+// next.config redirects() kuralıydı — 1133 çiftte Next.js'in 1000 özel route
+// performans uyarısını aşıyordu; tek bir Set araması aynı işi görüyor.
+// Şehir slug'larında tire yok, bu yüzden "a-b" ayrıştırması belirsiz değil.
+const distanceSlugs = new Set(distancePairs.map(distancePairSlug));
+const REVERSE_DISTANCE = /^\/(tr|en|de|ar|ru)\/mesafe\/([a-z]+)-([a-z]+)\/?$/;
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  const reverse = pathname.match(REVERSE_DISTANCE);
+  if (reverse && !distanceSlugs.has(`${reverse[2]}-${reverse[3]}`) && distanceSlugs.has(`${reverse[3]}-${reverse[2]}`)) {
+    return NextResponse.redirect(new URL(`/${reverse[1]}/mesafe/${reverse[3]}-${reverse[2]}`, request.url), 308);
+  }
 
   // Check if the pathname is missing a locale prefix
   const pathnameIsMissingLocale = locales.every(

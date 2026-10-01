@@ -175,7 +175,7 @@ BAHŞİŞ — NE ZAMAN, NE KADAR?
 Restoranlarda bahşiş zorunlu değildir ama yaygındır. Hesabın yaklaşık %5-10'u kadar bahşiş bırakmak nazik karşılanır — özellikle turistik bölgelerde ve tam hizmet veren restoranlarda. Bazı işletmeler hesaba otomatik "servis ücreti" ekleyebilir; bu durumda ayrıca bahşiş bırakmak zorunda değilsiniz, hesabı kontrol edin.
 Kafelerde ve büfelerde bahşiş genellikle beklenmez, ama üstü kalan bozuk parayı bırakmak yaygın bir davranıştır.
 Taksilerde bahşiş genellikle beklenmez; ücreti yuvarlamak (örn. 47 TL yerine 50 TL) yeterlidir.
-Otel personeline (kapıcı, oda temizliği) küçük banknotlarla (20-50 TL civarı) bahşiş bırakmak yaygındır.
+Otel personeline (kapıcı, oda temizliği) küçük banknotlarla bahşiş bırakmak yaygındır.
 Tur rehberlerine ve şoförlere, özellikle çok günlük turlarda, günlük bazlı bir bahşiş (rehber için genelde şoförden fazla) bırakmak gelenekseldir.
 
 PAZARLIK — NEREDE YAPILIR, NEREDE YAPILMAZ?
@@ -231,80 +231,91 @@ Bu notlar genel, herkesçe bilinen seyahat güvenliği tavsiyeleridir; herhangi 
 // src/lib/data/cities/karadeniz.ts, marmara-extra4.ts) — bu makaleler o
 // gerçek rakamları yeniden bir araya getirip yorumluyor, yeni bir fiyat
 // icat etmiyor.
+// 2026-10-01: Bu üç rehber önceden "1.000-1.500 TL bütçeyle" gibi rakamlar
+// veriyordu; rakamlar 2026 fiyatlarının çok altında kalmıştı. URL korunarak
+// rakamsız bir günlük plana çevrildi: neyin ücretsiz, neyin ücretli olduğu
+// söyleniyor, tutar verilmiyor.
 guides.push(
   {
     slug: "amasrada-1-gun-butce-rehberi",
-    title: "Amasra'da 1 Gün, 1.000-1.500 TL Bütçeyle Neler Yapılır?",
-    seoTitle: "Amasra'da 1 Gün: Bütçe ve Gezi Planı",
-    summary: "Amasra'yı günübirlik ziyaret edenler için gerçekçi bir bütçe planı: konaklama, yemek ve aktivite kalemleri.",
+    title: "Amasra'da 1 Günde Ne Yapılır? Günübirlik Gezi Planı",
+    seoTitle: "Amasra'da 1 Günde Gezi Planı",
+    summary: "Amasra'yı bir günde gezmek isteyenler için sabahtan akşama rota: kale, iki liman, Kemere Köprüsü ve balık; ücretsiz ve ücretli duraklar.",
     publishedAt: "2026-08-17",
+    updatedAt: "2026-10-01",
     relatedCitySlugs: ["amasra"],
-    body: `Amasra, günübirlik ya da kısa bir kaçamak için ideal, kompakt bir Karadeniz kasabası. Kişi başı günlük 1.000-1.500 TL'lik orta segment bir bütçeyle rahat bir gün geçirebilirsiniz.
+    body: `Amasra, merkezi yürüyerek gezilebilen küçük bir Karadeniz kasabası; bir gün, öne çıkan yerleri görmek için yeterli. Aşağıdaki sıra, yürüme mesafesine göre düzenlendi.
 
-KONAKLAMA (eğer geceleyecekseniz)
-2 yıldızlı bir pansiyon: 400-600 TL
-3+ yıldızlı bir otel: 800-1.200 TL
+SABAH: KALE VE KALE İÇİ
+Güne Amasra Kalesi'nin surları arasında, kale içindeki taş sokaklarda yürüyerek başlayın. Sur boyunca iki limanı birden gören manzara noktaları var. Kale içi ve surlar açık alan olduğu için ücretsizdir.
 
-YEME-İÇME
-Yerel restoranlarda günlük: 150-300 TL. Küçük Liman ve Büyük Liman çevresindeki balıkçı lokantaları, taze av balığıyla bu aralıkta doyurucu bir öğün sunar.
+ÖĞLEYE DOĞRU: KEMERE KÖPRÜSÜ VE BOZTEPE
+Kaleden Kemere Köprüsü üzerinden Boztepe Adası'na geçebilirsiniz. Kısa bir yürüyüş, deniz manzarası ve fotoğraf için iyi bir duraktır.
 
-AKTİVİTELER
-Amasra Kalesi ve çevresindeki gezilecek yerlerin çoğu (kale surları, Küçük Liman, Çekiciler Çarşısı) ücretsizdir — bu kalemde günlük 50-150 TL yeterli, çünkü çoğu doğal/açık alan gezisi ücret gerektirmiyor.
+ÖĞLE: LİMANDA BALIK
+Küçük Liman ve Büyük Liman çevresinde balık lokantaları sıralanır. Mevsimin balığını ve Amasra salatasını denemek bu kasabanın klasik deneyimidir.
 
-ULAŞIM
-Kasaba içi minibüs/yerel ulaşım: günlük 10-20 TL. Amasra'nın merkezi kompakt olduğu için çoğu yeri yürüyerek gezebilirsiniz.
+ÖĞLEDEN SONRA: ÇEKİCİLER ÇARŞISI VE MÜZE
+Ahşap el işçiliğiyle bilinen Çekiciler Çarşısı'nda hediyelik bakabilirsiniz. Amasra Müzesi ücretlidir; Müzekart geçerliliğini ve güncel ücreti ziyaret öncesi kontrol edin.
 
-GÜNÜN TOPLAMI
-Konaklama hariç (günübirlik ziyaretçiyseniz) yaklaşık 250-450 TL'ye Amasra'nın tadını çıkarabilirsiniz; bir gece konaklamayı da eklerseniz toplam bütçe 1.000-1.500 TL aralığına oturur.`,
+AKŞAM: GÜN BATIMI
+Günü Büyük Liman sahilinde ya da kale surlarında gün batımıyla bitirin.
+
+MALİYET NOTU
+Kale, limanlar, köprü ve çarşı gezisi ücretsizdir; harcamanın büyük kısmı yemek ve (kalacaksanız) konaklamadır. Yaz sezonunda ve hafta sonları konaklama fiyatları belirgin şekilde yükselir; güncel fiyatları rezervasyon sitelerinden kontrol edin.`,
   },
   {
     slug: "safranboluda-1-gun-butce-rehberi",
-    title: "Safranbolu'da 1 Gün, 900-1.800 TL Bütçeyle Neler Yapılır?",
-    seoTitle: "Safranbolu'da 1 Gün: Bütçe ve Gezi Planı",
-    summary: "UNESCO'lu Safranbolu'yu bir günde gezmek isteyenler için gerçekçi bir bütçe kırılımı.",
+    title: "Safranbolu'da 1 Günde Ne Yapılır? Günübirlik Gezi Planı",
+    seoTitle: "Safranbolu'da 1 Günde Gezi Planı",
+    summary: "UNESCO listesindeki Safranbolu'yu bir günde gezmek için rota: çarşı, konaklar, Hıdırlık Tepesi ve Tokatlı Kanyonu; ücretsiz ve ücretli duraklar.",
     publishedAt: "2026-08-17",
+    updatedAt: "2026-10-01",
     relatedCitySlugs: ["safranbolu"],
-    body: `Safranbolu'nun tarihi çarşısını ve konaklarını bir günde gezmek, kişi başı 900-1.800 TL aralığında bir bütçeyle mümkün.
+    body: `Safranbolu'nun tarihi bölümü (Çarşı) yürüyerek gezilir ve bir güne sığar. Şehir 1994'ten beri UNESCO Dünya Mirası Listesi'nde.
 
-KONAKLAMA (isteğe bağlı)
-Standart bir konak-otel: 500-800 TL
-Üst segment bir konak deneyimi: 1.200 TL ve üzeri
+SABAH: ÇARŞI VE CİNCİ HANI
+Güne Çarşı meydanında, Cinci Hanı'nın çevresinde başlayın. Arasta ve dar sokaklarda lokum, safran ve el işi dükkânları bulunur. Sokak gezisi ücretsizdir.
 
-YEME-İÇME
-Günlük yerel restoran harcaması: 150-300 TL. Çarşı içindeki geleneksel Safranbolu mutfağı sunan restoranlar (köfte, höşmerim, kuyu kebabı) bu bütçeye rahatça sığar.
+ÖĞLEYE DOĞRU: KAYMAKAMLAR EVİ
+Geleneksel Safranbolu evinin içini görmek için Kaymakamlar Evi iyi bir duraktır. Giriş ücretlidir; güncel ücreti ziyaret öncesi kontrol edin.
 
-AKTİVİTELER VE MÜZE GİRİŞLERİ
-Günlük 100-200 TL — Kaymakamlar Evi Müzesi gibi müze girişleri genelde 40 TL civarında, çoğu tarihi sokak gezisi ise ücretsiz.
+ÖĞLE: YÖRESEL MUTFAK
+Çarşıdaki lokantalarda Safranbolu mutfağını (ör. kuyu kebabı, bükme) deneyebilir, tatlı olarak höşmerim ya da safranlı zerde tadabilirsiniz.
 
-ULAŞIM
-Çarşı tamamen yaya dostu olduğu için günlük ulaşım maliyeti yaklaşık 50 TL (Yukarı Çarşı-Kıranköy arası taksi/dolmuş gibi kısa transferler için).
+ÖĞLEDEN SONRA: HIDIRLIK TEPESİ
+Çarşıdan kısa bir yokuşla çıkılan Hıdırlık Tepesi, kırmızı kiremitli evlerin en iyi göründüğü manzara noktasıdır.
 
-GÜNÜN TOPLAMI
-Günübirlik bir ziyaret için (konaklama hariç) yaklaşık 300-550 TL yeterli; bir gece konaklamayı eklediğinizde toplam 900-1.800 TL aralığına ulaşır — bu da Safranbolu'nun kendi curated bütçe verisiyle birebir örtüşüyor.`,
+GÜN SONU: TOKATLI KANYONU
+Aracınız varsa Tokatlı Kanyonu cam seyir terası ve İncekaya Su Kemeri yakındadır. Cam teras ücretlidir.
+
+MALİYET NOTU
+Çarşı, sokaklar ve Hıdırlık Tepesi ücretsizdir; müze ve cam teras ücretlidir. Konak otellerde konaklama fiyatları sezona ve odaya göre çok değişir; güncel fiyatları rezervasyon sitelerinden kontrol edin.`,
   },
   {
     slug: "canakkalede-1-gun-butce-rehberi",
-    title: "Çanakkale'de 1 Gün, 900-1.700 TL Bütçeyle Neler Yapılır?",
-    seoTitle: "Çanakkale'de 1 Gün: Bütçe ve Gezi Planı",
-    summary: "Truva ve Çanakkale Boğazı'nı bir günde keşfetmek isteyenler için gerçekçi bir bütçe planı.",
+    title: "Çanakkale'de 1 Günde Ne Yapılır? Günübirlik Gezi Planı",
+    seoTitle: "Çanakkale'de 1 Günde Gezi Planı",
+    summary: "Çanakkale'yi bir günde gezmek için rota: Kordon, Truva Antik Kenti ve Troya Müzesi ya da feribotla Gelibolu Yarımadası; ücretsiz ve ücretli duraklar.",
     publishedAt: "2026-08-17",
+    updatedAt: "2026-10-01",
     relatedCitySlugs: ["canakkale"],
-    body: `Çanakkale merkezi kompakt bir şehir olduğu için, Truva'yı da içeren bir günü kişi başı 900-1.700 TL aralığında bir bütçeyle geçirebilirsiniz (Bozcaada/Gökçeada gibi feribotla ulaşılan adalar bu bütçenin dışında, ayrı bir gün planı gerektirir).
+    body: `Çanakkale'de bir gün için iki ayrı plan yapılabilir: Truva tarafı (güney) ya da Gelibolu Yarımadası (Boğaz'ın karşı yakası). İkisini tek güne sığdırmak acele olur. Bozcaada ve Gökçeada feribotla gidildiği için ayrı bir gün ister.
 
-KONAKLAMA (isteğe bağlı)
-Günlük konaklama: 600-1.000 TL
+SABAH: KORDON VE SAAT KULESİ
+Güne şehir merkezinde, Boğaz kıyısındaki Kordon'da ve Saat Kulesi çevresinde başlayın. Kordon'daki tahta Truva Atı (film için yapılmış bir replika) fotoğraf için popüler bir duraktır.
 
-YEME-İÇME
-Günlük yerel restoran harcaması: 200-350 TL. Boğaz kıyısındaki restoranlar taze deniz ürünleri ve meşhur Çanakkale peyniriyle bu aralıkta doyurucu seçenekler sunuyor.
+PLAN A: TRUVA ANTİK KENTİ VE TROYA MÜZESİ
+Truva (Troya) Antik Kenti şehir merkezinin güneyinde, karayoluyla yaklaşık yarım saat uzaklıkta. UNESCO Dünya Mirası olan ören yeri ve yakınındaki Troya Müzesi ücretlidir; Müzekart geçerliliğini ve güncel ücretleri ziyaret öncesi kontrol edin.
 
-AKTİVİTELER (müze, tur)
-Günlük 100-300 TL — Truva Antik Kenti'nin giriş ücreti bu kalemin büyük kısmını oluşturur.
+PLAN B: GELİBOLU YARIMADASI
+Feribotla karşıya (Kilitbahir ya da Eceabat) geçip Gelibolu Yarımadası Tarihi Alanı'ndaki anıt ve şehitlikleri gezebilirsiniz. Alan geniş olduğu için araçla ya da organize turla gezmek daha verimlidir.
 
-ULAŞIM
-Günlük 50-90 TL — şehir merkezi kompakt olsa da Truva ve Gelibolu gibi merkez dışı noktalara araç kiralama veya organize tur önerilir, bu da ulaşım kalemini biraz yükseltir.
+AKŞAM: KORDON'DA YEMEK
+Günü Kordon'da deniz ürünleri ve Çanakkale'nin peynir helvasıyla bitirin.
 
-GÜNÜN TOPLAMI
-Konaklama hariç günlük yaklaşık 350-650 TL; bir gece konaklamayla toplam bütçe 900-1.700 TL aralığında kalır.`,
+MALİYET NOTU
+Kordon ve şehir merkezi gezisi ücretsizdir; Truva ören yeri ve Troya Müzesi ücretlidir; feribot ve tur ücretleri ayrıca ödenir. Güncel fiyatları ilgili kurum ve firmalardan kontrol edin.`,
   }
 );
 

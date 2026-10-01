@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Wifi } from "lucide-react";
+import { Star, Wifi, MapPin } from "lucide-react";
 import PlaceholderImage from "./PlaceholderImage";
 import { Accommodation } from "@/lib/types";
 import { translateDataText, Locale } from "@/lib/i18n";
@@ -15,13 +15,10 @@ export default function AccommodationCard({ accommodation, locale = "tr", onClic
     resort: locale === "tr" ? "Resort" : locale === "de" ? "Resort" : locale === "ar" ? "منتجع" : "Resort",
   };
 
-  const perNightText = locale === "tr"
-    ? "/ gece"
-    : locale === "de"
-    ? "/ Nacht"
-    : locale === "ar"
-    ? "/ ليلة"
-    : "/ night";
+  const mapsQuery = accommodation.isAreaSuggestion
+    ? `${TYPE_LABELS[accommodation.type] ?? "otel"} ${accommodation.address}`
+    : `${accommodation.name} ${accommodation.address}`;
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
 
   return (
     <motion.div
@@ -68,11 +65,23 @@ export default function AccommodationCard({ accommodation, locale = "tr", onClic
 
       <div className="p-4 pt-0">
         <div className="flex flex-col gap-1 border-t border-ink/5 pt-3">
-          <p className="font-bold text-kiremit">
-            {translateDataText(accommodation.pricePerNight, locale as Locale)}{" "}
-            <span className="text-xs font-normal text-ink/65">{perNightText}</span>
-          </p>
-          <span className="text-[9px] text-kiremit/70 font-semibold leading-tight block">🛡️ Sezonluk Ortalama Tahmini Fiyattır</span>
+          <a
+            href={mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="flex items-center gap-1.5 text-xs font-bold text-kiremit hover:underline"
+          >
+            <MapPin size={12} />
+            {locale === "tr"
+              ? accommodation.isAreaSuggestion
+                ? "Bu bölgedeki seçenekleri haritada gör"
+                : "Haritada gör, fiyat ve yorumlara bak"
+              : "View on map"}
+          </a>
+          {accommodation.isAreaSuggestion && locale === "tr" && (
+            <span className="text-[10px] text-ink/55 leading-tight">Belirli bir tesis değil, konaklama bölgesi önerisidir.</span>
+          )}
         </div>
       </div>
     </motion.div>

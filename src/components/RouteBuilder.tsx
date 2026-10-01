@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Trash2, ArrowRight, ArrowLeft, Send, Sparkles, MapPin, Loader2 } from "lucide-react";
+import { Trash2, ArrowRight, ArrowLeft, Send, Sparkles, MapPin, Loader2 } from "lucide-react";
 import { Attraction } from "@/lib/types";
 import { getLocalAuthorName, setLocalAuthorName } from "@/lib/socialDb";
 import { createCommunityRoute, CommunityRoute, CommunityStop } from "@/lib/communityApi";

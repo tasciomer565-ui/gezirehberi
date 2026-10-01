@@ -7,11 +7,11 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
   const params = await props.params;
   const locale = (params.locale || "tr") as Locale;
   const guides = getAllGuides();
-  const title = locale === "tr" ? "Rehberler" : "Guides";
+  const title = locale === "tr" ? "Türkiye Gezi Rehberleri ve Rota Önerileri" : "Turkey Travel Guides";
   const description =
     locale === "tr"
-      ? "Bölgesel öneri listeleri ve mevsimsel seyahat rehberleri."
-      : "Regional recommendation lists and seasonal travel guides.";
+      ? "Ekim, Kasım ve kış rotaları, UNESCO mirası listesi, en iyi sahil kasabaları, 1 günlük şehir planları ve pratik seyahat bilgileri: Türkiye gezi rehberleri."
+      : "Seasonal routes, UNESCO sites, beach towns, one-day city plans and practical travel tips for Turkey.";
 
   return {
     title,

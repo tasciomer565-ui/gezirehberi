@@ -1,5 +1,5 @@
 import { City, DayPlan, ItineraryRoute, RouteStop, Attraction, Restaurant } from "@/lib/types";
-import { estimateTransfer, assignTimeSlot, optimizeTSP, clusterByLocation } from "@/lib/geo";
+import { estimateTransfer, assignTimeSlot, optimizeTSP, clusterByLocation, haversineDistanceKm } from "@/lib/geo";
 
 const IMPORTANCE_ORDER: Record<string, number> = {
   "must-see": 0,
@@ -11,6 +11,34 @@ function sortByImportance<T extends { importance: string }>(items: T[]): T[] {
   return [...items].sort(
     (a, b) => (IMPORTANCE_ORDER[a.importance] ?? 3) - (IMPORTANCE_ORDER[b.importance] ?? 3)
   );
+}
+
+// optimizeTSP (en yakın komşu, kahvaltıdan başlar) yemek duraklarını doğru
+// yere koyuyor ama gezilecek yerleri açgözlü sırayla bağladığı için bazen
+// geri dönüş yaratıyordu (denetim: 34 günde ara durak, uç duraklar arası
+// mesafenin 1,6-3,8 katı yol). Gün başına en fazla 3-4 gezilecek yer olduğu
+// için, yemek durakları yerinde kalırken gezilecek yerler kendi
+// pozisyonlarında, ilk duraktan başlayan en kısa yol sırasına diziliyor.
+function reorderAttractionStops(stops: RouteStop[]): RouteStop[] {
+  const idx = stops.map((s, i) => (s.type === "attraction" ? i : -1)).filter((i) => i >= 0);
+  const attractions = idx.map((i) => stops[i]);
+  if (attractions.length < 2 || attractions.length > 6 || attractions.some((s) => !s.location)) return stops;
+  const start = stops[0].type !== "attraction" ? stops[0].location : undefined;
+  const permute = (arr: RouteStop[]): RouteStop[][] =>
+    arr.length <= 1 ? [arr] : arr.flatMap((x, i) => permute([...arr.slice(0, i), ...arr.slice(i + 1)]).map((p) => [x, ...p]));
+  const length = (p: RouteStop[]) =>
+    (start ? haversineDistanceKm(start, p[0].location!) : 0) +
+    p.slice(1).reduce((sum, s, i) => sum + haversineDistanceKm(p[i].location!, s.location!), 0);
+  const best = permute(attractions).reduce((b, p) => (length(p) < length(b) ? p : b));
+  const out = [...stops];
+  idx.forEach((pos, k) => (out[pos] = best[k]));
+  return out.map((s, i) => ({ ...s, order: i + 1 }));
+}
+
+// Şablon isimli kayıtlar belirli bir işletme değil, bölge önerisi (bkz.
+// data/cities/sanitize.ts) — durak başlığında da öyle yazılıyor.
+function diningTitle(meal: string, r: Restaurant): string {
+  return r.isAreaSuggestion ? `${meal}: ${r.address} çevresinde` : `${meal}: ${r.name}`;
 }
 
 function pickRestaurant(restaurants: Restaurant[], index: number): Restaurant | undefined {
@@ -124,7 +152,7 @@ export function generateItinerary(city: City, days: number): ItineraryRoute {
     if (breakfastRestaurant) {
       stops.push({
         order: order++,
-        title: `Kahvaltı: ${breakfastRestaurant.name}`,
+        title: diningTitle("Kahvaltı", breakfastRestaurant),
         description: breakfastRestaurant.description,
         duration: "1 saat",
         type: "dining",
@@ -168,7 +196,7 @@ export function generateItinerary(city: City, days: number): ItineraryRoute {
       if (idx === 0 && lunchRestaurant) {
         stops.push({
           order: order++,
-          title: `Öğle Yemeği: ${lunchRestaurant.name}`,
+          title: diningTitle("Öğle Yemeği", lunchRestaurant),
           description: lunchRestaurant.description,
           duration: "1.5 saat",
           type: "dining",
@@ -182,7 +210,7 @@ export function generateItinerary(city: City, days: number): ItineraryRoute {
     if (dinnerRestaurant) {
       stops.push({
         order: order++,
-        title: `Akşam Yemeği: ${dinnerRestaurant.name}`,
+        title: diningTitle("Akşam Yemeği", dinnerRestaurant),
         description: dinnerRestaurant.description,
         duration: "2 saat",
         type: "dining",
@@ -211,7 +239,7 @@ export function generateItinerary(city: City, days: number): ItineraryRoute {
     // (nearest-neighbor, ilk durağı sabit tutar) burada da uygulanarak varsayılan
     // sıra baştan coğrafi olarak mantıklı geliyor; kullanıcı butona hiç
     // basmasa da SSR/ilk render zaten optimize.
-    const optimizedStops = optimizeTSP(stops);
+    const optimizedStops = reorderAttractionStops(optimizeTSP(stops));
     stops.length = 0;
     stops.push(...optimizedStops);
 
@@ -245,7 +273,6 @@ export function generateItinerary(city: City, days: number): ItineraryRoute {
       }
     }
 
-    const estimatedSpend = `${150 + dayAttractions.length * 120}-${300 + dayAttractions.length * 200} TL`;
 
     dayPlans.push({
       day,
@@ -253,7 +280,6 @@ export function generateItinerary(city: City, days: number): ItineraryRoute {
       stops,
       transfers,
       totalWalkingKm: Math.round(totalWalkingKm * 10) / 10,
-      estimatedSpend,
       totalDuration: `${6 + dayAttractions.length * 2} saat`,
       mealSuggestions:
         breakfastRestaurant && lunchRestaurant && dinnerRestaurant

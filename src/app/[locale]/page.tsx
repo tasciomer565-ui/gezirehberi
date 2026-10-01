@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getCostLevelText } from "@/lib/costLevel";
 import { Compass, Utensils, Wallet, MapPinned, Route as RouteIcon, BookOpen } from "lucide-react";
 import { regions } from "@/lib/data/regions";
 import { allCities } from "@/lib/data/cities";
@@ -154,7 +155,7 @@ export default async function Home(props: {
                         <MapPinned size={13} /> {city.attractions.length} {dict.city.stopsCount}
                       </span>
                       <span className="flex items-center gap-1 font-semibold text-kiremit">
-                        <Wallet size={13} /> {translateDataText(city.budget.split(" ")[0], locale)}
+                        <Wallet size={13} /> {getCostLevelText(city.costLevel, locale, "short")}
                       </span>
                       <span className="flex items-center gap-1">
                         <Utensils size={13} /> {city.localFood.length} {dict.city.foodCount}

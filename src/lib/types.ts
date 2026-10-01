@@ -18,6 +18,7 @@ export type PlaceCategory =
   | "shopping";
 export type DiningType = "restaurant" | "cafe" | "street-food" | "market";
 export type PriceRange = "budget" | "mid" | "luxury";
+export type CostLevel = "low" | "mid" | "high";
 export type AccommodationType = "hotel" | "guesthouse" | "boutique" | "resort";
 
 export interface GeoPoint {
@@ -99,9 +100,9 @@ export interface Restaurant {
   images: PlaceImage[];
   location: GeoPoint;
   address: string;
-  priceRange: PriceRange;
-  averageCost: string;
-  openingHours: string;
+  priceRange?: PriceRange;
+  averageCost?: string;
+  openingHours?: string;
   phone?: string;
   website?: string;
   reservationNeeded: boolean;
@@ -113,6 +114,9 @@ export interface Restaurant {
   priceSegment?: 1 | 2 | 3 | 4;
   signatureDish?: string;
   accessMode?: "ferry" | "boat-tour";
+  // Şablon isimli kayıt, belirli bir işletme değil "tür · bölge" önerisi
+  // olarak gösteriliyor (bkz. data/cities/sanitize.ts).
+  isAreaSuggestion?: boolean;
 }
 
 export interface Accommodation {
@@ -124,14 +128,15 @@ export interface Accommodation {
   location: GeoPoint;
   address: string;
   priceRange: PriceRange;
-  pricePerNight: string;
-  rating: number;
+  pricePerNight?: string;
+  rating?: number;
   amenities: string[];
   phone?: string;
   website?: string;
   bookingUrl?: string;
   regionSlug?: string;
   accessMode?: "ferry" | "boat-tour";
+  isAreaSuggestion?: boolean;
 }
 
 export interface FoodItem {
@@ -144,7 +149,7 @@ export interface FoodItem {
   ingredients: string[];
   whereToTry: Restaurant[];
   bestSeason: string;
-  priceRange: string;
+  priceRange?: string;
   tips: string;
   importance: ImportanceLevel;
   regionSlug?: string;
@@ -244,6 +249,8 @@ export interface City {
   climate: string;
   whereToStay: string;
   budget: string;
+  // Şehirler arası göreli maliyet düzeyi (data/cities/sanitize.ts).
+  costLevel?: CostLevel;
   budgetBreakdown: {
     accommodation: string;
     food: string;

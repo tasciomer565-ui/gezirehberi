@@ -1,4 +1,5 @@
 import { Scale } from "lucide-react";
+import { getCostLevelText } from "@/lib/costLevel";
 import { allCities } from "@/lib/data/cities";
 import { getDictionary, Locale, translateDataText, buildAlternates, buildPageSocialMeta } from "@/lib/i18n";
 import CityComparator, { CitySummary } from "@/components/CityComparator";
@@ -33,13 +34,7 @@ export default async function ComparePage(props: { params: Promise<{ locale: str
     slug: c.slug,
     regionSlug: c.regionSlug,
     name: translateDataText(c.name, locale),
-    budget: translateDataText(c.budget, locale),
-    budgetBreakdown: {
-      accommodation: translateDataText(c.budgetBreakdown.accommodation, locale),
-      food: translateDataText(c.budgetBreakdown.food, locale),
-      activities: translateDataText(c.budgetBreakdown.activities, locale),
-      transport: translateDataText(c.budgetBreakdown.transport, locale),
-    },
+    budget: getCostLevelText(c.costLevel, locale),
     bestDuration: translateDataText(c.bestDuration, locale),
     whenToGo: translateDataText(c.whenToGo, locale),
     howToGetThere: translateDataText(c.howToGetThere, locale),

@@ -148,10 +148,10 @@ export default function ContactForm() {
                     className="mt-0.5 rounded border-ink/20 text-kiremit focus:ring-kiremit cursor-pointer"
                   />
                   <span>
-                    <Link href="/gizlilik-politikasi#kvkk" className="underline hover:text-kiremit">
+                    <Link href="/tr/gizlilik-politikasi#kvkk" className="underline hover:text-kiremit">
                       KVKK Aydınlatma Metni
                     </Link>
-                    'ni okudum, kişisel verilerimin bu talebimi yanıtlamak amacıyla işlenmesini kabul ediyorum.
+                    &apos;ni okudum, kişisel verilerimin bu talebimi yanıtlamak amacıyla işlenmesini kabul ediyorum.
                   </span>
                 </label>
                 <button

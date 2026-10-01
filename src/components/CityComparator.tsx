@@ -10,7 +10,6 @@ export interface CitySummary {
   regionSlug: string;
   name: string;
   budget: string;
-  budgetBreakdown: { accommodation: string; food: string; activities: string; transport: string };
   bestDuration: string;
   whenToGo: string;
   howToGetThere: string;

@@ -1,5 +1,6 @@
 import { City, RegionSlug } from "@/lib/types";
 import contentDates from "./contentDates.json";
+import { applyCostLevels, sanitizeCity } from "./sanitize";
 import { karadenizCities } from "./karadeniz";
 import { karadenizExtraCities } from "./karadeniz-extra";
 import { karadenizExtra2Cities } from "./karadeniz-extra2";
@@ -30,7 +31,7 @@ import { guneydoguAnadoluCities } from "./guneydogu-anadolu";
 import { guneydoguAnadoluExtraCities } from "./guneydogu-anadolu-extra";
 import { guneydoguAnadoluExtra2Cities } from "./guneydogu-anadolu-extra2";
 
-export const allCities: City[] = [
+export const allCities: City[] = applyCostLevels([
   ...karadenizCities,
   ...karadenizExtraCities,
   ...karadenizExtra2Cities,
@@ -60,7 +61,7 @@ export const allCities: City[] = [
   ...guneydoguAnadoluCities,
   ...guneydoguAnadoluExtraCities,
   ...guneydoguAnadoluExtra2Cities,
-];
+].map(sanitizeCity));
 
 export function getCity(regionSlug: string, citySlug: string): City | undefined {
   return allCities.find((c) => c.regionSlug === regionSlug && c.slug === citySlug);

@@ -21,12 +21,12 @@ import { getCity, getAllCitySlugs, allCities, getContentLastUpdated, isHiddenGem
 import { getConfusablePlaces } from "@/lib/data/confusablePlaces";
 import RelatedCities from "@/components/RelatedCities";
 import AdSlot from "@/components/AdSlot";
-import { getRegionThemeStyle } from "@/lib/regionTheme";
 import { getDictionary, Locale, translateDataText, buildAlternates, buildRobots, getAccommodationTypeLabel, SITE_URL } from "@/lib/i18n";
 import { getCityImage } from "@/lib/cityImages";
 import FAQSection from "@/components/FAQSection";
 import ArrivalOptionsTable from "@/components/ArrivalOptionsTable";
-import BudgetTierTable from "@/components/BudgetTierTable";
+import { getCostLevelText } from "@/lib/costLevel";
+import { clampDescription, clampTitle } from "@/lib/metaText";
 import { getPlacesForCity } from "@/lib/places";
 import { getTranslatedCity, cityHasTranslation, getTranslatedKnownFor } from "@/lib/translation/pipeline";
 import { getGuidesForCity } from "@/lib/data/guides";
@@ -83,8 +83,8 @@ export async function generateMetadata(props: {
   const topAttractionNames = [...city.attractions]
     .sort((a, b) => IMPORTANCE_RANK[a.importance] - IMPORTANCE_RANK[b.importance])
     .map((a) => a.name);
-  let title = translateDataText(city.title, locale);
-  let description = translateDataText(city.summary, locale);
+  let title = clampTitle(translateDataText(city.title, locale));
+  let description = clampDescription(translateDataText(city.summary, locale));
   if (locale === "tr") {
     const titleCandidates = [
       `${city.name} Gezilecek Yerler: ${attractionCount} Yer ve Gezi Rehberi`,
@@ -331,7 +331,7 @@ export default async function CityDetailPage(props: {
               {[
                 { label: dict.city.bestTime, value: translateDataText(city.whenToGo, locale) },
                 { label: dict.city.transit, value: translateDataText(city.howToGetThere, locale) },
-                { label: dict.city.budget, value: translateDataText(city.budget, locale) },
+                { label: dict.city.budget, value: getCostLevelText(city.costLevel, locale) },
                 { label: dict.city.idealDuration, value: translateDataText(city.bestDuration, locale) },
               ].map((item) => (
                 <div
@@ -387,9 +387,8 @@ export default async function CityDetailPage(props: {
           </div>
         </div>
 
-        <div className="mb-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="mb-16">
           <ArrivalOptionsTable howToArrive={city.howToArrive} locale={locale} title={dict.city.arrivalOptions} />
-          <BudgetTierTable budgetBreakdown={city.budgetBreakdown} locale={locale} title={dict.city.budgetTiers} />
         </div>
 
         <div id="itinerary-section" className="mb-20 scroll-mt-20">
@@ -572,7 +571,7 @@ export default async function CityDetailPage(props: {
           name={translateDataText(city.name, locale)}
           whenToGo={translateDataText(city.whenToGo, locale)}
           howToGetThere={translateDataText(city.howToGetThere, locale)}
-          budget={translateDataText(city.budget, locale)}
+          budget={getCostLevelText(city.costLevel, locale)}
           whatToEat={city.localFood.length > 0
             ? `${city.localFood.slice(0, 3).map(f => translateDataText(f.name, locale)).join(", ")} ${locale === "tr" ? "gibi yöresel lezzetleri mutlaka denemelisiniz." : "are among the famous local foods you must try."}`
             : (locale === "tr" ? "Bölgeye özgü yöresel lezzetleri ve tescilli tatları yerel lokantalarda denemelisiniz." : "You should try region-specific local dishes at local restaurants.")

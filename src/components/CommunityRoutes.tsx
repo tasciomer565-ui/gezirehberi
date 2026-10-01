@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Users, Plus, Compass, Loader2, RefreshCw } from "lucide-react";
+import { Users, Plus, Loader2, RefreshCw } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fetchCommunityRoutes, fetchCommunityStats, CommunityRoute, CommunityStats } from "@/lib/communityApi";
 import { getDictionary, Locale } from "@/lib/i18n";

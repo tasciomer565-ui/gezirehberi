@@ -46,9 +46,11 @@ export default function FoodCard({ food, locale = "tr", onClick }: { food: FoodI
           <span className="flex items-center gap-1.5">
             <Calendar size={12} /> {translateDataText(food.bestSeason, locale as Locale)}
           </span>
-          <span className="flex items-center gap-1.5 font-bold text-kiremit">
-            <Tag size={12} /> {translateDataText(food.priceRange, locale as Locale)}
-          </span>
+          {food.priceRange && (
+            <span className="flex items-center gap-1.5 font-bold text-kiremit">
+              <Tag size={12} /> {translateDataText(food.priceRange, locale as Locale)}
+            </span>
+          )}
         </div>
 
         {food.tips && (

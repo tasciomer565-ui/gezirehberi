@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { UtensilsCrossed, Phone, CheckCircle2 } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import PlaceholderImage from "./PlaceholderImage";
 import { Restaurant } from "@/lib/types";
 import { translateDataText, Locale } from "@/lib/i18n";
@@ -21,13 +21,10 @@ export default function RestaurantCard({ restaurant, locale = "tr", onClick }: {
     market: locale === "tr" ? "Pazar" : locale === "de" ? "Markt" : locale === "ar" ? "سوق" : "Market",
   };
 
-  const reservationText = locale === "tr"
-    ? "Rezervasyon önerilir"
-    : locale === "de"
-    ? "Reservierung empfohlen"
-    : locale === "ar"
-    ? "يُنصح بالحجز"
-    : "Reservation recommended";
+  const mapsQuery = restaurant.isAreaSuggestion
+    ? `${restaurant.specialties[0] ?? "restoran"} ${restaurant.address}`
+    : `${restaurant.name} ${restaurant.address}`;
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
 
   return (
     <motion.div
@@ -50,9 +47,11 @@ export default function RestaurantCard({ restaurant, locale = "tr", onClick }: {
             <h3 className="font-display text-lg italic text-ink group-hover:text-kiremit transition-colors">
               {translateDataText(restaurant.name, locale as Locale)}
             </h3>
-            <span className="shrink-0 rounded-full bg-safran/20 px-2.5 py-1 text-xs font-bold text-kiremit shadow-sm">
-              {PRICE_LABELS[restaurant.priceRange]}
-            </span>
+            {restaurant.priceRange && (
+              <span className="shrink-0 rounded-full bg-safran/20 px-2.5 py-1 text-xs font-bold text-kiremit shadow-sm">
+                {PRICE_LABELS[restaurant.priceRange]}
+              </span>
+            )}
           </div>
           <p className="mt-1.5 text-sm text-ink/70 line-clamp-2 leading-relaxed">
             {translateDataText(restaurant.description, locale as Locale)}
@@ -91,17 +90,23 @@ export default function RestaurantCard({ restaurant, locale = "tr", onClick }: {
 
       <div className="p-4 pt-0">
         <div className="flex flex-col gap-1 border-t border-ink/5 pt-3">
-          <div className="flex items-center justify-between text-xs text-ink/65 font-medium">
-            <span className="flex items-center gap-1 font-bold text-kiremit">
-              <UtensilsCrossed size={12} /> {translateDataText(restaurant.averageCost, locale as Locale)}
-            </span>
-            {restaurant.reservationNeeded && (
-              <span className="flex items-center gap-1 text-[11px]">
-                <CheckCircle2 size={12} className="text-turkuaz" /> {reservationText}
-              </span>
-            )}
-          </div>
-          <span className="text-[9px] text-kiremit/70 font-semibold leading-tight block">🛡️ Sezonluk Ortalama Tahmini Fiyattır</span>
+          <a
+            href={mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="flex items-center gap-1.5 text-xs font-bold text-kiremit hover:underline"
+          >
+            <MapPin size={12} />
+            {locale === "tr"
+              ? restaurant.isAreaSuggestion
+                ? "Bu bölgedeki mekanları haritada gör"
+                : "Haritada gör, saat ve yorumlara bak"
+              : "View on map"}
+          </a>
+          {restaurant.isAreaSuggestion && locale === "tr" && (
+            <span className="text-[10px] text-ink/55 leading-tight">Belirli bir işletme değil, yeme-içme bölgesi önerisidir.</span>
+          )}
         </div>
 
         {restaurant.phone && (

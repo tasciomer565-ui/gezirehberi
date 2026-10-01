@@ -13,8 +13,7 @@ import {
   DollarSign, 
   Calendar, 
   Accessibility, 
-  Info,
-  KeyRound
+  Info
 } from "lucide-react";
 import PlaceholderImage from "./PlaceholderImage";
 import { translateDataText, Locale } from "@/lib/i18n";
@@ -195,13 +194,6 @@ export default function PlaceDetailModal({
                       <div>
                         <p className="text-xs font-bold text-kiremit uppercase tracking-wider">{t("entrance")}</p>
                         <p className="text-sm text-ink/85 font-semibold">{translateDataText(place.entranceFee, locale as Locale)}</p>
-                        {place.entranceFee && !String(place.entranceFee).toLowerCase().includes("ücretsiz") && !String(place.entranceFee).toLowerCase().includes("free") && (
-                          <>
-                            <p className="text-[9px] text-kiremit/70 font-semibold mt-0.5 leading-tight">
-                              🛡️ Sezonluk Ortalama Tahmini Fiyattır (Tesisle Teyit Ediniz)
-                            </p>
-                          </>
-                        )}
                       </div>
                     </div>
                   </>
@@ -210,48 +202,33 @@ export default function PlaceDetailModal({
                 {/* --- RESTAURANT FIELDS --- */}
                 {category === "restaurants" && (
                   <>
-                    <div className="flex items-start gap-3">
-                      <DollarSign size={16} className="text-kiremit mt-0.5" />
-                      <div>
-                        <p className="text-xs font-bold text-kiremit uppercase tracking-wider">{t("averageCost")}</p>
-                        <p className="text-sm text-ink/85 font-semibold">{translateDataText(place.averageCost, locale as Locale)}</p>
-                        <p className="text-[9px] text-kiremit/70 font-semibold mt-0.5 leading-tight">
-                          🛡️ Sezonluk Ortalama Tahmini Fiyattır (Tesisle Teyit Ediniz)
-                        </p>
+                    {place.signatureDish && (
+                      <div className="flex items-start gap-3">
+                        <Star size={16} className="text-kiremit mt-0.5" />
+                        <div>
+                          <p className="text-xs font-bold text-kiremit uppercase tracking-wider">{t("signatureDish")}</p>
+                          <p className="text-sm text-ink/85 font-semibold italic">{translateDataText(place.signatureDish, locale as Locale)}</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <Star size={16} className="text-kiremit mt-0.5" />
-                      <div>
-                        <p className="text-xs font-bold text-kiremit uppercase tracking-wider">{t("signatureDish")}</p>
-                        <p className="text-sm text-ink/85 font-semibold italic">{translateDataText(place.signatureDish || "", locale as Locale)}</p>
+                    )}
+                    {place.isAreaSuggestion && locale === "tr" && (
+                      <div className="flex items-start gap-3">
+                        <Info size={16} className="text-kiremit mt-0.5" />
+                        <p className="text-sm text-ink/75">Belirli bir işletme değil, yeme-içme bölgesi önerisidir. Güncel mekanlar, saatler ve fiyatlar için haritaya bakın.</p>
                       </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <KeyRound size={16} className="text-kiremit mt-0.5" />
-                      <div>
-                        <p className="text-xs font-bold text-kiremit uppercase tracking-wider">{t("reservation")}</p>
-                        <p className="text-sm text-ink/85 font-semibold">
-                          {place.reservationNeeded ? t("reservationNeeded") : t("reservationNotNeeded")}
-                        </p>
-                      </div>
-                    </div>
+                    )}
                   </>
                 )}
 
                 {/* --- ACCOMMODATION FIELDS --- */}
                 {category === "accommodations" && (
                   <>
-                    <div className="flex items-start gap-3">
-                      <DollarSign size={16} className="text-kiremit mt-0.5" />
-                      <div>
-                        <p className="text-xs font-bold text-kiremit uppercase tracking-wider">{locale === "tr" ? "Gecelik Ücret" : "Price Per Night"}</p>
-                        <p className="text-sm text-ink/85 font-semibold">{translateDataText(place.pricePerNight, locale as Locale)}</p>
-                        <p className="text-[9px] text-kiremit/70 font-semibold mt-0.5 leading-tight">
-                          🛡️ Sezonluk Ortalama Tahmini Fiyattır (Tesisle Teyit Ediniz)
-                        </p>
+                    {place.isAreaSuggestion && locale === "tr" && (
+                      <div className="flex items-start gap-3">
+                        <Info size={16} className="text-kiremit mt-0.5" />
+                        <p className="text-sm text-ink/75">Belirli bir tesis değil, konaklama bölgesi önerisidir. Güncel fiyat ve müsaitlik için haritaya veya rezervasyon sitelerine bakın.</p>
                       </div>
-                    </div>
+                    )}
                     {place.amenities && place.amenities.length > 0 && (
                       <div className="flex items-start gap-3">
                         <Info size={16} className="text-kiremit mt-0.5" />

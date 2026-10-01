@@ -10,10 +10,7 @@ import {
   Compass, 
   LayoutGrid, 
   Rows3,
-  MapPinned,
-  UtensilsCrossed,
-  Soup,
-  BedDouble
+  MapPinned
 } from "lucide-react";
 import { getWishlist, removeFromWishlist, subscribeWishlist, WishlistItem } from "@/lib/wishlist";
 import { getSavedPlaces, subscribeSavedPlaces, SavedPlaceItem } from "@/lib/savedPlaces";

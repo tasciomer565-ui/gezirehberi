@@ -9,7 +9,6 @@ import {
   Soup, 
   BedDouble, 
   Search, 
-  SlidersHorizontal, 
   RotateCcw,
   Loader2,
   ChevronDown,
@@ -234,30 +233,21 @@ export default function CityContentSections({
     { value: "nice-to-have", label: locale === "tr" ? "Zaman Varsa" : "Nice to Have" },
   ];
 
-  const BUDGET_FILTERS = [
-    { value: "all", label: locale === "tr" ? "Tüm Bütçeler" : "All Budgets" },
-    { value: "budget", label: locale === "tr" ? "Ekonomik" : "Budget" },
-    { value: "mid", label: locale === "tr" ? "Orta" : "Mid-range" },
-    { value: "luxury", label: locale === "tr" ? "Lüks" : "Luxury" },
-  ];
-
   const sortOptions = useMemo(() => {
     if (activeTab === "attractions") {
       return [
-        { value: "popularity", label: locale === "tr" ? "🌟 Google Popülerliği" : "🌟 Google Popularity" },
+        { value: "popularity", label: locale === "tr" ? "🌟 Öne Çıkanlar" : "🌟 Highlights first" },
         { value: "constructionYear", label: locale === "tr" ? "⏳ Tarihsel Yaş (En Eski)" : "⏳ Oldest Year" },
-        { value: "price", label: locale === "tr" ? "💰 Bütçe (Ücretsiz / Ücretli)" : "💰 Budget (Free first)" },
         { value: "alphabetical", label: locale === "tr" ? "🔤 Alfabetik (A-Z)" : "🔤 Alphabetical (A-Z)" },
       ];
     } else if (activeTab === "restaurants" || activeTab === "accommodations") {
       return [
-        { value: "popularity", label: locale === "tr" ? "🌟 Google Popülerliği" : "🌟 Google Popularity" },
-        { value: "price", label: locale === "tr" ? "💰 Fiyat Segmenti (Ekonomik - Lüks)" : "💰 Price (Budget to Luxury)" },
+        { value: "popularity", label: locale === "tr" ? "🌟 Önerilen Sıra" : "🌟 Suggested order" },
         { value: "alphabetical", label: locale === "tr" ? "🔤 Alfabetik (A-Z)" : "🔤 Alphabetical (A-Z)" },
       ];
     } else {
       return [
-        { value: "popularity", label: locale === "tr" ? "🌟 Kökensel Popülerlik (İmza)" : "🌟 Signature Popularity" },
+        { value: "popularity", label: locale === "tr" ? "🌟 Öne Çıkanlar" : "🌟 Highlights first" },
         { value: "alphabetical", label: locale === "tr" ? "🔤 Alfabetik (A-Z)" : "🔤 Alphabetical (A-Z)" },
       ];
     }
@@ -340,20 +330,6 @@ export default function CityContentSections({
                     </button>
                   ))}
 
-                {(activeTab === "restaurants" || activeTab === "accommodations") &&
-                  BUDGET_FILTERS.map((filt) => (
-                    <button
-                      key={filt.value}
-                      onClick={() => setSubFilter(filt.value)}
-                      className={`rounded-lg px-3 py-1.5 text-xs font-bold transition-all ${
-                        subFilter === filt.value
-                          ? "bg-kiremit text-paper"
-                          : "border border-ink/10 text-ink/65 hover:border-kiremit/40 bg-paper"
-                      }`}
-                    >
-                      {filt.label}
-                    </button>
-                  ))}
               </div>
 
               {/* Viewport Boundary Checkbox */}

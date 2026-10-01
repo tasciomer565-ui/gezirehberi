@@ -84,9 +84,6 @@ export default function AttractionCard({ attraction, locale = "tr", onClick }: {
             <MapPin size={12} className="shrink-0" />
             <span className="truncate">{translateDataText(attraction.address, locale as Locale)}</span>
           </div>
-          {attraction.entranceFee && !String(attraction.entranceFee).toLowerCase().includes("ücretsiz") && !String(attraction.entranceFee).toLowerCase().includes("free") && (
-            <span className="text-[9px] text-kiremit/70 font-semibold leading-tight block">🛡️ Sezonluk Ortalama Tahmini Fiyattır</span>
-          )}
         </div>
 
         {(attraction.accessibility || attraction.parkingTip) && (

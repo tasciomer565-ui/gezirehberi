@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { clampDescription } from "@/lib/metaText";
 import { notFound } from "next/navigation";
 import { ArrowLeft, MapPin, BedDouble, UtensilsCrossed, MapPinned, Soup } from "lucide-react";
 import CityHero from "@/components/CityHero";
@@ -50,16 +51,17 @@ export async function generateMetadata(props: {
 
   const bgImage = getCityImage(district.slug, district.regionSlug);
 
+  const description = clampDescription(district.summary);
   const pageUrl = `${SITE_URL}/${locale}/bolgeler/${district.regionSlug}/${district.citySlug}/${district.slug}`;
 
   return {
     title: district.title,
-    description: district.summary,
+    description,
     alternates: buildAlternates(locale, `/bolgeler/${district.regionSlug}/${district.citySlug}/${district.slug}`),
     openGraph: {
       url: pageUrl,
       title: district.title,
-      description: district.summary,
+      description,
       images: [
         {
           url: bgImage,
@@ -72,7 +74,7 @@ export async function generateMetadata(props: {
     twitter: {
       card: "summary_large_image",
       title: district.title,
-      description: district.summary,
+      description,
     },
   };
 }

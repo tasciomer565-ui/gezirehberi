@@ -255,7 +255,7 @@ export function getPlacesForCity(citySlug: string, options: GetPlacesOptions = {
       amenities: item.amenities || [],
       ingredients: item.ingredients || [],
       diningType: item.diningType || "restaurant",
-      priceRange: item.priceRange || "mid",
+      priceRange: item.priceRange,
       bestSeason: item.bestSeason || "Yıl boyu",
       tips: Array.isArray(item.tips) ? item.tips.join(". ") : (item.tips || "")
     };
@@ -274,12 +274,11 @@ export function getPlacesForCity(citySlug: string, options: GetPlacesOptions = {
   // Apply Sorting logic
   list.sort((a, b) => {
     if (sort === "popularity") {
-      // Puanı olmayan kayıt (artık uydurma 4.5 yok) sona gider; sort
-      // karşılaştırıcısına NaN dönmesin.
-      const rA = a.rating ?? 0;
-      const rB = b.rating ?? 0;
-      if (rB !== rA) return rB - rA;
-      return (b.reviewCount || 0) - (a.reviewCount || 0);
+      // Puan/yorum verisi yok (uydurma değerler 2026-09/10'da kaldırıldı);
+      // "Öne çıkanlar" editörün importance alanına göre, eşitlikte kaynak
+      // sırası korunur (Array.sort kararlı).
+      const rank: Record<string, number> = { "must-see": 0, "should-see": 1, "nice-to-have": 2 };
+      return (rank[a.importance] ?? 3) - (rank[b.importance] ?? 3);
     }
     else if (sort === "constructionYear") {
       // Sort from oldest year to newest year. Items without constructionYear are pushed to the end

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getDictionary, Locale } from "@/lib/i18n";
-import { Mail, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Footer() {
   const pathname = usePathname() || "";
@@ -146,7 +146,7 @@ export default function Footer() {
                         <Link href={`/${locale}/gizlilik-politikasi#kvkk`} className="underline footer-link-accent">
                           KVKK Aydınlatma Metni
                         </Link>
-                        'ni okudum, e-posta adresimin bülten göndermek amacıyla işlenmesini kabul ediyorum.
+                        &apos;ni okudum, e-posta adresimin bülten göndermek amacıyla işlenmesini kabul ediyorum.
                       </>
                     ) : (
                       <>
