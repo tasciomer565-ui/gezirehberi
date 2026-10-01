@@ -591,18 +591,6 @@
       "Iğdır - Van Yolu"
     ]
   },
-  "diyarbakir-van": {
-    "distanceKm": 406.2,
-    "durationMin": 333,
-    "roadNames": [
-      "Van-Bitlis yolu",
-      "Diyarbakır-Silvan yolu",
-      "Diyarbakır-Bitlis yolu",
-      "Siirt-Bitlis yolu",
-      "Bitlis-Tatvan yolu",
-      "İpek Yolu"
-    ]
-  },
   "ankara-istanbul": {
     "distanceKm": 440.9,
     "durationMin": 280,
@@ -936,15 +924,6 @@
       "Çanakkale - Balıkesir Otoyolu"
     ]
   },
-  "balikesir-canakkale": {
-    "distanceKm": 213.5,
-    "durationMin": 179,
-    "roadNames": [
-      "İzmir - Çanakkale Yolu",
-      "Balıkesir - Edremit Yolu",
-      "Edremit Caddesi"
-    ]
-  },
   "samsun-sinop": {
     "distanceKm": 158,
     "durationMin": 120,
@@ -1045,16 +1024,6 @@
       "Bayburt - Gümüşhane Yolu",
       "Gümüşhane Çevre Yolu",
       "Anadolu Bulvarı"
-    ]
-  },
-  "gumushane-trabzon": {
-    "distanceKm": 109.4,
-    "durationMin": 115,
-    "roadNames": [
-      "Trabzon - Gümüşhane Yolu",
-      "Gümüşhane Çevre Yolu",
-      "Anadolu Bulvarı",
-      "T-4 Tüneli"
     ]
   },
   "amasra-zonguldak": {
@@ -1348,16 +1317,6 @@
       "Yeni Adana Yolu Bulvarı",
       "Gazi Mustafa Kemal Bulvarı",
       "Adana Yolu Bulvarı"
-    ]
-  },
-  "batman-mardin": {
-    "distanceKm": 109.5,
-    "durationMin": 96,
-    "roadNames": [
-      "Mardin-Midyat yolu",
-      "72-47",
-      "Midyat - Savur yolu",
-      "72-27"
     ]
   },
   "batman-siirt": {
@@ -3352,6 +3311,26 @@
   "sirnak-van": {
     "distanceKm": 352,
     "durationMin": 311,
+    "roadNames": []
+  },
+  "diyarbakir-van": {
+    "distanceKm": 362,
+    "durationMin": 298,
+    "roadNames": []
+  },
+  "balikesir-canakkale": {
+    "distanceKm": 193,
+    "durationMin": 168,
+    "roadNames": []
+  },
+  "gumushane-trabzon": {
+    "distanceKm": 94.3,
+    "durationMin": 83,
+    "roadNames": []
+  },
+  "batman-mardin": {
+    "distanceKm": 143,
+    "durationMin": 133,
     "roadNames": []
   }
 }
