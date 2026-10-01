@@ -14,7 +14,13 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 async function checkUrl(label: string, url: string): Promise<boolean> {
   try {
-    const res = await fetch(url, { method: "GET", redirect: "follow" });
+    const res = await fetch(url, {
+      method: "GET",
+      redirect: "follow",
+      // Wikimedia, tanımlayıcı User-Agent göndermeyen istekleri 429 ile
+      // kısıtlıyor (2026-10-01: 75 sahte "kırık link" bulgusu bundandı).
+      headers: { "User-Agent": "yoldefteri-image-audit/1.0 (https://www.yoldefterim.com.tr)" },
+    });
     if (res.status !== 200) {
       console.log(`[${label}] HTTP ${res.status}: ${url}`);
       return false;
