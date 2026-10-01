@@ -4081,58 +4081,6 @@
       }
     ]
   },
-  "gumushane-rize": {
-    "cities": [
-      {
-        "slug": "trabzon",
-        "kmFromA": 105
-      }
-    ],
-    "attractions": [
-      {
-        "citySlug": "trabzon",
-        "attractionId": "trabzon-sumela",
-        "kmFromA": 72,
-        "offsetKm": 9.9
-      },
-      {
-        "citySlug": "trabzon",
-        "attractionId": "trabzon-boztepe",
-        "kmFromA": 105,
-        "offsetKm": 0.7
-      },
-      {
-        "citySlug": "trabzon",
-        "attractionId": "trabzon-ayasofya-muzesi",
-        "kmFromA": 105,
-        "offsetKm": 3.3
-      },
-      {
-        "citySlug": "trabzon",
-        "attractionId": "trabzon-ataturk-kosku",
-        "kmFromA": 105,
-        "offsetKm": 4.2
-      },
-      {
-        "citySlug": "trabzon",
-        "attractionId": "trabzon-ayasofya-trabzon",
-        "kmFromA": 105,
-        "offsetKm": 4.2
-      },
-      {
-        "citySlug": "trabzon",
-        "attractionId": "trabzon-boztepe-trabzon",
-        "kmFromA": 105,
-        "offsetKm": 1.9
-      },
-      {
-        "citySlug": "trabzon",
-        "attractionId": "trabzon-of-sahili",
-        "kmFromA": 155,
-        "offsetKm": 0.8
-      }
-    ]
-  },
   "adana-karaman": {
     "cities": [],
     "attractions": []
@@ -4944,17 +4892,6 @@
     "cities": [],
     "attractions": []
   },
-  "bingol-erzincan": {
-    "cities": [],
-    "attractions": [
-      {
-        "citySlug": "tunceli",
-        "attractionId": "tunceli-pulumur-vadisi",
-        "kmFromA": 200,
-        "offsetKm": 9.2
-      }
-    ]
-  },
   "bingol-erzurum": {
     "cities": [],
     "attractions": []
@@ -4987,28 +4924,6 @@
         "attractionId": "van-hosap-kalesi",
         "kmFromA": 213,
         "offsetKm": 8.5
-      }
-    ]
-  },
-  "bitlis-mardin": {
-    "cities": [
-      {
-        "slug": "batman",
-        "kmFromA": 141
-      }
-    ],
-    "attractions": [
-      {
-        "citySlug": "siirt",
-        "attractionId": "siirt-veysel-karani",
-        "kmFromA": 51,
-        "offsetKm": 0
-      },
-      {
-        "citySlug": "batman",
-        "attractionId": "batman-sason-yaylalari",
-        "kmFromA": 120,
-        "offsetKm": 9.9
       }
     ]
   },
@@ -6641,6 +6556,18 @@
     "attractions": []
   },
   "aydin-izmir": {
+    "cities": [],
+    "attractions": []
+  },
+  "gumushane-rize": {
+    "cities": [],
+    "attractions": []
+  },
+  "bingol-erzincan": {
+    "cities": [],
+    "attractions": []
+  },
+  "bitlis-mardin": {
     "cities": [],
     "attractions": []
   }

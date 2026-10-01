@@ -1599,17 +1599,6 @@
       "Ordu Kumbaşı Çevre Yolu Bulvar"
     ]
   },
-  "gumushane-rize": {
-    "distanceKm": 182.3,
-    "durationMin": 167,
-    "roadNames": [
-      "Trabzon - Gümüşhane Yolu",
-      "Yalıncak Rize Caddesi",
-      "D010",
-      "Anadolu Bulvarı",
-      "Gümüşhane Çevre Yolu"
-    ]
-  },
   "adana-karaman": {
     "distanceKm": 283.5,
     "durationMin": 188,
@@ -2153,17 +2142,6 @@
       "Cahit Dalokay Bulvarı"
     ]
   },
-  "bingol-erzincan": {
-    "distanceKm": 242.6,
-    "durationMin": 211,
-    "roadNames": [
-      "12-82",
-      "Bingöl - Karlıova Yolu",
-      "Erzincan - Erzurum Yolu",
-      "62-07",
-      "Karlıova - Çat Yolu"
-    ]
-  },
   "bingol-erzurum": {
     "distanceKm": 179.5,
     "durationMin": 131,
@@ -2204,21 +2182,6 @@
       "Van-Hakkari yolu",
       "Hakkari-Van yolu",
       "D965"
-    ]
-  },
-  "bitlis-mardin": {
-    "distanceKm": 248.5,
-    "durationMin": 194,
-    "roadNames": [
-      "Mardin-Midyat yolu",
-      "Siirt-Batman yolu",
-      "72-47",
-      "Siirt-Bitlis yolu",
-      "D965",
-      "Eski Siirt-Bitlis yolu",
-      "Batman-Siirt yolu",
-      "Midyat - Savur yolu",
-      "72-27"
     ]
   },
   "bitlis-siirt": {
@@ -3327,6 +3290,21 @@
   "aydin-izmir": {
     "distanceKm": 117,
     "durationMin": 83,
+    "roadNames": []
+  },
+  "gumushane-rize": {
+    "distanceKm": 165,
+    "durationMin": 137,
+    "roadNames": []
+  },
+  "bingol-erzincan": {
+    "distanceKm": 221,
+    "durationMin": 219,
+    "roadNames": []
+  },
+  "bitlis-mardin": {
+    "distanceKm": 267,
+    "durationMin": 221,
     "roadNames": []
   }
 }
