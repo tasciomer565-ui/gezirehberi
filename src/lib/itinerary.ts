@@ -117,7 +117,12 @@ export function generateItinerary(city: City, days: number): ItineraryRoute {
   const attractionsPerDay = days <= 2 ? 3 : days <= 5 ? 2 : 2;
 
   const dayPlans: DayPlan[] = [];
-  let attractionCursor = 0;
+  // Günlere coğrafi dağıtım (2026-10-02): her gün kalan en önemli yerle
+  // başlar, günün diğer durakları o yere en yakın kalan yerlerden seçilir.
+  // Önceden önem sırasıyla art arda alınıyordu; şehrin zıt yönlerindeki yerler
+  // (Kars: Ani doğuda, Sarıkamış batıda) aynı güne düşüp gidiş-dönüş
+  // yaratıyordu.
+  const remainingAttractions = [...sortedAttractions];
   let ferryClusterCursor = 0;
 
   const dayThemes = [
@@ -168,13 +173,22 @@ export function generateItinerary(city: City, days: number): ItineraryRoute {
     const dayAttractions: Attraction[] = isFerryDay
       ? ferryCluster.slice(0, 2)
       : (() => {
-          const picked: Attraction[] = [];
-          for (let i = 0; i < attractionsPerDay; i++) {
-            const attraction = sortedAttractions[attractionCursor];
-            if (attraction) {
-              picked.push(attraction);
-              attractionCursor++;
+          const seed = remainingAttractions.shift();
+          if (!seed) return [];
+          const picked: Attraction[] = [seed];
+          while (picked.length < attractionsPerDay && remainingAttractions.length > 0) {
+            let best = 0;
+            if (seed.location) {
+              let bestKm = Infinity;
+              remainingAttractions.forEach((a, i) => {
+                const km = a.location ? haversineDistanceKm(seed.location, a.location) : Infinity;
+                if (km < bestKm) {
+                  bestKm = km;
+                  best = i;
+                }
+              });
             }
+            picked.push(remainingAttractions.splice(best, 1)[0]);
           }
           return picked;
         })();
