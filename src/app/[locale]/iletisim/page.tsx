@@ -7,7 +7,7 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
   const title = locale === "tr" ? "İletişim & Geri Bildirim" : "Contact & Feedback";
   const description =
     locale === "tr"
-      ? "Mekan düzeltmeleri, reklam iş birlikleri veya seyahat önerileriniz için Yol Defteri ekibine ulaşın; geri bildirimleriniz rehberi daha doğru tutmamıza yardımcı olur."
+      ? "Bilgi düzeltmeleri, iş birlikleri ve seyahat önerileriniz için Yol Defteri ekibine ulaşın; geri bildirimleriniz rehberi daha doğru tutmamızı sağlar."
       : "Reach the Yol Defteri team for place corrections, advertising partnerships, or travel suggestions — your feedback helps keep this guide accurate and current.";
 
   return {

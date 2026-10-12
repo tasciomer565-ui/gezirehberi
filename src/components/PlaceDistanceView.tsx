@@ -54,7 +54,6 @@ export default function PlaceDistanceView({ data, locale }: { data: PlacePairDat
   const avgSpeed = Math.round(distanceKm / (durationMin / 60));
   const others = getPlacePairsForPlace(place.slug).filter((o) => o.slug !== data.slug).slice(0, 8);
   const directionsUrl = buildStopDirectionsUrl({ lat: place.lat, lng: place.lng }, city.location, "driving");
-  const placeHref = place.districtHref ?? `/bolgeler/${city.regionSlug}/${place.citySlug}`;
 
   const faqItems = isTr
     ? [
@@ -139,7 +138,7 @@ export default function PlaceDistanceView({ data, locale }: { data: PlacePairDat
       )}
 
       <section className="mb-10 grid gap-3 sm:grid-cols-2">
-        <Link href={`/${locale}${placeHref}`} className="rounded-xl border border-ink/8 bg-paper p-4 text-sm font-bold text-ink shadow-sm hover:border-kiremit/40 hover:text-kiremit">
+        <Link href={`/${locale}${place.href}`} className="rounded-xl border border-ink/8 bg-paper p-4 text-sm font-bold text-ink shadow-sm hover:border-kiremit/40 hover:text-kiremit">
           {isTr ? `${place.name} gezi rehberi →` : `${place.name} guide →`}
         </Link>
         <Link href={`/${locale}/bolgeler/${city.regionSlug}/${city.slug}`} className="rounded-xl border border-ink/8 bg-paper p-4 text-sm font-bold text-ink shadow-sm hover:border-kiremit/40 hover:text-kiremit">

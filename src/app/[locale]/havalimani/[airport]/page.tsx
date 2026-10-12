@@ -37,6 +37,8 @@ export async function generateMetadata(props: { params: Promise<{ airport: strin
   const base = airport.name.replace(/\s*\(.*?\)/g, "");
   const names = transfers.map((t) => t.name);
   let title = `${base} Ulaşım: Hangi Yere Kaç Km?`;
+  if (title.length > 60) title = `${base}: Hangi Yere Kaç Km?`;
+  if (title.length > 60) title = `${base} Ulaşım ve Mesafeler`;
   for (let n = 3; n >= 1; n--) {
     const t = `${base} Ulaşım: ${names.slice(0, n).join(", ")} Kaç Km?`;
     if (t.length <= 60) { title = t; break; }

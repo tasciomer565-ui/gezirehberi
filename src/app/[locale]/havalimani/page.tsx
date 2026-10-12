@@ -9,7 +9,7 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
   const params = await props.params;
   const locale = (params.locale || "tr") as Locale;
   const count = getAirportsWithTransfers().length;
-  const title = locale === "tr" ? "Havalimanından Şehir Merkezine Kaç Km? Türkiye Havalimanları" : "Airport Transfers in Turkey";
+  const title = locale === "tr" ? "Havalimanından Şehir Merkezine Kaç Km?" : "Airport Transfers in Turkey";
   const description =
     locale === "tr"
       ? `Türkiye'deki ${count} havalimanından şehir merkezlerine ve tatil beldelerine karayolu mesafesi ve transfer süresi, gerçek yol verisiyle.`

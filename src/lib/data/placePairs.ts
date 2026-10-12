@@ -23,7 +23,10 @@ export interface Place {
   lng: number;
   citySlug: string; // linklenecek şehir
   province: string;
-  districtHref?: string; // sitede ilçe sayfası varsa
+  // Sitedeki ilgili sayfa: ilçe sayfası, yoksa bağlı olduğu şehrin sayfası.
+  // Bölge, tatil yerinin kendi şehrinden alınır (2026-10-12 denetimi: merkez
+  // şehrin bölgesi kullanılınca /bolgeler/marmara/aydin gibi 25 kırık link).
+  href: string;
   summary?: string;
 }
 
@@ -41,11 +44,22 @@ export const places: Place[] = [
         lng: d.location.lng,
         citySlug: d.citySlug,
         province: city?.name ?? "",
-        districtHref: city ? `/bolgeler/${city.regionSlug}/${city.slug}/${d.slug}` : undefined,
+        href: city ? `/bolgeler/${city.regionSlug}/${city.slug}/${d.slug}` : "",
         summary: d.summary,
       };
     }),
-  ...transferPlaces.map((p) => ({ slug: p.slug, name: p.name, lat: p.lat, lng: p.lng, citySlug: p.citySlug, province: p.province })),
+  ...transferPlaces.map((p) => {
+    const city = cityBySlug.get(p.citySlug);
+    return {
+      slug: p.slug,
+      name: p.name,
+      lat: p.lat,
+      lng: p.lng,
+      citySlug: p.citySlug,
+      province: p.province,
+      href: city ? `/bolgeler/${city.regionSlug}/${city.slug}` : "",
+    };
+  }),
 ];
 
 export interface PlacePair {
