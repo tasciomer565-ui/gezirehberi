@@ -3707,5 +3707,45 @@
       "Kale - Tavas Yolu",
       "Banaz-Sivaslı Yolu"
     ]
+  },
+  "aksaray-goreme": {
+    "distanceKm": 86.7,
+    "durationMin": 69,
+    "roadNames": [
+      "Aksaray - Nevşehir Yolu",
+      "Göreme-Uçhisar yolu",
+      "Nevşehir-Ürgüp yolu",
+      "Uçhisar-Nevşehir yolu",
+      "Nevşehir Caddesi",
+      "Aksaray Caddesi",
+      "Muhsin Yazıcıoğlu Bulvarı"
+    ]
+  },
+  "ayvalik-balikesir": {
+    "distanceKm": 127.2,
+    "durationMin": 90,
+    "roadNames": [
+      "Balıkesir - Edremit Yolu",
+      "İzmir - Çanakkale Yolu",
+      "Edremit Caddesi"
+    ]
+  },
+  "fethiye-turgutreis": {
+    "distanceKm": 255,
+    "durationMin": 212,
+    "roadNames": [
+      "Muğla - Fethiye Yolu",
+      "D400",
+      "Yatağan - Milas Yolu",
+      "Milas - Bodrum Yolu",
+      "Aydın - Muğla Yolu",
+      "Muğla-Fethiye Karayolu",
+      "Güvercinlik Bulvarı",
+      "Emin Anter Bulvarı",
+      "Bodrum-Turgutreis Yolu",
+      "Muğla Çevreyolu",
+      "Atatürk Bulvarı",
+      "Kıbrıs Şehitleri Caddesi"
+    ]
   }
 }

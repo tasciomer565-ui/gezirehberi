@@ -68,8 +68,20 @@ export interface PlacePair {
   place: Place;
 }
 
+// Merkez listesinde olmayan ama Search Console'da aranan çiftler (2026-10-12
+// export'u: aksaray göreme 37, ayvalık balıkesir 25, fethiye turgutreis gösterim).
+const EXTRA_PAIRS: [string, string][] = [
+  ["aksaray", "goreme"],
+  ["balikesir", "ayvalik"],
+  ["fethiye", "turgutreis"],
+];
+
 export function getPlacePairs(): PlacePair[] {
   const out: PlacePair[] = [];
+  for (const [citySlug, placeSlug] of EXTRA_PAIRS) {
+    const place = places.find((p) => p.slug === placeSlug);
+    if (place) out.push({ slug: [citySlug, placeSlug].sort().join("-"), citySlug, place });
+  }
   for (const hub of PLACE_PAIR_HUBS) {
     const city = cityBySlug.get(hub);
     if (!city) continue;

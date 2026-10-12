@@ -101,7 +101,10 @@ export async function generateMetadata(props: { params: Promise<{ pair: string; 
           // Google eşleşen kelimeleri sonuçta kalın gösteriyor.
           `${cityA.name} ${cityB.name} arası kaç km? Karayoluyla ${roundedKm} km, arabayla yaklaşık ${durationText}.`,
           stopNames ? ` Yol üstü: ${stopNames}.` : "",
-          ` ${cityB.name} ${cityA.name} yönü, güzergah ve gezilecek yerler.`,
+          // Google'ın yol tarifi kutusunda olmayan somut bilgiler (yakıt litresi,
+          // mola, yol üstü yerler) — tıklama gerekçesi olarak (2026-10-12).
+          ` Tahmini ${Math.round((data.distanceKm * 7) / 100)} L yakıt, mola yerleri ve yol üstü gezilecek yerler.`,
+          ` ${cityB.name} ${cityA.name} yönü ve güzergah.`,
         ]
       : [
           `${cityA.name} to ${cityB.name} is ${roundedKm} km by road, about ${durationText} by car.`,
