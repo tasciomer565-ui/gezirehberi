@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { distancePairs, distancePairSlug } from "@/lib/data/distancePairs";
+// Proxy her istekte çalışıyor: şehir verisini içe aktaran placePairs yerine
+// sadece küçük mesafe JSON'unun anahtarları kullanılıyor.
+import placeDistances from "@/lib/data/placeDistances.json";
 
 const locales = ["tr", "en", "de", "ar", "ru"];
 const defaultLocale = "tr";
@@ -10,7 +13,7 @@ const defaultLocale = "tr";
 // next.config redirects() kuralıydı — 1133 çiftte Next.js'in 1000 özel route
 // performans uyarısını aşıyordu; tek bir Set araması aynı işi görüyor.
 // Şehir slug'larında tire yok, bu yüzden "a-b" ayrıştırması belirsiz değil.
-const distanceSlugs = new Set(distancePairs.map(distancePairSlug));
+const distanceSlugs = new Set([...distancePairs.map(distancePairSlug), ...Object.keys(placeDistances)]);
 const REVERSE_DISTANCE = /^\/(tr|en|de|ar|ru)\/mesafe\/([a-z]+)-([a-z]+)\/?$/;
 
 export function proxy(request: NextRequest) {

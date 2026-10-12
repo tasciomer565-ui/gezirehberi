@@ -1,0 +1,3711 @@
+{
+  "alacati-istanbul": {
+    "distanceKm": 555.1,
+    "durationMin": 333,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "İstanbul - Bursa Otoyolu",
+      "İzmir-Çeşme Otoyolu",
+      "O-4",
+      "Bursa Çevre Yolu"
+    ]
+  },
+  "ayvalik-istanbul": {
+    "distanceKm": 405.6,
+    "durationMin": 257,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "İstanbul - Bursa Otoyolu",
+      "Balıkesir - Edremit Yolu",
+      "O-4",
+      "İzmir - Çanakkale Yolu",
+      "Bursa Çevre Yolu"
+    ]
+  },
+  "istanbul-pamukkale": {
+    "distanceKm": 592,
+    "durationMin": 382,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Denizli-Salihli yolu",
+      "İstanbul - Bursa Otoyolu",
+      "Salihli - Akhisar Yolu",
+      "O-4",
+      "Bursa Çevre Yolu",
+      "Aydın-Denizli Otoyolu"
+    ]
+  },
+  "istanbul-selcuk": {
+    "distanceKm": 517.3,
+    "durationMin": 312,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "İstanbul - Bursa Otoyolu",
+      "O-4",
+      "İzmir-Aydın yolu",
+      "35-26",
+      "Bursa Çevre Yolu",
+      "Philsa Caddesi"
+    ]
+  },
+  "istanbul-kusadasi": {
+    "distanceKm": 537.5,
+    "durationMin": 330,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "İstanbul - Bursa Otoyolu",
+      "O-4",
+      "İzmir-Aydın yolu",
+      "35-26",
+      "Bursa Çevre Yolu",
+      "Philsa Caddesi"
+    ]
+  },
+  "istanbul-oludeniz": {
+    "distanceKm": 791.5,
+    "durationMin": 535,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Muğla Fethiye Yolu",
+      "Aydın - Muğla Yolu",
+      "İstanbul - Bursa Otoyolu",
+      "O-4",
+      "İzmir - Aydın Otoyolu",
+      "35-26",
+      "Bursa Çevre Yolu",
+      "İzmir-Aydın yolu"
+    ]
+  },
+  "alanya-istanbul": {
+    "distanceKm": 787.2,
+    "durationMin": 610,
+    "roadNames": [
+      "D650",
+      "Antalya - Isparta Yolu",
+      "Antalya - Mersin Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "İstanbul - Bursa Otoyolu",
+      "O-4",
+      "Bilecik - Yenişehir Yolu",
+      "16-10",
+      "Bilecik-Eskişehir Yolu",
+      "Isparta-Burdur yolu"
+    ]
+  },
+  "istanbul-urgup": {
+    "distanceKm": 736.1,
+    "durationMin": 443,
+    "roadNames": [
+      "Anadolu Otoyolu",
+      "Ankara-Tarsus Otoyolu",
+      "Kuzey Marmara Otoyolu",
+      "Aksaray - Nevşehir Yolu",
+      "Ankara Çevre Yolu",
+      "O-4",
+      "Nevşehir-Ürgüp yolu"
+    ]
+  },
+  "goreme-istanbul": {
+    "distanceKm": 727.9,
+    "durationMin": 439,
+    "roadNames": [
+      "Anadolu Otoyolu",
+      "Ankara-Tarsus Otoyolu",
+      "Kuzey Marmara Otoyolu",
+      "Aksaray - Nevşehir Yolu",
+      "Ankara Çevre Yolu",
+      "O-4"
+    ]
+  },
+  "istanbul-uzungol": {
+    "distanceKm": 1151,
+    "durationMin": 804,
+    "roadNames": [
+      "İstanbul - Samsun Yolu",
+      "Anadolu Otoyolu",
+      "Kuzey Marmara Otoyolu",
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Samsun Çorum Yolu",
+      "Yalıncak Rize Caddesi",
+      "Ordu-Giresun yolu",
+      "Merzifon-Osmancık yolu",
+      "Of - Bayburt yolu",
+      "O-4"
+    ]
+  },
+  "istanbul-kemer": {
+    "distanceKm": 713.1,
+    "durationMin": 558,
+    "roadNames": [
+      "D650",
+      "Antalya - Burdur Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "İstanbul - Bursa Otoyolu",
+      "O-4",
+      "Afyonkarahisar - Burdur Yolu",
+      "Bilecik - Yenişehir Yolu",
+      "Kemer Yolu",
+      "16-10",
+      "Bilecik-Eskişehir Yolu",
+      "İznik - Gemlik Yolu"
+    ]
+  },
+  "belek-istanbul": {
+    "distanceKm": 692.7,
+    "durationMin": 545,
+    "roadNames": [
+      "D650",
+      "Antalya - Isparta Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "İstanbul - Bursa Otoyolu",
+      "O-4",
+      "Bilecik - Yenişehir Yolu",
+      "16-10",
+      "Bilecik-Eskişehir Yolu",
+      "Isparta-Burdur yolu",
+      "Antalya - Mersin Yolu",
+      "İznik - Gemlik Yolu"
+    ]
+  },
+  "istanbul-side": {
+    "distanceKm": 726.4,
+    "durationMin": 570,
+    "roadNames": [
+      "D650",
+      "Antalya - Isparta Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "İstanbul - Bursa Otoyolu",
+      "O-4",
+      "Antalya - Mersin Yolu",
+      "Bilecik - Yenişehir Yolu",
+      "16-10",
+      "Bilecik-Eskişehir Yolu",
+      "Isparta-Burdur yolu",
+      "İznik - Gemlik Yolu"
+    ]
+  },
+  "istanbul-manavgat": {
+    "distanceKm": 727.2,
+    "durationMin": 568,
+    "roadNames": [
+      "D650",
+      "Antalya - Isparta Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "İstanbul - Bursa Otoyolu",
+      "O-4",
+      "Antalya - Mersin Yolu",
+      "Bilecik - Yenişehir Yolu",
+      "16-10",
+      "Bilecik-Eskişehir Yolu",
+      "Isparta-Burdur yolu",
+      "İznik - Gemlik Yolu"
+    ]
+  },
+  "gocek-istanbul": {
+    "distanceKm": 749.2,
+    "durationMin": 492,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Aydın - Muğla Yolu",
+      "İstanbul - Bursa Otoyolu",
+      "Muğla Fethiye Yolu",
+      "O-4",
+      "İzmir - Aydın Otoyolu",
+      "35-26",
+      "Bursa Çevre Yolu",
+      "İzmir-Aydın yolu"
+    ]
+  },
+  "dalyan-istanbul": {
+    "distanceKm": 734.4,
+    "durationMin": 482,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Aydın - Muğla Yolu",
+      "İstanbul - Bursa Otoyolu",
+      "Muğla Fethiye Yolu",
+      "O-4",
+      "İzmir - Aydın Otoyolu",
+      "35-26",
+      "Bursa Çevre Yolu",
+      "İzmir-Aydın yolu"
+    ]
+  },
+  "istanbul-turgutreis": {
+    "distanceKm": 696.5,
+    "durationMin": 459,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "İstanbul - Bursa Otoyolu",
+      "Söke - Milas Yolu",
+      "O-4",
+      "35-26",
+      "İzmir - Aydın Otoyolu",
+      "Bursa Çevre Yolu",
+      "D525",
+      "Milas - Bodrum Yolu",
+      "İzmir-Aydın yolu"
+    ]
+  },
+  "istanbul-yalikavak": {
+    "distanceKm": 694.8,
+    "durationMin": 461,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "İstanbul - Bursa Otoyolu",
+      "Söke - Milas Yolu",
+      "O-4",
+      "35-26",
+      "İzmir - Aydın Otoyolu",
+      "Bursa Çevre Yolu",
+      "D525",
+      "Milas - Bodrum Yolu",
+      "İzmir-Aydın yolu"
+    ]
+  },
+  "didim-istanbul": {
+    "distanceKm": 601.7,
+    "durationMin": 378,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "İstanbul - Bursa Otoyolu",
+      "O-4",
+      "Söke - Milas Yolu",
+      "35-26",
+      "İzmir - Aydın Otoyolu",
+      "Bursa Çevre Yolu",
+      "D525",
+      "09-59",
+      "İzmir-Aydın yolu",
+      "Philsa Caddesi"
+    ]
+  },
+  "datca-istanbul": {
+    "distanceKm": 776.6,
+    "durationMin": 521,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Aydın - Muğla Yolu",
+      "İstanbul - Bursa Otoyolu",
+      "Marmaris Datça Yolu",
+      "O-4",
+      "İzmir - Aydın Otoyolu",
+      "Marmaris Muğla Yolu",
+      "Muğla Fethiye Yolu",
+      "35-26",
+      "Bursa Çevre Yolu",
+      "İzmir-Aydın yolu"
+    ]
+  },
+  "alacati-ankara": {
+    "distanceKm": 665.3,
+    "durationMin": 497,
+    "roadNames": [
+      "Uşak - İzmir Yolu",
+      "Ankara - Afyonkarahisar Yolu",
+      "D300",
+      "İzmir-Çeşme Otoyolu",
+      "Dumlupınar Bulvarı",
+      "Ankara - Eskişehir Yolu",
+      "Bursa-İzmir Otoyolu",
+      "D260",
+      "Afyonkarahisar - Uşak Yolu",
+      "Hacı Bayram-ı Velî Bulvarı",
+      "Nasreddin Hoca Bulvarı",
+      "Ankara Caddesi"
+    ]
+  },
+  "ankara-ayvalik": {
+    "distanceKm": 658,
+    "durationMin": 466,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Ankara - Eskişehir Yolu",
+      "Balıkesir - Edremit Yolu",
+      "Dumlupınar Bulvarı",
+      "Bursa Çevre Yolu",
+      "İnegöl - Bozüyük Yolu",
+      "İzmir - Çanakkale Yolu",
+      "Eskişehir - Aakara Yolu",
+      "Bursa - İnegöl Yolu",
+      "Eskişehir - Bozüyük Yolu",
+      "Eskişehir Çevre Yolu",
+      "Hacı Bayram-ı Velî Bulvarı"
+    ]
+  },
+  "ankara-pamukkale": {
+    "distanceKm": 471.3,
+    "durationMin": 369,
+    "roadNames": [
+      "Denizli - Afyonkarahisar Yolu",
+      "Dumlupınar Bulvarı",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Ankara - Afyonkarahisar Yolu",
+      "D260",
+      "Hacı Bayram-ı Velî Bulvarı",
+      "Nasreddin Hoca Bulvarı",
+      "Aydın-Denizli Otoyolu"
+    ]
+  },
+  "ankara-selcuk": {
+    "distanceKm": 646,
+    "durationMin": 468,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Dumlupınar Bulvarı",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Ankara - Afyonkarahisar Yolu",
+      "D260",
+      "İzmir - Aydın Yolu",
+      "Hacı Bayram-ı Velî Bulvarı",
+      "Nasreddin Hoca Bulvarı"
+    ]
+  },
+  "ankara-kusadasi": {
+    "distanceKm": 651.2,
+    "durationMin": 479,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Dumlupınar Bulvarı",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Ankara - Afyonkarahisar Yolu",
+      "D260",
+      "Hacı Bayram-ı Velî Bulvarı",
+      "Nasreddin Hoca Bulvarı",
+      "İzmir - Aydın Otoyolu"
+    ]
+  },
+  "ankara-oludeniz": {
+    "distanceKm": 625,
+    "durationMin": 502,
+    "roadNames": [
+      "Burdur - Çavdır Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Afyonkarahisar - Burdur Yolu",
+      "Dumlupınar Bulvarı",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Ankara - Afyonkarahisar Yolu",
+      "D260",
+      "Hacı Bayram-ı Velî Bulvarı",
+      "Nasreddin Hoca Bulvarı"
+    ]
+  },
+  "alanya-ankara": {
+    "distanceKm": 503,
+    "durationMin": 391,
+    "roadNames": [
+      "Ankara-Tarsus Otoyolu",
+      "Ankara Caddesi",
+      "D715",
+      "Konya-Hadim yolu",
+      "Alanya-Sarıveliler Yolu",
+      "07-33",
+      "42-65",
+      "Konya - Karaman Yolu",
+      "Karaman Caddesi",
+      "42-41",
+      "Ankara Konya Yolu",
+      "Adana Çevre Yolu Caddesi"
+    ]
+  },
+  "ankara-urgup": {
+    "distanceKm": 306.6,
+    "durationMin": 188,
+    "roadNames": [
+      "Ankara-Tarsus Otoyolu",
+      "Aksaray - Nevşehir Yolu",
+      "Nevşehir-Ürgüp yolu",
+      "Mevlana Bulvarı"
+    ]
+  },
+  "ankara-goreme": {
+    "distanceKm": 298.4,
+    "durationMin": 184,
+    "roadNames": [
+      "Ankara-Tarsus Otoyolu",
+      "Aksaray - Nevşehir Yolu",
+      "Mevlana Bulvarı"
+    ]
+  },
+  "ankara-uzungol": {
+    "distanceKm": 825.1,
+    "durationMin": 603,
+    "roadNames": [
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "Çorum-Samsun yolu",
+      "Samsun Çorum Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Yalıncak Rize Caddesi",
+      "Ordu-Giresun yolu",
+      "Kırıkkale - Yozgat Yolu",
+      "Of - Bayburt yolu",
+      "Kırıkkale Çevre Yolu",
+      "Atatürk Bulvarı"
+    ]
+  },
+  "ankara-kemer": {
+    "distanceKm": 582.1,
+    "durationMin": 430,
+    "roadNames": [
+      "D687",
+      "Konya - Beyşehir Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Ankara Caddesi",
+      "D715",
+      "Antalya - Mersin Yolu",
+      "Kemer Yolu",
+      "Serik Caddesi",
+      "Ankara Konya Yolu"
+    ]
+  },
+  "ankara-belek": {
+    "distanceKm": 505.3,
+    "durationMin": 366,
+    "roadNames": [
+      "D687",
+      "Konya - Beyşehir Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Ankara Caddesi",
+      "D715",
+      "Ankara Konya Yolu",
+      "Mevlana Bulvarı"
+    ]
+  },
+  "ankara-side": {
+    "distanceKm": 512.1,
+    "durationMin": 372,
+    "roadNames": [
+      "D687",
+      "Konya - Beyşehir Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Ankara Caddesi",
+      "D715",
+      "Antalya - Mersin Yolu",
+      "Ankara Konya Yolu",
+      "Mevlana Bulvarı"
+    ]
+  },
+  "ankara-manavgat": {
+    "distanceKm": 498.6,
+    "durationMin": 367,
+    "roadNames": [
+      "Manavgat - Seydişehir Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Konya - Seydişehir - Antalya Yolu",
+      "Ankara Caddesi",
+      "D715",
+      "Konya - Mavangat Yolu",
+      "Ankara Konya Yolu",
+      "Mevlana Bulvarı"
+    ]
+  },
+  "ankara-gocek": {
+    "distanceKm": 639.6,
+    "durationMin": 507,
+    "roadNames": [
+      "Burdur - Çavdır Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Afyonkarahisar - Burdur Yolu",
+      "Dumlupınar Bulvarı",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Fethiye - Seydikemer Yolu",
+      "Ankara - Afyonkarahisar Yolu",
+      "D260",
+      "Hacı Bayram-ı Velî Bulvarı"
+    ]
+  },
+  "ankara-dalyan": {
+    "distanceKm": 637.1,
+    "durationMin": 511,
+    "roadNames": [
+      "Denizli - Afyonkarahisar Yolu",
+      "Muğla - Kale Yolu",
+      "Dumlupınar Bulvarı",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Ankara - Afyonkarahisar Yolu",
+      "Kale - Tavas Yolu",
+      "D260",
+      "Hacı Bayram-ı Velî Bulvarı",
+      "Nasreddin Hoca Bulvarı"
+    ]
+  },
+  "ankara-turgutreis": {
+    "distanceKm": 745.8,
+    "durationMin": 570,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Dumlupınar Bulvarı",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Aydın - Muğla Yolu",
+      "Milas - Bodrum Yolu",
+      "Ankara - Afyonkarahisar Yolu",
+      "D260",
+      "Aydın - Karpuzlu Yolu"
+    ]
+  },
+  "ankara-yalikavak": {
+    "distanceKm": 744.1,
+    "durationMin": 573,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Dumlupınar Bulvarı",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Aydın - Muğla Yolu",
+      "Milas - Bodrum Yolu",
+      "Ankara - Afyonkarahisar Yolu",
+      "D260",
+      "Aydın - Karpuzlu Yolu"
+    ]
+  },
+  "ankara-didim": {
+    "distanceKm": 690.2,
+    "durationMin": 504,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Dumlupınar Bulvarı",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Söke - Milas Yolu",
+      "Ankara - Afyonkarahisar Yolu",
+      "D260",
+      "Hacı Bayram-ı Velî Bulvarı",
+      "Nasreddin Hoca Bulvarı"
+    ]
+  },
+  "ankara-datca": {
+    "distanceKm": 705.7,
+    "durationMin": 570,
+    "roadNames": [
+      "Denizli - Afyonkarahisar Yolu",
+      "Muğla - Kale Yolu",
+      "Marmaris Datça Yolu",
+      "Dumlupınar Bulvarı",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Ankara - Eskişehir Yolu",
+      "Marmaris Muğla Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Ankara - Afyonkarahisar Yolu",
+      "Kale - Tavas Yolu",
+      "D260"
+    ]
+  },
+  "alacati-izmir": {
+    "distanceKm": 78,
+    "durationMin": 55,
+    "roadNames": [
+      "İzmir-Çeşme Otoyolu",
+      "Mustafa Kemal Sahil Bulvarı"
+    ]
+  },
+  "ayvalik-izmir": {
+    "distanceKm": 156.9,
+    "durationMin": 115,
+    "roadNames": [
+      "İzmir - Çanakkale Yolu",
+      "Kuzey Ege Otoyolu",
+      "İzmir Çevre Yolu",
+      "Anadolu Caddesi",
+      "Altınyol"
+    ]
+  },
+  "izmir-pamukkale": {
+    "distanceKm": 245.7,
+    "durationMin": 149,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "İzmir - Aydın Otoyolu",
+      "Aydın Çevre Yolu",
+      "İzmir Çevre Yolu",
+      "Pamukkale Bulvarı"
+    ]
+  },
+  "izmir-selcuk": {
+    "distanceKm": 78.2,
+    "durationMin": 58,
+    "roadNames": [
+      "İzmir - Aydın Otoyolu",
+      "İzmir - Aydın Yolu",
+      "İzmir Çevre Yolu",
+      "Kemalpaşa Caddesi",
+      "Gaziler Caddesi",
+      "İzmir-Denizli Otoyolu",
+      "Izmir Aydin Yolu"
+    ]
+  },
+  "izmir-kusadasi": {
+    "distanceKm": 98.4,
+    "durationMin": 76,
+    "roadNames": [
+      "İzmir - Aydın Otoyolu",
+      "Kuşadası - Selçuk Yolu",
+      "İzmir - Aydın Yolu",
+      "Dr. Sabri Yayla Bulvarı",
+      "İzmir Çevre Yolu",
+      "Kemalpaşa Caddesi",
+      "Gaziler Caddesi",
+      "İzmir-Denizli Otoyolu"
+    ]
+  },
+  "izmir-oludeniz": {
+    "distanceKm": 348,
+    "durationMin": 274,
+    "roadNames": [
+      "Muğla Fethiye Yolu",
+      "Aydın - Muğla Yolu",
+      "İzmir - Aydın Otoyolu",
+      "Muğla-Fethiye Karayolu"
+    ]
+  },
+  "alanya-izmir": {
+    "distanceKm": 594.8,
+    "durationMin": 424,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Antalya - Mersin Yolu",
+      "Denizli - Acıpayam Yolu",
+      "İzmir - Aydın Otoyolu",
+      "Antalya - Korkuteli Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Denizli Çevre Yolu"
+    ]
+  },
+  "izmir-urgup": {
+    "distanceKm": 780,
+    "durationMin": 567,
+    "roadNames": [
+      "Uşak - İzmir Yolu",
+      "Konya-Afyon yolu",
+      "Konya - Aksaray Yolu",
+      "Aksaray - Nevşehir Yolu",
+      "Afyonkarahisar - Uşak Yolu",
+      "Yeni İstanbul Caddesi",
+      "Bursa-İzmir Otoyolu",
+      "Konya Çevre Yolu",
+      "Uşak - Afyonkarahisar Yolu",
+      "Konya-Afyonkarahisar Yolu",
+      "Ankara Caddesi",
+      "Nevşehir-Ürgüp yolu"
+    ]
+  },
+  "goreme-izmir": {
+    "distanceKm": 771.8,
+    "durationMin": 563,
+    "roadNames": [
+      "Uşak - İzmir Yolu",
+      "Konya-Afyon yolu",
+      "Konya - Aksaray Yolu",
+      "Aksaray - Nevşehir Yolu",
+      "Afyonkarahisar - Uşak Yolu",
+      "Yeni İstanbul Caddesi",
+      "Bursa-İzmir Otoyolu",
+      "Konya Çevre Yolu",
+      "Uşak - Afyonkarahisar Yolu",
+      "Konya-Afyonkarahisar Yolu",
+      "Ankara Caddesi"
+    ]
+  },
+  "izmir-uzungol": {
+    "distanceKm": 1509.8,
+    "durationMin": 995,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "İstanbul - Samsun Yolu",
+      "Anadolu Otoyolu Bekirdere Viyadüğü",
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "İstanbul - Bursa Otoyolu",
+      "Samsun Çorum Yolu",
+      "Yalıncak Rize Caddesi",
+      "Ordu-Giresun yolu",
+      "Anadolu Otoyolu",
+      "Merzifon-Osmancık yolu",
+      "Of - Bayburt yolu"
+    ]
+  },
+  "izmir-kemer": {
+    "distanceKm": 498.2,
+    "durationMin": 357,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Denizli - Acıpayam Yolu",
+      "İzmir - Aydın Otoyolu",
+      "Antalya - Korkuteli Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Denizli Çevre Yolu",
+      "Kemer Yolu"
+    ]
+  },
+  "belek-izmir": {
+    "distanceKm": 500.3,
+    "durationMin": 359,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Denizli - Acıpayam Yolu",
+      "İzmir - Aydın Otoyolu",
+      "Antalya - Korkuteli Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Denizli Çevre Yolu",
+      "Antalya - Mersin Yolu"
+    ]
+  },
+  "izmir-side": {
+    "distanceKm": 534,
+    "durationMin": 383,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Denizli - Acıpayam Yolu",
+      "İzmir - Aydın Otoyolu",
+      "Antalya - Mersin Yolu",
+      "Antalya - Korkuteli Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Denizli Çevre Yolu"
+    ]
+  },
+  "izmir-manavgat": {
+    "distanceKm": 534.8,
+    "durationMin": 382,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Denizli - Acıpayam Yolu",
+      "İzmir - Aydın Otoyolu",
+      "Antalya - Mersin Yolu",
+      "Antalya - Korkuteli Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Denizli Çevre Yolu"
+    ]
+  },
+  "gocek-izmir": {
+    "distanceKm": 305.7,
+    "durationMin": 231,
+    "roadNames": [
+      "Aydın - Muğla Yolu",
+      "İzmir - Aydın Otoyolu",
+      "Muğla Fethiye Yolu",
+      "Muğla-Fethiye Karayolu",
+      "Aydın Çevre Yolu",
+      "Muğla Çevreyolu"
+    ]
+  },
+  "dalyan-izmir": {
+    "distanceKm": 291,
+    "durationMin": 222,
+    "roadNames": [
+      "Aydın - Muğla Yolu",
+      "İzmir - Aydın Otoyolu",
+      "Muğla Fethiye Yolu",
+      "Muğla-Fethiye Karayolu",
+      "Aydın Çevre Yolu",
+      "Muğla Çevreyolu"
+    ]
+  },
+  "izmir-turgutreis": {
+    "distanceKm": 253,
+    "durationMin": 198,
+    "roadNames": [
+      "Söke - Milas Yolu",
+      "İzmir - Aydın Otoyolu",
+      "D525",
+      "Milas - Bodrum Yolu",
+      "Güvercinlik Bulvarı",
+      "Emin Anter Bulvarı",
+      "Milas Söke Yolu",
+      "Bodrum-Turgutreis Yolu",
+      "İzmir Çevre Yolu",
+      "Kıbrıs Şehitleri Caddesi"
+    ]
+  },
+  "izmir-yalikavak": {
+    "distanceKm": 251.4,
+    "durationMin": 201,
+    "roadNames": [
+      "Söke - Milas Yolu",
+      "İzmir - Aydın Otoyolu",
+      "D525",
+      "Milas - Bodrum Yolu",
+      "Güvercinlik Bulvarı",
+      "Emin Anter Bulvarı",
+      "Milas Söke Yolu",
+      "Bodrum Caddesi",
+      "İzmir Çevre Yolu",
+      "Kıbrıs Şehitleri Caddesi"
+    ]
+  },
+  "didim-izmir": {
+    "distanceKm": 158.2,
+    "durationMin": 117,
+    "roadNames": [
+      "İzmir - Aydın Otoyolu",
+      "Söke - Milas Yolu",
+      "D525",
+      "09-59",
+      "Milas Söke Yolu",
+      "İzmir Çevre Yolu",
+      "Kemalpaşa Caddesi",
+      "Gaziler Caddesi"
+    ]
+  },
+  "datca-izmir": {
+    "distanceKm": 333.2,
+    "durationMin": 261,
+    "roadNames": [
+      "Aydın - Muğla Yolu",
+      "İzmir - Aydın Otoyolu",
+      "Marmaris Datça Yolu",
+      "Marmaris Muğla Yolu",
+      "Muğla Fethiye Yolu"
+    ]
+  },
+  "alacati-antalya": {
+    "distanceKm": 532.9,
+    "durationMin": 365,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Korkuteli - Çavdır Yolu",
+      "İzmir - Aydın Otoyolu",
+      "İzmir-Çeşme Otoyolu",
+      "D350",
+      "Korkuteli - Seydikemer Yolu",
+      "Denizli Çevre Yolu",
+      "İzmir Çevre Yolu"
+    ]
+  },
+  "antalya-ayvalik": {
+    "distanceKm": 609.2,
+    "durationMin": 420,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Korkuteli - Çavdır Yolu",
+      "İzmir - Aydın Otoyolu",
+      "İzmir - Çanakkale Yolu",
+      "Kuzey Ege Otoyolu",
+      "D350",
+      "Korkuteli - Seydikemer Yolu",
+      "Denizli Çevre Yolu",
+      "İzmir Çevre Yolu"
+    ]
+  },
+  "antalya-pamukkale": {
+    "distanceKm": 235,
+    "durationMin": 192,
+    "roadNames": [
+      "Korkuteli - Çavdır Yolu",
+      "D350",
+      "Korkuteli - Seydikemer Yolu",
+      "Denizli Çevre Yolu",
+      "Pamukkale Bulvarı",
+      "Denizli - Antalya Yolu"
+    ]
+  },
+  "antalya-selcuk": {
+    "distanceKm": 405.5,
+    "durationMin": 291,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Korkuteli - Çavdır Yolu",
+      "D350",
+      "Korkuteli - Seydikemer Yolu",
+      "Denizli Çevre Yolu",
+      "İzmir - Aydın Yolu",
+      "İzmir - Aydın Otoyolu"
+    ]
+  },
+  "antalya-kusadasi": {
+    "distanceKm": 410.7,
+    "durationMin": 303,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Korkuteli - Çavdır Yolu",
+      "D350",
+      "Korkuteli - Seydikemer Yolu",
+      "Denizli Çevre Yolu",
+      "İzmir - Aydın Otoyolu",
+      "İzmir - Aydın Yolu",
+      "09-60"
+    ]
+  },
+  "antalya-oludeniz": {
+    "distanceKm": 205.2,
+    "durationMin": 181,
+    "roadNames": [
+      "D350",
+      "Korkuteli - Seydikemer Yolu",
+      "D400",
+      "Antalya - Burdur Yolu"
+    ]
+  },
+  "alanya-antalya": {
+    "distanceKm": 134.7,
+    "durationMin": 104,
+    "roadNames": [
+      "Antalya - Mersin Yolu",
+      "Serik Caddesi",
+      "Antalya Bulvarı",
+      "Aspendos Bulvarı",
+      "Gündoğdu Bulvarı"
+    ]
+  },
+  "antalya-urgup": {
+    "distanceKm": 507.9,
+    "durationMin": 387,
+    "roadNames": [
+      "D687",
+      "Konya - Aksaray Yolu",
+      "Konya - Beyşehir Yolu",
+      "Aksaray - Nevşehir Yolu",
+      "Antalya - Mersin Yolu",
+      "Nevşehir-Ürgüp yolu",
+      "Aksaray Çevre Yolu Caddesi",
+      "Serik Caddesi"
+    ]
+  },
+  "antalya-goreme": {
+    "distanceKm": 499.7,
+    "durationMin": 384,
+    "roadNames": [
+      "D687",
+      "Konya - Aksaray Yolu",
+      "Konya - Beyşehir Yolu",
+      "Aksaray - Nevşehir Yolu",
+      "Antalya - Mersin Yolu",
+      "Aksaray Çevre Yolu Caddesi",
+      "Serik Caddesi"
+    ]
+  },
+  "antalya-uzungol": {
+    "distanceKm": 1169.3,
+    "durationMin": 911,
+    "roadNames": [
+      "Erzincan - Sivas Yolu",
+      "D687",
+      "Konya - Aksaray Yolu",
+      "Sivas-Kayseri yolu",
+      "Konya - Beyşehir Yolu",
+      "Aksaray - Nevşehir Yolu",
+      "Kayseri-Sivas yolu",
+      "Kayseri-Nevşehir yolu",
+      "D260",
+      "Erzincan - Kelkit Yolu",
+      "Antalya - Mersin Yolu",
+      "69-50"
+    ]
+  },
+  "antalya-kemer": {
+    "distanceKm": 49.1,
+    "durationMin": 45,
+    "roadNames": [
+      "Kemer Yolu",
+      "D400",
+      "Hürriyet Caddesi",
+      "Akdeniz Bulvarı",
+      "Gazi Bulvarı",
+      "Ataturk Bulvarı",
+      "Adnan Menderes Bulvarı",
+      "Evliya Çelebi Caddesi",
+      "Antalya Batı Çevre Yolu",
+      "Kumluca - Kemer Yolu"
+    ]
+  },
+  "antalya-belek": {
+    "distanceKm": 40.2,
+    "durationMin": 39,
+    "roadNames": [
+      "Antalya - Mersin Yolu",
+      "Kadriye Yolu",
+      "Serik Caddesi",
+      "Aspendos Bulvarı",
+      "Turizm Caddesi"
+    ]
+  },
+  "antalya-side": {
+    "distanceKm": 74,
+    "durationMin": 64,
+    "roadNames": [
+      "Antalya - Mersin Yolu",
+      "Serik Caddesi",
+      "Aspendos Bulvarı",
+      "Gündoğdu Bulvarı"
+    ]
+  },
+  "antalya-manavgat": {
+    "distanceKm": 74.7,
+    "durationMin": 62,
+    "roadNames": [
+      "Antalya - Mersin Yolu",
+      "Serik Caddesi",
+      "Antalya Bulvarı",
+      "Aspendos Bulvarı",
+      "Gündoğdu Bulvarı",
+      "Hasan Fehmi Boztepe Caddesi",
+      "Antalya Caddesi"
+    ]
+  },
+  "antalya-gocek": {
+    "distanceKm": 219.8,
+    "durationMin": 186,
+    "roadNames": [
+      "D350",
+      "Korkuteli - Seydikemer Yolu",
+      "Fethiye - Seydikemer Yolu",
+      "D400"
+    ]
+  },
+  "antalya-dalyan": {
+    "distanceKm": 251.7,
+    "durationMin": 217,
+    "roadNames": [
+      "D350",
+      "Korkuteli - Seydikemer Yolu",
+      "Fethiye - Seydikemer Yolu",
+      "Muğla - Fethiye Yolu",
+      "D400",
+      "Dalyan Atatürk Bulvarı",
+      "Atatürk Bulvarı"
+    ]
+  },
+  "antalya-turgutreis": {
+    "distanceKm": 440.3,
+    "durationMin": 364,
+    "roadNames": [
+      "Korkuteli - Çavdır Yolu",
+      "Muğla - Kale Yolu",
+      "D350",
+      "Korkuteli - Seydikemer Yolu",
+      "Yatağan - Milas Yolu",
+      "Milas - Bodrum Yolu",
+      "Kale - Tavas Yolu",
+      "Aydın - Muğla Yolu",
+      "Denizli - Tavas Yolu"
+    ]
+  },
+  "antalya-yalikavak": {
+    "distanceKm": 438.6,
+    "durationMin": 367,
+    "roadNames": [
+      "Korkuteli - Çavdır Yolu",
+      "Muğla - Kale Yolu",
+      "D350",
+      "Korkuteli - Seydikemer Yolu",
+      "Yatağan - Milas Yolu",
+      "Milas - Bodrum Yolu",
+      "Kale - Tavas Yolu",
+      "Aydın - Muğla Yolu",
+      "Denizli - Tavas Yolu"
+    ]
+  },
+  "antalya-didim": {
+    "distanceKm": 449.7,
+    "durationMin": 328,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Korkuteli - Çavdır Yolu",
+      "D350",
+      "Korkuteli - Seydikemer Yolu",
+      "Denizli Çevre Yolu",
+      "Söke - Milas Yolu",
+      "D525",
+      "İzmir - Aydın Otoyolu",
+      "09-59"
+    ]
+  },
+  "antalya-datca": {
+    "distanceKm": 387.8,
+    "durationMin": 323,
+    "roadNames": [
+      "D350",
+      "Marmaris Datça Yolu",
+      "D400",
+      "Korkuteli - Seydikemer Yolu",
+      "Marmaris Muğla Yolu",
+      "Fethiye - Seydikemer Yolu",
+      "Muğla - Fethiye Yolu",
+      "Muğla-Fethiye Karayolu"
+    ]
+  },
+  "alacati-bursa": {
+    "distanceKm": 422.2,
+    "durationMin": 251,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "İzmir-Çeşme Otoyolu",
+      "Bursa Çevre Yolu"
+    ]
+  },
+  "ayvalik-bursa": {
+    "distanceKm": 272.7,
+    "durationMin": 175,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Balıkesir - Edremit Yolu",
+      "İzmir - Çanakkale Yolu",
+      "Bursa Çevre Yolu",
+      "Sanayi Caddesi"
+    ]
+  },
+  "bursa-pamukkale": {
+    "distanceKm": 459.1,
+    "durationMin": 300,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Denizli-Salihli yolu",
+      "Salihli - Akhisar Yolu",
+      "Aydın-Denizli Otoyolu",
+      "Bursa Çevre Yolu",
+      "Akhisar Çevre Yolu"
+    ]
+  },
+  "bursa-selcuk": {
+    "distanceKm": 384.4,
+    "durationMin": 230,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "İzmir-Aydın yolu",
+      "35-26",
+      "Philsa Caddesi",
+      "Bursa Çevre Yolu"
+    ]
+  },
+  "bursa-kusadasi": {
+    "distanceKm": 404.5,
+    "durationMin": 248,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "İzmir-Aydın yolu",
+      "35-26",
+      "Philsa Caddesi",
+      "Bursa Çevre Yolu",
+      "Kuşadası - Selçuk Yolu"
+    ]
+  },
+  "bursa-oludeniz": {
+    "distanceKm": 658.5,
+    "durationMin": 453,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Muğla Fethiye Yolu",
+      "Aydın - Muğla Yolu",
+      "İzmir - Aydın Otoyolu",
+      "35-26",
+      "İzmir-Aydın yolu"
+    ]
+  },
+  "alanya-bursa": {
+    "distanceKm": 655.1,
+    "durationMin": 524,
+    "roadNames": [
+      "D650",
+      "Antalya - Isparta Yolu",
+      "Antalya - Mersin Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "İnegöl - Bozüyük Yolu",
+      "Bursa - İnegöl Yolu",
+      "Isparta-Burdur yolu",
+      "İpek Yolu Bulvarı",
+      "Afyonkarahisar - Burdur Yolu"
+    ]
+  },
+  "bursa-urgup": {
+    "distanceKm": 660.1,
+    "durationMin": 459,
+    "roadNames": [
+      "Ankara-Tarsus Otoyolu",
+      "Ankara - Eskişehir Yolu",
+      "İnegöl - Bozüyük Yolu",
+      "Aksaray - Nevşehir Yolu",
+      "Dumlupınar Bulvarı",
+      "Eskişehir Çevre Yolu",
+      "Eskişehir - Bozüyük Yolu",
+      "Hacı Bayram-ı Velî Bulvarı",
+      "Nasreddin Hoca Bulvarı",
+      "Bursa - İnegöl Yolu",
+      "İpek Yolu Bulvarı",
+      "Nevşehir-Ürgüp yolu"
+    ]
+  },
+  "bursa-goreme": {
+    "distanceKm": 651.9,
+    "durationMin": 455,
+    "roadNames": [
+      "Ankara-Tarsus Otoyolu",
+      "Ankara - Eskişehir Yolu",
+      "İnegöl - Bozüyük Yolu",
+      "Aksaray - Nevşehir Yolu",
+      "Dumlupınar Bulvarı",
+      "Eskişehir Çevre Yolu",
+      "Eskişehir - Bozüyük Yolu",
+      "Hacı Bayram-ı Velî Bulvarı",
+      "Nasreddin Hoca Bulvarı",
+      "Bursa - İnegöl Yolu",
+      "İpek Yolu Bulvarı",
+      "Ankara Çevre Yolu"
+    ]
+  },
+  "bursa-uzungol": {
+    "distanceKm": 1187.9,
+    "durationMin": 824,
+    "roadNames": [
+      "İstanbul - Samsun Yolu",
+      "Anadolu Otoyolu Bekirdere Viyadüğü",
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "İstanbul - Bursa Otoyolu",
+      "Samsun Çorum Yolu",
+      "Yalıncak Rize Caddesi",
+      "Ordu-Giresun yolu",
+      "Anadolu Otoyolu",
+      "Merzifon-Osmancık yolu",
+      "Of - Bayburt yolu"
+    ]
+  },
+  "bursa-kemer": {
+    "distanceKm": 581,
+    "durationMin": 472,
+    "roadNames": [
+      "D650",
+      "Antalya - Burdur Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "İnegöl - Bozüyük Yolu",
+      "Afyonkarahisar - Burdur Yolu",
+      "Kemer Yolu",
+      "Bursa - İnegöl Yolu",
+      "İpek Yolu Bulvarı"
+    ]
+  },
+  "belek-bursa": {
+    "distanceKm": 560.6,
+    "durationMin": 459,
+    "roadNames": [
+      "D650",
+      "Antalya - Isparta Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "İnegöl - Bozüyük Yolu",
+      "Bursa - İnegöl Yolu",
+      "Isparta-Burdur yolu",
+      "İpek Yolu Bulvarı",
+      "Antalya - Mersin Yolu",
+      "Afyonkarahisar - Burdur Yolu"
+    ]
+  },
+  "bursa-side": {
+    "distanceKm": 594.3,
+    "durationMin": 483,
+    "roadNames": [
+      "D650",
+      "Antalya - Isparta Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "Antalya - Mersin Yolu",
+      "İnegöl - Bozüyük Yolu",
+      "Bursa - İnegöl Yolu",
+      "Isparta-Burdur yolu",
+      "İpek Yolu Bulvarı",
+      "Afyonkarahisar - Burdur Yolu"
+    ]
+  },
+  "bursa-manavgat": {
+    "distanceKm": 595.1,
+    "durationMin": 482,
+    "roadNames": [
+      "D650",
+      "Antalya - Isparta Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "Antalya - Mersin Yolu",
+      "İnegöl - Bozüyük Yolu",
+      "Bursa - İnegöl Yolu",
+      "Isparta-Burdur yolu",
+      "İpek Yolu Bulvarı",
+      "Afyonkarahisar - Burdur Yolu"
+    ]
+  },
+  "bursa-gocek": {
+    "distanceKm": 616.2,
+    "durationMin": 410,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Aydın - Muğla Yolu",
+      "Muğla Fethiye Yolu",
+      "İzmir - Aydın Otoyolu",
+      "35-26",
+      "İzmir-Aydın yolu",
+      "Philsa Caddesi",
+      "Bursa Çevre Yolu"
+    ]
+  },
+  "bursa-dalyan": {
+    "distanceKm": 601.5,
+    "durationMin": 400,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Aydın - Muğla Yolu",
+      "Muğla Fethiye Yolu",
+      "İzmir - Aydın Otoyolu",
+      "35-26",
+      "İzmir-Aydın yolu",
+      "Philsa Caddesi",
+      "Bursa Çevre Yolu",
+      "Muğla-Fethiye Karayolu"
+    ]
+  },
+  "bursa-turgutreis": {
+    "distanceKm": 563.6,
+    "durationMin": 377,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Söke - Milas Yolu",
+      "35-26",
+      "İzmir - Aydın Otoyolu",
+      "D525",
+      "Milas - Bodrum Yolu",
+      "İzmir-Aydın yolu",
+      "Philsa Caddesi",
+      "Bursa Çevre Yolu"
+    ]
+  },
+  "bursa-yalikavak": {
+    "distanceKm": 561.9,
+    "durationMin": 379,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Söke - Milas Yolu",
+      "35-26",
+      "İzmir - Aydın Otoyolu",
+      "D525",
+      "Milas - Bodrum Yolu",
+      "İzmir-Aydın yolu",
+      "Philsa Caddesi",
+      "Bursa Çevre Yolu"
+    ]
+  },
+  "bursa-didim": {
+    "distanceKm": 468.7,
+    "durationMin": 295,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Söke - Milas Yolu",
+      "35-26",
+      "İzmir - Aydın Otoyolu",
+      "D525",
+      "09-59",
+      "İzmir-Aydın yolu",
+      "Philsa Caddesi",
+      "Bursa Çevre Yolu"
+    ]
+  },
+  "bursa-datca": {
+    "distanceKm": 643.7,
+    "durationMin": 439,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Aydın - Muğla Yolu",
+      "Marmaris Datça Yolu",
+      "İzmir - Aydın Otoyolu",
+      "Marmaris Muğla Yolu",
+      "Muğla Fethiye Yolu",
+      "35-26",
+      "İzmir-Aydın yolu",
+      "Philsa Caddesi"
+    ]
+  },
+  "alacati-konya": {
+    "distanceKm": 634.9,
+    "durationMin": 461,
+    "roadNames": [
+      "Konya-Afyon yolu",
+      "Uşak - İzmir Yolu",
+      "D300",
+      "İzmir-Çeşme Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Bursa-İzmir Otoyolu",
+      "Afyonkarahisar - Uşak Yolu",
+      "Konya - Afyonkarahisar Yolu",
+      "Ankara Caddesi"
+    ]
+  },
+  "ayvalik-konya": {
+    "distanceKm": 664.1,
+    "durationMin": 488,
+    "roadNames": [
+      "Konya-Afyon yolu",
+      "Uşak - İzmir Yolu",
+      "D300",
+      "Akhisar - Bergama Yolu",
+      "Salihli - Akhisar Yolu",
+      "İzmir - Çanakkale Yolu",
+      "Yeni İstanbul Caddesi",
+      "Afyonkarahisar - Uşak Yolu",
+      "Konya - Afyonkarahisar Yolu"
+    ]
+  },
+  "konya-pamukkale": {
+    "distanceKm": 399.6,
+    "durationMin": 315,
+    "roadNames": [
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Konya - Afyonkarahisar Yolu",
+      "Aydın-Denizli Otoyolu"
+    ]
+  },
+  "konya-selcuk": {
+    "distanceKm": 574.3,
+    "durationMin": 414,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "İzmir - Aydın Yolu",
+      "İzmir - Aydın Otoyolu",
+      "Konya - Afyonkarahisar Yolu"
+    ]
+  },
+  "konya-kusadasi": {
+    "distanceKm": 579.6,
+    "durationMin": 425,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "İzmir - Aydın Otoyolu",
+      "Konya - Afyonkarahisar Yolu",
+      "İzmir - Aydın Yolu"
+    ]
+  },
+  "konya-oludeniz": {
+    "distanceKm": 469.6,
+    "durationMin": 387,
+    "roadNames": [
+      "D687",
+      "D350",
+      "Konya - Beyşehir Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Antalya - Mersin Yolu",
+      "Serik Caddesi",
+      "D400"
+    ]
+  },
+  "alanya-konya": {
+    "distanceKm": 232.7,
+    "durationMin": 211,
+    "roadNames": [
+      "Konya-Hadim yolu",
+      "Alanya-Sarıveliler Yolu",
+      "07-33",
+      "42-65",
+      "Konya - Karaman Yolu",
+      "Karaman Caddesi",
+      "42-41",
+      "D340",
+      "Konya Caddesi",
+      "Alanya Çevre Yolu"
+    ]
+  },
+  "konya-urgup": {
+    "distanceKm": 242.6,
+    "durationMin": 179,
+    "roadNames": [
+      "Konya - Aksaray Yolu",
+      "Aksaray - Nevşehir Yolu",
+      "Nevşehir-Ürgüp yolu",
+      "Aksaray Çevre Yolu Caddesi",
+      "Ankara Caddesi"
+    ]
+  },
+  "goreme-konya": {
+    "distanceKm": 234.4,
+    "durationMin": 176,
+    "roadNames": [
+      "Konya - Aksaray Yolu",
+      "Aksaray - Nevşehir Yolu",
+      "Aksaray Çevre Yolu Caddesi",
+      "Ankara Caddesi"
+    ]
+  },
+  "konya-uzungol": {
+    "distanceKm": 904,
+    "durationMin": 703,
+    "roadNames": [
+      "Erzincan - Sivas Yolu",
+      "Konya - Aksaray Yolu",
+      "Sivas-Kayseri yolu",
+      "Aksaray - Nevşehir Yolu",
+      "Kayseri-Sivas yolu",
+      "Kayseri-Nevşehir yolu",
+      "D260",
+      "Erzincan - Kelkit Yolu",
+      "69-50",
+      "Of-Bayburt Yolu"
+    ]
+  },
+  "kemer-konya": {
+    "distanceKm": 313.3,
+    "durationMin": 251,
+    "roadNames": [
+      "D687",
+      "Konya - Beyşehir Yolu",
+      "Antalya - Mersin Yolu",
+      "Kemer Yolu",
+      "Serik Caddesi",
+      "Beyşehir Caddesi"
+    ]
+  },
+  "belek-konya": {
+    "distanceKm": 236.5,
+    "durationMin": 186,
+    "roadNames": [
+      "D687",
+      "Konya - Beyşehir Yolu",
+      "Antalya - Mersin Yolu",
+      "Beyşehir Caddesi",
+      "Belek - Serik Yolu"
+    ]
+  },
+  "konya-side": {
+    "distanceKm": 243.3,
+    "durationMin": 193,
+    "roadNames": [
+      "D687",
+      "Konya - Beyşehir Yolu",
+      "Antalya - Mersin Yolu",
+      "Beyşehir Caddesi"
+    ]
+  },
+  "konya-manavgat": {
+    "distanceKm": 228,
+    "durationMin": 187,
+    "roadNames": [
+      "Manavgat - Seydişehir Yolu",
+      "Konya - Seydişehir - Antalya Yolu",
+      "Konya - Mavangat Yolu",
+      "Antalya - Mersin Yolu",
+      "D695",
+      "Yeni Meram Caddesi",
+      "Dutlu Caddesi"
+    ]
+  },
+  "gocek-konya": {
+    "distanceKm": 484.2,
+    "durationMin": 393,
+    "roadNames": [
+      "D687",
+      "D350",
+      "Konya - Beyşehir Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Antalya - Mersin Yolu",
+      "Fethiye - Seydikemer Yolu",
+      "Serik Caddesi",
+      "D400"
+    ]
+  },
+  "dalyan-konya": {
+    "distanceKm": 516.1,
+    "durationMin": 423,
+    "roadNames": [
+      "D687",
+      "D350",
+      "Konya - Beyşehir Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Antalya - Mersin Yolu",
+      "Fethiye - Seydikemer Yolu",
+      "Muğla - Fethiye Yolu",
+      "Serik Caddesi",
+      "D400"
+    ]
+  },
+  "konya-turgutreis": {
+    "distanceKm": 674.1,
+    "durationMin": 516,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Aydın - Muğla Yolu",
+      "Milas - Bodrum Yolu",
+      "Aydın - Karpuzlu Yolu",
+      "Konya - Afyonkarahisar Yolu",
+      "48-78"
+    ]
+  },
+  "konya-yalikavak": {
+    "distanceKm": 672.4,
+    "durationMin": 519,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Aydın - Muğla Yolu",
+      "Milas - Bodrum Yolu",
+      "Aydın - Karpuzlu Yolu",
+      "Konya - Afyonkarahisar Yolu",
+      "48-78"
+    ]
+  },
+  "didim-konya": {
+    "distanceKm": 618.6,
+    "durationMin": 451,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Söke - Milas Yolu",
+      "D525",
+      "İzmir - Aydın Otoyolu",
+      "Konya - Afyonkarahisar Yolu",
+      "09-59"
+    ]
+  },
+  "datca-konya": {
+    "distanceKm": 634,
+    "durationMin": 516,
+    "roadNames": [
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Muğla - Kale Yolu",
+      "Marmaris Datça Yolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Marmaris Muğla Yolu",
+      "Kale - Tavas Yolu",
+      "Konya - Afyonkarahisar Yolu",
+      "Denizli - Tavas Yolu",
+      "Denizli Çevreyolu"
+    ]
+  },
+  "adana-alacati": {
+    "distanceKm": 973.2,
+    "durationMin": 684,
+    "roadNames": [
+      "Adana - Konya Yolu",
+      "Konya-Afyon yolu",
+      "Uşak - İzmir Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "D300",
+      "İzmir-Çeşme Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Bursa-İzmir Otoyolu",
+      "Pozantı - Afyonkarahisar Otoyolu",
+      "Adana-Silifke Otoyolu",
+      "Afyonkarahisar - Uşak Yolu",
+      "Konya - Afyonkarahisar Yolu"
+    ]
+  },
+  "adana-ayvalik": {
+    "distanceKm": 1002.4,
+    "durationMin": 712,
+    "roadNames": [
+      "Adana - Konya Yolu",
+      "Konya-Afyon yolu",
+      "Uşak - İzmir Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "D300",
+      "Akhisar - Bergama Yolu",
+      "Salihli - Akhisar Yolu",
+      "İzmir - Çanakkale Yolu",
+      "Yeni İstanbul Caddesi",
+      "Pozantı - Afyonkarahisar Otoyolu",
+      "Adana-Silifke Otoyolu",
+      "Afyonkarahisar - Uşak Yolu"
+    ]
+  },
+  "adana-pamukkale": {
+    "distanceKm": 737.9,
+    "durationMin": 538,
+    "roadNames": [
+      "Adana - Konya Yolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Pozantı - Afyonkarahisar Otoyolu",
+      "Adana-Silifke Otoyolu",
+      "Konya - Afyonkarahisar Yolu"
+    ]
+  },
+  "adana-selcuk": {
+    "distanceKm": 912.6,
+    "durationMin": 637,
+    "roadNames": [
+      "Adana - Konya Yolu",
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Pozantı - Afyonkarahisar Otoyolu",
+      "Adana-Silifke Otoyolu",
+      "İzmir - Aydın Yolu",
+      "İzmir - Aydın Otoyolu"
+    ]
+  },
+  "adana-kusadasi": {
+    "distanceKm": 917.8,
+    "durationMin": 649,
+    "roadNames": [
+      "Adana - Konya Yolu",
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Pozantı - Afyonkarahisar Otoyolu",
+      "Adana-Silifke Otoyolu",
+      "İzmir - Aydın Otoyolu"
+    ]
+  },
+  "adana-oludeniz": {
+    "distanceKm": 745.8,
+    "durationMin": 591,
+    "roadNames": [
+      "Antalya-Mersin Yolu",
+      "D350",
+      "Mersin-Antalya Yolu",
+      "Adana-Silifke Otoyolu",
+      "D400",
+      "Korkuteli - Seydikemer Yolu",
+      "Mersin Karayolu",
+      "Eski Antalya - Mersin Yolu",
+      "Eski Mersin - Antalya Yolu",
+      "Serik Caddesi"
+    ]
+  },
+  "adana-alanya": {
+    "distanceKm": 406.9,
+    "durationMin": 311,
+    "roadNames": [
+      "Adana-Silifke Otoyolu",
+      "Mersin-Antalya Yolu",
+      "Antalya-Mersin Yolu",
+      "Mersin Karayolu",
+      "Eski Antalya - Mersin Yolu",
+      "Eski Mersin - Antalya Yolu",
+      "Alparslan Türkeş Bulvarı",
+      "Silifke Caddesi"
+    ]
+  },
+  "adana-urgup": {
+    "distanceKm": 272.9,
+    "durationMin": 179,
+    "roadNames": [
+      "Ankara-Tarsus Otoyolu",
+      "Niğde - Nevşehir Yolu",
+      "Nevşehir-Niğde yolu",
+      "Adana-Silifke Otoyolu",
+      "Nevşehir-Ürgüp yolu"
+    ]
+  },
+  "adana-goreme": {
+    "distanceKm": 264.7,
+    "durationMin": 175,
+    "roadNames": [
+      "Ankara-Tarsus Otoyolu",
+      "Niğde - Nevşehir Yolu",
+      "Nevşehir-Niğde yolu",
+      "Adana-Silifke Otoyolu"
+    ]
+  },
+  "adana-uzungol": {
+    "distanceKm": 904.4,
+    "durationMin": 678,
+    "roadNames": [
+      "Erzincan - Sivas Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Kayseri-Niğde yolu",
+      "Sivas-Kayseri yolu",
+      "Kayseri-Sivas yolu",
+      "D260",
+      "Erzincan - Kelkit Yolu",
+      "69-50",
+      "Adana-Silifke Otoyolu",
+      "Of-Bayburt Yolu"
+    ]
+  },
+  "adana-kemer": {
+    "distanceKm": 589.4,
+    "durationMin": 455,
+    "roadNames": [
+      "Antalya-Mersin Yolu",
+      "Mersin-Antalya Yolu",
+      "Adana-Silifke Otoyolu",
+      "D400",
+      "Kemer Yolu",
+      "Mersin Karayolu",
+      "Serik Caddesi",
+      "Eski Antalya - Mersin Yolu",
+      "Eski Mersin - Antalya Yolu",
+      "Alparslan Türkeş Bulvarı"
+    ]
+  },
+  "adana-belek": {
+    "distanceKm": 512.6,
+    "durationMin": 390,
+    "roadNames": [
+      "Antalya-Mersin Yolu",
+      "Mersin-Antalya Yolu",
+      "Adana-Silifke Otoyolu",
+      "D400",
+      "Mersin Karayolu",
+      "Eski Antalya - Mersin Yolu",
+      "Eski Mersin - Antalya Yolu",
+      "Alparslan Türkeş Bulvarı"
+    ]
+  },
+  "adana-side": {
+    "distanceKm": 474.4,
+    "durationMin": 362,
+    "roadNames": [
+      "Mersin-Antalya Yolu",
+      "Antalya-Mersin Yolu",
+      "Adana-Silifke Otoyolu",
+      "D400",
+      "Mersin Karayolu",
+      "Eski Antalya - Mersin Yolu",
+      "Eski Mersin - Antalya Yolu",
+      "Alparslan Türkeş Bulvarı"
+    ]
+  },
+  "adana-manavgat": {
+    "distanceKm": 468.1,
+    "durationMin": 355,
+    "roadNames": [
+      "Mersin-Antalya Yolu",
+      "Antalya-Mersin Yolu",
+      "Adana-Silifke Otoyolu",
+      "D400",
+      "Mersin Karayolu",
+      "Eski Antalya - Mersin Yolu",
+      "Eski Mersin - Antalya Yolu",
+      "Alparslan Türkeş Bulvarı",
+      "Silifke Caddesi"
+    ]
+  },
+  "adana-gocek": {
+    "distanceKm": 760.3,
+    "durationMin": 596,
+    "roadNames": [
+      "Antalya-Mersin Yolu",
+      "D350",
+      "Mersin-Antalya Yolu",
+      "Adana-Silifke Otoyolu",
+      "D400",
+      "Korkuteli - Seydikemer Yolu",
+      "Fethiye - Seydikemer Yolu",
+      "Mersin Karayolu",
+      "Eski Antalya - Mersin Yolu",
+      "Eski Mersin - Antalya Yolu",
+      "Serik Caddesi"
+    ]
+  },
+  "adana-dalyan": {
+    "distanceKm": 792.2,
+    "durationMin": 627,
+    "roadNames": [
+      "Antalya-Mersin Yolu",
+      "D350",
+      "Mersin-Antalya Yolu",
+      "Adana-Silifke Otoyolu",
+      "D400",
+      "Korkuteli - Seydikemer Yolu",
+      "Fethiye - Seydikemer Yolu",
+      "Mersin Karayolu",
+      "Muğla - Fethiye Yolu",
+      "Eski Antalya - Mersin Yolu",
+      "Eski Mersin - Antalya Yolu"
+    ]
+  },
+  "adana-turgutreis": {
+    "distanceKm": 1012.4,
+    "durationMin": 740,
+    "roadNames": [
+      "Adana - Konya Yolu",
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Pozantı - Afyonkarahisar Otoyolu",
+      "Adana-Silifke Otoyolu",
+      "Aydın - Muğla Yolu",
+      "Milas - Bodrum Yolu"
+    ]
+  },
+  "adana-yalikavak": {
+    "distanceKm": 1010.7,
+    "durationMin": 742,
+    "roadNames": [
+      "Adana - Konya Yolu",
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Pozantı - Afyonkarahisar Otoyolu",
+      "Adana-Silifke Otoyolu",
+      "Aydın - Muğla Yolu",
+      "Milas - Bodrum Yolu"
+    ]
+  },
+  "adana-didim": {
+    "distanceKm": 956.8,
+    "durationMin": 674,
+    "roadNames": [
+      "Adana - Konya Yolu",
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Pozantı - Afyonkarahisar Otoyolu",
+      "Adana-Silifke Otoyolu",
+      "Söke - Milas Yolu",
+      "D525"
+    ]
+  },
+  "adana-datca": {
+    "distanceKm": 928.4,
+    "durationMin": 733,
+    "roadNames": [
+      "Antalya-Mersin Yolu",
+      "D350",
+      "Mersin-Antalya Yolu",
+      "Adana-Silifke Otoyolu",
+      "D400",
+      "Marmaris Datça Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Marmaris Muğla Yolu",
+      "Fethiye - Seydikemer Yolu",
+      "Muğla - Fethiye Yolu"
+    ]
+  },
+  "alacati-kayseri": {
+    "distanceKm": 921,
+    "durationMin": 666,
+    "roadNames": [
+      "Konya-Afyon yolu",
+      "Uşak - İzmir Yolu",
+      "D300",
+      "Konya - Aksaray Yolu",
+      "İzmir-Çeşme Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Bursa-İzmir Otoyolu",
+      "Konya Çevre Yolu",
+      "Aksaray-Nevşehir yolu",
+      "Afyonkarahisar - Uşak Yolu",
+      "Konya - Afyonkarahisar Yolu",
+      "Nevşehir - Aksaray Yolu"
+    ]
+  },
+  "ayvalik-kayseri": {
+    "distanceKm": 974.6,
+    "durationMin": 654,
+    "roadNames": [
+      "Ankara-Tarsus Otoyolu",
+      "Bursa-İzmir Otoyolu",
+      "Ankara - Eskişehir Yolu",
+      "Balıkesir - Edremit Yolu",
+      "Kayseri-Kırıkkale yolu",
+      "Bursa Çevre Yolu",
+      "İnegöl - Bozüyük Yolu",
+      "İzmir - Çanakkale Yolu",
+      "D260; D805",
+      "Ağaçören - Kırşehir Bağlantısı",
+      "Dumlupınar Bulvarı",
+      "Eskişehir - Aakara Yolu"
+    ]
+  },
+  "kayseri-pamukkale": {
+    "distanceKm": 685.7,
+    "durationMin": 520,
+    "roadNames": [
+      "Konya - Aksaray Yolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "D300",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Yeni İstanbul Caddesi",
+      "Konya Çevre Yolu",
+      "Aksaray-Nevşehir yolu",
+      "Nevşehir - Aksaray Yolu",
+      "Konya - Afyonkarahisar Yolu",
+      "Nevşehir-Ürgüp yolu"
+    ]
+  },
+  "kayseri-selcuk": {
+    "distanceKm": 860.4,
+    "durationMin": 619,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Konya - Aksaray Yolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "D300",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Yeni İstanbul Caddesi",
+      "Konya Çevre Yolu",
+      "İzmir - Aydın Yolu",
+      "Aksaray-Nevşehir yolu",
+      "Nevşehir - Aksaray Yolu"
+    ]
+  },
+  "kayseri-kusadasi": {
+    "distanceKm": 865.6,
+    "durationMin": 631,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Konya - Aksaray Yolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "D300",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Yeni İstanbul Caddesi",
+      "Konya Çevre Yolu",
+      "Aksaray-Nevşehir yolu",
+      "Nevşehir - Aksaray Yolu",
+      "İzmir - Aydın Otoyolu"
+    ]
+  },
+  "kayseri-oludeniz": {
+    "distanceKm": 776.1,
+    "durationMin": 609,
+    "roadNames": [
+      "D687",
+      "D350",
+      "Konya - Aksaray Yolu",
+      "Konya - Beyşehir Yolu",
+      "D300",
+      "Korkuteli - Seydikemer Yolu",
+      "Antalya - Mersin Yolu",
+      "Aksaray-Nevşehir yolu",
+      "Nevşehir - Aksaray Yolu",
+      "Nevşehir-Ürgüp yolu",
+      "Serik Caddesi",
+      "Aksaray Çevre Yolu Caddesi"
+    ]
+  },
+  "alanya-kayseri": {
+    "distanceKm": 531.5,
+    "durationMin": 428,
+    "roadNames": [
+      "D300; D805",
+      "D350",
+      "Ankara-Tarsus Otoyolu",
+      "Adana - Konya Yolu",
+      "Alanya-Sarıveliler Yolu",
+      "Karaman - Konya Yolu",
+      "Pozantı - Afyonkarahisar Otoyolu",
+      "Konya-Hadim yolu",
+      "07-33",
+      "42-65",
+      "Güneysınır Caddesi",
+      "Osman Kavuncu Bulvarı"
+    ]
+  },
+  "kayseri-urgup": {
+    "distanceKm": 66,
+    "durationMin": 49,
+    "roadNames": [
+      "D300",
+      "Osman Kavuncu Bulvarı",
+      "D300; D805",
+      "Ürgüp-Kayseri yolu",
+      "Kocasinan Bulvarı"
+    ]
+  },
+  "goreme-kayseri": {
+    "distanceKm": 74.4,
+    "durationMin": 58,
+    "roadNames": [
+      "D300",
+      "Osman Kavuncu Bulvarı",
+      "D300; D805",
+      "Ürgüp-Kayseri yolu",
+      "Nevşehir-Ürgüp yolu",
+      "Ahmet Taner Kışlalı Caddesi"
+    ]
+  },
+  "kayseri-uzungol": {
+    "distanceKm": 606,
+    "durationMin": 479,
+    "roadNames": [
+      "Erzincan - Sivas Yolu",
+      "Sivas-Kayseri yolu",
+      "Kayseri-Sivas yolu",
+      "D260",
+      "Erzincan - Kelkit Yolu",
+      "69-50",
+      "Of-Bayburt Yolu",
+      "29-30",
+      "Köse - Bayburt Yolu",
+      "Sultanşehir Bulvarı"
+    ]
+  },
+  "kayseri-kemer": {
+    "distanceKm": 619.7,
+    "durationMin": 473,
+    "roadNames": [
+      "D687",
+      "Konya - Aksaray Yolu",
+      "Konya - Beyşehir Yolu",
+      "D300",
+      "Antalya - Mersin Yolu",
+      "Aksaray-Nevşehir yolu",
+      "Kemer Yolu",
+      "Nevşehir - Aksaray Yolu",
+      "Serik Caddesi",
+      "Nevşehir-Ürgüp yolu",
+      "Aksaray Çevre Yolu Caddesi",
+      "Osman Kavuncu Bulvarı"
+    ]
+  },
+  "belek-kayseri": {
+    "distanceKm": 542.9,
+    "durationMin": 409,
+    "roadNames": [
+      "D687",
+      "Konya - Aksaray Yolu",
+      "Konya - Beyşehir Yolu",
+      "D300",
+      "Aksaray-Nevşehir yolu",
+      "Nevşehir - Aksaray Yolu",
+      "Nevşehir-Ürgüp yolu",
+      "Aksaray Çevre Yolu Caddesi",
+      "Osman Kavuncu Bulvarı"
+    ]
+  },
+  "kayseri-side": {
+    "distanceKm": 549.7,
+    "durationMin": 416,
+    "roadNames": [
+      "D687",
+      "Konya - Aksaray Yolu",
+      "Konya - Beyşehir Yolu",
+      "D300",
+      "Aksaray-Nevşehir yolu",
+      "Nevşehir - Aksaray Yolu",
+      "Nevşehir-Ürgüp yolu",
+      "Aksaray Çevre Yolu Caddesi",
+      "Antalya - Mersin Yolu",
+      "Osman Kavuncu Bulvarı"
+    ]
+  },
+  "kayseri-manavgat": {
+    "distanceKm": 536.2,
+    "durationMin": 411,
+    "roadNames": [
+      "Konya - Aksaray Yolu",
+      "Manavgat - Seydişehir Yolu",
+      "Konya - Seydişehir - Antalya Yolu",
+      "D300",
+      "Aksaray-Nevşehir yolu",
+      "Konya - Mavangat Yolu",
+      "Nevşehir - Aksaray Yolu",
+      "Nevşehir-Ürgüp yolu",
+      "Aksaray Çevre Yolu Caddesi",
+      "Osman Kavuncu Bulvarı"
+    ]
+  },
+  "gocek-kayseri": {
+    "distanceKm": 790.6,
+    "durationMin": 615,
+    "roadNames": [
+      "D687",
+      "D350",
+      "Konya - Aksaray Yolu",
+      "Konya - Beyşehir Yolu",
+      "D300",
+      "Korkuteli - Seydikemer Yolu",
+      "Antalya - Mersin Yolu",
+      "Fethiye - Seydikemer Yolu",
+      "Aksaray-Nevşehir yolu",
+      "Nevşehir - Aksaray Yolu",
+      "Nevşehir-Ürgüp yolu"
+    ]
+  },
+  "dalyan-kayseri": {
+    "distanceKm": 822.5,
+    "durationMin": 646,
+    "roadNames": [
+      "D687",
+      "D350",
+      "Konya - Aksaray Yolu",
+      "Konya - Beyşehir Yolu",
+      "D300",
+      "Korkuteli - Seydikemer Yolu",
+      "Antalya - Mersin Yolu",
+      "Fethiye - Seydikemer Yolu",
+      "Aksaray-Nevşehir yolu",
+      "Nevşehir - Aksaray Yolu",
+      "Muğla - Fethiye Yolu",
+      "Nevşehir-Ürgüp yolu"
+    ]
+  },
+  "kayseri-turgutreis": {
+    "distanceKm": 960.2,
+    "durationMin": 721,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Konya - Aksaray Yolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "D300",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Yeni İstanbul Caddesi",
+      "Konya Çevre Yolu",
+      "Aydın - Muğla Yolu",
+      "Milas - Bodrum Yolu",
+      "Aydın - Karpuzlu Yolu"
+    ]
+  },
+  "kayseri-yalikavak": {
+    "distanceKm": 958.5,
+    "durationMin": 724,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Konya - Aksaray Yolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "D300",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Yeni İstanbul Caddesi",
+      "Konya Çevre Yolu",
+      "Aydın - Muğla Yolu",
+      "Milas - Bodrum Yolu",
+      "Aydın - Karpuzlu Yolu"
+    ]
+  },
+  "didim-kayseri": {
+    "distanceKm": 904.6,
+    "durationMin": 656,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Konya - Aksaray Yolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "D300",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Yeni İstanbul Caddesi",
+      "Konya Çevre Yolu",
+      "Söke - Milas Yolu",
+      "Aksaray-Nevşehir yolu",
+      "Nevşehir - Aksaray Yolu"
+    ]
+  },
+  "datca-kayseri": {
+    "distanceKm": 920,
+    "durationMin": 721,
+    "roadNames": [
+      "Konya - Aksaray Yolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Muğla - Kale Yolu",
+      "Marmaris Datça Yolu",
+      "D300",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Marmaris Muğla Yolu",
+      "Yeni İstanbul Caddesi",
+      "Konya Çevre Yolu",
+      "Kale - Tavas Yolu"
+    ]
+  },
+  "alacati-gaziantep": {
+    "distanceKm": 1190.5,
+    "durationMin": 812,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Adana - Konya Yolu",
+      "Konya-Afyon yolu",
+      "Uşak - İzmir Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "D300",
+      "İzmir-Çeşme Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Bursa-İzmir Otoyolu",
+      "Pozantı - Afyonkarahisar Otoyolu"
+    ]
+  },
+  "ayvalik-gaziantep": {
+    "distanceKm": 1428.6,
+    "durationMin": 839,
+    "roadNames": [
+      "Ankara-Tarsus Otoyolu",
+      "Anadolu Otoyolu",
+      "Adana-Şanlıurfa Otoyolu",
+      "Bursa-İzmir Otoyolu",
+      "İstanbul - Bursa Otoyolu",
+      "Balıkesir - Edremit Yolu",
+      "İzmir - Çanakkale Yolu",
+      "Ankara Çevre Yolu",
+      "Anadolu Otoyolu Çınarlıdere Viyadüğü"
+    ]
+  },
+  "gaziantep-pamukkale": {
+    "distanceKm": 955.2,
+    "durationMin": 666,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Adana - Konya Yolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Pozantı - Afyonkarahisar Otoyolu"
+    ]
+  },
+  "gaziantep-selcuk": {
+    "distanceKm": 1129.9,
+    "durationMin": 765,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Adana - Konya Yolu",
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Pozantı - Afyonkarahisar Otoyolu",
+      "İzmir - Aydın Yolu"
+    ]
+  },
+  "gaziantep-kusadasi": {
+    "distanceKm": 1135.1,
+    "durationMin": 777,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Adana - Konya Yolu",
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Pozantı - Afyonkarahisar Otoyolu"
+    ]
+  },
+  "gaziantep-oludeniz": {
+    "distanceKm": 963.1,
+    "durationMin": 719,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Antalya-Mersin Yolu",
+      "D350",
+      "Mersin-Antalya Yolu",
+      "D400",
+      "Korkuteli - Seydikemer Yolu"
+    ]
+  },
+  "alanya-gaziantep": {
+    "distanceKm": 624.2,
+    "durationMin": 440,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Mersin-Antalya Yolu",
+      "Antalya-Mersin Yolu",
+      "Mersin Karayolu",
+      "Eski Antalya - Mersin Yolu",
+      "Eski Mersin - Antalya Yolu"
+    ]
+  },
+  "gaziantep-urgup": {
+    "distanceKm": 395.4,
+    "durationMin": 291,
+    "roadNames": [
+      "D300",
+      "Kayseri-Kahramanmaraş yolu",
+      "Pınarbaşı-Adana yolu",
+      "Kahramanmaraş-Gaziantep Yolu",
+      "Gaziantep - Kahramanmaraş Yolu",
+      "Osman Kavuncu Bulvarı",
+      "Batı Çevre Yolu Bulvarı",
+      "Pınarbaşı-Sarız yolu",
+      "Gaziantep-Osmaniye yolu",
+      "D300; D805",
+      "D835",
+      "Bahattin Karakoç Tüneli"
+    ]
+  },
+  "gaziantep-goreme": {
+    "distanceKm": 403.9,
+    "durationMin": 300,
+    "roadNames": [
+      "D300",
+      "Kayseri-Kahramanmaraş yolu",
+      "Pınarbaşı-Adana yolu",
+      "Kahramanmaraş-Gaziantep Yolu",
+      "Gaziantep - Kahramanmaraş Yolu",
+      "Osman Kavuncu Bulvarı",
+      "Batı Çevre Yolu Bulvarı",
+      "Pınarbaşı-Sarız yolu",
+      "Gaziantep-Osmaniye yolu",
+      "D300; D805",
+      "D835",
+      "Ürgüp-Kayseri yolu"
+    ]
+  },
+  "gaziantep-uzungol": {
+    "distanceKm": 735.8,
+    "durationMin": 615,
+    "roadNames": [
+      "D877",
+      "Malatya-Gaziantep yolu",
+      "Malatya-Keban yolu",
+      "Erzincan - Sivas Yolu",
+      "Gaziantep - Malatya yolu",
+      "Erzincan - Kelkit Yolu",
+      "69-50",
+      "Kemaliye - İliç yolu",
+      "Of-Bayburt Yolu",
+      "Kahramanmaraş-Malatya Yolu",
+      "Keban-Arapgir yolu;Malatya-Keban yolu",
+      "Malatya-Kahramanmaraş yolu"
+    ]
+  },
+  "gaziantep-kemer": {
+    "distanceKm": 806.7,
+    "durationMin": 583,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Antalya-Mersin Yolu",
+      "Mersin-Antalya Yolu",
+      "D400",
+      "Kemer Yolu",
+      "Mersin Karayolu",
+      "Serik Caddesi",
+      "Eski Antalya - Mersin Yolu",
+      "Eski Mersin - Antalya Yolu"
+    ]
+  },
+  "belek-gaziantep": {
+    "distanceKm": 729.9,
+    "durationMin": 518,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Antalya-Mersin Yolu",
+      "Mersin-Antalya Yolu",
+      "D400",
+      "Mersin Karayolu",
+      "Eski Antalya - Mersin Yolu",
+      "Eski Mersin - Antalya Yolu"
+    ]
+  },
+  "gaziantep-side": {
+    "distanceKm": 691.7,
+    "durationMin": 490,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Mersin-Antalya Yolu",
+      "Antalya-Mersin Yolu",
+      "D400",
+      "Mersin Karayolu",
+      "Eski Antalya - Mersin Yolu",
+      "Eski Mersin - Antalya Yolu"
+    ]
+  },
+  "gaziantep-manavgat": {
+    "distanceKm": 685.4,
+    "durationMin": 484,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Mersin-Antalya Yolu",
+      "Antalya-Mersin Yolu",
+      "D400",
+      "Mersin Karayolu",
+      "Eski Antalya - Mersin Yolu",
+      "Eski Mersin - Antalya Yolu"
+    ]
+  },
+  "gaziantep-gocek": {
+    "distanceKm": 977.6,
+    "durationMin": 725,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Antalya-Mersin Yolu",
+      "D350",
+      "Mersin-Antalya Yolu",
+      "D400",
+      "Korkuteli - Seydikemer Yolu",
+      "Fethiye - Seydikemer Yolu"
+    ]
+  },
+  "dalyan-gaziantep": {
+    "distanceKm": 1009.5,
+    "durationMin": 755,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Antalya-Mersin Yolu",
+      "D350",
+      "Mersin-Antalya Yolu",
+      "D400",
+      "Korkuteli - Seydikemer Yolu",
+      "Fethiye - Seydikemer Yolu"
+    ]
+  },
+  "gaziantep-turgutreis": {
+    "distanceKm": 1229.7,
+    "durationMin": 868,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Adana - Konya Yolu",
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Pozantı - Afyonkarahisar Otoyolu",
+      "Aydın - Muğla Yolu",
+      "Milas - Bodrum Yolu"
+    ]
+  },
+  "gaziantep-yalikavak": {
+    "distanceKm": 1228,
+    "durationMin": 870,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Adana - Konya Yolu",
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Pozantı - Afyonkarahisar Otoyolu",
+      "Aydın - Muğla Yolu",
+      "Milas - Bodrum Yolu"
+    ]
+  },
+  "didim-gaziantep": {
+    "distanceKm": 1174.1,
+    "durationMin": 802,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Adana - Konya Yolu",
+      "Aydın-Denizli Otoyolu",
+      "Konya-Afyon yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Ankara-Tarsus Otoyolu",
+      "Yeni İstanbul Caddesi",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Pozantı - Afyonkarahisar Otoyolu",
+      "Söke - Milas Yolu"
+    ]
+  },
+  "datca-gaziantep": {
+    "distanceKm": 1145.7,
+    "durationMin": 862,
+    "roadNames": [
+      "Adana-Şanlıurfa Otoyolu",
+      "Antalya-Mersin Yolu",
+      "D350",
+      "Mersin-Antalya Yolu",
+      "D400",
+      "Marmaris Datça Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Marmaris Muğla Yolu",
+      "Fethiye - Seydikemer Yolu",
+      "Muğla - Fethiye Yolu"
+    ]
+  },
+  "alacati-samsun": {
+    "distanceKm": 1082.7,
+    "durationMin": 789,
+    "roadNames": [
+      "Uşak - İzmir Yolu",
+      "Çorum-Kırıkkale yolu",
+      "Ankara - Afyonkarahisar Yolu",
+      "D300",
+      "İzmir-Çeşme Otoyolu",
+      "Çorum-Samsun yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Samsun-Erzincan yolu",
+      "Ankara - Eskişehir Yolu",
+      "Kırıkkale - Yozgat Yolu",
+      "Dumlupınar Bulvarı"
+    ]
+  },
+  "ayvalik-samsun": {
+    "distanceKm": 1013.7,
+    "durationMin": 661,
+    "roadNames": [
+      "Anadolu Otoyolu",
+      "Ömer Derindere Bulvarı",
+      "Bursa-İzmir Otoyolu",
+      "İstanbul-Samsun yolu",
+      "İstanbul - Bursa Otoyolu",
+      "Balıkesir - Edremit Yolu",
+      "İzmir - Çanakkale Yolu",
+      "Samsun-Erzincan yolu",
+      "Anadolu Otoyolu Çınarlıdere Viyadüğü",
+      "D100",
+      "Samsun Çorum Yolu"
+    ]
+  },
+  "pamukkale-samsun": {
+    "distanceKm": 888.7,
+    "durationMin": 661,
+    "roadNames": [
+      "Çorum-Kırıkkale yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Çorum-Samsun yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Kırıkkale - Yozgat Yolu",
+      "Dumlupınar Bulvarı"
+    ]
+  },
+  "samsun-selcuk": {
+    "distanceKm": 1063.3,
+    "durationMin": 760,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Çorum-Kırıkkale yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Çorum-Samsun yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Kırıkkale - Yozgat Yolu"
+    ]
+  },
+  "kusadasi-samsun": {
+    "distanceKm": 1068.6,
+    "durationMin": 772,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Çorum-Kırıkkale yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Çorum-Samsun yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Kırıkkale - Yozgat Yolu"
+    ]
+  },
+  "oludeniz-samsun": {
+    "distanceKm": 1042.4,
+    "durationMin": 794,
+    "roadNames": [
+      "Çorum-Kırıkkale yolu",
+      "Burdur - Çavdır Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Çorum-Samsun yolu",
+      "Afyonkarahisar - Burdur Yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu"
+    ]
+  },
+  "alanya-samsun": {
+    "distanceKm": 817.3,
+    "durationMin": 628,
+    "roadNames": [
+      "Çorum-Kırıkkale yolu",
+      "D753",
+      "D715",
+      "Ankara Caddesi",
+      "Konya-Hadim yolu",
+      "Çorum-Samsun yolu",
+      "Samsun-Erzincan yolu",
+      "Kırıkkale - Yozgat Yolu",
+      "Alanya-Sarıveliler Yolu",
+      "Samsun Çorum Yolu",
+      "07-33",
+      "42-65"
+    ]
+  },
+  "samsun-urgup": {
+    "distanceKm": 455.5,
+    "durationMin": 346,
+    "roadNames": [
+      "Yozgat-Kayseri yolu",
+      "Çorum-Samsun yolu",
+      "Çorum-Yozgat yolu",
+      "Samsun-Erzincan yolu",
+      "Yozgat - Sivas Yolu",
+      "Samsun Çorum Yolu",
+      "D795",
+      "Avanos-Kalaba yolu",
+      "Amasya-Samsun yolu",
+      "D100",
+      "Nevzat Şener Bulvarı",
+      "Anadolu Bulvarı"
+    ]
+  },
+  "goreme-samsun": {
+    "distanceKm": 454,
+    "durationMin": 345,
+    "roadNames": [
+      "Yozgat-Kayseri yolu",
+      "Çorum-Samsun yolu",
+      "Çorum-Yozgat yolu",
+      "Samsun-Erzincan yolu",
+      "Yozgat - Sivas Yolu",
+      "Samsun Çorum Yolu",
+      "D795",
+      "Avanos-Kalaba yolu",
+      "Amasya-Samsun yolu",
+      "D100",
+      "Nevzat Şener Bulvarı",
+      "Anadolu Bulvarı"
+    ]
+  },
+  "samsun-uzungol": {
+    "distanceKm": 420.9,
+    "durationMin": 311,
+    "roadNames": [
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Yalıncak Rize Caddesi",
+      "Ordu-Giresun yolu",
+      "Of - Bayburt yolu",
+      "Atatürk Bulvarı",
+      "Yunus Emre Blv.",
+      "61-30"
+    ]
+  },
+  "kemer-samsun": {
+    "distanceKm": 896.4,
+    "durationMin": 668,
+    "roadNames": [
+      "D687",
+      "Çorum-Kırıkkale yolu",
+      "Konya - Beyşehir Yolu",
+      "D753",
+      "D715",
+      "Ankara Caddesi",
+      "Çorum-Samsun yolu",
+      "Samsun-Erzincan yolu",
+      "Kırıkkale - Yozgat Yolu",
+      "Antalya - Mersin Yolu",
+      "Samsun Çorum Yolu",
+      "Kemer Yolu"
+    ]
+  },
+  "belek-samsun": {
+    "distanceKm": 819.6,
+    "durationMin": 603,
+    "roadNames": [
+      "D687",
+      "Çorum-Kırıkkale yolu",
+      "Konya - Beyşehir Yolu",
+      "D753",
+      "D715",
+      "Ankara Caddesi",
+      "Çorum-Samsun yolu",
+      "Samsun-Erzincan yolu",
+      "Kırıkkale - Yozgat Yolu",
+      "Samsun Çorum Yolu"
+    ]
+  },
+  "samsun-side": {
+    "distanceKm": 826.4,
+    "durationMin": 610,
+    "roadNames": [
+      "D687",
+      "Çorum-Kırıkkale yolu",
+      "Konya - Beyşehir Yolu",
+      "D753",
+      "D715",
+      "Ankara Caddesi",
+      "Çorum-Samsun yolu",
+      "Samsun-Erzincan yolu",
+      "Kırıkkale - Yozgat Yolu",
+      "Samsun Çorum Yolu"
+    ]
+  },
+  "manavgat-samsun": {
+    "distanceKm": 812.9,
+    "durationMin": 605,
+    "roadNames": [
+      "Çorum-Kırıkkale yolu",
+      "Manavgat - Seydişehir Yolu",
+      "D753",
+      "Konya - Seydişehir - Antalya Yolu",
+      "D715",
+      "Ankara Caddesi",
+      "Çorum-Samsun yolu",
+      "Samsun-Erzincan yolu",
+      "Kırıkkale - Yozgat Yolu",
+      "Samsun Çorum Yolu",
+      "Konya - Mavangat Yolu"
+    ]
+  },
+  "gocek-samsun": {
+    "distanceKm": 1056.9,
+    "durationMin": 800,
+    "roadNames": [
+      "Çorum-Kırıkkale yolu",
+      "Burdur - Çavdır Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Çorum-Samsun yolu",
+      "Afyonkarahisar - Burdur Yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu"
+    ]
+  },
+  "dalyan-samsun": {
+    "distanceKm": 1054.4,
+    "durationMin": 804,
+    "roadNames": [
+      "Çorum-Kırıkkale yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Çorum-Samsun yolu",
+      "Muğla - Kale Yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Kırıkkale - Yozgat Yolu"
+    ]
+  },
+  "samsun-turgutreis": {
+    "distanceKm": 1163.1,
+    "durationMin": 863,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Çorum-Kırıkkale yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Çorum-Samsun yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Kırıkkale - Yozgat Yolu"
+    ]
+  },
+  "samsun-yalikavak": {
+    "distanceKm": 1161.5,
+    "durationMin": 865,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Çorum-Kırıkkale yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Çorum-Samsun yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Kırıkkale - Yozgat Yolu"
+    ]
+  },
+  "didim-samsun": {
+    "distanceKm": 1107.6,
+    "durationMin": 797,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Çorum-Kırıkkale yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Çorum-Samsun yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu",
+      "Ankara - Eskişehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Kırıkkale - Yozgat Yolu"
+    ]
+  },
+  "datca-samsun": {
+    "distanceKm": 1123,
+    "durationMin": 862,
+    "roadNames": [
+      "Çorum-Kırıkkale yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Çorum-Samsun yolu",
+      "Muğla - Kale Yolu",
+      "Marmaris Datça Yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu",
+      "Ankara - Eskişehir Yolu",
+      "Marmaris Muğla Yolu"
+    ]
+  },
+  "alacati-trabzon": {
+    "distanceKm": 1410.8,
+    "durationMin": 1026,
+    "roadNames": [
+      "Uşak - İzmir Yolu",
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "Ankara - Afyonkarahisar Yolu",
+      "D300",
+      "İzmir-Çeşme Otoyolu",
+      "Çorum-Samsun yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Samsun-Erzincan yolu",
+      "Ordu-Giresun yolu"
+    ]
+  },
+  "ayvalik-trabzon": {
+    "distanceKm": 1341.9,
+    "durationMin": 898,
+    "roadNames": [
+      "Anadolu Otoyolu",
+      "Ömer Derindere Bulvarı",
+      "Bursa-İzmir Otoyolu",
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "İstanbul-Samsun yolu",
+      "İstanbul - Bursa Otoyolu",
+      "Balıkesir - Edremit Yolu",
+      "İzmir - Çanakkale Yolu",
+      "Samsun-Erzincan yolu",
+      "Ordu-Giresun yolu",
+      "Anadolu Otoyolu Çınarlıdere Viyadüğü"
+    ]
+  },
+  "pamukkale-trabzon": {
+    "distanceKm": 1216.8,
+    "durationMin": 898,
+    "roadNames": [
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Çorum-Samsun yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu",
+      "Ordu-Giresun yolu",
+      "Ankara - Eskişehir Yolu"
+    ]
+  },
+  "selcuk-trabzon": {
+    "distanceKm": 1453.6,
+    "durationMin": 953,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Anadolu Otoyolu",
+      "Ömer Derindere Bulvarı",
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "İstanbul-Samsun yolu",
+      "İstanbul - Bursa Otoyolu",
+      "Samsun-Erzincan yolu",
+      "Ordu-Giresun yolu",
+      "Anadolu Otoyolu Çınarlıdere Viyadüğü",
+      "D100"
+    ]
+  },
+  "kusadasi-trabzon": {
+    "distanceKm": 1473.7,
+    "durationMin": 971,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Anadolu Otoyolu",
+      "Ömer Derindere Bulvarı",
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "İstanbul-Samsun yolu",
+      "İstanbul - Bursa Otoyolu",
+      "Samsun-Erzincan yolu",
+      "Ordu-Giresun yolu",
+      "Anadolu Otoyolu Çınarlıdere Viyadüğü",
+      "D100"
+    ]
+  },
+  "oludeniz-trabzon": {
+    "distanceKm": 1370.5,
+    "durationMin": 1032,
+    "roadNames": [
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "Burdur - Çavdır Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Çorum-Samsun yolu",
+      "Afyonkarahisar - Burdur Yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu"
+    ]
+  },
+  "alanya-trabzon": {
+    "distanceKm": 1145.4,
+    "durationMin": 865,
+    "roadNames": [
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "D753",
+      "D715",
+      "Ankara Caddesi",
+      "Konya-Hadim yolu",
+      "Çorum-Samsun yolu",
+      "Samsun-Erzincan yolu",
+      "Ordu-Giresun yolu",
+      "Kırıkkale - Yozgat Yolu",
+      "Alanya-Sarıveliler Yolu"
+    ]
+  },
+  "trabzon-urgup": {
+    "distanceKm": 664.8,
+    "durationMin": 501,
+    "roadNames": [
+      "Trabzon-Giresun yolu",
+      "Şebinkarahisar - Giresun Yolu",
+      "Kayseri-Sivas yolu",
+      "Sivas-Kayseri yolu",
+      "Erzincan - Sivas Yolu",
+      "Zara-Suşehri yolu",
+      "Şebinkarahisar - Sivas Yolu",
+      "D300",
+      "D260"
+    ]
+  },
+  "goreme-trabzon": {
+    "distanceKm": 673.3,
+    "durationMin": 509,
+    "roadNames": [
+      "Trabzon-Giresun yolu",
+      "Şebinkarahisar - Giresun Yolu",
+      "Kayseri-Sivas yolu",
+      "Sivas-Kayseri yolu",
+      "Erzincan - Sivas Yolu",
+      "Zara-Suşehri yolu",
+      "Şebinkarahisar - Sivas Yolu",
+      "D300",
+      "D260"
+    ]
+  },
+  "trabzon-uzungol": {
+    "distanceKm": 95.4,
+    "durationMin": 76,
+    "roadNames": [
+      "Yalıncak Rize Caddesi",
+      "Of - Bayburt yolu",
+      "61-30",
+      "Atatürk Bulvarı",
+      "Rize Caddesi"
+    ]
+  },
+  "kemer-trabzon": {
+    "distanceKm": 1224.5,
+    "durationMin": 905,
+    "roadNames": [
+      "D687",
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "Konya - Beyşehir Yolu",
+      "D753",
+      "D715",
+      "Ankara Caddesi",
+      "Çorum-Samsun yolu",
+      "Samsun-Erzincan yolu",
+      "Ordu-Giresun yolu",
+      "Kırıkkale - Yozgat Yolu"
+    ]
+  },
+  "belek-trabzon": {
+    "distanceKm": 1147.7,
+    "durationMin": 840,
+    "roadNames": [
+      "D687",
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "Konya - Beyşehir Yolu",
+      "D753",
+      "D715",
+      "Ankara Caddesi",
+      "Çorum-Samsun yolu",
+      "Samsun-Erzincan yolu",
+      "Ordu-Giresun yolu",
+      "Kırıkkale - Yozgat Yolu"
+    ]
+  },
+  "side-trabzon": {
+    "distanceKm": 1154.5,
+    "durationMin": 847,
+    "roadNames": [
+      "D687",
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "Konya - Beyşehir Yolu",
+      "D753",
+      "D715",
+      "Ankara Caddesi",
+      "Çorum-Samsun yolu",
+      "Samsun-Erzincan yolu",
+      "Ordu-Giresun yolu",
+      "Kırıkkale - Yozgat Yolu"
+    ]
+  },
+  "manavgat-trabzon": {
+    "distanceKm": 1141,
+    "durationMin": 842,
+    "roadNames": [
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "Manavgat - Seydişehir Yolu",
+      "D753",
+      "Konya - Seydişehir - Antalya Yolu",
+      "D715",
+      "Ankara Caddesi",
+      "Çorum-Samsun yolu",
+      "Samsun-Erzincan yolu",
+      "Ordu-Giresun yolu",
+      "Kırıkkale - Yozgat Yolu"
+    ]
+  },
+  "gocek-trabzon": {
+    "distanceKm": 1385.1,
+    "durationMin": 1037,
+    "roadNames": [
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "Burdur - Çavdır Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Çorum-Samsun yolu",
+      "Afyonkarahisar - Burdur Yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu"
+    ]
+  },
+  "dalyan-trabzon": {
+    "distanceKm": 1382.5,
+    "durationMin": 1041,
+    "roadNames": [
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Çorum-Samsun yolu",
+      "Muğla - Kale Yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu",
+      "Ordu-Giresun yolu"
+    ]
+  },
+  "trabzon-turgutreis": {
+    "distanceKm": 1491.2,
+    "durationMin": 1100,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Çorum-Samsun yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu",
+      "Ordu-Giresun yolu"
+    ]
+  },
+  "trabzon-yalikavak": {
+    "distanceKm": 1489.6,
+    "durationMin": 1102,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Çorum-Samsun yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu",
+      "Ordu-Giresun yolu"
+    ]
+  },
+  "didim-trabzon": {
+    "distanceKm": 1537.9,
+    "durationMin": 1019,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Anadolu Otoyolu",
+      "Ömer Derindere Bulvarı",
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "İstanbul-Samsun yolu",
+      "İstanbul - Bursa Otoyolu",
+      "Samsun-Erzincan yolu",
+      "Ordu-Giresun yolu",
+      "Anadolu Otoyolu Çınarlıdere Viyadüğü",
+      "D100"
+    ]
+  },
+  "datca-trabzon": {
+    "distanceKm": 1451.1,
+    "durationMin": 1099,
+    "roadNames": [
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Çorum-Samsun yolu",
+      "Muğla - Kale Yolu",
+      "Marmaris Datça Yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Konya-Denizli Yolu",
+      "03-27",
+      "Samsun-Erzincan yolu"
+    ]
+  },
+  "alacati-eskisehir": {
+    "distanceKm": 493.7,
+    "durationMin": 361,
+    "roadNames": [
+      "Uşak - İzmir Yolu",
+      "Kütahya - Gediz Yolu",
+      "İzmir-Çeşme Otoyolu",
+      "Bozüyük - Kütahya Yolu",
+      "Bursa-İzmir Otoyolu",
+      "Eskişehir - Kütahya Yolu",
+      "Uşak - Gediz Yolu",
+      "Ankara Caddesi",
+      "Kütahya - Balıkesir Yolu"
+    ]
+  },
+  "ayvalik-eskisehir": {
+    "distanceKm": 421.9,
+    "durationMin": 293,
+    "roadNames": [
+      "Bursa-İzmir Otoyolu",
+      "Balıkesir - Edremit Yolu",
+      "Bursa Çevre Yolu",
+      "İnegöl - Bozüyük Yolu",
+      "İzmir - Çanakkale Yolu",
+      "Bursa - İnegöl Yolu",
+      "Eskişehir - Bozüyük Yolu",
+      "Bozüyük Çevre Yolu"
+    ]
+  },
+  "eskisehir-pamukkale": {
+    "distanceKm": 343.6,
+    "durationMin": 262,
+    "roadNames": [
+      "Denizli-Uşak Yolu",
+      "Kütahya - Dumlupınar Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "Afyonkarahisar - Uşak Yolu",
+      "Eskişehir - Kütahya Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Uşak Denizli Yolu",
+      "Banaz-Sivaslı Yolu",
+      "Kütahya - Balıkesir Yolu",
+      "Aydın-Denizli Otoyolu",
+      "Denizli - Afyonkarahisar Yolu",
+      "Demokrasi Bulvarı"
+    ]
+  },
+  "eskisehir-selcuk": {
+    "distanceKm": 452.9,
+    "durationMin": 339,
+    "roadNames": [
+      "Uşak - İzmir Yolu",
+      "Kütahya - Gediz Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "Ankara Caddesi",
+      "Eskişehir - Kütahya Yolu",
+      "İzmir-Aydın yolu",
+      "35-26",
+      "Uşak - Gediz Yolu",
+      "Philsa Caddesi",
+      "Kütahya - Balıkesir Yolu"
+    ]
+  },
+  "eskisehir-kusadasi": {
+    "distanceKm": 473.1,
+    "durationMin": 357,
+    "roadNames": [
+      "Uşak - İzmir Yolu",
+      "Kütahya - Gediz Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "Ankara Caddesi",
+      "Eskişehir - Kütahya Yolu",
+      "İzmir-Aydın yolu",
+      "35-26",
+      "Uşak - Gediz Yolu",
+      "Philsa Caddesi",
+      "Kütahya - Balıkesir Yolu"
+    ]
+  },
+  "eskisehir-oludeniz": {
+    "distanceKm": 508.5,
+    "durationMin": 431,
+    "roadNames": [
+      "D650",
+      "Burdur - Çavdır Yolu",
+      "Korkuteli - Seydikemer Yolu",
+      "Eskişehir-Afyonkarahisar Yolu",
+      "Afyonkarahisar - Burdur Yolu",
+      "Afyon-Eskişehir Yolu",
+      "D585",
+      "Afyonkarahisar-Eskişehir Karayolu",
+      "D400"
+    ]
+  },
+  "alanya-eskisehir": {
+    "distanceKm": 530.3,
+    "durationMin": 418,
+    "roadNames": [
+      "D687",
+      "Akşehir - Beyşehir Yolu",
+      "Antalya - Mersin Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Konya-Afyon yolu",
+      "Çifteler-Emirdağ Yolu",
+      "Çifteler-Eskişehir yolu",
+      "Ankara - Eskişehir Yolu",
+      "Yeni İstanbul Caddesi"
+    ]
+  },
+  "eskisehir-urgup": {
+    "distanceKm": 509.7,
+    "durationMin": 330,
+    "roadNames": [
+      "Ankara-Tarsus Otoyolu",
+      "Ankara - Eskişehir Yolu",
+      "Aksaray - Nevşehir Yolu",
+      "Dumlupınar Bulvarı",
+      "Hacı Bayram-ı Velî Bulvarı",
+      "Nasreddin Hoca Bulvarı",
+      "Nevşehir-Ürgüp yolu",
+      "Ankara Çevre Yolu"
+    ]
+  },
+  "eskisehir-goreme": {
+    "distanceKm": 501.5,
+    "durationMin": 326,
+    "roadNames": [
+      "Ankara-Tarsus Otoyolu",
+      "Ankara - Eskişehir Yolu",
+      "Aksaray - Nevşehir Yolu",
+      "Dumlupınar Bulvarı",
+      "Hacı Bayram-ı Velî Bulvarı",
+      "Nasreddin Hoca Bulvarı",
+      "Ankara Çevre Yolu"
+    ]
+  },
+  "eskisehir-uzungol": {
+    "distanceKm": 1072.6,
+    "durationMin": 775,
+    "roadNames": [
+      "Ankara - Eskişehir Yolu",
+      "Samsun-Ordu yolu",
+      "Trabzon-Giresun yolu",
+      "Çorum-Kırıkkale yolu",
+      "Çorum-Samsun yolu",
+      "Samsun Çorum Yolu",
+      "Ankara Çevre Yolu",
+      "Ankara - Kırıkkale Yolu",
+      "Yalıncak Rize Caddesi",
+      "Ordu-Giresun yolu",
+      "Kırıkkale - Yozgat Yolu",
+      "Of - Bayburt yolu"
+    ]
+  },
+  "eskisehir-kemer": {
+    "distanceKm": 452.8,
+    "durationMin": 374,
+    "roadNames": [
+      "D650",
+      "Antalya - Burdur Yolu",
+      "Eskişehir-Afyonkarahisar Yolu",
+      "Afyonkarahisar - Burdur Yolu",
+      "Afyon-Eskişehir Yolu",
+      "Kemer Yolu",
+      "Afyonkarahisar-Eskişehir Karayolu",
+      "Antalya Batı Çevre Yolu"
+    ]
+  },
+  "belek-eskisehir": {
+    "distanceKm": 432.4,
+    "durationMin": 361,
+    "roadNames": [
+      "D650",
+      "Antalya - Isparta Yolu",
+      "Eskişehir-Afyonkarahisar Yolu",
+      "Afyon-Eskişehir Yolu",
+      "Isparta-Burdur yolu",
+      "Afyonkarahisar-Eskişehir Karayolu",
+      "Antalya - Mersin Yolu",
+      "Afyonkarahisar - Burdur Yolu"
+    ]
+  },
+  "eskisehir-side": {
+    "distanceKm": 469.5,
+    "durationMin": 377,
+    "roadNames": [
+      "D687",
+      "Akşehir - Beyşehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Konya-Afyon yolu",
+      "Çifteler-Emirdağ Yolu",
+      "Çifteler-Eskişehir yolu",
+      "Ankara - Eskişehir Yolu",
+      "Yeni İstanbul Caddesi",
+      "Antalya - Mersin Yolu",
+      "Emirdağ - Çifteler Yolu"
+    ]
+  },
+  "eskisehir-manavgat": {
+    "distanceKm": 470.3,
+    "durationMin": 376,
+    "roadNames": [
+      "D687",
+      "Akşehir - Beyşehir Yolu",
+      "Bolvadin-Emirdağ Yolu",
+      "Konya-Afyon yolu",
+      "Çifteler-Emirdağ Yolu",
+      "Çifteler-Eskişehir yolu",
+      "Ankara - Eskişehir Yolu",
+      "Yeni İstanbul Caddesi",
+      "Antalya - Mersin Yolu",
+      "Emirdağ - Çifteler Yolu"
+    ]
+  },
+  "eskisehir-gocek": {
+    "distanceKm": 524.1,
+    "durationMin": 414,
+    "roadNames": [
+      "Denizli-Uşak Yolu",
+      "Muğla - Kale Yolu",
+      "Kütahya - Dumlupınar Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "Muğla - Fethiye Yolu",
+      "Afyonkarahisar - Uşak Yolu",
+      "Eskişehir - Kütahya Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Uşak Denizli Yolu",
+      "Kale - Tavas Yolu",
+      "48-28",
+      "Banaz-Sivaslı Yolu"
+    ]
+  },
+  "dalyan-eskisehir": {
+    "distanceKm": 509.4,
+    "durationMin": 405,
+    "roadNames": [
+      "Denizli-Uşak Yolu",
+      "Muğla - Kale Yolu",
+      "Kütahya - Dumlupınar Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "Afyonkarahisar - Uşak Yolu",
+      "Eskişehir - Kütahya Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Uşak Denizli Yolu",
+      "Kale - Tavas Yolu",
+      "48-28",
+      "Banaz-Sivaslı Yolu",
+      "Denizli - Tavas Yolu"
+    ]
+  },
+  "eskisehir-turgutreis": {
+    "distanceKm": 618.1,
+    "durationMin": 464,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Denizli-Uşak Yolu",
+      "Kütahya - Dumlupınar Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "Afyonkarahisar - Uşak Yolu",
+      "Eskişehir - Kütahya Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Aydın - Muğla Yolu",
+      "Milas - Bodrum Yolu",
+      "Uşak Denizli Yolu",
+      "Aydın - Karpuzlu Yolu",
+      "Banaz-Sivaslı Yolu"
+    ]
+  },
+  "eskisehir-yalikavak": {
+    "distanceKm": 616.4,
+    "durationMin": 466,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Denizli-Uşak Yolu",
+      "Kütahya - Dumlupınar Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "Afyonkarahisar - Uşak Yolu",
+      "Eskişehir - Kütahya Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Aydın - Muğla Yolu",
+      "Milas - Bodrum Yolu",
+      "Uşak Denizli Yolu",
+      "Aydın - Karpuzlu Yolu",
+      "Banaz-Sivaslı Yolu"
+    ]
+  },
+  "didim-eskisehir": {
+    "distanceKm": 562.6,
+    "durationMin": 398,
+    "roadNames": [
+      "Aydın-Denizli Otoyolu",
+      "Denizli-Uşak Yolu",
+      "Kütahya - Dumlupınar Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "Afyonkarahisar - Uşak Yolu",
+      "Eskişehir - Kütahya Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Söke - Milas Yolu",
+      "Uşak Denizli Yolu",
+      "D525",
+      "İzmir - Aydın Otoyolu",
+      "Banaz-Sivaslı Yolu"
+    ]
+  },
+  "datca-eskisehir": {
+    "distanceKm": 578,
+    "durationMin": 463,
+    "roadNames": [
+      "Denizli-Uşak Yolu",
+      "Muğla - Kale Yolu",
+      "Marmaris Datça Yolu",
+      "Kütahya - Dumlupınar Yolu",
+      "Bozüyük - Kütahya Yolu",
+      "Marmaris Muğla Yolu",
+      "Afyonkarahisar - Uşak Yolu",
+      "Eskişehir - Kütahya Yolu",
+      "Afyonkarahisar - Kütahya Yolu",
+      "Uşak Denizli Yolu",
+      "Kale - Tavas Yolu",
+      "Banaz-Sivaslı Yolu"
+    ]
+  }
+}

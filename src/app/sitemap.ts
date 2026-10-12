@@ -7,6 +7,8 @@ import { getTranslatedCitySlugs } from "@/lib/translation/pipeline";
 import type { TranslationTargetLocale } from "@/lib/translation/types";
 import { getAllGuides } from "@/lib/data/guides";
 import { getAllDistancePageData, getCityTableSlugs } from "@/lib/data/distances";
+import { getAirportPageSlugs } from "@/lib/data/airportTransfers";
+import { getAllPlacePairData } from "@/lib/data/placePairs";
 
 // Only list locales that are actually indexable site-wide. en/de/ar/ru stay
 // out of this base list (report items 22/283 — untranslated content by
@@ -116,9 +118,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // 1c. Madde 150 — programatik mesafe sayfaları (50 el ile seçilmiş şehir
     // çifti). Guides ile aynı desen: locales zaten sadece ["tr"] olduğu için
     // bu blok otomatik olarak TR-only kalıyor, ayrı bir kontrol gerekmiyor.
+    // Havalimanı transfer sayfaları.
+    const airportSlugs = getAirportPageSlugs();
+    if (airportSlugs.length > 0) {
+      sitemapRoutes.push(route(`${siteUrl}/${locale}/havalimani`, "monthly", 0.6, "src/lib/data/airportTransfers.json"));
+      airportSlugs.forEach((slug) => {
+        sitemapRoutes.push(route(`${siteUrl}/${locale}/havalimani/${slug}`, "monthly", 0.6, "src/lib/data/airportTransfers.json"));
+      });
+    }
     // Şehirden illere mesafe tablosu sayfaları.
     getCityTableSlugs().forEach((slug) => {
       sitemapRoutes.push(route(`${siteUrl}/${locale}/mesafe/sehir/${slug}`, "monthly", 0.6, "src/lib/data/distanceCache.json"));
+    });
+    getAllPlacePairData().forEach((d) => {
+      sitemapRoutes.push(route(`${siteUrl}/${locale}/mesafe/${d.slug}`, "monthly", 0.4, "src/lib/data/placeDistances.json"));
     });
     getAllDistancePageData().forEach((d) => {
       sitemapRoutes.push(

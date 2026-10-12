@@ -85,3 +85,22 @@ export function getCityAirports(citySlug: string): CityAirport[] {
     })
     .filter((d): d is CityAirport => Boolean(d));
 }
+
+// URL slug'ı: "Antalya Havalimanı" -> "antalya-havalimani".
+export function airportSlug(a: Airport): string {
+  return a.name
+    .replace(/\(.*?\)/g, "")
+    .toLocaleLowerCase("tr")
+    .replace(/ç/g, "c").replace(/ğ/g, "g").replace(/ı/g, "i").replace(/ö/g, "o").replace(/ş/g, "s").replace(/ü/g, "u")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+export function getAirportBySlug(slug: string): Airport | undefined {
+  return airports.find((a) => airportSlug(a) === slug);
+}
+
+// "Antalya Havalimanı" -> "Antalya Havalimanı'ndan" / "'na" (tamlama eki n'si).
+export function airportFrom(a: Airport): string {
+  return `${a.name.replace(/\s*\(.*?\)/g, "")}'ndan`;
+}

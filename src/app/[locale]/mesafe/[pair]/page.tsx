@@ -17,16 +17,22 @@ import { getGuidesForCity } from "@/lib/data/guides";
 import AdSlot from "@/components/AdSlot";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { BookOpen } from "lucide-react";
+import PlaceDistanceView, { buildPlaceDistanceMetadata } from "@/components/PlaceDistanceView";
+import { getAllPlacePairData, getPlacePairData } from "@/lib/data/placePairs";
 
 export async function generateStaticParams() {
-  return getAllDistancePageData().map((d) => ({ pair: d.slug }));
+  return [...getAllDistancePageData(), ...getAllPlacePairData()].map((d) => ({ pair: d.slug }));
 }
 
 export async function generateMetadata(props: { params: Promise<{ pair: string; locale: string }> }) {
   const params = await props.params;
   const locale = (params.locale || "tr") as Locale;
   const data = getDistancePageData(params.pair);
-  if (!data) return { title: locale === "tr" ? "Sayfa bulunamadı" : "Page not found" };
+  if (!data) {
+    const placeData = getPlacePairData(params.pair);
+    if (placeData) return buildPlaceDistanceMetadata(placeData, locale);
+    return { title: locale === "tr" ? "Sayfa bulunamadı" : "Page not found" };
+  }
 
   // Bulgu (Search Console, 2026-09): "X-Y arası kaç km" sorgusunda Google
   // sonucu doğrudan bir AI özetiyle veriyor, tıklama neredeyse hiç gelmiyor
@@ -119,6 +125,8 @@ export default async function DistancePage(props: { params: Promise<{ pair: stri
   const data = getDistancePageData(params.pair);
 
   if (!data) {
+    const placeData = getPlacePairData(params.pair);
+    if (placeData) return <PlaceDistanceView data={placeData} locale={locale} />;
     notFound();
   }
 

@@ -32,7 +32,8 @@ import { getTranslatedCity, cityHasTranslation, getTranslatedKnownFor } from "@/
 import { getGuidesForCity } from "@/lib/data/guides";
 import { getDistanceLinksForCity, IMPORTANCE_RANK, formatDuration, CITY_TABLE_MIN_ROWS } from "@/lib/data/distances";
 import { ablative } from "@/lib/trSuffix";
-import { getCityAirports } from "@/lib/data/airports";
+import { getCityAirports, airportSlug } from "@/lib/data/airports";
+import { getAirportPageSlugs } from "@/lib/data/airportTransfers";
 import { Route as RouteIcon } from "lucide-react";
 import { BookOpen } from "lucide-react";
 
@@ -155,6 +156,7 @@ export default async function CityDetailPage(props: {
   // 6 saat, gezmeye vakit kalıyor). Sadece mesafe verisi olan çiftler.
   const dayTrips = distanceLinks.filter((d) => d.durationMin <= 180).slice(0, 6);
   const cityAirports = getCityAirports(city.slug);
+  const airportPages = new Set(getAirportPageSlugs());
   const quickFacts = getCityQuickFacts(city.slug);
 
   // Server-rendered first page of the default (attractions/popularity) list, so the
@@ -531,7 +533,14 @@ export default async function CityDetailPage(props: {
               {cityAirports.map(({ airport, distanceKm, durationMin }) => (
                 <li key={airport.iata} className="rounded-xl border border-ink/8 bg-paper p-5 shadow-sm">
                   <p className="font-bold text-ink">
-                    {airport.name} <span className="text-xs font-semibold text-ink/50">({airport.iata})</span>
+                    {airportPages.has(airportSlug(airport)) ? (
+                      <Link href={`/${locale}/havalimani/${airportSlug(airport)}`} className="hover:text-kiremit transition-colors">
+                        {airport.name}
+                      </Link>
+                    ) : (
+                      airport.name
+                    )}{" "}
+                    <span className="text-xs font-semibold text-ink/50">({airport.iata})</span>
                   </p>
                   <p className="mt-1 text-sm text-ink/75">
                     {locale === "tr"
