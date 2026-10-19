@@ -38,7 +38,6 @@ export default async function BolgelerPage(props: {
 }) {
   const params = await props.params;
   const locale = (params.locale || "tr") as Locale;
-  const dict = getDictionary(locale);
 
   const titleText = locale === "tr"
     ? "Türkiye'nin Yedi Bölgesi"

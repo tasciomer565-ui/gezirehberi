@@ -44,7 +44,6 @@ const TYPE_ICON: Record<string, React.ReactNode> = {
 
 function TransferRow({ transfer, locale }: { transfer: TransferBlock; locale: string }) {
   const isRtl = locale === "ar";
-  const dict = getDictionary(locale as Locale);
 
   if (transfer.mode === "ferry") {
     const ferryText =

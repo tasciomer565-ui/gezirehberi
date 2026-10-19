@@ -1,4 +1,4 @@
-import { getDictionary, Locale, buildAlternates, buildPageSocialMeta } from "@/lib/i18n";
+import { Locale, buildAlternates, buildPageSocialMeta } from "@/lib/i18n";
 import { Info, ShieldCheck, Compass } from "lucide-react";
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
@@ -21,7 +21,6 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
 export default async function AboutPage(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
   const locale = (params.locale || "tr") as Locale;
-  const dict = getDictionary(locale);
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6">

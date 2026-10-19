@@ -31,7 +31,8 @@ import { getPlacesForCity } from "@/lib/places";
 import { getTranslatedCity, cityHasTranslation, getTranslatedKnownFor } from "@/lib/translation/pipeline";
 import { getGuidesForCity } from "@/lib/data/guides";
 import { getDistanceLinksForCity, IMPORTANCE_RANK, formatDuration, CITY_TABLE_MIN_ROWS } from "@/lib/data/distances";
-import { ablative } from "@/lib/trSuffix";
+import { ablative, dative } from "@/lib/trSuffix";
+import { PLACE_PAIR_HUBS } from "@/lib/data/placePairs";
 import { getCityAirports, airportSlug } from "@/lib/data/airports";
 import { getAirportPageSlugs } from "@/lib/data/airportTransfers";
 import { Route as RouteIcon } from "lucide-react";
@@ -155,6 +156,9 @@ export default async function CityDetailPage(props: {
   // Günübirlik: gerçek karayolu süresi 3 saate kadar olan şehirler (gidiş-dönüş
   // 6 saat, gezmeye vakit kalıyor). Sadece mesafe verisi olan çiftler.
   const dayTrips = distanceLinks.filter((d) => d.durationMin <= 180).slice(0, 6);
+  // "X'e İstanbul'dan / Ankara'dan kaç km" için: en yakın büyük şehirlerden
+  // gerçek rota verisiyle mesafe (mesafe sayfalarına link) — 2026-10-20.
+  const hubRoutes = distanceLinks.filter((d) => PLACE_PAIR_HUBS.includes(d.otherCitySlug)).slice(0, 6);
   const cityAirports = getCityAirports(city.slug);
   const airportPages = new Set(getAirportPageSlugs());
   const quickFacts = getCityQuickFacts(city.slug);
@@ -393,6 +397,22 @@ export default async function CityDetailPage(props: {
         <div className="mb-16">
           <ArrivalOptionsTable howToArrive={city.howToArrive} locale={locale} title={dict.city.arrivalOptions} />
         </div>
+
+        {locale === "tr" && hubRoutes.length > 0 && (
+          <section className="mb-16">
+            <h2 className="mb-3 font-display text-2xl italic text-ink">{dative(city.name)} Nasıl Gidilir? Büyük Şehirlerden Mesafe</h2>
+            <ul className="space-y-2 text-sm leading-relaxed text-ink/75">
+              {hubRoutes.map((d) => (
+                <li key={d.slug}>
+                  <Link href={`/${locale}/mesafe/${d.slug}`} className="font-bold text-kiremit hover:underline">
+                    {ablative(d.otherCityName)} {dative(city.name)}
+                  </Link>{" "}
+                  karayoluyla {Math.round(d.distanceKm)} km; arabayla trafiksiz yaklaşık {formatDuration(d.durationMin, locale)} sürer.
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         <div id="itinerary-section" className="mb-20 scroll-mt-20">
           <ItinerarySection city={city} locale={locale} />

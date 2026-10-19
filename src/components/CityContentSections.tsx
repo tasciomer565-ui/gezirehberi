@@ -48,10 +48,6 @@ const DEFAULT_SORT = "popularity";
 export default function CityContentSections({
   citySlug,
   cityCenter,
-  attractions: initialAttractions,
-  restaurants: initialRestaurants,
-  localFood: initialLocalFood,
-  accommodations: initialAccommodations,
   locale = "tr",
   districtSlug,
   initialItems,
@@ -370,7 +366,7 @@ export default function CityContentSections({
                     sayfanın asıl içeriği (gezilecek yerler) görünmüyordu. Sekme/
                     filtre değişimlerinde animasyon aynen çalışıyor. */}
                 <AnimatePresence mode="popLayout" initial={false}>
-                  {processedItems.map((item, idx) => (
+                  {processedItems.map((item) => (
                     <motion.div 
                       key={item.id} 
                       layout 
