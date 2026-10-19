@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { regions } from "@/lib/data/regions";
+import { getCitiesByRegion } from "@/lib/data/cities";
 import RegionCard from "@/components/RegionCard";
 import { getDictionary, Locale, buildAlternates, buildPageSocialMeta } from "@/lib/i18n";
 import type { Metadata } from "next";
@@ -71,6 +73,46 @@ export default async function BolgelerPage(props: {
           <RegionCard key={region.slug} region={region} locale={locale} eager={i === 0} />
         ))}
       </div>
+
+      {/* Bölge bölge şehir listesi (2026-10-20): ana /bolgeler sayfası 198
+          kelimeydi ve şehir sayfalarına link vermiyordu; her bölgedeki
+          şehirleri gerçek veriden listeler. */}
+      {locale === "tr" && (
+        <section className="mt-16 border-t border-ink/10 pt-12">
+          <h2 className="mb-2 font-display text-3xl italic text-ink">Bölge Bölge Gezilecek Şehirler</h2>
+          <p className="mb-8 max-w-3xl text-sm leading-relaxed text-ink/70">
+            Yol Defteri&apos;nde yedi bölgede toplam {regions.reduce((n, r) => n + getCitiesByRegion(r.slug).length, 0)} şehir ve tatil beldesi için
+            gezilecek yerler, ne yenir, nerede kalınır ve ulaşım bilgisi var. Bir şehri seçerek gezi rehberine, şehirden diğer illere mesafe
+            tablosuna ve en yakın havalimanına ulaşabilirsiniz.
+          </p>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {regions.map((region) => {
+              const cities = [...getCitiesByRegion(region.slug)].sort((a, b) => a.name.localeCompare(b.name, "tr"));
+              return (
+                <div key={region.slug}>
+                  <h3 className="mb-3 text-lg font-bold text-ink">
+                    <Link href={`/${locale}/bolgeler/${region.slug}`} className="hover:text-kiremit transition-colors">
+                      {region.name} Bölgesi
+                    </Link>{" "}
+                    <span className="text-sm font-semibold text-ink/50">({cities.length} şehir)</span>
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {cities.map((c) => (
+                      <Link
+                        key={c.slug}
+                        href={`/${locale}/bolgeler/${region.slug}/${c.slug}`}
+                        className="rounded-full border border-ink/15 px-3 py-1 text-sm font-semibold text-ink/75 transition-colors hover:border-kiremit hover:text-kiremit"
+                      >
+                        {c.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
     </div>
   );
 }
