@@ -7,8 +7,8 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
   const title = locale === "tr" ? "Hakkımızda" : "About Us";
   const description =
     locale === "tr"
-      ? "Yol Defteri, Türkiye'nin 81 ili ve en popüler turistik bölgelerine dair veri odaklı, şeffaf bir seyahat rehberidir; her il için gerçek bilgi ve rotalar sunar."
-      : "Yol Defteri is a data-driven, transparent travel guide covering Turkey's 81 provinces and most popular tourist regions, with real information and routes.";
+      ? "Yol Defteri, Türkiye'nin 85 şehir ve tatil beldesine dair veri odaklı, şeffaf bir seyahat rehberidir; her biri için gerçek bilgi ve rotalar sunar."
+      : "Yol Defteri is a data-driven, transparent travel guide covering 85 cities and resorts across Turkey, with real information and routes.";
 
   return {
     title,
@@ -30,8 +30,8 @@ export default async function AboutPage(props: { params: Promise<{ locale: strin
         </h1>
         <p className="text-lg text-ink/75 max-w-2xl mx-auto font-medium">
           {locale === "tr" 
-            ? "Yol Defteri, Türkiye'nin 81 ili ve en popüler turistik bölgelerine dair veri odaklı, şeffaf seyahat rehberidir."
-            : "Yol Defteri is a data-driven, transparent travel guide covering Turkey's 81 cities and most popular tourist regions."}
+            ? "Yol Defteri, Türkiye'nin 85 şehir ve tatil beldesine dair veri odaklı, şeffaf seyahat rehberidir."
+            : "Yol Defteri is a data-driven, transparent travel guide covering Turkey's 85 cities and most popular tourist regions."}
         </p>
       </div>
 
@@ -44,8 +44,8 @@ export default async function AboutPage(props: { params: Promise<{ locale: strin
             </h3>
             <p className="text-xs">
               {locale === "tr" 
-                ? "81 il ve popüler turizm beldelerinin tamamında 500+ gezilecek yer, otel ve restoranı harita entegrasyonuyla listeliyoruz."
-                : "We list 500+ places to visit, hotels, and restaurants across all 81 cities and popular tourism districts."}
+                ? "85 şehir ve tatil beldesinde 800'den fazla gezilecek yeri, yeme-içme ve konaklama bölgelerini harita üzerinde listeliyoruz."
+                : "We list 800+ places to visit, plus dining and lodging areas, on a map across 85 cities and resorts."}
             </p>
           </div>
           <div className="rounded-2xl border border-ink/10 bg-paper p-6 shadow-sm hover:border-kiremit/30 transition-colors">

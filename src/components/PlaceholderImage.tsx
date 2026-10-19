@@ -10,11 +10,10 @@ const HISTORICAL_IMAGES = {
   marmara: [
     "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=600&h=450&q=80", // Galata Tower
     "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&h=450&q=80", // Dolmabahce Palace
-    "https://images.unsplash.com/photo-1568322422998-843190f21543?auto=format&fit=crop&w=600&h=450&q=80"  // Sultanahmet Mosque
   ],
   ege: [
-    "https://images.unsplash.com/photo-1608988673752-094191630be8?auto=format&fit=crop&w=600&h=450&q=80", // Ephesus ancient ruins
-    "https://images.unsplash.com/photo-1599950753725-2c23d515eb9e?auto=format&fit=crop&w=600&h=450&q=80"  // Bodrum Castle
+    "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=600&h=450&q=80", // Ephesus ancient ruins
+    "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=600&h=450&q=80"  // Bodrum Castle
   ],
   akdeniz: [
     "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=600&h=450&q=80", // Apollo Temple Side
@@ -29,10 +28,10 @@ const HISTORICAL_IMAGES = {
     "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&h=450&q=80"  // Ankara Castle
   ],
   "dogu-anadolu": [
-    "https://images.unsplash.com/photo-1589825704981-d1c9535f2a1b?auto=format&fit=crop&w=600&h=450&q=80"  // Ishak Pasha Palace
+    "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&h=450&q=80"  // Ishak Pasha Palace
   ],
   "guneydogu-anadolu": [
-    "https://images.unsplash.com/photo-1512958729672-d2a0298e0a78?auto=format&fit=crop&w=600&h=450&q=80", // Mardin stone view
+    "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&h=450&q=80", // Mardin stone view
     "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=600&h=450&q=80"  // Gobeklitepe style archaeology
   ]
 };
@@ -51,7 +50,7 @@ const NATURE_IMAGES = {
     "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&h=450&q=80"  // Saklikent Canyon
   ],
   karadeniz: [
-    "https://images.unsplash.com/photo-1571566806873-fbfe26083be7?auto=format&fit=crop&w=600&h=450&q=80", // Rize tea hills
+    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&h=450&q=80", // Rize tea hills
     "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&h=450&q=80"  // Firtina valley forest
   ],
   "ic-anadolu": [
@@ -79,7 +78,6 @@ const MEAT_IMAGES = [
 
 const FISH_IMAGES = [
   "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&h=450&q=80", // Grilled sea bass
-  "https://images.unsplash.com/photo-1534604973900-c41ab4c2e0ab?auto=format&fit=crop&w=600&h=450&q=80"  // Seafood skillet
 ];
 
 const CAFE_IMAGES = [

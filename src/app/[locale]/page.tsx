@@ -23,7 +23,7 @@ export async function generateMetadata(props: {
   if (locale === "tr") {
     return {
       title: { absolute: "Yol Defteri: Türkiye Gezi Rehberi ve Şehirler Arası Mesafe" },
-      description: `Türkiye'nin 81 iline gezi rehberi: gezilecek yerler, ne yenir, nerede kalınır. ${getAllDistancePageData().length} şehirler arası mesafe, süre ve yol üstü duraklar.`,
+      description: `Türkiye'nin 85 şehir ve tatil beldesine gezi rehberi: gezilecek yerler, ne yenir, nerede kalınır. ${getAllDistancePageData().length} şehirler arası mesafe, süre ve yol üstü duraklar.`,
       alternates: buildAlternates(locale, ""),
     };
   }
@@ -89,7 +89,7 @@ export default async function Home(props: {
           {dict.home.title}
           {locale === "tr" && (
             <span className="mt-3 block font-sans text-lg not-italic font-bold text-kiremit sm:text-xl">
-              Türkiye gezi rehberi: 81 il, 7 bölge, şehirler arası mesafeler
+              Türkiye gezi rehberi: 85 şehir, 7 bölge, şehirler arası mesafeler
             </span>
           )}
         </h1>
