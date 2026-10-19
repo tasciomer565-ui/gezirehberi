@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Heart, Search, ChevronDown, BookOpen, GitCompareArrows } from "lucide-react";
+import { Heart, Search, ChevronDown, BookOpen, GitCompareArrows, Route as RouteIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { SearchableCity } from "@/lib/search";
@@ -111,6 +111,16 @@ export default function Header({
               )}
             </AnimatePresence>
           </div>
+          {/* Mesafe sayfaları sitenin organik trafiğinin %97'si (Search Console,
+              2026-10) ama sadece footer'dan linkleniyordu; header'a alınınca
+              her sayfa hub'a link veriyor (Google 869 sayfayı "keşfedildi,
+              taranmadı" bırakmıştı — iç link önceliği). */}
+          <Link
+            href={`/${locale}/mesafe`}
+            className="flex items-center gap-1.5 hover:text-kiremit transition-colors"
+          >
+            <RouteIcon size={15} /> {dict.nav.distances}
+          </Link>
           <Link
             href={`/${locale}/rehberler`}
             className="flex items-center gap-1.5 hover:text-kiremit transition-colors"
@@ -160,6 +170,30 @@ export default function Header({
           </Link>
         </div>
       </div>
+
+      {/* Mobil gezinti satırı (2026-10-19): küçük ekranlarda ana menü hiç yoktu
+          (sadece arama/tema/dil/kalp simgeleri); trafiğin %92'si mobil. Düz
+          link satırı, JS gerektirmez, sunucu çıktısında linkler görünür. */}
+      <nav
+        aria-label={locale === "tr" ? "Ana gezinti" : "Main navigation"}
+        className="flex gap-2 overflow-x-auto border-t border-ink/10 px-4 py-2 text-xs font-bold text-ink/75 scrollbar-none sm:px-6 lg:hidden"
+      >
+        {[
+          { href: `/${locale}/bolgeler`, label: dict.nav.regions },
+          { href: `/${locale}/mesafe`, label: dict.nav.distances },
+          { href: `/${locale}/havalimani`, label: locale === "tr" ? "Havalimanı" : "Airports" },
+          { href: `/${locale}/rehberler`, label: dict.nav.guides },
+          { href: `/${locale}/karsilastir`, label: dict.nav.compare },
+        ].map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="shrink-0 rounded-full border border-ink/15 px-3 py-1.5 transition-colors hover:border-kiremit hover:text-kiremit"
+          >
+            {item.label}
+          </Link>
+        ))}
+      </nav>
 
       <AnimatePresence>
         {isMobileSearchOpen && (

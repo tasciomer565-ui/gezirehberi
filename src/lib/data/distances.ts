@@ -1,4 +1,5 @@
 import distanceCacheRaw from "./distanceCache.json";
+import { ablative, dative } from "../trSuffix";
 import routeStopsRaw from "./routeStops.json";
 import { allCities } from "./cities";
 import { distancePairs, distancePairSlug, type DistancePair } from "./distancePairs";
@@ -327,9 +328,13 @@ export function buildDistanceSections(data: DistancePageData): DistanceSection[]
     },
     {
       id: "guzergah",
-      heading: `${cityA.name} ${cityB.name} Yol Güzergahı`,
+      // Search Console (2026-10-19): düz "kaç km" sorgusu %0,04 tıklama alırken
+      // "yol tarifi" / "en kısa yol" / "arabayla" sorguları %0,3-7 alıyor;
+      // başlık ve metin bu ifadeleri taşıyor.
+      heading: `${cityA.name} ${cityB.name} Yol Tarifi ve Güzergahı`,
       paragraphs: [
         [
+          `${ablative(cityA.name)} ${dative(cityB.name)} arabayla en kısa yol yaklaşık ${distanceKm} km.`,
           majorRoads.length > 0 ? `Güzergahın büyük bölümü ${majorRoads.slice(0, 3).join(", ")} üzerinden geçiyor.` : "",
           stopCities.length > 0
             ? `Yol, ${stopCities.map((s) => s.city.name).join(", ")} üzerinden ya da yakınından geçiyor.`

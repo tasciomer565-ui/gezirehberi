@@ -248,3 +248,11 @@ body {
 .map-tiles-dark {
   filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(0.9);
 }
+
+/* Yatay kaydırılan gezinti satırlarında kaydırma çubuğunu gizle. */
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

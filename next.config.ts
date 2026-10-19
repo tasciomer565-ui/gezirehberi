@@ -19,6 +19,24 @@ const nextConfig: NextConfig = {
   // request to the domain is still made over plain HTTP before any redirect.
   // Bundled with the other zero-config, zero-risk security headers from the
   // same checklist item since they cost nothing and touch no business logic.
+  // Search Console'da "Bulunamadı (404)" görünen eski şehir/ilçe adresleri
+  // (il/ilçe şeklinde yanlış yol: /bolgeler/karadeniz/karabuk/safranbolu) —
+  // gerçek sayfalarına kalıcı yönlendirme (2026-10-19).
+  async redirects() {
+    const moved: [string, string][] = [
+      ["karadeniz/karabuk/safranbolu", "karadeniz/safranbolu"],
+      ["ic-anadolu/nevsehir/urgup", "ic-anadolu/kapadokya/urgup"],
+      ["ic-anadolu/nevsehir/goreme", "ic-anadolu/kapadokya/goreme"],
+      ["ege/mugla/bodrum", "ege/bodrum"],
+      ["ege/mugla/marmaris", "ege/marmaris"],
+      ["ege/balikesir/ayvalik", "marmara/balikesir/ayvalik"],
+    ];
+    return moved.map(([from, to]) => ({
+      source: `/:locale(tr|en|de|ar|ru)/bolgeler/${from}`,
+      destination: `/:locale/bolgeler/${to}`,
+      permanent: true,
+    }));
+  },
   async headers() {
     return [
       {

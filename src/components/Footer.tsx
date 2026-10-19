@@ -75,6 +75,9 @@ export default function Footer() {
                 <Link href={`/${locale}/mesafe`} className="transition-colors">
                   {dict.nav.distances}
                 </Link>
+                <Link href={`/${locale}/havalimani`} className="transition-colors">
+                  {locale === "tr" ? "Havalimanı Ulaşım" : "Airport Transfers"}
+                </Link>
                 <Link href={`/${locale}/hakkimizda`} className="transition-colors">
                   {locale === "tr" ? "Hakkımızda" : "About Us"}
                 </Link>

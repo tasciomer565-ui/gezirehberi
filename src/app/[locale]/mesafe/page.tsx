@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Route as RouteIcon, TrendingUp } from "lucide-react";
 import { Locale, buildAlternates, buildRobots, buildPageSocialMeta, translateDataText } from "@/lib/i18n";
-import { getAllDistancePageData, getPopularDistances, formatDuration } from "@/lib/data/distances";
+import { getAllDistancePageData, getPopularDistances, formatDuration, getCityTableSlugs } from "@/lib/data/distances";
+import { allCities } from "@/lib/data/cities";
 import { regions } from "@/lib/data/regions";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { ablative } from "@/lib/trSuffix";
@@ -78,6 +79,11 @@ export default async function DistanceHubPage(props: { params: Promise<{ locale:
   const byKm = [...all].sort((a, b) => a.distanceKm - b.distanceKm);
   const shortest = byKm[0];
   const longest = byKm[byKm.length - 1];
+
+  const tableSlugs = new Set(getCityTableSlugs());
+  const cityTableLinks = allCities
+    .filter((c) => tableSlugs.has(c.slug))
+    .sort((a, b) => a.name.localeCompare(b.name, "tr"));
 
   const faqItems = isTr
     ? [
@@ -239,6 +245,24 @@ export default async function DistanceHubPage(props: { params: Promise<{ locale:
           </div>
         </section>
       ))}
+
+      {isTr && (
+        <section className="mt-6 border-t border-ink/10 pt-10">
+          <h2 className="mb-2 font-display text-2xl italic text-ink">Şehirden İllere Mesafe Tabloları</h2>
+          <p className="mb-5 text-sm text-ink/65">Bir şehri seçin, oradan diğer tüm şehirlere km ve sürüş süresini tek tabloda görün.</p>
+          <div className="flex flex-wrap gap-2">
+            {cityTableLinks.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/${locale}/mesafe/sehir/${c.slug}`}
+                className="rounded-full border border-ink/15 px-3 py-1.5 text-sm font-semibold text-ink/75 transition-colors hover:border-kiremit hover:text-kiremit"
+              >
+                {ablative(c.name)} mesafeler
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {faqItems.length > 0 && (
         <section className="mt-6 border-t border-ink/10 pt-10">
