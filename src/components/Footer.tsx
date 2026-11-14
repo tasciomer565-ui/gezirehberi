@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { usePathname } from "next/navigation";
 import { getDictionary, Locale } from "@/lib/i18n";
 import { ArrowRight } from "lucide-react";

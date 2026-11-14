@@ -1,60 +1,17 @@
 import type { NextConfig } from "next";
+
+// 2026-11-15: Vercel'den Cloudflare'e (ücretsiz, statik) taşındı. Vercel Hobby
+// limiti aşılıp ekip durdurulunca site 402 dönmeye başladı. Site artık tamamen
+// statik dosya olarak dışa aktarılıyor (`out/`):
+// - Yönlendirmeler ve güvenlik başlıkları: public/_redirects, public/_headers
+//   (statik dışa aktarımda next.config redirects()/headers() çalışmaz).
+// - API rotaları: functions/api/** (Cloudflare Pages Functions).
+// - Görseller Unsplash/Wikimedia'dan doğrudan yükleniyor (sunucu yok, Next
+//   görüntü optimizasyonu kullanılamaz; Unsplash URL'leri zaten boyutlu).
 const nextConfig: NextConfig = {
+  output: "export",
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "upload.wikimedia.org",
-      },
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
-    formats: ["image/avif", "image/webp"],
-  },
-  // Report items 255-267 — Vercel terminates HTTPS and redirects HTTP->HTTPS
-  // automatically, but does NOT add the Strict-Transport-Security response
-  // header on its own; without it, a browser's very first (never-yet-HSTS'd)
-  // request to the domain is still made over plain HTTP before any redirect.
-  // Bundled with the other zero-config, zero-risk security headers from the
-  // same checklist item since they cost nothing and touch no business logic.
-  // Search Console'da "Bulunamadı (404)" görünen eski şehir/ilçe adresleri
-  // (il/ilçe şeklinde yanlış yol: /bolgeler/karadeniz/karabuk/safranbolu) —
-  // gerçek sayfalarına kalıcı yönlendirme (2026-10-19).
-  async redirects() {
-    const moved: [string, string][] = [
-      ["karadeniz/karabuk/safranbolu", "karadeniz/safranbolu"],
-      ["karadeniz/safranbolu/safranbolu", "karadeniz/safranbolu"],
-      ["ic-anadolu/nevsehir/urgup", "ic-anadolu/kapadokya/urgup"],
-      ["ic-anadolu/nevsehir/goreme", "ic-anadolu/kapadokya/goreme"],
-      ["ege/mugla/bodrum", "ege/bodrum"],
-      ["ege/bodrum/bodrum", "ege/bodrum"],
-      ["ege/mugla/marmaris", "ege/marmaris"],
-      ["akdeniz/fethiye/fethiye", "akdeniz/fethiye"],
-      ["ege/balikesir/ayvalik", "marmara/balikesir/ayvalik"],
-    ];
-    return moved.map(([from, to]) => ({
-      source: `/:locale(tr|en|de|ar|ru)/bolgeler/${from}`,
-      destination: `/:locale/bolgeler/${to}`,
-      permanent: true,
-    }));
-  },
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: [
-          {
-            key: "Strict-Transport-Security",
-            value: "max-age=63072000; includeSubDomains; preload",
-          },
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "X-Frame-Options", value: "SAMEORIGIN" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-        ],
-      },
-    ];
+    unoptimized: true,
   },
 };
 

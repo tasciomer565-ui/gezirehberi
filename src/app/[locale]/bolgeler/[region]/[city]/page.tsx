@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { notFound } from "next/navigation";
 import { ArrowLeft, MapPin, BedDouble, UtensilsCrossed, MapPinned, Soup } from "lucide-react";
 import CityHero from "@/components/CityHero";

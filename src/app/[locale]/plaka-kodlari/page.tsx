@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { notFound } from "next/navigation";
 import { Locale, buildAlternates, buildRobots, buildPageSocialMeta } from "@/lib/i18n";
 import { PROVINCES } from "@/lib/data/provinces";

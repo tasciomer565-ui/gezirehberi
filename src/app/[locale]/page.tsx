@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { getCostLevelText } from "@/lib/costLevel";
 import { Compass, Utensils, Wallet, MapPinned, Route as RouteIcon, BookOpen } from "lucide-react";
 import { regions } from "@/lib/data/regions";

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import type { City } from "@/lib/types";
 import { CITY_CODES } from "@/lib/data/cityCodes";
 import { getCityKnownFor } from "@/lib/data/knownFor";

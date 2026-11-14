@@ -1,0 +1,33 @@
+# Cloudflare Pages yönlendirmeleri (2026-11-15). Önceden next.config redirects()
+# ve src/proxy.ts. İlk eşleşen kural uygulanır.
+
+# Eski/yanlış şehir-ilçe adresleri (Search Console 404'leri, 2026-10-19)
+/:locale/bolgeler/karadeniz/karabuk/safranbolu      /:locale/bolgeler/karadeniz/safranbolu       301
+/:locale/bolgeler/karadeniz/safranbolu/safranbolu   /:locale/bolgeler/karadeniz/safranbolu       301
+/:locale/bolgeler/ic-anadolu/nevsehir/urgup         /:locale/bolgeler/ic-anadolu/kapadokya/urgup  301
+/:locale/bolgeler/ic-anadolu/nevsehir/goreme        /:locale/bolgeler/ic-anadolu/kapadokya/goreme 301
+/:locale/bolgeler/ege/mugla/bodrum                  /:locale/bolgeler/ege/bodrum                 301
+/:locale/bolgeler/ege/bodrum/bodrum                 /:locale/bolgeler/ege/bodrum                 301
+/:locale/bolgeler/ege/mugla/marmaris                /:locale/bolgeler/ege/marmaris               301
+/:locale/bolgeler/akdeniz/fethiye/fethiye           /:locale/bolgeler/akdeniz/fethiye            301
+/:locale/bolgeler/ege/balikesir/ayvalik             /:locale/bolgeler/marmara/balikesir/ayvalik  301
+
+# Dil öneki olmayan adresler -> Türkçe (önceden proxy.ts)
+/                        /tr                               302
+/bolgeler                /tr/bolgeler                      301
+/bolgeler/*              /tr/bolgeler/:splat               301
+/mesafe                  /tr/mesafe                        301
+/mesafe/*                /tr/mesafe/:splat                 301
+/gunubirlik/*            /tr/gunubirlik/:splat             301
+/havalimani              /tr/havalimani                    301
+/havalimani/*            /tr/havalimani/:splat             301
+/rehberler               /tr/rehberler                     301
+/rehberler/*             /tr/rehberler/:splat              301
+/plaka-kodlari           /tr/plaka-kodlari                 301
+/hakkimizda              /tr/hakkimizda                    301
+/iletisim                /tr/iletisim                      301
+/gizlilik-politikasi     /tr/gizlilik-politikasi           301
+/cerez-politikasi        /tr/cerez-politikasi              301
+/kullanim-sartlari       /tr/kullanim-sartlari             301
+/karsilastir             /tr/karsilastir                   301
+/kayitlerim              /tr/kayitlerim                    301

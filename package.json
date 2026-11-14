@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build && node scripts/cloudflare-postbuild.mjs",
+    "preview": "npx wrangler@4 pages dev out --port 8788",
     "lint": "eslint"
   },
   "dependencies": {

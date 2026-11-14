@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Region } from "@/lib/types";

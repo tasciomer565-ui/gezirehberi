@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 import { MetadataRoute } from "next";
 import { execFileSync } from "child_process";
 import { regions } from "@/lib/data/regions";

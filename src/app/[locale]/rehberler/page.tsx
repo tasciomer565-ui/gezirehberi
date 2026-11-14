@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { BookOpen } from "lucide-react";
 import { getDictionary, Locale, buildAlternates, buildRobots, buildPageSocialMeta } from "@/lib/i18n";
 import { getAllGuides } from "@/lib/data/guides";

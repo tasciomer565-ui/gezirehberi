@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
-import { useRouter, useParams } from "next/navigation";
+import Link from "@/components/PlainLink";
+import { useParams } from "next/navigation";
 import { Search, X, MapPin } from "lucide-react";
 import { searchCities, type SearchResult, type SearchableCity } from "@/lib/search";
 import { getDictionary, Locale, translateDataText } from "@/lib/i18n";
@@ -19,7 +19,6 @@ export default function SearchBar({ index }: { index: SearchableCity[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const router = useRouter();
 
   useEffect(() => {
     if (debounceRef.current) clearTimeout(debounceRef.current);
@@ -83,7 +82,6 @@ export default function SearchBar({ index }: { index: SearchableCity[] }) {
                 href={`/${locale}/bolgeler/${r.city.regionSlug}/${r.city.slug}`}
                 onClick={() => {
                   setIsOpen(false);
-                  router.push(`/${locale}/bolgeler/${r.city.regionSlug}/${r.city.slug}`);
                 }}
                 className="flex items-center gap-3 border-b border-ink/5 px-4 py-3 last:border-0 hover:bg-kiremit/5 transition-colors"
               >

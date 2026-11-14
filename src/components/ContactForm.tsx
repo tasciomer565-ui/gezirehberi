@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { Mail, Phone, MapPin, Send, Building2, Loader2 } from "lucide-react";
 import { submitContentFeedback } from "@/lib/communityApi";
 

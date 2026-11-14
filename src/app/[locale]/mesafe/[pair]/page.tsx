@@ -1,5 +1,5 @@
 import { notFound, permanentRedirect } from "next/navigation";
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { ArrowLeft, MapPin, Clock, Fuel, Coffee, Route as RouteIcon, Plane, Compass, Store } from "lucide-react";
 import { Locale, buildAlternates, buildRobots, buildPageSocialMeta, translateDataText } from "@/lib/i18n";
 import {
@@ -164,9 +164,10 @@ export default async function DistancePage(props: { params: Promise<{ pair: stri
   if (!data) {
     const placeData = getPlacePairData(params.pair);
     if (placeData) return <PlaceDistanceView data={placeData} locale={locale} />;
-    // Ters yön ("mardin-gaziantep") kanonik sayfaya kalıcı yönlenir. Önceden
-    // proxy.ts her istekte yapıyordu; proxy artık dil öneki olan adreslerde
-    // çalışmıyor (Vercel Hobby CPU/çağrı limiti, 2026-11-15).
+    // Ters yön ("mardin-gaziantep") kanonik sayfaya kalıcı yönlenir. Not: statik
+    // dışa aktarımda (Cloudflare, 2026-11-15) bilinmeyen slug için bu sayfa hiç
+    // üretilmez; orada yönlendirmeyi src/app/not-found.tsx'teki betik yapar.
+    // Bu dal, sunuculu bir ortama dönülürse diye duruyor.
     const m = params.pair.match(/^([a-z]+)-([a-z]+)$/);
     if (m) {
       const reversed = `${m[2]}-${m[1]}`;

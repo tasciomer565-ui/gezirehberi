@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { MapPinned, Users, Gift } from "lucide-react";
 import type { City } from "@/lib/types";
 import { CITY_CODES } from "@/lib/data/cityCodes";

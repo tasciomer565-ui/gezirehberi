@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { AlertTriangle } from "lucide-react";
 import { ConfusablePlace } from "@/lib/data/confusablePlaces";
 import { getDictionary, Locale } from "@/lib/i18n";

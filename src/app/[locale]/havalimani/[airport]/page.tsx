@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { notFound } from "next/navigation";
 import { Plane, Route as RouteIcon, Clock } from "lucide-react";
 import { Locale, buildAlternates, buildRobots, buildPageSocialMeta, translateDataText } from "@/lib/i18n";

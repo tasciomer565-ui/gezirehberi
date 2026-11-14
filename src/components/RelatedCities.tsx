@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { City } from "@/lib/types";
 import { Locale, translateDataText } from "@/lib/i18n";
 import { haversineDistanceKm } from "@/lib/geo";

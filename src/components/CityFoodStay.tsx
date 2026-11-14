@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { UtensilsCrossed, BedDouble, Soup, CloudSun, Store } from "lucide-react";
 import type { City } from "@/lib/types";
 import { withLocative } from "@/lib/turkish";

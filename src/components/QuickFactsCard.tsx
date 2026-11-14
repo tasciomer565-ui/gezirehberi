@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { Info, Sparkles, Users, ArrowRight, MapPin, Mountain, Car } from "lucide-react";
 import type { CityQuickFacts } from "@/lib/data/quickFacts";
 import type { Locale } from "@/lib/i18n";

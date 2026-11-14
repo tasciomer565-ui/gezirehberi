@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { ChevronRight } from "lucide-react";
 import { SITE_URL } from "@/lib/i18n";
 import { jsonLd } from "@/lib/jsonLd";

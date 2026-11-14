@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { Compass } from "lucide-react";
@@ -34,10 +34,17 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 };
 
+// Ters yön mesafe adresi ("/tr/mesafe/mardin-gaziantep") statik sitede yok;
+// Cloudflare bu 404 sayfasını döner. Doğru yön ("gaziantep-mardin") varsa
+// tarayıcı oraya yönlenir (Googlebot JS çalıştırıp yönlendirmeyi izler).
+// Önceden proxy.ts / sayfa içi 308 yönlendirmesiydi (Vercel, 2026-11-15'e dek).
+const REVERSE_DISTANCE_REDIRECT = `(function(){var m=location.pathname.match(/^\\/(tr|en|de|ar|ru)\\/mesafe\\/([a-z]+)-([a-z]+)\\/?$/);if(!m)return;var t="/"+m[1]+"/mesafe/"+m[3]+"-"+m[2];fetch(t,{method:"HEAD"}).then(function(r){if(r.ok)location.replace(t)}).catch(function(){})})();`;
+
 export default function RootNotFound() {
   return (
     <html lang="tr" className={`${fraunces.variable} ${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-ink selection:bg-kiremit/20">
+        <script dangerouslySetInnerHTML={{ __html: REVERSE_DISTANCE_REDIRECT }} />
         <ThemeProvider>
           <Header
             activeRegionSlugs={regions.filter((r) => r.cityCount > 0).map((r) => r.slug)}

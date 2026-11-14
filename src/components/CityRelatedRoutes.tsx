@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { Route as RouteIcon, ArrowRight, BookOpen, Plane, Compass } from "lucide-react";
 import type { City } from "@/lib/types";
 import { getNextCityRoutes, getRouteGuidesForCity } from "@/lib/data/nextRoutes";

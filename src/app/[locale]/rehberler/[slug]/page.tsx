@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { MapPin, Route as RouteIcon } from "lucide-react";
 import { Locale, buildAlternates, buildRobots, buildPageSocialMeta, translateDataText, getDictionary, SITE_URL } from "@/lib/i18n";
 import { getAllGuides, getGuideBySlug } from "@/lib/data/guides";

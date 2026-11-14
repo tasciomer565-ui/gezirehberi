@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { provincesInRegion } from "@/lib/data/provinces";
 import Image from "next/image";
 import { notFound } from "next/navigation";

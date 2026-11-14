@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { clampDescription } from "@/lib/metaText";
 import { notFound } from "next/navigation";
 import { ArrowLeft, MapPin, BedDouble, UtensilsCrossed, MapPinned, Soup, Route as RouteIcon } from "lucide-react";

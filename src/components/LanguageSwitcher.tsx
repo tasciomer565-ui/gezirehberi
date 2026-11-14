@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Globe, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -15,7 +15,6 @@ const LANGUAGES = [
 
 export default function LanguageSwitcher() {
   const pathname = usePathname();
-  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -43,7 +42,7 @@ export default function LanguageSwitcher() {
     nextSegments[1] = newLocale;
     const newPath = nextSegments.join("/");
     setIsOpen(false);
-    router.push(newPath);
+    window.location.assign(newPath);
   };
 
   return (

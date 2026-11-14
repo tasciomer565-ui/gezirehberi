@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { Route as RouteIcon, Clock, Fuel, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 import { Locale, buildAlternates, buildRobots, buildPageSocialMeta } from "@/lib/i18n";

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { Cookie } from "lucide-react";
 import { getCookieConsent, setCookieConsent } from "@/lib/cookieConsent";
 import { Locale } from "@/lib/i18n";

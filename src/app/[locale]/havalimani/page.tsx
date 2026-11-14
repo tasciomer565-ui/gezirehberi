@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { Plane } from "lucide-react";
 import { Locale, buildAlternates, buildRobots, buildPageSocialMeta } from "@/lib/i18n";
 import { airportSlug } from "@/lib/data/airports";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Link from "@/components/PlainLink";
 import { ArrowRight, MapPinned, UtensilsCrossed, BedDouble } from "lucide-react";
 import { getDictionary, Locale } from "@/lib/i18n";
 
