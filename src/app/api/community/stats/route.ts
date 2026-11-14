@@ -57,7 +57,8 @@ const getCachedStats = unstable_cache(
     return { routeCount, commentCount, likeCount };
   },
   ["community-stats"],
-  { revalidate: 30 }
+  // 30 sn'den 10 dk'ya (2026-11-15): Hobby ISR yazım limiti; bkz. routes/route.ts.
+  { revalidate: 600 }
 );
 
 export async function GET(request: NextRequest) {

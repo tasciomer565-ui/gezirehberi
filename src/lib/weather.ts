@@ -2,12 +2,9 @@
 // Kaynak: MET Norway (Norveç Meteoroloji Enstitüsü) Locationforecast 2.0 —
 // API anahtarı gerektirmez, ticari kullanıma izin verir; koşullar: tanımlayıcı
 // User-Agent (iletişim bilgisiyle), enlem/boylam en fazla 4 ondalık, kaynak
-// gösterimi (CC BY 4.0) ve önbellekleme. Önbellek: Next fetch revalidate ile
-// saatlik (sayfa ISR olur); hata/zaman aşımında null döner ve bölüm gizlenir,
+// gösterimi (CC BY 4.0). Hata/zaman aşımında null döner ve bölüm gizlenir,
 // sayfa asla kırılmaz.
 const ENDPOINT = "https://api.met.no/weatherapi/locationforecast/2.0/compact";
-const USER_AGENT = "YolDefteri/1.0 (+https://www.yoldefterim.com.tr; info@yoldefterim.com.tr)";
-export const WEATHER_REVALIDATE_SECONDS = 3600;
 
 export type WeatherIcon = "sun" | "partly" | "cloud" | "fog" | "rain" | "snow" | "sleet" | "thunder";
 
@@ -87,20 +84,26 @@ interface Entry {
   };
 }
 
-export async function getWeather(lat: number, lng: number): Promise<WeatherData | null> {
-  // Build sırasında dış API'ye istek atma: yüzlerce sayfa aynı anda istek atınca
-  // Vercel build'inde sayfa üretimi 60 sn'yi aşıyordu. Bölüm gizli kalır, sayfa
-  // revalidate süresi dolunca çalışma zamanında doldurulur.
-  if (process.env.NEXT_PHASE === "phase-production-build") return null;
+type MetResponse = { properties?: { meta?: { updated_at?: string }; timeseries?: Entry[] } };
+
+// Tarayıcıda çağrılır (CityWeather istemci bileşeni). MET Norway CORS'a izin
+// veriyor; tarayıcı User-Agent başlığını değiştiremediği için kimlik Origin/
+// Referer ile gidiyor. Önceden sunucuda saatlik ISR ile çekiliyordu: 425 şehir
+// sayfası x saatlik yeniden üretim Vercel Hobby ISR/CPU limitlerini aşıp ekibi
+// durdurdu (2026-11-15). Artık şehir sayfaları tamamen statik.
+export async function fetchWeather(lat: number, lng: number, signal?: AbortSignal): Promise<WeatherData | null> {
   try {
     const url = `${ENDPOINT}?lat=${lat.toFixed(4)}&lon=${lng.toFixed(4)}`;
-    const res = await fetch(url, {
-      headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
-      next: { revalidate: WEATHER_REVALIDATE_SECONDS },
-      signal: AbortSignal.timeout(6000),
-    });
+    const res = await fetch(url, { headers: { Accept: "application/json" }, signal });
     if (!res.ok) return null;
-    const json = (await res.json()) as { properties?: { meta?: { updated_at?: string }; timeseries?: Entry[] } };
+    return parseWeather((await res.json()) as MetResponse);
+  } catch {
+    return null;
+  }
+}
+
+function parseWeather(json: MetResponse): WeatherData | null {
+  try {
     const series = json.properties?.timeseries;
     if (!Array.isArray(series) || series.length === 0) return null;
 

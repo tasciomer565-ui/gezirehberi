@@ -31,6 +31,13 @@ const inter = Inter({
 
 const siteUrl = "https://www.yoldefterim.com.tr";
 
+// Dil segmenti build'de bilinsin: yoksa kendi generateStaticParams'ı olmayan
+// sayfalar (hakkımızda, mesafe/havalimanı/rehber merkezleri, OG görseli...) her
+// istekte sunucuda üretiliyordu — Vercel Hobby CPU limiti (2026-11-15).
+export function generateStaticParams() {
+  return ["tr", "en", "de", "ar", "ru"].map((locale) => ({ locale }));
+}
+
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {

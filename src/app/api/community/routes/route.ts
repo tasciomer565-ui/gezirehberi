@@ -37,7 +37,9 @@ const getCachedRoutes = unstable_cache(
     return { routes: data };
   },
   ["community-routes"],
-  { revalidate: 30 }
+  // 30 sn'den 10 dk'ya (2026-11-15): her şehir sayfası açılışında çağrılıyor;
+  // her yenileme Vercel'de bir önbellek yazımı — Hobby ISR yazım limiti.
+  { revalidate: 600 }
 );
 
 export async function GET(request: NextRequest) {

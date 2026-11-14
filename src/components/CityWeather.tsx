@@ -1,11 +1,13 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Thermometer, Wind, Droplets, Sun, CloudSun, Cloud, CloudFog, CloudRain, CloudSnow, CloudDrizzle, CloudLightning } from "lucide-react";
-import type { City } from "@/lib/types";
-import { getWeather, type WeatherIcon } from "@/lib/weather";
+import { fetchWeather, type WeatherData, type WeatherIcon } from "@/lib/weather";
 import { withLocative } from "@/lib/turkish";
 
-// "X hava durumu", "X'te hava nasıl" aramaları için sunucuda render edilen
-// anlık durum + 5 günlük tahmin (2026-11-02). Veri MET Norway'den, saatlik
-// ISR ile yenilenir; çekilemezse bölüm hiç gösterilmez.
+// Anlık durum + 7 günlük tahmin (2026-11-02). Veri MET Norway'den, ziyaretçinin
+// tarayıcısında çekilir (2026-11-15: sunucuda saatlik ISR, Vercel Hobby
+// limitlerini aşıp siteyi durdurdu). Çekilemezse bölüm hiç gösterilmez.
 const ICONS: Record<WeatherIcon, typeof Sun> = {
   sun: Sun,
   partly: CloudSun,
@@ -19,8 +21,20 @@ const ICONS: Record<WeatherIcon, typeof Sun> = {
 const dateFmt = new Intl.DateTimeFormat("tr-TR", { timeZone: "Europe/Istanbul", day: "numeric", month: "long" });
 const timeFmt = new Intl.DateTimeFormat("tr-TR", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit" });
 
-export default async function CityWeather({ city }: { city: City }) {
-  const w = await getWeather(city.location.lat, city.location.lng);
+export default function CityWeather({ city }: { city: { name: string; location: { lat: number; lng: number } } }) {
+  const [w, setW] = useState<WeatherData | null>(null);
+  const { lat, lng } = city.location;
+  useEffect(() => {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 8000);
+    fetchWeather(lat, lng, ctrl.signal).then((d) => {
+      if (!ctrl.signal.aborted) setW(d);
+    });
+    return () => {
+      clearTimeout(timer);
+      ctrl.abort();
+    };
+  }, [lat, lng]);
   if (!w) return null;
   const updated = new Date(w.updatedAt);
   const updatedText = Number.isNaN(updated.getTime()) ? "" : `${dateFmt.format(updated)} ${timeFmt.format(updated)}`;

@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, MapPin, Clock, Fuel, Coffee, Route as RouteIcon, Plane, Compass, Store } from "lucide-react";
 import { Locale, buildAlternates, buildRobots, buildPageSocialMeta, translateDataText } from "@/lib/i18n";
@@ -28,6 +28,14 @@ import PlaceDistanceView, { buildPlaceDistanceMetadata } from "@/components/Plac
 import { getAllPlacePairData, getPlacePairData } from "@/lib/data/placePairs";
 import { ablative } from "@/lib/trSuffix";
 import { jsonLd } from "@/lib/jsonLd";
+
+// Başlık deneyi grubu: deterministik, slug'ın karakter kodları toplamının
+// paritesi. GSC dışa aktarımında aynı kuralla gruplanıp karşılaştırılır.
+function titleExperimentGroup(slug: string): "A" | "B" {
+  let sum = 0;
+  for (const ch of slug) sum += ch.charCodeAt(0);
+  return sum % 2 === 1 ? "B" : "A";
+}
 
 export async function generateStaticParams() {
   return [...getAllDistancePageData(), ...getAllPlacePairData()].map((d) => ({ pair: d.slug }));
@@ -82,8 +90,22 @@ export async function generateMetadata(props: { params: Promise<{ pair: string; 
   const durLong = [h > 0 ? `${h} Saat` : null, m > 0 ? `${m} Dk` : null].filter(Boolean).join(" ");
   const pairName = `${cityA.name} - ${cityB.name}`;
   const MAX_TITLE = locale === "tr" ? 60 : 60 - " | Yol Defteri".length;
+  // BAŞLIK DENEYİ (2026-11-15'te başladı): 15 Kasım GSC verisi — rota sayfaları
+  // 894 bin gösterim, TO %0,09; "kaç km" sorgularında %0,06. Başlık cevabın
+  // tamamını (km + süre) veriyor, kullanıcı sonuç sayfasında cevabı alıp
+  // tıklamıyor olabilir. Sayfaların yarısında (titleExperimentGroup === "B")
+  // başlık rakam yerine sayfaya özgü değeri vaat ediyor; diğer yarı (A) aynı.
+  // Değerlendirme: GSC'de iki grubun TO'su karşılaştırılır (grup kuralı:
+  // slug karakter kodları toplamı tek ise B). Kazanan tüm sayfalara uygulanmalı.
   const titleCandidates =
-    locale === "tr"
+    locale === "tr" && titleExperimentGroup(data.slug) === "B"
+      ? [
+          `${pairName} Arası Kaç Km, Kaç Saat? Yol Tarifi ve Yakıt Hesabı`,
+          `${pairName} Arası Kaç Km, Kaç Saat? Yol Tarifi ve Yakıt`,
+          `${pairName} Arası Kaç Km? Yol Tarifi ve Yakıt Hesabı`,
+          `${pairName} Arası Kaç Km? Yol Tarifi`,
+        ]
+      : locale === "tr"
       ? [
           `${pairName} Arası Kaç Km, Kaç Saat? ${roundedKm} Km, ${durShort}`,
           `${pairName} Arası Kaç Km? ${roundedKm} Km, ${durLong}`,
@@ -142,6 +164,14 @@ export default async function DistancePage(props: { params: Promise<{ pair: stri
   if (!data) {
     const placeData = getPlacePairData(params.pair);
     if (placeData) return <PlaceDistanceView data={placeData} locale={locale} />;
+    // Ters yön ("mardin-gaziantep") kanonik sayfaya kalıcı yönlenir. Önceden
+    // proxy.ts her istekte yapıyordu; proxy artık dil öneki olan adreslerde
+    // çalışmıyor (Vercel Hobby CPU/çağrı limiti, 2026-11-15).
+    const m = params.pair.match(/^([a-z]+)-([a-z]+)$/);
+    if (m) {
+      const reversed = `${m[2]}-${m[1]}`;
+      if (getDistancePageData(reversed) || getPlacePairData(reversed)) permanentRedirect(`/${locale}/mesafe/${reversed}`);
+    }
     notFound();
   }
 

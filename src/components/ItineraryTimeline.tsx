@@ -477,7 +477,12 @@ export default function ItineraryTimeline({
   // the day count changes, so this only re-runs when the route actually changes,
   // not on every page load; report items 53-55). Falls back silently to the
   // haversine estimate already in `dayPlans` (approximate:true) on any failure.
+  // 2026-11-15: yalnızca ziyaretçi bir güne tıkladığında çalışıyor. Önceden her
+  // şehir sayfası açılışında gün başına bir /api/directions çağrısı (Vercel
+  // fonksiyonu + Mapbox isteği) yapılıyordu — Hobby plan limiti.
+  const [wantRealTransfers, setWantRealTransfers] = useState(false);
   useEffect(() => {
+    if (!wantRealTransfers) return;
     let cancelled = false;
 
     async function fetchRealTransfers() {
@@ -529,7 +534,7 @@ export default function ItineraryTimeline({
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [citySlug, days]);
+  }, [citySlug, days, wantRealTransfers]);
 
   const persist = useCallback(
     (next: ItineraryLocalState) => {
@@ -694,7 +699,10 @@ export default function ItineraryTimeline({
               citySlug={citySlug}
               cityName={cityName}
               isOpen={openDay === plan.day}
-              onToggle={() => setOpenDay(openDay === plan.day ? -1 : plan.day)}
+              onToggle={() => {
+                setWantRealTransfers(true);
+                setOpenDay(openDay === plan.day ? -1 : plan.day);
+              }}
               localState={localState}
               onToggleCheck={handleToggleCheck}
               onNoteChange={handleNoteChange}

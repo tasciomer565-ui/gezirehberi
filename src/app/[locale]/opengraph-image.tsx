@@ -8,6 +8,14 @@ import { getDictionary, Locale } from "@/lib/i18n";
 // see report items 275-277). Generated at request time via next/og, so no
 // static image asset is needed and there's nothing fabricated about it.
 
+// Build'de 5 dil için üretilsin; yoksa her istekte sunucuda çiziliyordu
+// (Vercel Hobby CPU limiti, 2026-11-15). "ar" yok: next/og Arapça yazıyı
+// şekillendiremiyor ("lookupType: 5 - substFormat: 3 is not yet supported"),
+// build'i düşürüyor; o dil önceki gibi istek anında deneniyor.
+export function generateStaticParams() {
+  return ["tr", "en", "de", "ru"].map((locale) => ({ locale }));
+}
+
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
