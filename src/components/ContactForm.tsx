@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "@/components/PlainLink";
 import { Mail, Phone, MapPin, Send, Building2, Loader2 } from "lucide-react";
 import { submitContentFeedback } from "@/lib/communityApi";
+import { SOCIAL_LINKS } from "@/lib/social";
+import SocialIcon from "@/components/SocialIcon";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -83,6 +85,14 @@ export default function ContactForm() {
                 <MapPin className="text-kiremit shrink-0" size={18} />
                 <span>Çanakkale, Türkiye</span>
               </div>
+              {SOCIAL_LINKS.map((s) => (
+                <div key={s.id} className="flex items-center gap-3">
+                  <span className="text-kiremit shrink-0"><SocialIcon id={s.id} size={18} /></span>
+                  <a href={s.url} target="_blank" rel="me noopener" className="hover:text-kiremit transition-colors">
+                    {s.label} {s.handle}
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
 

@@ -1,5 +1,7 @@
 import { Locale, buildAlternates, buildPageSocialMeta } from "@/lib/i18n";
 import { Route, ShieldCheck, Compass } from "lucide-react";
+import { SOCIAL_LINKS } from "@/lib/social";
+import SocialIcon from "@/components/SocialIcon";
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
@@ -106,6 +108,28 @@ export default async function AboutPage(props: { params: Promise<{ locale: strin
               ? "Yanlış bir mesafe, kapanmış bir yer ya da eksik bir bilgi görürseniz iletişim sayfasından bize yazın. Düzeltmeleri inceleyip sayfalara yansıtıyoruz."
               : "If you spot a wrong distance, a closed place or missing information, write to us through the contact page. We review corrections and update the pages."}
           </p>
+        </section>
+
+        <section className="space-y-4 border-t border-ink/10 pt-8">
+          <h2 className="font-display text-2xl italic text-ink">{tr ? "Bizi takip edin" : "Follow us"}</h2>
+          <p>
+            {tr
+              ? "Rotaları, mesafeleri ve gezi önerilerini kısa videolarla da paylaşıyoruz."
+              : "We also share routes, distances and travel tips as short videos."}
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {SOCIAL_LINKS.map((s) => (
+              <a
+                key={s.id}
+                href={s.url}
+                target="_blank"
+                rel="me noopener"
+                className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-kiremit hover:text-kiremit"
+              >
+                <SocialIcon id={s.id} size={18} /> {s.label} {s.handle}
+              </a>
+            ))}
+          </div>
         </section>
       </div>
     </div>

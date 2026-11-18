@@ -9,6 +9,7 @@ import RegionCard from "@/components/RegionCard";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import { getDictionary, Locale, translateDataText, buildAlternates, SITE_URL } from "@/lib/i18n";
 import { jsonLd } from "@/lib/jsonLd";
+import { SOCIAL_SAME_AS } from "@/lib/social";
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
@@ -63,6 +64,8 @@ export default async function Home(props: {
     "name": dict.nav.logo,
     "url": SITE_URL,
     "logo": `${SITE_URL}/icon`,
+    // Resmî sosyal hesaplar — Google'ın marka bilgi panelini siteyle eşlemesi için.
+    "sameAs": SOCIAL_SAME_AS,
   };
 
   const websiteSchema = {

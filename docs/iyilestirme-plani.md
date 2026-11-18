@@ -58,3 +58,5 @@ Durum: `[ ]` bekliyor, `[x]` yapıldı (tarih ve commit ile).
 - 2026-11-18: Plan oluşturuldu. Bugün yapılanlar: günübirlik "yakın yerler"
   başlıkları (5077101), GA4 (964d39f), kapak görseli srcset + Arapça OG (44ff864),
   Bing'e site eklendi, GSC'de 4xx doğrulaması başlatıldı, build önbelleği açıldı.
+- 2026-11-18: Instagram/TikTok (@yoldefterim.tr) footer, Hakkımızda, İletişim'e
+  eklendi; Organization JSON-LD'ye `sameAs` (liste: src/lib/social.ts).

@@ -9,6 +9,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { getGuideDistanceLinks } from "@/lib/data/guideLinks";
 import { getNextGuideRoutes } from "@/lib/data/nextRoutes";
 import { jsonLd } from "@/lib/jsonLd";
+import { SOCIAL_SAME_AS } from "@/lib/social";
 
 // Rehber gövdeleri düz metin; bölüm başlıkları kendi satırında BÜYÜK HARFLE
 // yazılmış ("SELAMLAŞMA", "112 — TEK ACİL ÇAĞRI NUMARASI"). Önceden hepsi tek
@@ -112,6 +113,7 @@ export default async function GuideDetailPage(props: { params: Promise<{ slug: s
       "name": dict.nav.logo,
       "url": SITE_URL,
       "logo": { "@type": "ImageObject", "url": `${SITE_URL}/icon` },
+      "sameAs": SOCIAL_SAME_AS,
     },
   };
 

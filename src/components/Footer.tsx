@@ -5,6 +5,8 @@ import Link from "@/components/PlainLink";
 import { usePathname } from "next/navigation";
 import { getDictionary, Locale } from "@/lib/i18n";
 import { ArrowRight } from "lucide-react";
+import { SOCIAL_LINKS } from "@/lib/social";
+import SocialIcon from "@/components/SocialIcon";
 
 export default function Footer() {
   const pathname = usePathname() || "";
@@ -51,6 +53,22 @@ export default function Footer() {
             <p className="max-w-xs text-sm leading-relaxed font-medium" style={{ color: `${footerFg}99` }}>
               {dict.home.subtitle}
             </p>
+            <div className="flex items-center gap-3 pt-1 footer-social">
+              {SOCIAL_LINKS.map((s) => (
+                <a
+                  key={s.id}
+                  href={s.url}
+                  target="_blank"
+                  rel="me noopener"
+                  aria-label={`${dict.nav.logo} ${s.label}`}
+                  title={`${s.label} ${s.handle}`}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border transition-colors"
+                  style={{ borderColor: `${footerFg}33` }}
+                >
+                  <SocialIcon id={s.id} size={18} />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Quick Links Nav */}
@@ -198,6 +216,13 @@ export default function Footer() {
         }
         .footer-nav :global(a:hover) {
           color: ${footerAccent};
+        }
+        .footer-social a {
+          color: ${footerFg}cc;
+        }
+        .footer-social a:hover {
+          color: ${footerAccent};
+          border-color: ${footerAccent} !important;
         }
         .footer-link-accent:hover {
           color: ${footerAccent};
