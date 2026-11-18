@@ -65,3 +65,13 @@ Durum: `[ ]` bekliyor, `[x]` yapıldı (tarih ve commit ile).
   rel="sponsored nofollow", açık ortaklık notu. Travelpayouts Drive script'i
   REDDEDİLDİ (tıklamaları ele geçiriyor, kendini gizliyor) — siteye ekleme.
   Bekleyen: GetYourGuide ve Trip.com ortaklık kimlikleri.
+- 2026-11-18: **İlçe rehberleri başladı** — İstanbul Fatih, Beşiktaş, Kadıköy
+  (src/lib/data/districtGuides/istanbul.ts). Analiz: mevcut 14 ilçe sayfası 28 günde
+  257 gösterim, ort. konum 65, 0 tık; nedenleri ince içerik + şehir sayfasından hiç
+  link olmaması. Yapılanlar: ilçeye özel bölümler (semtler, ne yenir, nasıl gidilir,
+  ipuçları, ideal süre), İstanbul'a 19 gerçek yer (OSM koordinatlı), ilçe filtresi
+  artık adresle de eşleşiyor, şehir sayfasına "İlçe ve Semt Rehberleri" bölümü.
+  **Ölçüm:** 2026-12-02'de bu 3 sayfanın gösterim/konumuna bak; iyiyse sıradaki
+  parti: Beyoğlu, Üsküdar, Sarıyer, Adalar → sonra diğer büyükşehirler
+  (İzmir Konak/Karşıyaka, Ankara Çankaya, Antalya Muratpaşa/Kaleiçi). Kural:
+  partide en fazla 3-4 ilçe, işletme adı yok, fiyat/saat yok, koordinat OSM'den.

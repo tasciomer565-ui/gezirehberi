@@ -24,6 +24,8 @@ import { getCostLevelText } from "@/lib/costLevel";
 import { getDictionary, Locale, translateDataText, buildAlternates, buildRobots, SITE_URL } from "@/lib/i18n";
 import { getCityImage } from "@/lib/cityImages";
 import { jsonLd } from "@/lib/jsonLd";
+import { withLocative } from "@/lib/turkish";
+import { dative } from "@/lib/trSuffix";
 
 export async function generateStaticParams() {
   const slugs = getAllDistrictSlugs();
@@ -62,6 +64,7 @@ export async function generateMetadata(props: {
 
   if (locale === "tr") {
     const titleCandidates = [
+      ...(district.guide ? [`${district.name} Gezilecek Yerler ve Ne Yenir?`] : []),
       `${district.name} Gezilecek Yerler ve Gezi Rehberi`,
       `${district.name} Gezilecek Yerler (${city?.name ?? ""})`,
       `${district.name} Gezi Rehberi`,
@@ -202,21 +205,28 @@ export default async function DistrictDetailPage(props: {
     : locale === "tr"
     ? "İlkbahar ve sonbahar ayları gezmek için en dengeli dönemdir."
     : "Spring and autumn months are ideal to visit.";
+  const guide = locale === "tr" ? district.guide : undefined;
   const transitText =
-    locale === "tr"
+    guide
+      ? guide.transitSummary
+      : locale === "tr"
       ? districtDistance
         ? `${city.name} merkezinden ${isIsland ? "karayolu ve feribot bağlantısıyla" : "karayoluyla"} yaklaşık ${districtDistance.distanceKm} km (${formatDuration(districtDistance.durationMin, locale)}); ilçe minibüsleri ve özel araçla ulaşım sağlanır.`
         : `${city.name} merkezinden toplu taşıma veya özel araç ile kolayca ulaşılır.`
       : `Reachable from ${city.name} center via public transit or private car.`;
   const budgetText = getCostLevelText(city.costLevel, locale);
-  const durationText = city.bestDuration
+  const durationText = guide
+    ? guide.idealDuration
+    : city.bestDuration
     ? translateDataText(city.bestDuration, locale)
     : locale === "tr"
     ? "1 - 2 gün"
     : "1 - 2 days";
 
   const whatToEatText =
-    city.localFood.length > 0
+    guide
+      ? `${withLocative(district.name)} öne çıkan lezzetler: ${guide.food.map((f) => f.name).join(", ")}.`
+      : city.localFood.length > 0
       ? locale === "tr"
         ? `${district.name} ve bağlı olduğu ${city.name} mutfağında ${city.localFood.slice(0, 4).map((f) => f.name).join(", ")} gibi yöresel lezzetleri deneyimleyebilirsiniz.`
         : `Around ${district.name} and ${city.name}, you can try local specialties such as ${city.localFood.slice(0, 3).map((f) => translateDataText(f.name, locale)).join(", ")}.`
@@ -279,6 +289,9 @@ export default async function DistrictDetailPage(props: {
               />
             </div>
             <p className="text-base text-ink/70 leading-relaxed mb-4">{district.longDescription}</p>
+            {guide?.intro.map((p, i) => (
+              <p key={i} className="text-base text-ink/70 leading-relaxed mb-4">{p}</p>
+            ))}
             {locale === "tr" && city.summary && (
               <p className="text-sm text-ink/65 leading-relaxed mb-6">
                 {`${district.name}, ${city.name} (${city.region}) sınırları içinde yer alır. Bölge genelinde ${city.highlights.slice(0, 4).join(", ")} gibi duraklar öne çıkar; ${district.name} gezisini ${city.name} rotasıyla birleştirerek planlayabilirsiniz.`}
@@ -357,6 +370,50 @@ export default async function DistrictDetailPage(props: {
             </div>
           </div>
         </div>
+
+        {/* İlçeye özel rehber bölümleri (yalnız guide verisi olan ilçelerde, TR). */}
+        {guide && (
+          <div className="mb-16 grid grid-cols-1 gap-10 lg:grid-cols-2">
+            <section>
+              <h2 className="mb-4 font-display text-2xl italic text-ink">{district.name} Semtleri: Nereleri Gezmeli?</h2>
+              <ul className="space-y-3">
+                {guide.neighbourhoods.map((n) => (
+                  <li key={n.name} className="rounded-lg border border-ink/10 bg-paper p-4 shadow-sm">
+                    <p className="font-bold text-ink">{n.name}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-ink/75">{n.description}</p>
+                  </li>
+                ))}
+              </ul>
+            </section>
+            <section>
+              <h2 className="mb-4 font-display text-2xl italic text-ink">{withLocative(district.name)} Ne Yenir?</h2>
+              <ul className="space-y-3">
+                {guide.food.map((f) => (
+                  <li key={f.name} className="rounded-lg border border-ink/10 bg-paper p-4 shadow-sm">
+                    <p className="font-bold text-ink">{f.name}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-ink/75">{f.description}</p>
+                  </li>
+                ))}
+              </ul>
+            </section>
+            <section>
+              <h2 className="mb-4 font-display text-2xl italic text-ink">{dative(district.name)} Nasıl Gidilir?</h2>
+              <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink/80">
+                {guide.gettingThere.map((g) => (
+                  <li key={g}>{g}</li>
+                ))}
+              </ul>
+            </section>
+            <section>
+              <h2 className="mb-4 font-display text-2xl italic text-ink">{district.name} Gezisi İçin İpuçları</h2>
+              <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink/80">
+                {guide.tips.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+            </section>
+          </div>
+        )}
 
         {/* Dynamic content rendering specifically for the district */}
         <CityContentSections

@@ -22,9 +22,15 @@ function generatePlacesForCity(city: any, type: string, count: number, district?
   // Filter curated base list if district is specified
   if (district) {
     const dNameLower = district.name.toLowerCase();
+    // Adres "Mahalle, İlçe, İl" biçiminde: parçalardan biri ilçe adına birebir
+    // eşitse yer o ilçededir (2026-11-18; önceden yalnız ad/açıklama
+    // aranıyordu, adresi "Beşiktaş" olan Dolmabahçe Beşiktaş sayfasına düşmüyordu).
+    const dNameTr = district.name.toLocaleLowerCase("tr");
     baseList = baseList.filter(item =>
       item.name.toLowerCase().includes(dNameLower) ||
-      (item.description && item.description.toLowerCase().includes(dNameLower))
+      (item.description && item.description.toLowerCase().includes(dNameLower)) ||
+      (typeof item.address === "string" &&
+        item.address.split(",").some((part: string) => part.trim().toLocaleLowerCase("tr") === dNameTr))
     );
   }
 

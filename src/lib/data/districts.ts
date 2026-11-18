@@ -1,5 +1,6 @@
 import districtDistancesRaw from "./districtDistances.json";
 import { RegionSlug } from "@/lib/types";
+import { istanbulDistricts } from "./districtGuides/istanbul";
 
 export interface District {
   slug: string;
@@ -11,6 +12,24 @@ export interface District {
   longDescription: string;
   heroTagline: string;
   location: { lat: number; lng: number };
+  // Büyükşehir içi ilçe (Beşiktaş, Kadıköy...): şehir merkezine "kaç km"
+  // sorusu anlamsız, mesafe (placePairs) sayfası üretilmez.
+  urban?: boolean;
+  // İlçeye özel, elle yazılmış rehber içeriği (2026-11-18, İstanbul'la
+  // başladı). Varsa sayfada kendi bölümleriyle gösterilir; yoksa sayfa eski
+  // şablonla (şehir verisinden) çalışır.
+  guide?: DistrictGuide;
+}
+
+export interface DistrictGuide {
+  intro: string[];
+  neighbourhoods: { name: string; description: string }[];
+  // Yemek kültürü — işletme adı değil, semt/sokak ve yemek türü.
+  food: { name: string; description: string }[];
+  gettingThere: string[];
+  transitSummary: string;
+  idealDuration: string;
+  tips: string[];
 }
 
 export const popularDistricts: District[] = [
@@ -200,7 +219,8 @@ export const popularDistricts: District[] = [
     longDescription: "Trabzon'un Çaykara ilçesinde yer alan Uzungöl, dik yamaçları, zengin bitki örtüsü ve dağların arasına sıkışmış göl manzarasıyla Doğu Karadeniz'in en popüler doğa turizmi destinasyonlarındandır.",
     heroTagline: "Karadeniz Dağları Arasında Sisli ve Eşsiz Göl Manzarası",
     location: { lat: 40.6190, lng: 40.2917 }
-  }
+  },
+  ...istanbulDistricts,
 ];
 
 export function getDistrict(citySlug: string, districtSlug: string): District | undefined {

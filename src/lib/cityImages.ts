@@ -19,6 +19,10 @@ export const CITY_IMAGES: Record<string, string> = {
   // kaldırıldı — Parti 3'te Marmaris'in kendi curated City/District verisi
   // olmadığı için sayfası kaldırılmıştı, bu görsel artık hiçbir yerde
   // kullanılmıyor (orphan veri, madde 296 mantığıyla temizlendi).
+  // İstanbul ilçe rehberleri (2026-11-18), Wikimedia Commons, CC BY-SA.
+  fatih: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Exterior_of_Sultan_Ahmed_I_Mosque_in_Istanbul%2C_Turkey_002.jpg/960px-Exterior_of_Sultan_Ahmed_I_Mosque_in_Istanbul%2C_Turkey_002.jpg",
+  besiktas: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Ortak%C3%B6y_Mosque_and_Bosphorus_Bridge%2C_March_2024_01.jpg/960px-Ortak%C3%B6y_Mosque_and_Bosphorus_Bridge%2C_March_2024_01.jpg",
+  kadikoy: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Kad%C4%B1k%C3%B6y_Ferry_Terminal_in_January_2024_01.jpg/960px-Kad%C4%B1k%C3%B6y_Ferry_Terminal_in_January_2024_01.jpg",
   alacati: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Yel_degirmenleri_%28alacati%29_-_panoramio.jpg/960px-Yel_degirmenleri_%28alacati%29_-_panoramio.jpg",
   ayvalik: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Alibey_Adasi%2C_Ayval%C4%B1k%2C_Turkey_%28Unsplash%29.jpg/960px-Alibey_Adasi%2C_Ayval%C4%B1k%2C_Turkey_%28Unsplash%29.jpg",
   kusadasi: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Kusadasi_Burg.JPG/960px-Kusadasi_Burg.JPG",

@@ -42,6 +42,7 @@ import { PLACE_PAIR_HUBS } from "@/lib/data/placePairs";
 import { getCityAirports, airportSlug } from "@/lib/data/airports";
 import { getAirportPageSlugs } from "@/lib/data/airportTransfers";
 import CarRentalOffer from "@/components/CarRentalOffer";
+import { getDistrictsByCity } from "@/lib/data/districts";
 import { Route as RouteIcon } from "lucide-react";
 import { BookOpen } from "lucide-react";
 import { jsonLd } from "@/lib/jsonLd";
@@ -178,6 +179,7 @@ export default async function CityDetailPage(props: {
   // gerçek rota verisiyle mesafe (mesafe sayfalarına link) — 2026-10-20.
   const hubRoutes = distanceLinks.filter((d) => PLACE_PAIR_HUBS.includes(d.otherCitySlug)).slice(0, 6);
   const cityAirports = getCityAirports(city.slug);
+  const cityDistricts = getDistrictsByCity(city.slug).filter((d) => d.slug !== city.slug);
   const airportPages = new Set(getAirportPageSlugs());
   const quickFacts = getCityQuickFacts(city.slug);
 
@@ -622,6 +624,33 @@ export default async function CityDetailPage(props: {
                       : "Route and distance"}
                   </Link>
                 </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* İlçe rehberleri (2026-11-18): ilçe sayfalarına şehir sayfasından
+            hiç link yoktu; yalnız havalimanı/mesafe tablolarından erişiliyordu. */}
+        {cityDistricts.length > 0 && (
+          <section id="ilceler" className="mt-16 scroll-mt-24 border-t border-ink/10 pt-16 no-print">
+            <h2 className="font-display text-3xl italic text-ink mb-2">
+              {locale === "tr" ? `${city.name} İlçe ve Semt Rehberleri` : `${translateDataText(city.name, locale)} District Guides`}
+            </h2>
+            {locale === "tr" && (
+              <p className="mb-6 text-sm text-ink/65">{`${city.name} gezisini ilçe ilçe planlamak için: gezilecek yerler, ne yenir ve ulaşım.`}</p>
+            )}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {cityDistricts.map((d) => (
+                <Link
+                  key={d.slug}
+                  href={`/${locale}/bolgeler/${city.regionSlug}/${city.slug}/${d.slug}`}
+                  className="group rounded-xl border border-ink/10 bg-paper p-5 shadow-sm transition-colors hover:border-kiremit/50"
+                >
+                  <p className="font-bold text-ink group-hover:text-kiremit">
+                    {locale === "tr" ? `${d.name} gezilecek yerler →` : `${d.name} →`}
+                  </p>
+                  {locale === "tr" && <p className="mt-1.5 text-sm leading-relaxed text-ink/70">{d.summary}</p>}
+                </Link>
               ))}
             </div>
           </section>

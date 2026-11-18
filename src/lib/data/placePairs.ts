@@ -34,7 +34,7 @@ const cityBySlug = new Map(allCities.map((c) => [c.slug, c]));
 
 export const places: Place[] = [
   ...popularDistricts
-    .filter((d) => !cityBySlug.has(d.slug) && !FERRY_ONLY.has(d.slug))
+    .filter((d) => !cityBySlug.has(d.slug) && !FERRY_ONLY.has(d.slug) && !d.urban)
     .map((d) => {
       const city = cityBySlug.get(d.citySlug);
       return {
