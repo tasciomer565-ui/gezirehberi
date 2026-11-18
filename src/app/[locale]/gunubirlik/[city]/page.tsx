@@ -4,7 +4,8 @@ import { Route as RouteIcon, Clock, MapPin } from "lucide-react";
 import { Locale, buildAlternates, buildRobots, buildPageSocialMeta } from "@/lib/i18n";
 import { getDayTrips, getDayTripSlugs, type DayTripStop } from "@/lib/data/dayTrips";
 import { formatDuration } from "@/lib/data/distances";
-import { ablative } from "@/lib/trSuffix";
+import { ablative, dative } from "@/lib/trSuffix";
+import { CITY_CODES } from "@/lib/data/cityCodes";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdSlot from "@/components/AdSlot";
 import { jsonLd } from "@/lib/jsonLd";
@@ -14,6 +15,23 @@ import { jsonLd } from "@/lib/jsonLd";
 // Tüm km/süre değerleri sitenin gerçek rota verisinden; uydurma yer yok.
 export async function generateStaticParams() {
   return getDayTripSlugs().map((city) => ({ city }));
+}
+
+// "İl" diyebilmek için durak gerçekten bir il merkezi olmalı: sitedeki şehir
+// listesinde Kapadokya, Bodrum, Safranbolu gibi ilçe/bölgeler de var. Plaka
+// tablosunda kendi adıyla kayıtlı olan (Kapadokya -> "Nevşehir" değil) il sayılır.
+// "En yakın" km'ye göre (sayfadaki listeler sürüş süresine göre sıralı).
+// Şapka farkı yok sayılır: plaka tablosunda "Hakkâri", şehir listesinde "Hakkari".
+const noCircumflex = (s: string) => s.normalize("NFD").replace(/̂/g, "").normalize("NFC");
+function provinceStops(stops: DayTripStop[]): DayTripStop[] {
+  return stops
+    .filter((s) => {
+      if (s.kind !== "city") return false;
+      const slug = s.href.split("/").pop() ?? "";
+      const province = CITY_CODES[slug]?.[0];
+      return province !== undefined && noCircumflex(province) === noCircumflex(s.name);
+    })
+    .sort((a, b) => a.distanceKm - b.distanceKm);
 }
 
 function band(stops: DayTripStop[], from: number, to: number) {
@@ -27,17 +45,22 @@ export async function generateMetadata(props: { params: Promise<{ city: string; 
   if (!data || data.stops.length < 4) return { title: locale === "tr" ? "Sayfa bulunamadı" : "Page not found" };
   const { city, stops } = data;
   const n = stops.length;
+  // 2026-11-18 (GSC 15 Kasım): bu sayfalara gelen sorgular "kırşehire en yakın
+  // iller", "gaziantep yakın iller", "konya yakını gezilecek yerler" — başlıkta
+  // "yakın" hiç geçmiyordu. Başlık artık "X'e Yakın Yerler" ile başlıyor,
+  // "günübirlik" ve gerçek rota sayısı korunuyor.
+  const to = dative(city.name);
   const candidates = [
-    `${city.name} Günübirlik Gidilecek Yerler: ${n} Rota, Km ve Süre`,
-    `${city.name} Günübirlik Gidilecek ${n} Yer: Km ve Süre`,
-    `${city.name} Günübirlik Gidilecek Yerler (${n} Rota)`,
-    `${city.name} Günübirlik Gezi Rotaları`,
+    `${to} Yakın Yerler ve İller: ${n} Günübirlik Rota, Km`,
+    `${to} Yakın Yerler: ${n} Günübirlik Rota, Km ve Süre`,
+    `${to} Yakın Yerler: ${n} Günübirlik Rota`,
+    `${to} Yakın Günübirlik Gezi Rotaları`,
   ];
   const title = locale === "tr" ? candidates.find((t) => t.length <= 60) ?? candidates[candidates.length - 1] : `Day trips from ${city.name}`;
-  const nearest = stops[0];
+  const nearestCity = provinceStops(stops)[0];
   const description =
     locale === "tr"
-      ? `${city.name} çıkışlı ${n} günübirlik gezi rotası: arabayla 3 saate kadar gidilecek yerler, km ve süreleriyle. En yakını ${nearest.name}, ${Math.round(nearest.distanceKm)} km.`
+      ? `${to} yakın ${n} yer ve il, arabayla 3 saate kadar: km ve süreleriyle günübirlik rotalar.${nearestCity ? ` En yakın il ${nearestCity.name} (${Math.round(nearestCity.distanceKm)} km, ${formatDuration(nearestCity.durationMin, locale)}).` : ""}`
       : `${n} day trips from ${city.name} within 3 hours by car, with distance and drive time.`;
   const path = `/gunubirlik/${city.slug}`;
   return {
@@ -95,9 +118,31 @@ export default async function DayTripsPage(props: { params: Promise<{ city: stri
   const hour2 = band(stops, 60, 120);
   const hour3 = band(stops, 120, 180);
   const nearest = stops[0];
+  const to = dative(city.name);
   const names = (list: DayTripStop[]) => list.slice(0, 5).map((s) => s.name).join(", ");
+  // "Yakın iller" sorusu yalnızca il/şehir duraklarıyla cevaplanıyor (tatil
+  // yerleri ayrı); 2 saate kadar olanlar, yoksa en yakın üç il.
+  const cityStops = provinceStops(stops);
+  const nearCities = cityStops.filter((s) => s.durationMin <= 120);
+  const nearCityList = (nearCities.length > 0 ? nearCities : cityStops.slice(0, 3))
+    .slice(0, 6)
+    .map((s) => `${s.name} (${Math.round(s.distanceKm)} km)`)
+    .join(", ");
+  const nearestCity = cityStops[0];
 
   const faqItems = [
+    ...(nearestCity
+      ? [
+          {
+            q: `${to} en yakın il hangisi?`,
+            a: `Karayoluyla ${to} en yakın il ${nearestCity.name}: ${Math.round(nearestCity.distanceKm)} km, trafiksiz yaklaşık ${formatDuration(nearestCity.durationMin, locale)}.`,
+          },
+          {
+            q: `${to} yakın iller hangileri?`,
+            a: `${nearCities.length > 0 ? `${from} arabayla 2 saate kadar ulaşılan iller` : `${to} en yakın iller`}: ${nearCityList}.`,
+          },
+        ]
+      : []),
     {
       q: `${city.name} yakınında günübirlik nereye gidilir?`,
       a: `${city.name} çıkışlı, arabayla 3 saate kadar ulaşılabilecek ${stops.length} rota var. En yakınları: ${names(stops)}.`,
@@ -141,9 +186,9 @@ export default async function DayTripsPage(props: { params: Promise<{ city: stri
           { label: "Günübirlik Gezi" },
         ]}
       />
-      <h1 className="mb-4 font-display text-3xl italic text-ink sm:text-4xl">{city.name} Günübirlik Gidilecek Yerler</h1>
+      <h1 className="mb-4 font-display text-3xl italic text-ink sm:text-4xl">{`${to} Yakın Yerler: Günübirlik Gidilecek ${stops.length} Rota`}</h1>
       <p className="mb-8 max-w-3xl text-base leading-relaxed text-ink/75">
-        {`${city.name} çıkışlı, arabayla en fazla 3 saatte ulaşılan ${stops.length} günübirlik gezi rotası. En yakını ${nearest.name} (${Math.round(nearest.distanceKm)} km, ${formatDuration(nearest.durationMin, locale)}). Süreler gerçek karayolu güzergahından, trafiksiz ortalama olarak hesaplanmıştır; her rotanın yol tarifine ve yakıt hesabına satırdaki bağlantıdan ulaşabilirsin.`}
+        {`${city.name} çıkışlı, arabayla en fazla 3 saatte ulaşılan ${stops.length} günübirlik gezi rotası. En yakını ${nearest.name} (${Math.round(nearest.distanceKm)} km, ${formatDuration(nearest.durationMin, locale)})${nearestCity && nearestCity !== nearest ? `; ${to} en yakın il ise ${nearestCity.name} (${Math.round(nearestCity.distanceKm)} km)` : ""}. Süreler gerçek karayolu güzergahından, trafiksiz ortalama olarak hesaplanmıştır; her rotanın yol tarifine ve yakıt hesabına satırdaki bağlantıdan ulaşabilirsin.`}
       </p>
 
       {sections.map(

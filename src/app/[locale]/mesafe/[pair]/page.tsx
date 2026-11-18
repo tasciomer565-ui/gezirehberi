@@ -26,7 +26,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { BookOpen } from "lucide-react";
 import PlaceDistanceView, { buildPlaceDistanceMetadata } from "@/components/PlaceDistanceView";
 import { getAllPlacePairData, getPlacePairData } from "@/lib/data/placePairs";
-import { ablative } from "@/lib/trSuffix";
+import { ablative, dative } from "@/lib/trSuffix";
 import { jsonLd } from "@/lib/jsonLd";
 
 // Başlık deneyi grubu: deterministik, slug'ın karakter kodları toplamının
@@ -554,7 +554,7 @@ export default async function DistancePage(props: { params: Promise<{ pair: stri
                 href={`/${locale}/gunubirlik/${c.slug}`}
                 className="inline-flex items-center gap-1 rounded-full border border-kiremit/30 bg-paper px-3 py-1.5 text-xs font-bold text-kiremit hover:bg-kiremit hover:text-paper transition-colors"
               >
-                <Compass size={12} /> {c.name} Günübirlik Rotalar
+                <Compass size={12} /> {dative(c.name)} Yakın Yerler
               </Link>
             ))}
             {routeAirports.map(({ airport, cityName, distanceKm: airKm }) => (

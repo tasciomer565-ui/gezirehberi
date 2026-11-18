@@ -6,7 +6,7 @@ import { getDayTripSlugs } from "@/lib/data/dayTrips";
 import { getCityAirports, airportSlug } from "@/lib/data/airports";
 import { getAirportPageSlugs } from "@/lib/data/airportTransfers";
 import { formatDuration, getDistanceLinksForCity, CITY_TABLE_MIN_ROWS } from "@/lib/data/distances";
-import { ablative } from "@/lib/trSuffix";
+import { ablative, dative } from "@/lib/trSuffix";
 
 // "İlgili Rota ve Mesafeler" + "Sıradaki Rota Önerisi" (2026-11-02): şehir
 // sayfasından, kullanıcıyı sitede tutacak en alakalı sonraki adımlar —
@@ -78,7 +78,7 @@ export default function CityRelatedRoutes({ city, locale }: { city: City; locale
             <Compass size={15} className="mt-0.5 shrink-0 text-kiremit" />
             <span>
               <span className="block text-xs font-bold uppercase tracking-wider text-kiremit">Günübirlik</span>
-              <span className="font-bold text-ink">{ablative(city.name)} günübirlik gidilecek yerler</span>
+              <span className="font-bold text-ink">{dative(city.name)} yakın yerler ve günübirlik rotalar</span>
             </span>
           </Link>
         )}

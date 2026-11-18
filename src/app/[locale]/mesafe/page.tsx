@@ -6,7 +6,7 @@ import { allCities } from "@/lib/data/cities";
 import { regions } from "@/lib/data/regions";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdSlot from "@/components/AdSlot";
-import { ablative } from "@/lib/trSuffix";
+import { ablative, dative } from "@/lib/trSuffix";
 import { getDayTripSlugs } from "@/lib/data/dayTrips";
 import { jsonLd } from "@/lib/jsonLd";
 
@@ -285,7 +285,7 @@ export default async function DistanceHubPage(props: { params: Promise<{ locale:
                 href={`/${locale}/gunubirlik/${c.slug}`}
                 className="rounded-full border border-ink/15 px-3 py-1.5 text-sm font-semibold text-ink/75 transition-colors hover:border-kiremit hover:text-kiremit"
               >
-                {c.name} günübirlik
+                {dative(c.name)} yakın yerler
               </Link>
             ))}
           </div>
