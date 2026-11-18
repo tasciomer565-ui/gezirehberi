@@ -60,3 +60,8 @@ Durum: `[ ]` bekliyor, `[x]` yapıldı (tarih ve commit ile).
   Bing'e site eklendi, GSC'de 4xx doğrulaması başlatıldı, build önbelleği açıldı.
 - 2026-11-18: Instagram/TikTok (@yoldefterim.tr) footer, Hakkımızda, İletişim'e
   eklendi; Organization JSON-LD'ye `sameAs` (liste: src/lib/social.ts).
+- 2026-11-18: DiscoverCars ortaklığı (kimlik `yoldefterim`): havalimanı sayfaları ve
+  şehir sayfası havalimanı bölümünde kiralık araç kutusu (src/components/CarRentalOffer.tsx),
+  rel="sponsored nofollow", açık ortaklık notu. Travelpayouts Drive script'i
+  REDDEDİLDİ (tıklamaları ele geçiriyor, kendini gizliyor) — siteye ekleme.
+  Bekleyen: GetYourGuide ve Trip.com ortaklık kimlikleri.

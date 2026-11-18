@@ -41,6 +41,7 @@ import { ablative, dative } from "@/lib/trSuffix";
 import { PLACE_PAIR_HUBS } from "@/lib/data/placePairs";
 import { getCityAirports, airportSlug } from "@/lib/data/airports";
 import { getAirportPageSlugs } from "@/lib/data/airportTransfers";
+import CarRentalOffer from "@/components/CarRentalOffer";
 import { Route as RouteIcon } from "lucide-react";
 import { BookOpen } from "lucide-react";
 import { jsonLd } from "@/lib/jsonLd";
@@ -677,6 +678,7 @@ export default async function CityDetailPage(props: {
                 </li>
               ))}
             </ul>
+            {locale === "tr" && <CarRentalOffer iata={cityAirports[0].airport.iata} airportName={cityAirports[0].airport.name} />}
             {locale === "tr" && (
               <p className="mt-4 text-sm">
                 <Link href={`/${locale}/havalimani`} className="font-bold text-kiremit hover:underline">

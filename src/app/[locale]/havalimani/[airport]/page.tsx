@@ -7,6 +7,7 @@ import { getAirportPageSlugs, getAirportTransfers } from "@/lib/data/airportTran
 import { formatDuration } from "@/lib/data/distances";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdSlot from "@/components/AdSlot";
+import CarRentalOffer from "@/components/CarRentalOffer";
 import { jsonLd } from "@/lib/jsonLd";
 
 // "Antalya havalimanı Kemer kaç km" tipi transfer sorguları için (2026-10-02).
@@ -215,6 +216,8 @@ export default async function AirportPage(props: { params: Promise<{ airport: st
           ? "Süreler trafiksiz ortalamadır. Transfer ve otobüs (HAVAŞ vb.) seferleri ile ücretleri için havalimanının ve firmaların güncel duyurularını kontrol edin."
           : "Times assume no traffic. Check current shuttle schedules and fares with the airport and operators."}
       </p>
+
+      {isTr && <CarRentalOffer iata={airport.iata} airportName={base} />}
 
       <AdSlot />
 
