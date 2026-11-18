@@ -68,6 +68,40 @@ Video aracına verilecek ortak talimat:
 
 ---
 
+## 4. İzmir'den 1 saatte kaçabileceğin 4 yer + 1 bonus
+
+Veri: sitedeki günübirlik sayfası (/tr/gunubirlik/izmir), gerçek karayolu km ve
+trafiksiz sürüş süresi. Liste/geri sayım formatı "kaydet" aldığı için algoritmada öne çıkar.
+
+**Video aracına talimat:**
+
+> Dikey (9:16), 30 saniyelik, hızlı tempolu seyahat Reels'i. İlk 1 saniyede büyük yazı
+> ve hareketli görüntüyle izleyiciyi yakala. Geri sayım formatı: her durakta ekranın
+> üstünde büyük numara (1, 2, 3, 4, BONUS), altında yer adı ve "🚗 X km · Y dk" etiketi.
+> Her durak 4-5 saniye: önce geniş drone/manzara çekimi, sonra yakın detay. Ege'nin
+> parlak mavi-turkuaz ve beyaz renkleri, güneşli yaz ışığı. Enerjik, samimi Türkçe dış
+> ses; arka planda hareketli, telifsiz müzik ve geçişlerde "whoosh" efekti. Sonda
+> "Kaydet, hafta sonu lazım olacak!" yazısı, ardından yoldefterim.com.tr ve logo.
+
+| Sahne | Süre | Görüntü | Ekran yazısı | Dış ses |
+|---|---|---|---|---|
+| Kanca | 0-2 sn | İzmir Kordon'da gün batımı, hızlı zoom | İzmir'den 1 saatte kaçabileceğin 5 yer 🚗 | "İzmir'de yaşıyorsan bu yerlere bir saatte gidebilirsin!" |
+| 1 | 2-6 sn | Spil Dağı'ndan Manisa ovası manzarası | 1 · Manisa — 39 km · 37 dk | "Bir: Manisa. Spil Dağı'nın tepesinden ova manzarası, sadece 37 dakika." |
+| 2 | 6-11 sn | Alaçatı'nın taş evleri, begonviller, yel değirmenleri | 2 · Alaçatı — 78 km · 55 dk | "İki: Alaçatı. Taş sokaklar, begonviller ve yel değirmenleri." |
+| 3 | 11-16 sn | Çeşme Kalesi, turkuaz deniz | 3 · Çeşme — 86 km · 55 dk | "Üç: Çeşme. Kale, turkuaz deniz ve plajlar, yine 55 dakika." |
+| 4 | 16-21 sn | Efes'te Celsus Kütüphanesi cephesi, yavaş yukarı kayan çekim | 4 · Efes (Selçuk) — 78 km · 58 dk | "Dört: Efes. Celsus Kütüphanesi'nin önünde durmak bir saatten kısa sürüyor." |
+| Bonus | 21-26 sn | Kuşadası Güvercinada Kalesi, gün batımı | BONUS · Kuşadası — 98 km · 1 sa 16 dk | "Bonus: Kuşadası. Güvercinada'da gün batımı için biraz daha sür." |
+| Kapanış | 26-30 sn | Arabada yol, güneş gözlüğü, logo | Kaydet, hafta sonu lazım olacak! 📌 · yoldefterim.com.tr | "Kaydet, hafta sonu lazım olacak. Diğer rotalar ve yol tarifi Yol Defteri'nde." |
+
+Not: Süreler trafiksiz sürüş süresidir; ekranın altına küçük yazıyla "Süreler trafiksiz ortalamadır" eklenebilir.
+
+**Kapak yazısı:** İzmir'den 1 saatte 5 kaçamak 🚗
+**Açıklama:** İzmir'den günübirlik nereye gidilir? 🚗 Manisa 37 dk, Alaçatı 55 dk, Çeşme 55 dk, Efes 58 dk, bonus Kuşadası 1 sa 16 dk. Hangisine gidiyorsun? 👇 Hepsi ve 12 günübirlik rota daha: yoldefterim.com.tr (link profilde)
+**Etiketler:** #izmir #alaçatı #çeşme #efes #kuşadası #manisa #günübirlik #hafta_sonu #gezilecekyerler #yoldefteri
+**Yorum için soru:** "Hangisine gidiyorsun?" yorum sayısını artırır; ilk yorumu kendiniz yazıp sabitleyin: "Tam liste ve km bilgisi: yoldefterim.com.tr/tr/gunubirlik/izmir"
+
+---
+
 ## Paylaşım önerisi
 
 - **Paylaşım sırası:** Haftada 2-3 video. Önce Kadıköy (yemek videoları en çok paylaşılan tür), sonra Beşiktaş, sonra Fatih.
