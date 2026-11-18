@@ -32,6 +32,13 @@ Durum: `[ ]` bekliyor, `[x]` yapıldı (tarih ve commit ile).
    kartları, ilçe sayfası kapakları ve diğer Wikimedia görsellerine uygula;
    Unsplash kart görsellerinde `w=` parametresiyle srcset. Ekran dışı görseller
    `loading="lazy"`. Lighthouse mobil şehir sayfası LCP hedefi < 4 sn.
+2b. [ ] **Kapak görseli LCP (ölçüm 2026-11-18, Lighthouse mobil, canlı):** İstanbul
+   şehir sayfası 75 puan, LCP 6,2 sn (önce 72 / 7,2 sn); Beşiktaş ilçe 81, LCP 5,0 sn.
+   LCP dökümü: TTFB 0,7 sn, yükleme gecikmesi 1,8 sn, indirme 3,2 sn. Mobil (DPR 1,75)
+   srcset'ten 960px'i seçiyor (166 KB). Yapılacak: (a) layout'a
+   `<link rel="preconnect" href="https://upload.wikimedia.org">`, (b) CityHero `sizes`
+   değerini mobilde 500px seçilecek şekilde ayarla (görsel zaten %65 karartılmış).
+   Sonra aynı iki sayfayı yeniden ölç.
 3. [ ] **Harita tembel yükleme (hız).** Şehir sayfasındaki OpenStreetMap haritası
    açılışta ~15 kutucuk indiriyor; harita görünür alana gelince ya da tıklanınca yüklensin.
 4. [ ] **Günübirlik sayfalarına ItemList yapılandırılmış verisi.** Durak listesi
@@ -75,3 +82,6 @@ Durum: `[ ]` bekliyor, `[x]` yapıldı (tarih ve commit ile).
   parti: Beyoğlu, Üsküdar, Sarıyer, Adalar → sonra diğer büyükşehirler
   (İzmir Konak/Karşıyaka, Ankara Çankaya, Antalya Muratpaşa/Kaleiçi). Kural:
   partide en fazla 3-4 ilçe, işletme adı yok, fiyat/saat yok, koordinat OSM'den.
+- 2026-11-18: **2. parti taslağı hazır, yayında DEĞİL** — git dalı `ilce-parti-2`
+  (Beyoğlu, Üsküdar, Sarıyer, Adalar; 26 yeni yer, build temiz). 2026-12-02 ölçümü
+  iyiyse: `git merge ilce-parti-2` → build → push. Kötüyse önce şablonu düzelt.
