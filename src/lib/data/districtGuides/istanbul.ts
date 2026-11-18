@@ -150,4 +150,188 @@ export const istanbulDistricts: District[] = [
       ],
     },
   },
+  // İkinci parti (taslak hazırlandı 2026-11-18; ilk partinin sonucu
+  // 2026-12-02'de ölçüldükten sonra yayına alınacak).
+  {
+    slug: "beyoglu",
+    citySlug: "istanbul",
+    regionSlug: "marmara",
+    urban: true,
+    name: "Beyoğlu",
+    title: "İstanbul Beyoğlu Gezi Rehberi",
+    summary:
+      "Galata Kulesi, İstiklal Caddesi, Taksim Meydanı ve Karaköy'le İstanbul'un sanat, eğlence ve gece hayatı merkezi; müzeleri, pasajları ve yokuşlu Cihangir sokaklarıyla.",
+    longDescription:
+      "Beyoğlu, Haliç'in kuzey kıyısında, eski adıyla Pera ve Galata semtlerini kapsar. 19. yüzyılda elçiliklerin, pasajların ve tiyatroların açıldığı bu bölge, bugün İstiklal Caddesi, Galata Kulesi, Karaköy'ün kafeleri ve Pera Müzesi ile İstanbul Modern gibi sanat kurumlarıyla şehrin kültür hayatının merkezidir.",
+    heroTagline: "Pera'nın Pasajları, Galata'nın Yokuşları",
+    location: { lat: 41.0284, lng: 28.9737 },
+    guide: {
+      intro: [
+        "Beyoğlu'nu gezmenin klasik yolu Taksim Meydanı'ndan başlayıp İstiklal Caddesi boyunca Tünel'e yürümek, oradan Galip Dede Caddesi'nden Galata Kulesi'ne inmektir. Yol üzerindeki Çiçek Pasajı, Balık Pazarı ve Pera Müzesi kısa molalar için idealdir.",
+        "Galata Kulesi'nden Kamondo Merdivenleri ile Karaköy'e inilir; kıyıdaki İstanbul Modern ve Karaköy'ün kafe sokakları günü tamamlar. Daha sakin bir öğleden sonra için Cihangir ve Çukurcuma'nın antikacılarla dolu yokuşları tercih edilir.",
+      ],
+      neighbourhoods: [
+        { name: "Taksim ve İstiklal", description: "Cumhuriyet Anıtı'nın bulunduğu meydan ve Tünel'e uzanan, nostaljik tramvaylı yaya caddesi." },
+        { name: "Galata", description: "Galata Kulesi, Galata Mevlevihanesi, Kamondo Merdivenleri ve tasarım dükkânlarıyla dolu yokuşlar." },
+        { name: "Karaköy", description: "Kıyıdaki İstanbul Modern, vapur iskelesi, baklavacıları ve kafe sokaklarıyla eski liman semti." },
+        { name: "Cihangir ve Çukurcuma", description: "Boğaz'a bakan sakin sokaklar, kafeler ve antikacılarla dolu Çukurcuma." },
+        { name: "Asmalımescit ve Tünel", description: "Pera Müzesi, eski pasajlar ve akşamları dolan meyhane sokakları." },
+      ],
+      food: [
+        { name: "Karaköy'de baklava ve börek", description: "Karaköy'ün köklü baklavacı ve börekçileri, Galata Köprüsü'ne yakın sokaklarda sıralanır." },
+        { name: "Balık Pazarı ve Çiçek Pasajı", description: "Galatasaray'daki tarihi Balık Pazarı sokağında midye, kokoreç, meze ve balık; yanındaki Çiçek Pasajı'nda meyhane sofrası." },
+        { name: "Asmalımescit meyhaneleri", description: "Tünel'e yakın dar sokaklarda akşamları dolan meze ve rakı sofraları." },
+        { name: "Taksim'de ıslak hamburger", description: "Taksim Meydanı çevresindeki büfelerin gece geç saatlere kadar servis edilen meşhur ıslak hamburgeri." },
+        { name: "Cihangir'de kahvaltı ve kahve", description: "Cihangir'in küçük kafeleri, sakin bir kahvaltı ya da kahve molası için semtin en sevilen durağıdır." },
+      ],
+      gettingThere: [
+        "M2 metrosunun Taksim ve Şişhane istasyonları İstiklal Caddesi'nin iki ucundadır.",
+        "Kabataş'tan F1 füniküler Taksim'e, Karaköy'den 1875'ten beri çalışan tarihi F2 Tünel füniküleri İstiklal'in Tünel ucuna çıkar.",
+        "T1 tramvayının Karaköy ve Tophane durakları kıyı tarafındadır; Karaköy iskelesine Kadıköy vapurları yanaşır.",
+        "İstiklal Caddesi boyunca Taksim ile Tünel arasında T2 nostaljik tramvay çalışır.",
+      ],
+      transitSummary: "M2 metro (Taksim, Şişhane), F1 ve F2 füniküler, T1 tramvay (Karaköy, Tophane), Karaköy vapur iskelesi ve İstiklal'deki nostaljik tramvayla ulaşılır.",
+      idealDuration: "1 gün: Taksim'den Galata'ya İstiklal yürüyüşü, öğleden sonra Karaköy ve İstanbul Modern",
+      tips: [
+        "Galata Kulesi'nde sıra öğleden sonra ve gün batımında uzar; sabah erken gitmek en iyisidir.",
+        "Galata ile Karaköy arasındaki yokuşlar diktir; inişi Kamondo Merdivenleri'nden yapın.",
+        "İstiklal Caddesi hafta sonu akşamları çok kalabalıktır; yürüyüşü hafta içi sabahları yapmak daha rahattır.",
+      ],
+    },
+  },
+  {
+    slug: "uskudar",
+    citySlug: "istanbul",
+    regionSlug: "marmara",
+    urban: true,
+    name: "Üsküdar",
+    title: "İstanbul Üsküdar Gezi Rehberi",
+    summary:
+      "Kız Kulesi, Mimar Sinan'ın camileri, Beylerbeyi Sarayı, Kuzguncuk ve Çamlıca Tepesi ile Anadolu yakasının en köklü ilçesi; Salacak sahilinde gün batımıyla ünlü.",
+    longDescription:
+      "Üsküdar, Boğaz'ın Anadolu yakasında, antik Khrysopolis kentinin yerinde kurulmuştur. Osmanlı döneminde Anadolu'ya giden kervanların başlangıç noktasıydı; Mimar Sinan'ın Mihrimah Sultan ve Şemsi Paşa camileri, sahildeki Kız Kulesi manzarası ve Kuzguncuk'un ahşap evleri bu köklü geçmişin izlerini taşır.",
+    heroTagline: "Kız Kulesi'ne Karşı Gün Batımı, Sinan'ın Camileri",
+    location: { lat: 41.0265, lng: 29.0151 },
+    guide: {
+      intro: [
+        "Üsküdar'a vapurla gelindiğinde iskelenin hemen karşısında Mihrimah Sultan Camii, birkaç dakika güneyde ise denize sıfır Şemsi Paşa Camii karşılar. Sahil boyunca Salacak'a yürüyüp Kız Kulesi'ne karşı çay içmek ilçenin en klasik keyfidir.",
+        "Kuzeye doğru Kuzguncuk'un renkli ahşap evleri ve Beylerbeyi Sarayı, Boğaz kıyısında yarım günlük keyifli bir rota oluşturur. Şehrin tamamını yukarıdan görmek isteyenler için Büyük Çamlıca Tepesi en iyi seyir noktasıdır.",
+      ],
+      neighbourhoods: [
+        { name: "İskele ve Meydan", description: "Mihrimah Sultan Camii, Şemsi Paşa Camii, vapur ve Marmaray bağlantılarıyla ilçenin merkezi." },
+        { name: "Salacak", description: "Kız Kulesi'nin tam karşısındaki sahil; çay bahçeleri ve Tarihi Yarımada manzarasıyla gün batımı noktası." },
+        { name: "Kuzguncuk", description: "Renkli ahşap evleri, bostanı ve cami, kilise ile sinagogun yan yana durduğu sokaklarıyla dizi ve film setlerinin vazgeçilmezi." },
+        { name: "Beylerbeyi ve Çengelköy", description: "Beylerbeyi Sarayı, Boğaz kıyısındaki çınaraltı çay bahçeleri ve sahil yolu." },
+        { name: "Çamlıca", description: "İstanbul'u iki yakasıyla birlikte gören tepe, korusu ve seyir terasları." },
+      ],
+      food: [
+        { name: "Salacak'ta çay ve simit", description: "Kız Kulesi'ne karşı sahil çay bahçelerinde, özellikle gün batımında." },
+        { name: "Çengelköy'de çınaraltı kahvaltısı", description: "Boğaz kıyısındaki asırlık çınarın altında kahvaltı ve çay; Çengelköy, adını taşıyan hıyarıyla da bilinir." },
+        { name: "Kuzguncuk'ta kahvaltı", description: "Ahşap evlerin arasındaki küçük kahvaltıcı ve kafeler, hafta sonu sabahları dolar." },
+        { name: "Çarşı'da esnaf lokantaları", description: "Üsküdar çarşısındaki köklü esnaf lokantaları ve tatlıcılar, vapur öncesi hızlı ve doyurucu bir öğle yemeği sunar." },
+      ],
+      gettingThere: [
+        "Üsküdar iskelesine Eminönü, Karaköy ve Beşiktaş'tan vapur gelir.",
+        "Marmaray'ın Üsküdar istasyonu Boğaz'ın altından Sirkeci'ye birkaç dakikada bağlanır.",
+        "M5 metro hattı Üsküdar'dan başlayıp Anadolu yakasının iç kesimlerine uzanır.",
+        "Kız Kulesi'ne tekneler Salacak ve Karaköy'den kalkar.",
+      ],
+      transitSummary: "Vapur (Eminönü, Karaköy, Beşiktaş), Marmaray (Üsküdar istasyonu) ve M5 metroyla ulaşılır; Kız Kulesi'ne Salacak'tan tekneyle geçilir.",
+      idealDuration: "1 gün: sabah Sinan'ın camileri ve Salacak, öğleden sonra Kuzguncuk ve Beylerbeyi",
+      tips: [
+        "Salacak sahilinde gün batımında Tarihi Yarımada silüeti ve Kız Kulesi birlikte görülür.",
+        "Kuzguncuk'tan Beylerbeyi'ne sahil boyunca yürüyerek gidilebilir.",
+        "Çamlıca Tepesi'ne çıkmak için açık havalı bir gün seçin; puslu havada manzara kaybolur.",
+      ],
+    },
+  },
+  {
+    slug: "sariyer",
+    citySlug: "istanbul",
+    regionSlug: "marmara",
+    urban: true,
+    name: "Sarıyer",
+    title: "İstanbul Sarıyer Gezi Rehberi",
+    summary:
+      "Rumelihisarı, Emirgan Korusu, Sakıp Sabancı Müzesi, Belgrad Ormanı ve Kilyos plajlarıyla Boğaz'ın Karadeniz'e açılan yeşil ilçesi; Sarıyer böreği ve Rumelikavağı balıkçılarıyla bilinir.",
+    longDescription:
+      "Sarıyer, Boğaz'ın Avrupa yakasında Rumelihisarı'ndan Karadeniz kıyısına kadar uzanır. Fatih Sultan Mehmed'in 1452'de yaptırdığı Rumelihisarı, lale bahçeleriyle ünlü Emirgan Korusu, sahildeki yalılar ve kuzeyde Belgrad Ormanı ile Kilyos plajları, ilçeyi şehrin en yeşil ve en ferah köşelerinden biri yapar.",
+    heroTagline: "Hisarlar, Korular ve Karadeniz'e Açılan Boğaz",
+    location: { lat: 41.1686, lng: 29.0573 },
+    guide: {
+      intro: [
+        "Sarıyer'i gezmek için sahil yolunu güneyden kuzeye takip etmek en mantıklısıdır: Rumelihisarı'nın surları, ardından Emirgan Korusu ve hemen yanındaki Sakıp Sabancı Müzesi. Yeniköy ve Tarabya'nın yalılarıyla devam eden yol, Büyükdere'deki Sadberk Hanım Müzesi'ne ulaşır.",
+        "Günün sonunda Rumelikavağı'nda balık yemek ya da Sarıyer çarşısında börek almak klasiktir. Doğa arayanlar için Belgrad Ormanı'nın yürüyüş parkurları, yaz aylarında ise Karadeniz kıyısındaki Kilyos plajları tercih edilir.",
+      ],
+      neighbourhoods: [
+        { name: "Rumelihisarı", description: "1452'de yapılan hisar, Boğaz'ın en dar noktasına bakan surlar ve sahildeki kafeler." },
+        { name: "Emirgan", description: "Nisan'da lale festivaliyle dolan koru, köşkleri ve Sakıp Sabancı Müzesi." },
+        { name: "Yeniköy, Tarabya ve Büyükdere", description: "Boğaz'ın en gösterişli yalıları, sahil yürüyüşü ve Sadberk Hanım Müzesi." },
+        { name: "Sarıyer çarşı ve Rumelikavağı", description: "İlçenin merkezi, börekçileri ve Boğaz'ın Karadeniz ağzına yakın balıkçı köyü." },
+        { name: "Belgrad Ormanı ve Kilyos", description: "Tarihi bentleri ve yürüyüş parkurlarıyla orman; Karadeniz kıyısında kumsallar." },
+      ],
+      food: [
+        { name: "Sarıyer böreği", description: "İlçeye adını veren, kıymalı ya da peynirli kat kat çıtır börek; çarşıdaki börekçilerde bulunur." },
+        { name: "Rumelikavağı'nda balık", description: "Karadeniz'e açılan Boğaz ağzındaki balıkçı köyünde, iskele çevresindeki balık lokantaları." },
+        { name: "Emirgan'da çay ve kahvaltı", description: "Emirgan Korusu'ndaki köşklerde ve sahildeki çay bahçelerinde Boğaz'a karşı kahvaltı." },
+        { name: "Rumelihisarı'nda Boğaz kenarı kahvaltısı", description: "Hisarın eteğindeki sahil kafelerinde, Boğaz'ın en dar noktasına karşı." },
+      ],
+      gettingThere: [
+        "M2 metrosunun kuzey ucu Hacıosman istasyonu Sarıyer sınırlarındadır; buradan otobüs ve taksiyle sahile inilir.",
+        "Beşiktaş'tan kuzeye giden sahil otobüsleri Rumelihisarı, Emirgan, Yeniköy ve Sarıyer'e uğrar.",
+        "Şehir Hatları'nın uzun Boğaz turu vapuru Sarıyer ve Rumelikavağı iskelelerine yanaşır.",
+        "Kilyos ve Belgrad Ormanı'na özel araçla ya da Sarıyer merkezden kalkan otobüslerle gidilir.",
+      ],
+      transitSummary: "M2 metro (Hacıosman), Beşiktaş'tan Boğaz sahil otobüsleri ve Boğaz turu vapuruyla (Sarıyer, Rumelikavağı) ulaşılır.",
+      idealDuration: "1 gün: Rumelihisarı ve Emirgan, ardından sahil boyunca Sarıyer ve Rumelikavağı",
+      tips: [
+        "Emirgan Korusu'nun en güzel zamanı Nisan'daki lale dönemidir.",
+        "Hafta sonu sahil yolunda trafik çok yoğunlaşır; Boğaz vapuru hem manzara hem zaman için daha iyi bir seçenektir.",
+        "Kilyos'ta deniz akıntılı olabilir; yalnızca cankurtaranın olduğu bölümlerde denize girin.",
+      ],
+    },
+  },
+  {
+    slug: "adalar",
+    citySlug: "istanbul",
+    regionSlug: "marmara",
+    urban: true,
+    name: "Adalar",
+    title: "İstanbul Adalar (Büyükada, Heybeliada) Gezi Rehberi",
+    summary:
+      "Büyükada, Heybeliada, Burgazada ve Kınalıada'dan oluşan, motorlu araç trafiği olmayan ilçe; köşkleri, çam ormanları, Aya Yorgi Tepesi ve vapur yolculuğuyla İstanbul'un en sevilen günübirlik kaçamağı.",
+    longDescription:
+      "Adalar, Marmara Denizi'ndeki adalardan oluşan ilçedir; gezilerin odağı dört büyük ada olan Büyükada, Heybeliada, Burgazada ve Kınalıada'dır. Adalarda özel motorlu araç kullanılmaz; ulaşım bisiklet, yürüyüş ve belediyenin elektrikli araçlarıyla yapılır. 19. yüzyıl köşkleri, çam ormanları ve deniz kenarı çay bahçeleri, İstanbul'un kalabalığından vapurla bir saat uzakta sakin bir gün sunar.",
+    heroTagline: "Arabasız Sokaklar, Köşkler ve Çam Kokulu Tepeler",
+    location: { lat: 40.8742, lng: 29.1293 },
+    guide: {
+      intro: [
+        "Adalar gezisi vapurla başlar: Kabataş ya da Bostancı'dan kalkan vapurlar sırasıyla Kınalıada, Burgazada, Heybeliada ve Büyükada'ya uğrar. Tek günde en çok tercih edilen plan, Büyükada'da Aya Yorgi Tepesi'ne yürümek ve dönüşte Heybeliada'da kısa bir mola vermektir.",
+        "Büyükada'da iskeleden Çankaya Caddesi boyunca köşklerin arasından yürüyüp Aya Yorgi'ye tırmanmak, tepeden Marmara'yı izlemek adanın en klasik rotasıdır. Heybeliada'nın çam ormanları ve sakin koyları, Burgazada'daki Sait Faik Abasıyanık Müzesi ise daha sakin bir gün için idealdir.",
+      ],
+      neighbourhoods: [
+        { name: "Büyükada", description: "En büyük ada; köşkleri, Aya Yorgi Tepesi, Çankaya Caddesi ve bisiklet turu." },
+        { name: "Heybeliada", description: "Çam ormanları, Heybeliada Ruhban Okulu'nun bulunduğu tepe ve sakin koylar." },
+        { name: "Burgazada", description: "Yazar Sait Faik Abasıyanık'ın evi olan müze ve küçük, sakin bir çarşı." },
+        { name: "Kınalıada", description: "Karaya en yakın ada; kızıl toprakları ve iskele çevresindeki küçük plajlarıyla." },
+      ],
+      food: [
+        { name: "İskele çevresinde balık", description: "Her adanın iskele çevresinde deniz kenarında balık ve meze lokantaları sıralanır." },
+        { name: "Büyükada'da dondurma ve kahvaltı", description: "Büyükada çarşısındaki dondurmacılar ve bahçeli kahvaltıcılar, gün boyu ada gezisinin molalarıdır." },
+        { name: "Vapurda çay ve simit", description: "Adalara giden vapurda martılara simit atarak çay içmek, yolculuğun ayrılmaz parçasıdır." },
+      ],
+      gettingThere: [
+        "Avrupa yakasında Kabataş, Anadolu yakasında Bostancı iskelesinden Adalar vapurları kalkar; Bostancı'dan yolculuk daha kısadır.",
+        "Vapurlar genellikle Kınalıada, Burgazada, Heybeliada ve Büyükada'ya sırasıyla uğrar.",
+        "Adalarda özel motorlu araç yoktur; ada içinde yürüyüş, bisiklet ve belediyenin elektrikli araçları kullanılır.",
+      ],
+      transitSummary: "Kabataş ya da Bostancı'dan vapurla ulaşılır; adalarda araç yoktur, yürüyüş, bisiklet ve elektrikli araçlar kullanılır.",
+      idealDuration: "1 gün: sabah vapuruyla Büyükada ve Aya Yorgi, dönüşte Heybeliada molası",
+      tips: [
+        "Yaz hafta sonlarında vapurlar çok kalabalıktır; sabahın ilk vapurlarını tercih edin.",
+        "Aya Yorgi Tepesi'ne çıkan yol dik ve uzundur; rahat ayakkabı giyin, yanınıza su alın.",
+        "Dönüş vapurlarının son sefer saatini ada iskelesinden önceden kontrol edin.",
+      ],
+    },
+  },
 ];
