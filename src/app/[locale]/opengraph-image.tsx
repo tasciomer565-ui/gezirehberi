@@ -8,12 +8,12 @@ import { getDictionary, Locale } from "@/lib/i18n";
 // see report items 275-277). Generated at request time via next/og, so no
 // static image asset is needed and there's nothing fabricated about it.
 
-// Build'de 5 dil için üretilsin; yoksa her istekte sunucuda çiziliyordu
-// (Vercel Hobby CPU limiti, 2026-11-15). "ar" yok: next/og Arapça yazıyı
+// Build'de 5 dil için üretilir (statik site). next/og Arapça yazıyı
 // şekillendiremiyor ("lookupType: 5 - substFormat: 3 is not yet supported"),
-// build'i düşürüyor; o dil önceki gibi istek anında deneniyor.
+// bu yüzden "ar" görselinde İngilizce metin kullanılıyor (2026-11-18; önceden
+// /ar/opengraph-image hiç üretilmiyordu, Arapça sayfaların paylaşım görseli kırıktı).
 export function generateStaticParams() {
-  return ["tr", "en", "de", "ru"].map((locale) => ({ locale }));
+  return ["tr", "en", "de", "ar", "ru"].map((locale) => ({ locale }));
 }
 
 export const size = { width: 1200, height: 630 };
@@ -22,7 +22,7 @@ export const contentType = "image/png";
 export default async function Image({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: rawLocale } = await params;
   const locale = (rawLocale || "tr") as Locale;
-  const dict = getDictionary(locale);
+  const dict = getDictionary(locale === "ar" ? "en" : locale);
 
   return new ImageResponse(
     (

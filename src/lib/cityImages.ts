@@ -122,6 +122,18 @@ export const CITY_IMAGES: Record<string, string> = {
   zonguldak: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Zonguldak_51.jpg/960px-Zonguldak_51.jpg",
 };
 
+// Wikimedia küçük resimleri için srcset (2026-11-18). Statik sitede Next.js görsel
+// optimizasyonu yok; kapak görseli mobilde de 960px (~390 KB) iniyordu (Lighthouse
+// mobil LCP 7,2 sn). Wikimedia standart küçük resim boyutlarından 500px (~110 KB)
+// sürümünü dar ekranlara veriyor. Wikimedia dışı URL'lerde undefined döner.
+export function wikimediaSrcSet(url: string): string | undefined {
+  const m = url.match(/^(https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\/thumb\/.+\/)(\d+)px-([^/]+)$/);
+  if (!m) return undefined;
+  const [, base, width, file] = m;
+  const widths = [...new Set([500, Number(width)])].sort((a, b) => a - b);
+  return widths.map((w) => `${base}${w}px-${file} ${w}w`).join(", ");
+}
+
 export function getCityImage(slug: string, regionSlug?: string): string {
   const s = (slug || "").toLowerCase();
   return CITY_IMAGES[s] || REGION_IMAGES[regionSlug || ""] || REGION_IMAGES.marmara;

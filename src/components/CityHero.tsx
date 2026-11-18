@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+
 import { MapPin } from "lucide-react";
 import { getRegionMeta } from "@/lib/data/regionMeta";
 import { translateDataText, Locale, getDictionary } from "@/lib/i18n";
-import { getCityImage } from "@/lib/cityImages";
+import { getCityImage, wikimediaSrcSet } from "@/lib/cityImages";
 
 interface CityHeroProps {
   city: {
@@ -53,14 +53,18 @@ export default function CityHero({ city, locale = "tr" }: CityHeroProps) {
     <div className="relative h-96 overflow-hidden text-paper">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
-        <Image
+        {/* Düz <img> + srcset: statik sitede next/image boyut üretemiyor; mobil
+            ekranlar Wikimedia'nın 500px küçük resmini alır (bkz. wikimediaSrcSet). */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={bgImage}
+          srcSet={wikimediaSrcSet(bgImage)}
+          sizes="100vw"
           alt={locale === "tr" ? `${city.name} gezilecek yerler ve gezi rehberi` : translateDataText(city.name, locale as Locale)}
-          fill
           loading="eager"
           fetchPriority="high"
-          sizes="100vw"
-          className="object-cover filter brightness-[0.65] contrast-[1.03]"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover filter brightness-[0.65] contrast-[1.03]"
         />
         {/* Subtle color tint overlay reflecting the region's theme */}
         <div 
