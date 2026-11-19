@@ -24,10 +24,13 @@ geçmeden yayınlanmaz, yapılan iş aşağıdaki "Günlük kayıt"a yazılır.
 
 Durum: `[ ]` bekliyor, `[x]` yapıldı (tarih ve commit ile).
 
-1. [ ] **Sitemap lastmod doğruluğu.** 1.297 URL'nin lastmod'u 2026-10-01'de kalmış;
+1. [x] **Sitemap lastmod doğruluğu** (2026-11-19, baae5c2). 1.297 URL'nin lastmod'u 2026-10-01'de kalmış;
    rota/günübirlik sayfaları Kasım'da değişti. lastmod'u sayfanın gerçek son
    değişikliğinden üret (scripts/generate-content-dates.ts ya da git geçmişi).
    Doğru lastmod, değişen sayfaların daha hızlı yeniden taranmasını sağlar.
+   Gerçek neden: Cloudflare sığ klonunda `git log` hepsine son commit gününü veriyordu
+   (1.898 URL de 2026-11-18). Artık src/lib/data/sitemapDates.json okunuyor; içerik
+   dosyaları değişince push öncesi `npx tsx scripts/generate-sitemap-dates.ts` çalıştır.
 2. [ ] **Görsel boyutları (hız).** Kapak görselindeki `wikimediaSrcSet`'i bölge
    kartları, ilçe sayfası kapakları ve diğer Wikimedia görsellerine uygula;
    Unsplash kart görsellerinde `w=` parametresiyle srcset. Ekran dışı görseller
@@ -85,3 +88,4 @@ Durum: `[ ]` bekliyor, `[x]` yapıldı (tarih ve commit ile).
 - 2026-11-18: **2. parti taslağı hazır, yayında DEĞİL** — git dalı `ilce-parti-2`
   (Beyoğlu, Üsküdar, Sarıyer, Adalar; 26 yeni yer, build temiz). 2026-12-02 ölçümü
   iyiyse: `git merge ilce-parti-2` → build → push. Kötüyse önce şablonu düzelt.
+- 2026-11-19: Sağlık temiz (tüm URL 200, www 301, API 200, GA4 kimliği pakette; çerez onayına bağlı olduğundan HTML'de yok). Cloudflare son derlemeler başarılı. GSC son 7 gün (11-17'ye kadar): 592 tık, 467 B gösterim, TO %0,13, trend yukarı (günlük tık 58→85-100). Yapılan: sitemap lastmod düzeltmesi (baae5c2), canlıda 1.898 URL gerçek tarihlerle (Ağu–Kas). Sıradaki: madde 2b (preconnect + CityHero sizes).
