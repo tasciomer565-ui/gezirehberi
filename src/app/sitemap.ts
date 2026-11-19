@@ -1,6 +1,6 @@
 export const dynamic = "force-static";
 import { MetadataRoute } from "next";
-import { execFileSync } from "child_process";
+import dates from "@/lib/data/sitemapDates.json";
 import { regions } from "@/lib/data/regions";
 import { allCities } from "@/lib/data/cities";
 import { popularDistricts } from "@/lib/data/districts";
@@ -21,61 +21,33 @@ import { getDayTripSlugs } from "@/lib/data/dayTrips";
 const locales = ["tr"];
 const CANDIDATE_TRANSLATED_LOCALES: TranslationTargetLocale[] = ["en", "de", "ru", "ar"];
 
-// Report item 95 — every entry used to get `lastModified: new Date()`, i.e.
-// "right now, every single build," which is a fake freshness signal (worse
-// than no signal at all). This reads the real last-commit date of whatever
-// source file actually backs that route, via `git log`, and simply omits
-// lastModified when no real source/git data is available rather than
-// fabricating one. Memoized per pathspec since sitemap() is called once per
-// generation but touches the same handful of source files hundreds of times.
-const gitDateCache = new Map<string, Date | undefined>();
+// lastmod, src/lib/data/sitemapDates.json'dan okunur (scripts/generate-sitemap-dates.ts
+// tam git geçmişiyle üretir). Cloudflare Pages sığ klon kullandığı için derlemede
+// `git log` çağırmak tüm URL'lere aynı sahte tarihi verirdi. Tarih yoksa
+// lastModified hiç yazılmaz (uydurma tarih yok). Birden fazla kaynak verilirse
+// en yeni olanı alınır.
+const sitemapDates = dates as { paths: Record<string, string>; cities: Record<string, string> };
 
-function getGitLastModified(pathspec: string): Date | undefined {
-  if (gitDateCache.has(pathspec)) return gitDateCache.get(pathspec);
-  let result: Date | undefined;
-  try {
-    const output = execFileSync("git", ["log", "-1", "--format=%cI", "--", pathspec], {
-      cwd: process.cwd(),
-      stdio: ["ignore", "pipe", "ignore"],
-    })
-      .toString()
-      .trim();
-    // Guard the Date parse too — a malformed/unexpected git output shouldn't
-    // be able to produce an "Invalid Date" that then breaks sitemap XML
-    // serialization downstream.
-    if (output) {
-      const parsed = new Date(output);
-      result = isNaN(parsed.getTime()) ? undefined : parsed;
-    } else {
-      result = undefined;
-    }
-  } catch {
-    // Covers: git binary not in PATH (ENOENT — confirmed reproducible on
-    // Vercel-style build environments), no .git directory (shallow/tarball
-    // checkout, exit 128), or any other spawn/exec failure. Never fatal —
-    // this is a "nice to have" freshness signal, not a build requirement.
-    result = undefined;
+function newest(isoDates: (string | undefined)[]): Date | undefined {
+  let best: Date | undefined;
+  for (const iso of isoDates) {
+    if (!iso) continue;
+    const d = new Date(iso);
+    if (isNaN(d.getTime())) continue;
+    if (!best || d > best) best = d;
   }
-  gitDateCache.set(pathspec, result);
-  return result;
+  return best;
 }
 
-// Spreads lastModified into the route entry only when a real date was found.
-// Wrapped in its own try/catch as a second, redundant safety net — even if
-// getGitLastModified's internal handling somehow misses a case, a sitemap
-// entry must never be allowed to take down the entire build.
 function route(
   url: string,
   changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"],
   priority: number,
-  sourcePathspec: string
+  sourcePathspec: string | string[],
+  extraIso?: string
 ): MetadataRoute.Sitemap[number] {
-  let lastModified: Date | undefined;
-  try {
-    lastModified = getGitLastModified(sourcePathspec);
-  } catch {
-    lastModified = undefined;
-  }
+  const specs = Array.isArray(sourcePathspec) ? sourcePathspec : [sourcePathspec];
+  const lastModified = newest([...specs.map((sp) => sitemapDates.paths[sp]), extraIso]);
   return { url, changeFrequency, priority, ...(lastModified ? { lastModified } : {}) };
 }
 
@@ -134,10 +106,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       sitemapRoutes.push(route(`${siteUrl}/${locale}/mesafe/sehir/${slug}`, "monthly", 0.6, "src/lib/data/distanceCache.json"));
     });
     getDayTripSlugs().forEach((slug) => {
-      sitemapRoutes.push(route(`${siteUrl}/${locale}/gunubirlik/${slug}`, "monthly", 0.6, "src/lib/data/distanceCache.json"));
+      sitemapRoutes.push(route(`${siteUrl}/${locale}/gunubirlik/${slug}`, "monthly", 0.6, ["src/lib/data/dayTrips.ts", "src/lib/data/distanceCache.json"]));
     });
     getAllPlacePairData().forEach((d) => {
-      sitemapRoutes.push(route(`${siteUrl}/${locale}/mesafe/${d.slug}`, "monthly", 0.4, "src/lib/data/placeDistances.json"));
+      sitemapRoutes.push(route(`${siteUrl}/${locale}/mesafe/${d.slug}`, "monthly", 0.4, ["src/lib/data/placeDistances.json", "src/lib/data/placePairs.ts"]));
     });
     getAllDistancePageData().forEach((d) => {
       sitemapRoutes.push(
@@ -162,7 +134,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // commit as a shared (coarser, but real — never fabricated) signal.
     allCities.forEach((city) => {
       sitemapRoutes.push(
-        route(`${siteUrl}/${locale}/bolgeler/${city.regionSlug}/${city.slug}`, "daily", 0.8, "src/lib/data/cities")
+        route(
+          `${siteUrl}/${locale}/bolgeler/${city.regionSlug}/${city.slug}`,
+          "daily",
+          0.8,
+          city.slug === "istanbul" ? ["src/lib/data/districtGuides"] : [],
+          sitemapDates.cities[city.slug]
+        )
       );
     });
 
@@ -173,7 +151,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           `${siteUrl}/${locale}/bolgeler/${district.regionSlug}/${district.citySlug}/${district.slug}`,
           "daily",
           0.7,
-          "src/lib/data/districts.ts"
+          ["src/lib/data/districts.ts", "src/lib/data/districtGuides"]
         )
       );
     });
