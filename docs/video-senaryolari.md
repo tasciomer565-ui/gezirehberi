@@ -102,6 +102,40 @@ Not: Süreler trafiksiz sürüş süresidir; ekranın altına küçük yazıyla 
 
 ---
 
+## 5. Sonbaharda İstanbul'dan kaçılacak 4 yer + 1 bonus
+
+Veri: /tr/gunubirlik/istanbul (gerçek karayolu km, trafiksiz süre; km il merkezine).
+Kasım-Aralık için zamanlı: sonbahar renkleri (Maşukiye, Sapanca, Yedigöller).
+
+**Video aracına talimat:**
+
+> Dikey (9:16), 30-35 saniyelik sonbahar temalı seyahat Reels'i. Açılışta İstanbul
+> trafiğinde kırmızı stop lambaları, ardından hızlı geçişle sararmış ormanlara kaçış.
+> Sıcak sonbahar renkleri: turuncu, sarı ve kırmızı yapraklar, sisli göl sabahları, buharı
+> tüten çay. Geri sayım formatı: ekranın üstünde büyük numara (1, 2, 3, 4, BONUS), altında
+> yer adı ve "🚗 X km · Y" etiketi. Her durak 5 saniye: geniş drone çekimi + yakın detay.
+> Samimi, esprili Türkçe dış ses; hafif akustik, telifsiz müzik. Sonda "Kaydet, bu hafta
+> sonu lazım olacak!" yazısı, yoldefterim.com.tr ve logo.
+
+| Sahne | Süre | Görüntü | Ekran yazısı | Dış ses |
+|---|---|---|---|---|
+| Kanca | 0-3 sn | İstanbul trafiği, stop lambaları; hızlı geçişle sararmış orman yolu | İstanbul'dan kaç! 🍂 Sonbaharın en güzel 5 rotası | "İstanbul trafiğinden bunaldıysan, bu hafta sonu buralara kaç!" |
+| 1 | 3-8 sn | Maşukiye'de dere kenarı, sarı yapraklar, Kartepe'ye çıkan yol | 1 · Kocaeli (Maşukiye, Kartepe) · 104 km · 1 sa 16 dk | "Bir: Kocaeli. Maşukiye'de dere kenarında kahvaltı, üstüne Kartepe manzarası." |
+| 2 | 8-13 sn | Yalova'da tarihi termal hamam binası, buhar | 2 · Yalova (Termal) · 100 km · 1 sa 20 dk | "İki: Yalova. Soğuk havada termal sular, yanında Yürüyen Köşk." |
+| 3 | 13-18 sn | Sapanca Gölü'nde sisli sabah, kıyıda sonbahar ağaçları | 3 · Sakarya (Sapanca Gölü) · 148 km · 1 sa 46 dk | "Üç: Sapanca. Sisli göl sabahları ve sonbahar renkleri." |
+| 4 | 18-23 sn | Cumalıkızık'ın taş-ahşap evleri, köy kahvaltısı | 4 · Bursa (Cumalıkızık) · 156 km · 1 sa 50 dk | "Dört: Bursa. 700 yıllık Cumalıkızık köyünde kahvaltı." |
+| Bonus | 23-29 sn | Yedigöller'de göle yansıyan kırmızı-sarı orman, Abant Gölü | BONUS · Bolu (Abant, Yedigöller) · 257 km · 2 sa 48 dk | "Bonus: Bolu. Yedigöller'de sonbahar, Türkiye'nin en renkli manzarası. Biraz uzak ama değer." |
+| Kapanış | 29-34 sn | Arabanın camından sonbahar yolu, logo | Kaydet, bu hafta sonu lazım olacak! 📌 yoldefterim.com.tr | "Süreler trafiksiz tabii, İstanbul'da onu sadece sabah altıda görürsün. Kaydet, tüm rotalar Yol Defteri'nde!" |
+
+Not: km ve süreler il merkezine trafiksiz sürüş süresidir; ekranın altına küçük yazıyla "Süreler trafiksiz ortalamadır" eklenebilir.
+
+**Kapak yazısı:** İstanbul'dan kaç! 🍂 Sonbaharın 5 rotası
+**Açıklama:** Sonbaharda İstanbul'dan nereye kaçılır? 🍂 Maşukiye 1 sa 16 dk, Yalova 1 sa 20 dk, Sapanca 1 sa 46 dk, Cumalıkızık 1 sa 50 dk, bonus Yedigöller 2 sa 48 dk. Sen hangisini seçerdin? 👇 Tüm günübirlik rotalar ve km bilgisi: yoldefterim.com.tr (link profilde)
+**Etiketler:** #istanbul #sonbahar #sapanca #maşukiye #kartepe #cumalıkızık #yedigöller #abant #hafta_sonu #günübirlik #yoldefteri
+**Sabit yorum:** "Tam liste ve km bilgisi: yoldefterim.com.tr/tr/gunubirlik/istanbul"
+
+---
+
 ## Paylaşım önerisi
 
 - **Paylaşım sırası:** Haftada 2-3 video. Önce Kadıköy (yemek videoları en çok paylaşılan tür), sonra Beşiktaş, sonra Fatih.
