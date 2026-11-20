@@ -11,6 +11,7 @@
     "src/lib/data/distanceCache.json": "2026-10-01T19:54:55+03:00",
     "src/lib/data/airportTransfers.json": "2026-10-12T10:04:53+03:00",
     "src/lib/data/provinces.ts": "2026-11-02T01:34:26+03:00",
+    "src/lib/data/beaches.ts": "2026-11-20T12:48:37+03:00",
     "src/lib/data/placeDistances.json": "2026-10-12T14:10:54+03:00",
     "src/lib/data/regions.ts": "2026-09-30T09:33:09+03:00",
     "src/lib/data/cities": "2026-11-18T16:32:15+03:00",

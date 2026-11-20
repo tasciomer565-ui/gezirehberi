@@ -16,7 +16,7 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
   const params = await props.params;
   const locale = (params.locale || "tr") as Locale;
   const total = getAllBeaches().length;
-  const title = "Türkiye Plajları ve Koyları Rehberi: Deniz Tatili";
+  const title = "Türkiye Plajları ve Koyları Rehberi";
   const description = `Ege, Akdeniz, Marmara ve Karadeniz kıyılarında ${total} popüler plaj, koy ve lagün: kumlu sahiller, sakin koylar ve şehir rehberi bağlantıları tek listede.`;
   return {
     title,

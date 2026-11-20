@@ -24,6 +24,9 @@
 /rehberler               /tr/rehberler                     301
 /rehberler/*             /tr/rehberler/:splat              301
 /plaka-kodlari           /tr/plaka-kodlari                 301
+/muzeler                 /tr/muzeler                       301
+/plajlar                 /tr/plajlar                       301
+/yoresel-lezzetler       /tr/yoresel-lezzetler             301
 /hakkimizda              /tr/hakkimizda                    301
 /iletisim                /tr/iletisim                      301
 /gizlilik-politikasi     /tr/gizlilik-politikasi           301

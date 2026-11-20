@@ -15,7 +15,7 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
   const params = await props.params;
   const locale = (params.locale || "tr") as Locale;
   const totalFoods = allCities.reduce((sum, c) => sum + c.localFood.length, 0);
-  const title = "Türkiye Yöresel Lezzetleri: 85 Şehirde Ne Yenir?";
+  const title = "Türkiye Yöresel Lezzetleri: 85 İl";
   const description = `Türkiye genelinde ${totalFoods} meşhur yöresel yemek ve tatlı: Gaziantep, Adana, Hatay, Trabzon, İzmir, Konya ve 85 şehirde ne yenir, malzemeleri ve mevsimleri.`;
   return {
     title,
@@ -154,19 +154,19 @@ export default async function LocalFoodsPage(props: { params: Promise<{ locale: 
                     </Link>
                   </div>
                   <ul className="space-y-2.5">
-                    {foods.slice(0, 6).map((f) => (
+                    {foods.slice(0, 4).map((f) => (
                       <li key={f.id} className="text-sm">
                         <span className="flex items-start gap-2 font-semibold text-ink/90">
                           <Soup size={14} className="mt-1 shrink-0 text-kiremit" />
                           <span>{f.name}</span>
                         </span>
                         <p className="mt-0.5 pl-6 text-xs leading-relaxed text-ink/65 line-clamp-2">
-                          {f.description}
+                          {f.description.length > 110 ? f.description.slice(0, f.description.lastIndexOf(" ", 110)) + "…" : f.description}
                         </p>
                       </li>
                     ))}
                   </ul>
-                  {foods.length > 6 && (
+                  {foods.length > 4 && (
                     <Link
                       href={`/${locale}/bolgeler/${city.regionSlug}/${city.slug}#ne-yenir`}
                       className="mt-3 inline-block text-xs font-bold text-kiremit hover:underline"
