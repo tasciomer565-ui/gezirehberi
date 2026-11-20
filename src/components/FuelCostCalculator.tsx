@@ -281,12 +281,12 @@ export default function FuelCostCalculator({
             <span className="font-bold text-ink">Ücretli Otoyol / HGS Uyarısı: </span>
             Bu güzergah üzerinde <strong>{tollHighways.join(", ")}</strong> kesimleri yer alabilir. Otoyol ve köprü geçiş tarifeleri dönemsel olarak güncellendiği için yola çıkmadan güncel tutarı{" "}
             <a
-              href="https://www.kgm.gov.tr"
+              href="https://www.kgm.gov.tr/Sayfalar/KGM/SiteTr/Otoyollar/UcretlerAna.aspx"
               target="_blank"
               rel="noopener noreferrer nofollow"
               className="font-bold text-kiremit hover:underline"
             >
-              Karayolları Genel Müdürlüğü (KGM)
+              KGM Otoyol ve Köprü Geçiş Ücretleri
             </a>{" "}
             üzerinden kontrol etmeniz önerilir (eski/yanıltıcı olabilecek sabit TL tutarı gösterilmez).
           </div>
