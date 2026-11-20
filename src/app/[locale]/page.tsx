@@ -114,6 +114,26 @@ export default async function Home(props: {
             {dict.home.startBlacksea}
           </Link>
         </div>
+        {locale === "tr" && (
+          <div className="mt-6 flex flex-wrap gap-2">
+            {[
+              { href: "/tr/yoresel-lezzetler", label: "Yöresel Lezzetler (800 Yemek)" },
+              { href: "/tr/plajlar", label: "Plajlar ve Koylar" },
+              { href: "/tr/muzeler", label: "Türkiye Müzeleri" },
+              { href: "/tr/havalimani", label: "Havalimanı Ulaşım" },
+              { href: "/tr/mesafe", label: "Şehirler Arası Mesafe" },
+              { href: "/tr/plaka-kodlari", label: "Plaka Kodları" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-full border border-ink/12 bg-paper px-3.5 py-1.5 text-xs font-semibold text-ink/80 shadow-sm transition-colors hover:border-kiremit hover:text-kiremit"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        )}
       </section>
 
       <div className="route-dotted-line h-px w-full animate-pulse" />
