@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { ImageIcon } from "lucide-react";
-import { CITY_IMAGES } from "@/lib/cityImages";
+import { CITY_IMAGES, wikimediaSrcSet } from "@/lib/cityImages";
 
 // Smart Image Mapping Arrays - 100% active, gorgeous Unsplash photos representing Turkey's nature, history, dining and hospitality
 const HISTORICAL_IMAGES = {
@@ -128,6 +127,7 @@ interface PlaceholderImageProps {
   aspect?: "square" | "video" | "wide";
   regionSlug?: string;
   index?: number;
+  sizes?: string;
 }
 
 export default function PlaceholderImage({
@@ -139,6 +139,7 @@ export default function PlaceholderImage({
   aspect = "video",
   regionSlug = "marmara",
   index,
+  sizes = "(max-width: 768px) 420px, (max-width: 1200px) 50vw, 33vw",
 }: PlaceholderImageProps) {
   const [imgError, setImgError] = useState(false);
   const hash = hashString(seed);
@@ -236,13 +237,16 @@ export default function PlaceholderImage({
 
       {/* Main Image */}
       {!imgError && imgUrl && (
-        <Image
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
           src={imgUrl}
+          srcSet={wikimediaSrcSet(imgUrl)}
           alt={alt ?? label ?? ""}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes={sizes}
+          loading="lazy"
+          decoding="async"
           onError={() => setImgError(true)}
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
       )}
 

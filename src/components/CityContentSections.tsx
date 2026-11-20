@@ -75,9 +75,33 @@ export default function CityContentSections({
   const [loadingMore, setLoadingMore] = useState<boolean>(false);
   const [mobileView, setMobileView] = useState<"list" | "map">("list");
 
-  // Map viewport boundary state
+  // Map viewport boundary state & lazy mount
   const [mapViewportFilter, setMapViewportFilter] = useState<boolean>(false);
   const [mapBounds, setMapBounds] = useState<{ northEast: [number, number]; southWest: [number, number] } | null>(null);
+  const [mapLoaded, setMapLoaded] = useState<boolean>(false);
+  const mapContainerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = mapContainerRef.current;
+    if (!el || mapLoaded) return;
+    if (typeof IntersectionObserver === "undefined") {
+      const id = setTimeout(() => setMapLoaded(true), 0);
+      return () => clearTimeout(id);
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setMapLoaded(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [mapLoaded]);
+
+  const showMap = mapLoaded || mobileView === "map";
 
   const PAGE_LIMIT = 24;
   const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -430,16 +454,35 @@ export default function CityContentSections({
           )}
         </div>
 
-        <div className={`lg:col-span-2 relative h-[450px] lg:h-[calc(100vh-180px)] lg:sticky lg:top-24 ${mobileView === "map" ? "block h-[calc(100vh-180px)]" : "hidden lg:block"}`}>
-          <PlacesMap
-            center={cityCenter}
-            zoom={12}
-            places={processedItems}
-            locale={locale}
-            onBoundsChange={(bounds) => {
-              setMapBounds(bounds);
-            }}
-          />
+        <div
+          ref={mapContainerRef}
+          className={`lg:col-span-2 relative h-[450px] lg:h-[calc(100vh-180px)] lg:sticky lg:top-24 ${mobileView === "map" ? "block h-[calc(100vh-180px)]" : "hidden lg:block"}`}
+        >
+          {showMap ? (
+            <PlacesMap
+              center={cityCenter}
+              zoom={12}
+              places={processedItems}
+              locale={locale}
+              onBoundsChange={(bounds) => {
+                setMapBounds(bounds);
+              }}
+            />
+          ) : (
+            <div className="flex h-full w-full flex-col items-center justify-center rounded-xl border border-ink/10 bg-paper/60 p-6 text-center">
+              <MapPinned size={28} className="mb-2 text-kiremit/70" />
+              <p className="text-sm font-semibold text-ink/70">
+                {locale === "tr" ? "Harita kaydırıldığında otomatik yüklenir" : "Map loads as you scroll"}
+              </p>
+              <button
+                type="button"
+                onClick={() => setMapLoaded(true)}
+                className="mt-3 rounded-full border border-kiremit/30 px-4 py-1.5 text-xs font-bold text-kiremit hover:bg-kiremit hover:text-paper transition-colors cursor-pointer"
+              >
+                {locale === "tr" ? "Haritayı Şimdi Yükle" : "Load Map Now"}
+              </button>
+            </div>
+          )}
         </div>
       </div>
 

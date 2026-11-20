@@ -1,9 +1,8 @@
 import Link from "@/components/PlainLink";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Region } from "@/lib/types";
 import { translateDataText, Locale } from "@/lib/i18n";
-import { REGION_IMAGES } from "@/lib/cityImages";
+import { REGION_IMAGES, wikimediaSrcSet } from "@/lib/cityImages";
 
 // eager: mobilde ilk kart ekranın ilk görünümünde ve LCP öğesi (Lighthouse
 // 2026-09-29: ana sayfada 2,4 sn "load delay", düşük öncelikle yükleniyordu).
@@ -43,14 +42,16 @@ export default function RegionCard({
     >
       {/* Background Image Container with Zoom effect */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={bgImage}
+          srcSet={wikimediaSrcSet(bgImage)}
           alt={locale === "tr" ? `${region.name} Bölgesi gezi rehberi` : region.name}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 768px) 420px, (max-width: 1200px) 50vw, 33vw"
           loading={eager ? "eager" : "lazy"}
           fetchPriority={eager ? "high" : "auto"}
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 filter brightness-[0.85] contrast-[1.05]"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 filter brightness-[0.85] contrast-[1.05]"
         />
         {/* Dark linear gradient overlay for contrast */}
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/20 opacity-90 transition-opacity duration-300 group-hover:opacity-95" />
