@@ -31,25 +31,25 @@ Durum: `[ ]` bekliyor, `[x]` yapıldı (tarih ve commit ile).
    Gerçek neden: Cloudflare sığ klonunda `git log` hepsine son commit gününü veriyordu
    (1.898 URL de 2026-11-18). Artık src/lib/data/sitemapDates.json okunuyor; içerik
    dosyaları değişince push öncesi `npx tsx scripts/generate-sitemap-dates.ts` çalıştır.
-2. [ ] **Görsel boyutları (hız).** Kapak görselindeki `wikimediaSrcSet`'i bölge
+2. [x] **(2026-11-20: 8610948 ve 9dff171 ile yapılmış, doğrulandı)** Görsel boyutları (hız).** Kapak görselindeki `wikimediaSrcSet`'i bölge
    kartları, ilçe sayfası kapakları ve diğer Wikimedia görsellerine uygula;
    Unsplash kart görsellerinde `w=` parametresiyle srcset. Ekran dışı görseller
    `loading="lazy"`. Lighthouse mobil şehir sayfası LCP hedefi < 4 sn.
-2b. [ ] **Kapak görseli LCP (ölçüm 2026-11-18, Lighthouse mobil, canlı):** İstanbul
+2b. [x] **(2026-11-20: 8610948 ile yapılmış: preconnect + CityHero sizes; yeniden Lighthouse ölçümü hâlâ yapılmadı)** Kapak görseli LCP (ölçüm 2026-11-18, Lighthouse mobil, canlı):** İstanbul
    şehir sayfası 75 puan, LCP 6,2 sn (önce 72 / 7,2 sn); Beşiktaş ilçe 81, LCP 5,0 sn.
    LCP dökümü: TTFB 0,7 sn, yükleme gecikmesi 1,8 sn, indirme 3,2 sn. Mobil (DPR 1,75)
    srcset'ten 960px'i seçiyor (166 KB). Yapılacak: (a) layout'a
    `<link rel="preconnect" href="https://upload.wikimedia.org">`, (b) CityHero `sizes`
    değerini mobilde 500px seçilecek şekilde ayarla (görsel zaten %65 karartılmış).
    Sonra aynı iki sayfayı yeniden ölç.
-3. [ ] **Harita tembel yükleme (hız).** Şehir sayfasındaki OpenStreetMap haritası
+3. [x] **(9dff171, IntersectionObserver ile zaten yapılmış)** Harita tembel yükleme (hız).** Şehir sayfasındaki OpenStreetMap haritası
    açılışta ~15 kutucuk indiriyor; harita görünür alana gelince ya da tıklanınca yüklensin.
-4. [ ] **Günübirlik sayfalarına ItemList yapılandırılmış verisi.** Durak listesi
+4. [x] **(8610948 ile yapılmış)** Günübirlik sayfalarına ItemList yapılandırılmış verisi.** Durak listesi
    (ad, sayfa URL'si) `ItemList` JSON-LD olarak; içerik zaten sayfada görünür.
-5. [ ] **Rota sayfasından şehir mesafe tablosuna bağlantı.** Şehir tabloları
+5. [x] **(mesafe/[pair] sayfasında zaten var: 'X'ten N şehre mesafe tablosu →')** Rota sayfasından şehir mesafe tablosuna bağlantı.** Şehir tabloları
    (/tr/mesafe/sehir/X) TO %0,86 ile rota sayfalarının ~10 katı; her rota
    sayfasından iki şehrin tablosuna görünür bağlantı (yoksa ekle).
-6. [ ] **Havalimanı sayfaları içerik kontrolü.** 48 sayfa, 6.665 gösterim, TO %0,18.
+6. [x] **(2026-11-20: incelendi, değişiklik yok; GSC 28 gün 8,92 B gösterim, 16 tık, konum 9,1; sorgular 'X havalimanı Y kaç km' ve başlık zaten 'Kaç Km, Kaç Dk?' içeriyor; 2 hafta sonra yeniden bak)** Havalimanı sayfaları içerik kontrolü.** 48 sayfa, 6.665 gösterim, TO %0,18.
    Hangi sorgulardan geldiğine bak (GSC), başlık/açıklama sorguyla eşleşiyor mu.
    (Deney dışı sayfa türü; tek seferde değiştir, sonra 2 hafta ölç.)
 7. [ ] **Ortaklık (affiliate) entegrasyonu** — kullanıcı Travelpayouts (Trip.com
@@ -89,3 +89,5 @@ Durum: `[ ]` bekliyor, `[x]` yapıldı (tarih ve commit ile).
   (Beyoğlu, Üsküdar, Sarıyer, Adalar; 26 yeni yer, build temiz). 2026-12-02 ölçümü
   iyiyse: `git merge ilce-parti-2` → build → push. Kötüyse önce şablonu düzelt.
 - 2026-11-19: Sağlık temiz (tüm URL 200, www 301, API 200, GA4 kimliği pakette; çerez onayına bağlı olduğundan HTML'de yok). Cloudflare son derlemeler başarılı. GSC son 7 gün (11-17'ye kadar): 592 tık, 467 B gösterim, TO %0,13, trend yukarı (günlük tık 58→85-100). Yapılan: sitemap lastmod düzeltmesi (baae5c2), canlıda 1.898 URL gerçek tarihlerle (Ağu–Kas). Sıradaki: madde 2b (preconnect + CityHero sizes).
+
+- 2026-11-20: Sağlık temiz (tüm URL 200, www 301, API 200; GA4 çerez onayına bağlı, HTML'de yok). Cloudflare derlemeleri başarılı (biri sürüyordu, başka oturum push etmiş). GSC son 7 gün (11-12→11-18): 627 tık, ~494 B gösterim, TO %0,13, günlük tık 71→93, trend yukarı. Yapılan: dal origin/main'e fast-forward (9 commit). Plan eskimişti: madde 2-5 başka oturumlarda yapılmış, işaretlendi. Madde 6 analiz edildi, site değişikliği yok. Sıradaki: 7 (GetYourGuide/Trip.com kimliği bekleniyor), 8-9 tarih 2026-12-08.
