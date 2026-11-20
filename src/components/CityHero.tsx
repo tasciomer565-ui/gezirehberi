@@ -59,7 +59,7 @@ export default function CityHero({ city, locale = "tr" }: CityHeroProps) {
         <img
           src={bgImage}
           srcSet={wikimediaSrcSet(bgImage)}
-          sizes="100vw"
+          sizes="(max-width: 640px) 420px, 100vw"
           alt={locale === "tr" ? `${city.name} gezilecek yerler ve gezi rehberi` : translateDataText(city.name, locale as Locale)}
           loading="eager"
           fetchPriority="high"

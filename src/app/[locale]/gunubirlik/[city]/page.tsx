@@ -168,6 +168,18 @@ export default async function DayTripsPage(props: { params: Promise<{ city: stri
     "@type": "FAQPage",
     mainEntity: faqItems.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
   };
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${to} Yakın Yerler: Günübirlik Gidilecek ${stops.length} Rota`,
+    numberOfItems: stops.length,
+    itemListElement: stops.slice(0, 20).map((s, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: `${s.name} (${Math.round(s.distanceKm)} km)`,
+      url: `https://www.yoldefterim.com.tr/${locale}/mesafe/${s.pairSlug}`,
+    })),
+  };
 
   const sections: { title: string; list: DayTripStop[] }[] = [
     { title: `${from} 1 Saate Kadar Uzaklıktaki Yerler`, list: hour1 },
@@ -178,6 +190,7 @@ export default async function DayTripsPage(props: { params: Promise<{ city: stri
   return (
     <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(itemListSchema) }} />
       <Breadcrumbs
         withSchema
         items={[

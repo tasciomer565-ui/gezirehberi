@@ -121,6 +121,11 @@ export default async function RootLayout(props: {
       style={{ scrollBehavior: "smooth" }}
       data-scroll-behavior="smooth"
     >
+      <head>
+        <link rel="preconnect" href="https://upload.wikimedia.org" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://upload.wikimedia.org" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-ink selection:bg-kiremit/20">
         <ThemeProvider>
           <Header
