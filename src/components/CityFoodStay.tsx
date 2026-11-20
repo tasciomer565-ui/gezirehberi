@@ -2,6 +2,7 @@ import Link from "@/components/PlainLink";
 import { UtensilsCrossed, BedDouble, Soup, CloudSun, Store } from "lucide-react";
 import type { City } from "@/lib/types";
 import { withLocative } from "@/lib/turkish";
+import HotelOffer from "@/components/HotelOffer";
 
 // "X ne meşhur / X'te ne yenir / X'te nerede kalınır / X hava durumu" sorguları
 // için sunucuda render edilen bölüm (2026-11-02). Önceden yemek, restoran ve
@@ -97,6 +98,7 @@ export default function CityFoodStay({ city }: { city: City }) {
               ))}
             </ul>
           )}
+          <HotelOffer cityName={city.name} />
         </section>
       )}
 

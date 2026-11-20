@@ -22,6 +22,7 @@ import { getDayTripSlugs } from "@/lib/data/dayTrips";
 import { getCityAirports, airportSlug } from "@/lib/data/airports";
 import { getAirportPageSlugs } from "@/lib/data/airportTransfers";
 import AdSlot from "@/components/AdSlot";
+import { TRIP_HOTELS_AFFILIATE_URL } from "@/components/HotelOffer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { BookOpen } from "lucide-react";
 import PlaceDistanceView, { buildPlaceDistanceMetadata } from "@/components/PlaceDistanceView";
@@ -569,6 +570,14 @@ export default async function DistancePage(props: { params: Promise<{ pair: stri
                 <Plane size={12} className="text-kiremit" /> {airport.name} ({cityName}: {Math.round(airKm)} km)
               </Link>
             ))}
+            <a
+              href={TRIP_HOTELS_AFFILIATE_URL}
+              target="_blank"
+              rel="sponsored nofollow noopener"
+              className="inline-flex items-center gap-1 rounded-full border border-kiremit/30 bg-kiremit/10 px-3 py-1.5 text-xs font-bold text-kiremit hover:bg-kiremit hover:text-paper transition-colors"
+            >
+              {cityB.name} Otel Fiyatlarına Bak →
+            </a>
           </div>
           <div className="flex flex-wrap items-center justify-between gap-2 border-t border-ink/10 pt-3 text-xs text-ink/70">
             <span className="flex items-center gap-1.5">

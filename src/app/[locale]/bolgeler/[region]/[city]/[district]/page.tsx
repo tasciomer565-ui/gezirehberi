@@ -14,6 +14,7 @@ import ContentAccuracyFeedback from "@/components/ContentAccuracyFeedback";
 import ConfusedPlacesWarning from "@/components/ConfusedPlacesWarning";
 import { getConfusablePlaces } from "@/lib/data/confusablePlaces";
 import AdSlot from "@/components/AdSlot";
+import HotelOffer from "@/components/HotelOffer";
 
 import { getCity } from "@/lib/data/cities";
 import { getDistrict, getAllDistrictSlugs, getDistrictDistance } from "@/lib/data/districts";
@@ -429,6 +430,8 @@ export default async function DistrictDetailPage(props: {
           initialTotalCount={initialPlaces?.totalCount}
           initialHasMore={initialPlaces?.hasMore}
         />
+
+        {locale === "tr" && <HotelOffer cityName={district.name} />}
 
         {placePairs.length > 0 && (
           <section className="mt-16 border-t border-ink/10 pt-12 no-print">
