@@ -26,6 +26,7 @@ import { getCity, getAllCitySlugs, allCities, getContentLastUpdated, isHiddenGem
 import { getConfusablePlaces } from "@/lib/data/confusablePlaces";
 import RelatedCities from "@/components/RelatedCities";
 import AdSlot from "@/components/AdSlot";
+import { ToursOffer } from "@/components/TripOffers";
 import { getDictionary, Locale, translateDataText, buildAlternates, buildRobots, getAccommodationTypeLabel, SITE_URL } from "@/lib/i18n";
 import { getCityImage } from "@/lib/cityImages";
 import FAQSection from "@/components/FAQSection";
@@ -535,6 +536,7 @@ export default async function CityDetailPage(props: {
           initialHasMore={initialPlaces?.hasMore}
         />
 
+        {locale === "tr" && <ToursOffer cityName={city.name} />}
         {locale === "tr" && <CityFoodStay city={city} />}
         {locale === "tr" && <CityWeather city={{ name: city.name, location: city.location }} />}
         {locale === "tr" && <CityProvinceFacts city={city} locale={locale} />}

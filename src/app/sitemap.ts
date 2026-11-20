@@ -101,6 +101,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       });
     }
     sitemapRoutes.push(route(`${siteUrl}/${locale}/plaka-kodlari`, "monthly", 0.6, "src/lib/data/provinces.ts"));
+    sitemapRoutes.push(route(`${siteUrl}/${locale}/muzeler`, "weekly", 0.7, "src/lib/data/cities"));
     // Şehirden illere mesafe tablosu sayfaları.
     getCityTableSlugs().forEach((slug) => {
       sitemapRoutes.push(route(`${siteUrl}/${locale}/mesafe/sehir/${slug}`, "monthly", 0.6, "src/lib/data/distanceCache.json"));

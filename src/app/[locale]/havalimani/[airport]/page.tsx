@@ -8,6 +8,7 @@ import { formatDuration } from "@/lib/data/distances";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdSlot from "@/components/AdSlot";
 import CarRentalOffer from "@/components/CarRentalOffer";
+import { FlightOffer } from "@/components/TripOffers";
 import { jsonLd } from "@/lib/jsonLd";
 
 // "Antalya havalimanı Kemer kaç km" tipi transfer sorguları için (2026-10-02).
@@ -218,6 +219,7 @@ export default async function AirportPage(props: { params: Promise<{ airport: st
       </p>
 
       {isTr && <CarRentalOffer iata={airport.iata} airportName={base} />}
+      {isTr && <FlightOffer airportName={base} iata={airport.iata} />}
 
       <AdSlot />
 

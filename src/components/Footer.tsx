@@ -97,9 +97,14 @@ export default function Footer() {
                   {locale === "tr" ? "Havalimanı Ulaşım" : "Airport Transfers"}
                 </Link>
                 {locale === "tr" && (
-                  <Link href={`/${locale}/plaka-kodlari`} className="transition-colors">
-                    Plaka ve Alan Kodları
-                  </Link>
+                  <>
+                    <Link href={`/${locale}/muzeler`} className="transition-colors">
+                      Türkiye Müzeleri
+                    </Link>
+                    <Link href={`/${locale}/plaka-kodlari`} className="transition-colors">
+                      Plaka ve Alan Kodları
+                    </Link>
+                  </>
                 )}
                 <Link href={`/${locale}/hakkimizda`} className="transition-colors">
                   {locale === "tr" ? "Hakkımızda" : "About Us"}
