@@ -101,6 +101,12 @@ export default function Footer() {
                     <Link href={`/${locale}/muzeler`} className="transition-colors">
                       Türkiye Müzeleri
                     </Link>
+                    <Link href={`/${locale}/plajlar`} className="transition-colors">
+                      Plajlar ve Koylar
+                    </Link>
+                    <Link href={`/${locale}/yoresel-lezzetler`} className="transition-colors">
+                      Yöresel Lezzetler
+                    </Link>
                     <Link href={`/${locale}/plaka-kodlari`} className="transition-colors">
                       Plaka ve Alan Kodları
                     </Link>
