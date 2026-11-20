@@ -200,7 +200,10 @@ export default async function DistancePage(props: { params: Promise<{ pair: stri
       </div>
       {section.id === "yakit" && (
         <div className="mt-4">
-          <FuelCostCalculator distanceKm={distanceKm} />
+          <FuelCostCalculator
+            distanceKm={distanceKm}
+            tollHighways={majorRoads.filter((r) => /otoyol|\bO-\d+/i.test(r))}
+          />
         </div>
       )}
     </section>
