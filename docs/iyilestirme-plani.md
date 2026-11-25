@@ -99,3 +99,10 @@ Durum: `[ ]` bekliyor, `[x]` yapıldı (tarih ve commit ile).
 - 2026-11-23: Sağlık temiz (tüm URL 200, www 301, API 200; GA4 kimliği JS paketinde). Cloudflare Pages son derleme başarılı (GitHub kontrolü, 1096def; eski Vercel kontrolü yine başarısız, etkisiz). GSC son 7 gün (11-15→11-21): 655 tık, ~552 B gösterim, TO %0,12; 28 gün konum 7,4. Gösterim 73 B→86-88 B/gün yukarı, tık 85-105/gün yatay. Yapılan: site değişikliği yok — açık maddeler kullanıcı girdisi (7: GetYourGuide/Trip.com kimliği) ya da tarih (8-10: 2026-12-08) bekliyor. Sıradaki: 2026-12-02 ilçe rehberi ölçümü (+ uygunsa `ilce-parti-2`), 2026-12-08 deney değerlendirmeleri.
 
 - 2026-11-24: Sağlık temiz (tüm URL 200, www 301, API 200; GA4 kimliği JS paketinde). Cloudflare Pages son derleme başarılı (GitHub kontrolü, 7f428d4; eski Vercel kontrolü yine başarısız, etkisiz). GSC henüz yenilenmedi, son gün yine 11-21: son 7 gün (11-15→11-21) 655 tık, ~552 B gösterim, TO %0,12; 28 gün 1,68 B tık, 1,45 Mn gösterim, konum 7,4. Gösterim 73 B→86-88 B/gün yukarı, tık 85-105/gün yatay. Yapılan: site değişikliği yok, açık maddeler kullanıcı girdisi (7) ya da tarih (8-10: 2026-12-08) bekliyor. Sıradaki: 2026-12-02 ilçe rehberi ölçümü (+ uygunsa `ilce-parti-2`), 2026-12-08 deney değerlendirmeleri.
+- 2026-11-25: **AdSense onaylandı, otomatik reklamlar açıldı** (pub-8816248752189045, kimlik
+  doğrulandı). Ayarlar: banner + multiplex açık, sayfa başına en fazla 6 reklam, reklamlar
+  arası en az 780px, sabit (anchor) reklam yalnız altta, yan sütun açık, **vinyet (tam ekran)
+  KAPALI**, amaç odaklı biçimler kapalı. Site tarafı zaten hazırdı: ads.txt, doğrulama meta
+  etiketi, AdSlot (15 sayfa türü) çerez onayından sonra yükleniyor. Temiz Chrome testinde
+  reklam isteği 200 döndü. Ölçüm: 1-2 hafta sonra Search Console'da konum/TO düşüşü ve
+  Lighthouse CLS kontrol et; sorun varsa reklam sayısını azalt.
