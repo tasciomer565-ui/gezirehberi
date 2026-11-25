@@ -108,3 +108,7 @@ Durum: `[ ]` bekliyor, `[x]` yapıldı (tarih ve commit ile).
   Lighthouse CLS kontrol et; sorun varsa reklam sayısını azalt.
 
 - 2026-11-25 (otomatik bakım): Sağlık temiz (tüm URL 200, www 301, API 200; GA4 kimliği JS paketinde). Cloudflare paneli bu kez doğru hesapta açıldı: production f50322d derlemesi başarılı; 2. ilçe partisi (Beyoğlu, Üsküdar, Sarıyer, Adalar) canlıda 200 ve sitemap'te (önizleme derlemesi production'dan önce sıraya girdiği için ~10 dk 404 kaldı). Yerel build 8.798 dosya. GSC son 7 gün (11-17→11-23): 663 tık, ~578 B gösterim, TO %0,11; 28 gün 1,82 B tık, 1,57 Mn gösterim, konum 7,4. Gösterim 74 B→83-88 B/gün yukarı, tık 85-105/gün yatay. Yapılan: site değişikliği yok — açık maddeler kullanıcı girdisi (7: GetYourGuide/Trip.com kimliği) ya da tarih (8-10: 2026-12-08) bekliyor. Not: AdSense ve 2. ilçe partisi aynı gün yayına girdi; 2026-12-02 ilçe ölçümünde 7 sayfayı birlikte değerlendir, AdSense etkisini konum/TO'da ayrıca izle.
+- 2026-11-25: AdSense canlı testi (temiz mobil Chrome): mesafe sayfasında 1 dolu reklam +
+  alt sabit reklam, İstanbul sayfasında 2 dolu reklam; ana sayfada reklam yok (AdSlot yok).
+  Alt sabit reklam "dinamik" modda ekranın yarısını kaplıyordu → "Dinamik sabit reklamlara
+  izin ver" KAPATILDI (küçük şerit kalır).
