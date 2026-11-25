@@ -85,7 +85,7 @@ Durum: `[ ]` bekliyor, `[x]` yapıldı (tarih ve commit ile).
   parti: Beyoğlu, Üsküdar, Sarıyer, Adalar → sonra diğer büyükşehirler
   (İzmir Konak/Karşıyaka, Ankara Çankaya, Antalya Muratpaşa/Kaleiçi). Kural:
   partide en fazla 3-4 ilçe, işletme adı yok, fiyat/saat yok, koordinat OSM'den.
-- 2026-11-18: **2. parti taslağı hazır, yayında DEĞİL** — git dalı `ilce-parti-2`
+- 2026-11-18: **2. parti taslağı hazırlandı** (2026-11-25 kullanıcı isteğiyle yayına alındı, ölçüm beklenmeden) — git dalı `ilce-parti-2`
   (Beyoğlu, Üsküdar, Sarıyer, Adalar; 26 yeni yer, build temiz). 2026-12-02 ölçümü
   iyiyse: `git merge ilce-parti-2` → build → push. Kötüyse önce şablonu düzelt.
 - 2026-11-19: Sağlık temiz (tüm URL 200, www 301, API 200, GA4 kimliği pakette; çerez onayına bağlı olduğundan HTML'de yok). Cloudflare son derlemeler başarılı. GSC son 7 gün (11-17'ye kadar): 592 tık, 467 B gösterim, TO %0,13, trend yukarı (günlük tık 58→85-100). Yapılan: sitemap lastmod düzeltmesi (baae5c2), canlıda 1.898 URL gerçek tarihlerle (Ağu–Kas). Sıradaki: madde 2b (preconnect + CityHero sizes).
