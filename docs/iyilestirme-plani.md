@@ -112,3 +112,5 @@ Durum: `[ ]` bekliyor, `[x]` yapıldı (tarih ve commit ile).
   alt sabit reklam, İstanbul sayfasında 2 dolu reklam; ana sayfada reklam yok (AdSlot yok).
   Alt sabit reklam "dinamik" modda ekranın yarısını kaplıyordu → "Dinamik sabit reklamlara
   izin ver" KAPATILDI (küçük şerit kalır).
+
+- 2026-11-26 (otomatik bakım): Sağlık temiz (tüm URL 200, www 301, API 200; GA4 kimliği JS paketinde). Cloudflare Pages son derleme başarılı (GitHub kontrolü, 028abad; Chrome'daki Cloudflare oturumu yine başka hesapta; eski Vercel kontrolü başarısız, etkisiz). GSC son 7 gün (11-18→11-24): 676 tık, ~592 B gösterim, TO %0,11; 28 gün 1,89 B tık, 1,63 Mn gösterim, konum 7,3. Gösterim 76 B→83-88 B/gün yukarı, tık 86-105/gün yatay-hafif yukarı; AdSense (11-25) sonrası veri henüz yok. Yapılan: site değişikliği yok — açık maddeler kullanıcı girdisi (7: GetYourGuide/Trip.com kimliği) ya da tarih (8-10: 2026-12-08) bekliyor. Sıradaki: 2026-12-02 ilçe rehberi ölçümü (7 sayfa birlikte) + AdSense sonrası konum/TO kontrolü, 2026-12-08 deney değerlendirmeleri.
